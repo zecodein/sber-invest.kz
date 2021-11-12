@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://srv-plesk19.ps.kz:8443/smb/file-manager/list
+HostUrl=https://srv-plesk19.ps.kz:8443/smb/file-manager/download/domainId/4201/?currentDir=%2Fhttpdocs%2F&file=logo.jpeg
