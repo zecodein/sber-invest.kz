@@ -9,61 +9,91 @@
   <body style="
     background-color: #F7F7F7;
 ">
-    <div class="container py-5 px-4">
-      <div class="text-center">
-        <a href="https://t.me/savingandinvesting">
-          <img src="logo.jpeg" alt="логотип" width="500" class="img-fluid">
-        </a>
-        <h2 class="mt-5 h5">Пока сайт находится в разработке всю <br> информацию можно найти на нашем <br> Телеграм канале - <a href="https://t.me/savingandinvesting">https://t.me/savingandinvesting</a></h2>
+    <div style="width: 600px;" class="container py-5 px-4">
+      <div>
+
+        <div class="text-center">
+          <a href="https://t.me/savingandinvesting">
+            <img src="logo.jpeg" alt="логотип" width="500" class="img-fluid">
+          </a>
+          <h2 class="mt-5 h5">Пока сайт находится в разработке всю <br> информацию можно найти на нашем <br> Телеграм канале - <a href="https://t.me/savingandinvesting">https://t.me/savingandinvesting</a></h2>
 
 
 
-        <div class="mt-5 d-flex align-items-center links justify-content-center">         
-          <a href="https://instagram.com/sber_invest.kz" class="me-md-4 me-3">
-            <i class="bi bi-instagram fs-3"></i>
-          </a>
-          <a href="tel:+77055995673" class="me-md-4 me-3">
-            <i class="bi bi-telephone fs-3"></i>
-          </a>
-          <a href="https://wa.me/77055995673" class="me-md-4 me-3">
-            <i class="bi bi-whatsapp fs-3"></i>
-          </a>
-          <a href="https://t.me/SberInvestTeam" class="me-md-4 me-3">
-            <i class="bi bi-telegram fs-3"></i>
-          </a>
-          <a href="mailto:info@sber-invest.kz" class="me-md-4 me-3">
-            <i class="bi bi-envelope fs-3"></i>
-          </a>
-        </div>
+          <div class="mt-5 d-flex align-items-center links justify-content-center">         
+            <a href="https://instagram.com/sber_invest.kz" class="me-md-4 me-3">
+              <i class="bi bi-instagram fs-3"></i>
+            </a>
+            <a href="tel:+77055995673" class="me-md-4 me-3">
+              <i class="bi bi-telephone fs-3"></i>
+            </a>
+            <a href="https://wa.me/77055995673" class="me-md-4 me-3">
+              <i class="bi bi-whatsapp fs-3"></i>
+            </a>
+            <a href="https://t.me/SberInvestTeam" class="me-md-4 me-3">
+              <i class="bi bi-telegram fs-3"></i>
+            </a>
+            <a href="mailto:info@sber-invest.kz" class="me-md-4 me-3">
+              <i class="bi bi-envelope fs-3"></i>
+            </a>
+          </div>
 
-        <div class="mt-5 d-flex align-items-center links justify-content-center">
-          
-          <a href="/" class="me-md-4 me-3">            
-            <i class="bi bi-mortarboard fs-3"></i>
-            <h6>Записаться на курс</h6>
-          </a>
-          
-          <a href="" class="me-md-4 me-3">            
-            <i class="bi bi-pencil-square fs-3"></i>
-            <h6>Налоговое облажение</h6>
-          </a>
-
-        </div>
-
-        <form>
-          <div class="row">
-            <div class="col">
-              <input type="text" class="form-control" placeholder="First name">
+          <div class="mt-5 d-flex align-items-center links justify-content-center">
+            
+            <div id="ZapisNaKursOpen" href="/" class="me-md-4 me-3 ZapisNaKurs" onclick="toggle('ZapisNaKursOpen', 'ZapisNaKursClose', 'GoogleForm')">          
+              <i class="bi bi-mortarboard fs-3"></i>
+              <h6>Записаться на курс</h6>
             </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Last name">
+            <div id="ZapisNaKursClose" style="display: none;" href="/" class="me-md-4 me-3 ZapisNaKurs" onclick="toggle('ZapisNaKursOpen', 'ZapisNaKursClose', 'GoogleForm')">          
+              <i class="bi bi-mortarboard fs-3"></i>
+              <h6>Записаться на курс</h6>
+            </div>
+            
+            <div id="NalogObl" href="" class="me-md-4 me-3 ZapisNaKurs">            
+              <i class="bi bi-pencil-square fs-3"></i>
+              <h6>Налоговое облажение</h6>
             </div>
           </div>
-        </form>
-        
+        </div>
+        <iframe id="GoogleForm" justify style="margin-top: 40px;" src="https://docs.google.com/forms/d/e/1FAIpQLScbhbQw9nyMrMnha_fc8_lIasr8Gen6eMd2mSQQPSbi7iuwMQ/viewform?embedded=true" width="520" height="1000" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>    </div>
     </div>
     
     <style>
+
+      .ZapisNaKurs {
+  transition: 1s;
+  padding: 6px 12px;
+  cursor: pointer;
+  /* width: 600px;
+  height: 242px; */
+  /* display: flex; */
+  /* overflow: hidden; */
+  background: #122448 none repeat scroll 0% 0%;
+  border-radius: 0.5rem;
+  /* margin: 0.75rem; */
+  /* box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,rgb(209, 213, 219) 0px 0px 0px 1px inset; */
+  color: rgb(255, 255, 255);
+
+  transition: all 0.01s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ZapisNaKurs:hover {
+  box-shadow: none;
+  background: rgb(92, 92, 92);
+  transition: 0.3s;
+}
+
+.ZapisNaKurs:active {
+  background: rgb(92, 92, 92);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  transition: 0.3s;
+}
+
+
+
+
+      
       @media(max-width: 767.98px) {
         h2 br {
           display: none;
@@ -77,4 +107,28 @@
         color: #fff;
       }
     </style>
-</body></html>
+</body>
+
+<script>
+  function toggle(first, sec, div3) {
+
+  var first = document.getElementById(first),
+  second = document.getElementById( sec ),
+  div3 = document.getElementById(div3);
+
+  if ( first.style.display === "grid" ) {
+
+      first.style.display = "none";
+      second.style.display = "grid";
+      div3.style.display = "grid";
+      
+  } else { // switch back
+      first.style.display = "grid";
+      second.style.display = "none";
+      div3.style.display = "none";
+
+  }
+
+  }
+</script>
+</html>
