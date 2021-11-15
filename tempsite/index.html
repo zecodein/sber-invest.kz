@@ -14,12 +14,33 @@
       <div>
 
         <div class="text-center">
-          <a href="https://t.me/savingandinvesting">
+          <a name="MainLogo" href="https://t.me/savingandinvesting">
             <img src="style/img/logo.jpeg" alt="логотип" width="500" class="img-fluid">
           </a>
           <h2 class="mt-5 h5">Пока сайт находится в разработке всю <br> информацию можно найти на нашем <br> Телеграм канале - <a href="https://t.me/savingandinvesting">https://t.me/savingandinvesting</a></h2>
 
-          <div class="mt-5 d-flex align-items-center links justify-content-center">         
+          
+
+          <div class="mt-5 d-flex align-items-center links justify-content-center">
+            
+            <a href="#GoogleForm" id="ZapisNaKursOpen" class="me-md-4 me-3 ZapisNaKurs ZapisNaKursOpen" onclick="toggle('ZapisNaKursOpen', 'ZapisNaKursClose', 'GoogleForm')">          
+              <i class="bi bi-mortarboard fs-3"></i>
+              <h6>Подготовка декларации (форма 240)</h6>
+            </a>
+            <a href="#MainLogo" id="ZapisNaKursClose" class="me-md-4 me-3 ZapisNaKurs ZapisNaKursClose" onclick="toggle('ZapisNaKursOpen', 'ZapisNaKursClose', 'GoogleForm')">          
+              <i class="bi bi-mortarboard fs-3"></i>
+              <h6>Подготовка декларации (форма 240)</h6>
+            </a>
+            
+            <div id="NalogObl" href="" class="me-md-4 me-3 ZapisNaKurs">            
+              <i class="bi bi-pencil-square fs-3"></i>
+              <h6>Курс «Налоги инвестора в Казахстане»</h6>
+            </div>
+          </div>
+        </div>
+        <iframe name="GoogleForm" class="GoogleForm" id="GoogleForm" src="https://docs.google.com/forms/d/e/1FAIpQLScbhbQw9nyMrMnha_fc8_lIasr8Gen6eMd2mSQQPSbi7iuwMQ/viewform?embedded=true" width="520" height="1000" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>    </div>
+
+        <div class="mt-5 d-flex align-items-center links justify-content-center">         
             <a href="https://instagram.com/sber_invest.kz" class="me-md-4 me-3">
               <i class="bi bi-instagram fs-3"></i>
             </a>
@@ -36,25 +57,6 @@
               <i class="bi bi-envelope fs-3"></i>
             </a>
           </div>
-
-          <div class="mt-5 d-flex align-items-center links justify-content-center">
-            
-            <div id="ZapisNaKursOpen" href="/" class="me-md-4 me-3 ZapisNaKurs" onclick="toggle('ZapisNaKursOpen', 'ZapisNaKursClose', 'GoogleForm')">          
-              <i class="bi bi-mortarboard fs-3"></i>
-              <h6>Налоговое облажение</h6>
-            </div>
-            <div id="ZapisNaKursClose" style="display: none;" href="/" class="me-md-4 me-3 ZapisNaKurs" onclick="toggle('ZapisNaKursOpen', 'ZapisNaKursClose', 'GoogleForm')">          
-              <i class="bi bi-mortarboard fs-3"></i>
-              <h6>Налоговое облажение</h6>
-            </div>
-            
-            <div id="NalogObl" href="" class="me-md-4 me-3 ZapisNaKurs">            
-              <i class="bi bi-pencil-square fs-3"></i>
-              <h6>Записаться на курс</h6>
-            </div>
-          </div>
-        </div>
-        <iframe class="GoogleForm" id="GoogleForm" src="https://docs.google.com/forms/d/e/1FAIpQLScbhbQw9nyMrMnha_fc8_lIasr8Gen6eMd2mSQQPSbi7iuwMQ/viewform?embedded=true" width="520" height="1000" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>    </div>
     </div>
 </body>
 <script src="js/script.js"></script>

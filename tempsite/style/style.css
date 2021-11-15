@@ -1,3 +1,7 @@
+a { 
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+} 
+
 .ZapisNaKurs {
     transition: 1s;
     padding: 6px 12px;
@@ -44,4 +48,13 @@
 .GoogleForm {
     margin-top: 40px;
     display: none;
+}
+
+.ZapisNaKursOpen {
+    background-color:  rgb(92, 92, 92);
+}
+
+.ZapisNaKursClose {
+    display: none;
+    background-color: #122448;
 }

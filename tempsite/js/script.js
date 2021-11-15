@@ -3,7 +3,7 @@ function toggle(first, sec, div3) {
     second = document.getElementById( sec ),
     div3 = document.getElementById(div3);
     if ( first.style.display === "grid" ) {
-        first.style.display = "none";
+        first.style.display = "none"; 
         second.style.display = "grid";
         div3.style.display = "none";
     } else { // switch back
