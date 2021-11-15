@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <title>SberInvest - Сбережения и Инвестиции</title>
+    <link rel="stylesheet" href="/style/style.css">
   </head>
   <body style="
     background-color: #F7F7F7;
@@ -14,11 +15,9 @@
 
         <div class="text-center">
           <a href="https://t.me/savingandinvesting">
-            <img src="logo.jpeg" alt="логотип" width="500" class="img-fluid">
+            <img src="/style/img/logo.jpeg" alt="логотип" width="500" class="img-fluid">
           </a>
           <h2 class="mt-5 h5">Пока сайт находится в разработке всю <br> информацию можно найти на нашем <br> Телеграм канале - <a href="https://t.me/savingandinvesting">https://t.me/savingandinvesting</a></h2>
-
-
 
           <div class="mt-5 d-flex align-items-center links justify-content-center">         
             <a href="https://instagram.com/sber_invest.kz" class="me-md-4 me-3">
@@ -57,78 +56,6 @@
         </div>
         <iframe id="GoogleForm" justify style="margin-top: 40px;" src="https://docs.google.com/forms/d/e/1FAIpQLScbhbQw9nyMrMnha_fc8_lIasr8Gen6eMd2mSQQPSbi7iuwMQ/viewform?embedded=true" width="520" height="1000" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>    </div>
     </div>
-    
-    <style>
-
-      .ZapisNaKurs {
-  transition: 1s;
-  padding: 6px 12px;
-  cursor: pointer;
-  /* width: 600px;
-  height: 242px; */
-  /* display: flex; */
-  /* overflow: hidden; */
-  background: #122448 none repeat scroll 0% 0%;
-  border-radius: 0.5rem;
-  /* margin: 0.75rem; */
-  /* box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,rgb(209, 213, 219) 0px 0px 0px 1px inset; */
-  color: rgb(255, 255, 255);
-
-  transition: all 0.01s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.ZapisNaKurs:hover {
-  box-shadow: none;
-  background: rgb(92, 92, 92);
-  transition: 0.3s;
-}
-
-.ZapisNaKurs:active {
-  background: rgb(92, 92, 92);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-  transition: 0.3s;
-}
-
-
-
-
-      
-      @media(max-width: 767.98px) {
-        h2 br {
-          display: none;
-        }
-      }
-
-      .links a {
-        padding: .375rem .75rem;
-        border-radius: .5rem;
-        background-color: #122448;
-        color: #fff;
-      }
-    </style>
 </body>
-
-<script>
-  function toggle(first, sec, div3) {
-
-  var first = document.getElementById(first),
-  second = document.getElementById( sec ),
-  div3 = document.getElementById(div3);
-
-  if ( first.style.display === "grid" ) {
-
-      first.style.display = "none";
-      second.style.display = "grid";
-      div3.style.display = "grid";
-      
-  } else { // switch back
-      first.style.display = "grid";
-      second.style.display = "none";
-      div3.style.display = "none";
-
-  }
-
-  }
-</script>
+<script src="/js/script.js"></script>
 </html>
