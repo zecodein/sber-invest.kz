@@ -40,3 +40,8 @@
     background-color: #122448;
     color: #fff;
 }
+
+.GoogleForm {
+    margin-top: 40px;
+    display: none;
+}
