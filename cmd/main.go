@@ -14,7 +14,7 @@ func main() {
 	r := httprouter.New()
 	routes(r)
 
-	const PORT = ":8081"
+	const PORT = ":8080"
 
 	fmt.Printf("Listening on the port %v\nhttp://localhost%v/\n", PORT, PORT)
 	log.Fatal(http.ListenAndServe(PORT, r))

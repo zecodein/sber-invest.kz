@@ -1,8 +1,13 @@
 FROM golang:1.16.3
-LABEL Authors="ZeCodeIn"
-LABEL Version="1.0"
-RUN mkdir /app 
-ADD . /app/ 
-WORKDIR /app 
+
+LABEL base.name="sberinvest"
+
+WORKDIR /app
+
+COPY . .
+
 RUN go build -o main ./cmd/
-CMD ["/app/main"]
+
+EXPOSE 8080
+
+ENTRYPOINT ["./main"]
