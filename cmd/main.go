@@ -25,4 +25,5 @@ func routes(r *httprouter.Router) {
 	r.ServeFiles("/public/*filepath", http.Dir("public"))
 
 	r.GET("/", controller.MainPage)
+	r.GET("/services", controller.ServicesPage)
 }
