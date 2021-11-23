@@ -8,3 +8,7 @@
     width: 100%;
     overflow: visible
 }
+
+.navbar-brand{
+    color: #122448;
+}
