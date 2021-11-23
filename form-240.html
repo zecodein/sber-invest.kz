@@ -45,27 +45,54 @@
     <!-- Question Accordion -->
 
     <div class="container">
-        <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+ <!-- Form tag with action and method -->
+<form action="https://form2channel.com?form=taxform240" method="POST"  enctype="multipart/form-data">
+
+    <!-- Recipients for the form info -->
+    <input type="hidden" name="formto_googlesheets" value="sbekk85@gmail.com">
+    <input type="hidden" name="formto_email" value="s-bek-k@mail.ru">
+    <!-- <input type="hidden" name="formto_slack" value="Slack Channel Webhook URL">
+    <input type="hidden" name="formto_telegram" value="The chat ID the Form2Channel bot sent you">
+    <input type="hidden" name="formto_http" value="Address of the receiving webhook or api"> -->
+    
+    <!-- Custom redirects -->
+    <input type="hidden" name="formto_redirect" value="/">
+    <input type="hidden" name="formto_error" value="/">
+    
+    <!-- Form fields need name and value attributes -->
+      TextField: 
+      <input type="text" name="TextField" value="TextValue">
+      TextArea:
+      <textarea name="TextArea">TextArea Text</textarea>
+      DropDown: 
+      <select name="DropDown1">
+        <option value="SelectedOptionVal">SelectedOption</option>
+      </select>
+      <select name="DropDown2">
+        <option>OptionText</option>
+      </select>
+      <select name="DropDown3">
+        <option></option>
+        <option>Option</option>
+      </select>
+      <label>CheckBox1: <input name="CheckBox1" type="checkbox" value="checked" checked></label>
+      <label>CheckBox2: <input name="CheckBox2" type="checkbox"></label>
+      <label>CheckBox3: <input name="CheckBox3" type="checkbox" checked></label>
+      RadioButton: 
+      <label><input name="RadioButton" type="radio" value="checked" checked> Checked</label>
+      <label><input name="RadioButton" type="radio" value="unchecked"> Unchecked</label>
+      Single File:
+      <input type="file" name="fieldname1">
+      Multiple Files:
+      <input type="file" name="fieldname2[]" multiple>
+    
+      <button type="Submit">Send</button>
+    </form>
     </div>
 
 
 
-    <div class="container">    
+    <!-- <div class="container">    
         <section class="p-5" id="questions">
 
         </section>
@@ -75,7 +102,7 @@
                 <iframe name="GoogleForm" class="GoogleForm" id="GoogleForm" src="https://docs.google.com/forms/d/e/1FAIpQLScbhbQw9nyMrMnha_fc8_lIasr8Gen6eMd2mSQQPSbi7iuwMQ/viewform?embedded=true" width="520" height="1200" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe> 
             </div>
         </section>
-    </div>
+    </div> -->
 
 
 
