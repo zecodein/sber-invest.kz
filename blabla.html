@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        function on_change(el) {
+            var selectedOption = el.target.value;
+            if (selectedOption === 'MDM') {
+                document.getElementById('text').style.display = 'block';
+            } else {
+                document.getElementById('text').style.display = 'none'; // Hide el
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <h1>Hello, world!</h1> -->
+    <div class="container" "row justify-content-md-center">
+        <h4>Please Choose a Table Below</h4>
+        <div class="radio">
+            <label><input type="radio" name="optradio" oninput='on_change(event)' value="MDM">MDM_Sls_Rep_Dim_Na</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="optradio" oninput='on_change(event)' value="sample1">Sample_Table1</label>
+        </div>
+        <div class="radio disabled">
+            <label><input type="radio" name="optradio" oninput='on_change(event)' value="sample2">Sample_Table2</label>
+        </div>
+    </div>
+    <!-- <div class="radio"> -->
+    <!-- <select id="mySelect" onchange='on_change(this)'> // Note the onchange event handler, which passes the select object to the on_change function via the 'this' variable -->
+    <!-- <option value='one'>One</option> // Note I added value='one' -->
+    <!-- <option value='two'>Two</option> // Note I added value='two' -->
+    <!-- </select> -->
+    <!-- </div> -->
+    <div id="text" style="display:none;"> // Note display:none instead of display:hidden
+        The text would show if the user chooses option "Two"
+    </div>
+
+
+
+</body>
+
+</html>

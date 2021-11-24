@@ -133,22 +133,22 @@
                             <div class="card-body">
                                 <div>
                                     <label class="form-check">
-                                        <input id="RadioKolOpPoPro" onclick="myFunction('RadioKolOpPoPro','KolOpPoPro')" class="form-check-input" type="radio" value="option1"
-                                            name="radios-example" checked="">
+                                        <input id="hhh" class="form-check-input" oninput='on_change("hhh","KolOpPoPro")' type="radio"
+                                        name="optradio" value="Yes">
                                         <span class="form-check-label">
                                             Да
                                         </span>
                                     </label>
                                     <label class="form-check">
-                                        <input class="form-check-input" type="radio" value="option2"
-                                            name="radios-example">
+                                        <input class="form-check-input" oninput='on_change("hhh","KolOpPoPro")' type="radio"
+                                        name="optradio" value="No">
                                         <span class="form-check-label">
                                             Нет
                                         </span>
                                     </label>
                                     <label class="form-check">
-                                        <input class="form-check-input" type="radio" value="option3"
-                                            name="radios-example">
+                                        <input class="form-check-input" oninput='on_change("hhh","KolOpPoPro")' type="radio"
+                                        name="optradio" value="IDK">
                                         <span class="form-check-label">
                                             Не знаю
                                         </span>
@@ -157,7 +157,7 @@
                             </div>
                         </div>
 
-                        <div class="card" id="KolOpPoPro">
+                        <div class="card" id="KolOpPoPro"  style="display:none;">
                             <div class="card-header">
                                 <h5 class="card-title mb-0">Укажите количество операций по продаже ценных бумаг за
                                     отчетный период (календарный год)</h5>
@@ -175,7 +175,7 @@
                                 <div>
                                     <label class="form-check">
                                         <input class="form-check-input" type="radio" value="option1"
-                                            name="radios-example" checked="">
+                                            name="radios-example">
                                         <span class="form-check-label">
                                             Да
                                         </span>
@@ -206,15 +206,15 @@
                             <div class="card-body">
                                 <div>
                                     <label class="form-check">
-                                        <input class="form-check-input" type="radio" value="option1"
-                                            name="radios-example" checked="">
+                                        <input id="EstLiOsnovDl" class="form-check-input" type="radio" value="option1"
+                                            name="EstLiOsnovDl" oninput='on_change("EstLiOsnovDl","UkKaDrSd")' value="Yes">
                                         <span class="form-check-label">
                                             Да
                                         </span>
                                     </label>
                                     <label class="form-check">
                                         <input class="form-check-input" type="radio" value="option2"
-                                            name="radios-example">
+                                            name="EstLiOsnovDl" oninput='on_change("EstLiOsnovDl","UkKaDrSd")' value="No">
                                         <span class="form-check-label">
                                             Нет
                                         </span>
@@ -223,7 +223,7 @@
                             </div>
                         </div>
 
-                        <div class="card">
+                        <div class="card" id="UkKaDrSd" style="display: none">
                             <div class="card-header">
                                 <h5 class="card-title mb-0">Укажите какие другие сделки и доходы у вас были за отчетный
                                     период (календарный год).</h5>
@@ -243,15 +243,15 @@
                             <div class="card-body">
                                 <div>
                                     <label class="form-check">
-                                        <input class="form-check-input" type="radio" value="option1"
-                                            name="radios-example" checked="">
+                                        <input id="EstLiOsnovDlaNalog" class="form-check-input" type="radio" value="option1"
+                                            name="EstLiOsnovDlaNalog" oninput='on_change("EstLiOsnovDlaNalog","UkazhiOsnovDla")'>
                                         <span class="form-check-label">
                                             Да
                                         </span>
                                     </label>
                                     <label class="form-check">
                                         <input class="form-check-input" type="radio" value="option2"
-                                            name="radios-example">
+                                            name="EstLiOsnovDlaNalog" oninput='on_change("EstLiOsnovDlaNalog","UkazhiOsnovDla")'>
                                         <span class="form-check-label">
                                             Нет
                                         </span>
@@ -260,7 +260,7 @@
                             </div>
                         </div>
 
-                        <div class="card">
+                        <div class="card" id="UkazhiOsnovDla" style="display: none">
                             <div class="card-header">
                                 <h5 class="card-title mb-0">Укажите основания для каких налоговых вычетов у вас есть.
                                 </h5>
@@ -357,8 +357,19 @@
     </div> -->
 
 
-    <script src="js/script.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+            function on_change(el, text) {
+            var selectedOption = document.getElementById(el);
+            if (selectedOption.checked) {
+                document.getElementById(text).style.display = 'block';
+            } else {
+                document.getElementById(text).style.display = 'none'; // Hide el
+            }
+
+            }
+    </script>
 
 </body>
 

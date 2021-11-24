@@ -27,12 +27,3 @@ function myFunction(first, sec) {
     }
 }
 
-function on_change(el) {
-    var selectedOption = el.target.value;
-    if (selectedOption === 'MDM') {
-        document.getElementById('text').style.display = 'block';
-    } else {
-        document.getElementById('text').style.display = 'none'; // Hide el
-    }
-
-}
