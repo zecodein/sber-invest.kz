@@ -5,92 +5,344 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="style/bootstrap.min.css" rel="stylesheet"   crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
- 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link href="style/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
     <title>Заказать услугу</title>
 </head>
 
 <body>
 
-    <!-- Navbar menu -->
-    <nav class="navbar navbar-expand-md navbar-dark py-3 bg-dark">
-        <div class="container">
-            <a href="#" class="navbar-brand">СБЕРЕЖЕНИЯ И ИНВЕСТИЦИИ</a>
+    <!-- Forms -->
+    <main class="content">
+        <form action="https://form2channel.com?form=taxform240" method="POST" enctype="multipart/form-data">
+            <div class="container p-0">
 
+                <div class="mb-3">
+                    <h1 class="h3 d-inline align-middle">Форма оформления заказа</h1>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Фамилия</h5>
+                            </div>
+                            <div class="card-body">
+                                <input type="text" class="form-control" placeholder="Фамилия">
+                            </div>
+                        </div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Имя</h5>
+                            </div>
+                            <div class="card-body">
+                                <input type="text" class="form-control" placeholder="Имя">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Отчество</h5>
+                            </div>
+                            <div class="card-body">
+                                <input type="text" class="form-control" placeholder="Отчество">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Электроная почта</h5>
+                            </div>
+                            <div class="card-body">
+                                <input type="email" class="form-control" placeholder="e-mail">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Телефон для связи (сотовый)</h5>
+                            </div>
+                            <div class="card-body">
+                                <input type="tel" class="form-control" pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    value="+7">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Гражданство</h5>
+                            </div>
+                            <div class="card-body">
+                                <input type="text" class="form-control" placeholder="Казахстан">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Адрес прописки</h5>
+                            </div>
+                            <div class="card-body">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Адрес проживания</h5>
+                            </div>
+                            <div class="card-body">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
 
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                    <div class="col-12 col-lg-6">
 
-            <div class="collapse navbar-collapse" id="navmenu">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="/" class="nav-link">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="services.html" class="nav-link">Налоговая декларация</a>
-                    </li>
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Вы налоговый резидент РК в отчетном периоде? <div
+                                        data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen"
+                                        class="btn btn-outline-secondary bi bi-mortarboard-fill py-0 fs-4 text-reset"></div> </h5>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <label class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inline-radios-example"
+                                            value="option2">
+                                        <span class="form-check-label">
+                                            Да
+                                        </span>
+                                    </label>
+                                    <label class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inline-radios-example"
+                                            value="option3">
+                                        <span class="form-check-label">
+                                            Нет
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
 
-                    <li class="nav-item">
-                        <a href="/" class="nav-link">Курс «Налоги инвестора в Казахстане»</a>
-                    </li>
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">У вас были операции по продаже ценных бумаг в отчетном
+                                    периоде?</h5>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <label class="form-check">
+                                        <input id="RadioKolOpPoPro" onclick="myFunction('RadioKolOpPoPro','KolOpPoPro')" class="form-check-input" type="radio" value="option1"
+                                            name="radios-example" checked="">
+                                        <span class="form-check-label">
+                                            Да
+                                        </span>
+                                    </label>
+                                    <label class="form-check">
+                                        <input class="form-check-input" type="radio" value="option2"
+                                            name="radios-example">
+                                        <span class="form-check-label">
+                                            Нет
+                                        </span>
+                                    </label>
+                                    <label class="form-check">
+                                        <input class="form-check-input" type="radio" value="option3"
+                                            name="radios-example">
+                                        <span class="form-check-label">
+                                            Не знаю
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
 
-                </ul>
-            </div>
-        </div>
-    </nav>
+                        <div class="card" id="KolOpPoPro">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Укажите количество операций по продаже ценных бумаг за
+                                    отчетный период (календарный год)</h5>
+                            </div>
+                            <div class="card-body">
+                                <input type="text" class="form-control" placeholder="Введите количество">
+                            </div>
+                        </div>
 
-    <!-- Question Accordion -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Вы получали дивиденды в отчетном периоде?</h5>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <label class="form-check">
+                                        <input class="form-check-input" type="radio" value="option1"
+                                            name="radios-example" checked="">
+                                        <span class="form-check-label">
+                                            Да
+                                        </span>
+                                    </label>
+                                    <label class="form-check">
+                                        <input class="form-check-input" type="radio" value="option2"
+                                            name="radios-example">
+                                        <span class="form-check-label">
+                                            Нет
+                                        </span>
+                                    </label>
+                                    <label class="form-check">
+                                        <input class="form-check-input" type="radio" value="option3"
+                                            name="radios-example">
+                                        <span class="form-check-label">
+                                            Не знаю
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Есть ли основания для включения в налоговую декларацию
+                                    других доходов (продажа имущества, авто, получения других доходов)?</h5>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <label class="form-check">
+                                        <input class="form-check-input" type="radio" value="option1"
+                                            name="radios-example" checked="">
+                                        <span class="form-check-label">
+                                            Да
+                                        </span>
+                                    </label>
+                                    <label class="form-check">
+                                        <input class="form-check-input" type="radio" value="option2"
+                                            name="radios-example">
+                                        <span class="form-check-label">
+                                            Нет
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Укажите какие другие сделки и доходы у вас были за отчетный
+                                    период (календарный год).</h5>
+                            </div>
+                            <div class="card-body">
+                                <textarea class="form-control" placeholder="Введите другие сделки"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Есть ли основания для налоговых вычетов (стандартные,
+                                    другие)? Должна быть шапочка студента рядом, чтобы человек мог нажать ее и
+                                    посмотреть какие бывают налоговые вычеты. При нажатии шапочки надо чтобы появлялся
+                                    слайд 2. (слайды в приложении).</h5>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <label class="form-check">
+                                        <input class="form-check-input" type="radio" value="option1"
+                                            name="radios-example" checked="">
+                                        <span class="form-check-label">
+                                            Да
+                                        </span>
+                                    </label>
+                                    <label class="form-check">
+                                        <input class="form-check-input" type="radio" value="option2"
+                                            name="radios-example">
+                                        <span class="form-check-label">
+                                            Нет
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Укажите основания для каких налоговых вычетов у вас есть.
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <textarea class="form-control" placeholder="Введите какие именно вычеты"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button type="Submit" class="btn btn-success m-3">Success</button>
+                </div>
+    </main>
+
 
     <div class="container">
- <!-- Form tag with action and method -->
-<form action="https://form2channel.com?form=taxform240" method="POST"  enctype="multipart/form-data">
+        <!-- Form tag with action and method -->
+        <form action="https://form2channel.com?form=taxform240" method="POST" enctype="multipart/form-data">
 
-    <!-- Recipients for the form info -->
-    <input type="hidden" name="formto_googlesheets" value="sbekk85@gmail.com">
-    <input type="hidden" name="formto_email" value="s-bek-k@mail.ru">
-    <!-- <input type="hidden" name="formto_slack" value="Slack Channel Webhook URL">
-    <input type="hidden" name="formto_telegram" value="The chat ID the Form2Channel bot sent you">
-    <input type="hidden" name="formto_http" value="Address of the receiving webhook or api"> -->
-    
-    <!-- Custom redirects -->
-    <input type="hidden" name="formto_redirect" value="/">
-    <input type="hidden" name="formto_error" value="/">
-    
-    <!-- Form fields need name and value attributes -->
-      TextField: 
-      <input type="text" name="TextField" value="TextValue">
-      TextArea:
-      <textarea name="TextArea">TextArea Text</textarea>
-      DropDown: 
-      <select name="DropDown1">
-        <option value="SelectedOptionVal">SelectedOption</option>
-      </select>
-      <select name="DropDown2">
-        <option>OptionText</option>
-      </select>
-      <select name="DropDown3">
-        <option></option>
-        <option>Option</option>
-      </select>
-      <label>CheckBox1: <input name="CheckBox1" type="checkbox" value="checked" checked></label>
-      <label>CheckBox2: <input name="CheckBox2" type="checkbox"></label>
-      <label>CheckBox3: <input name="CheckBox3" type="checkbox" checked></label>
-      RadioButton: 
-      <label><input name="RadioButton" type="radio" value="checked" checked> Checked</label>
-      <label><input name="RadioButton" type="radio" value="unchecked"> Unchecked</label>
-      Single File:
-      <input type="file" name="fieldname1">
-      Multiple Files:
-      <input type="file" name="fieldname2[]" multiple>
-    
-      <button type="Submit">Send</button>
-    </form>
+            <!-- Recipients for the form info -->
+            <input type="hidden" name="formto_googlesheets" value="sbekk85@gmail.com">
+            <input type="hidden" name="formto_email" value="s-bek-k@mail.ru">
+            <!-- <input type="hidden" name="formto_slack" value="Slack Channel Webhook URL">
+               <input type="hidden" name="formto_telegram" value="The chat ID the Form2Channel bot sent you">
+               <input type="hidden" name="formto_http" value="Address of the receiving webhook or api"> -->
+
+            <!-- Custom redirects -->
+            <input type="hidden" name="formto_redirect" value="/">
+            <input type="hidden" name="formto_error" value="/">
+
+            <!-- Form fields need name and value attributes -->
+            TextField:
+            <input type="text" name="TextField" value="TextValue">
+            TextArea:
+            <textarea name="TextArea">TextArea Text</textarea>
+            DropDown:
+            <select name="DropDown1">
+                <option value="SelectedOptionVal">SelectedOption</option>
+            </select>
+            <select name="DropDown2">
+                <option>OptionText</option>
+            </select>
+            <select name="DropDown3">
+                <option></option>
+                <option>Option</option>
+            </select>
+            <label>CheckBox1: <input name="CheckBox1" type="checkbox" value="checked" checked></label>
+            <label>CheckBox2: <input name="CheckBox2" type="checkbox"></label>
+            <label>CheckBox3: <input name="CheckBox3" type="checkbox" checked></label>
+            RadioButton:
+            <label><input name="RadioButton" type="radio" value="checked" checked> Checked</label>
+            <label><input name="RadioButton" type="radio" value="unchecked"> Unchecked</label>
+            Single File:
+            <input type="file" name="fieldname1">
+            Multiple Files:
+            <input type="file" name="fieldname2[]" multiple>
+
+            <button type="Submit">Send</button>
+        </form>
     </div>
 
 
+    <!-- Modal -->
+
+    <div class="modal fade" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel"
+        style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title h4" id="exampleModalFullscreenLabel">Full screen modal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img class="img-fluid px-md-5 d-md-block" src="style/img/slide1.png" alt="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- <div class="container">    
         <section class="p-5" id="questions">
@@ -105,8 +357,8 @@
     </div> -->
 
 
-
-        <script src="js/bootstrap.bundle.min.js"></script> 
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 
 </body>
 
