@@ -5,28 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstap bundle css and icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link href="style/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- integrated google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
 
     <title>Заказать услугу</title>
 </head>
 
 <body>
 
+    <!-- Navbar menu -->
+    <nav class="navbar navbar-expand-md navbar-dark py-3 bg-dark">
+        <div class="container">
+            <a href="#" class="navbar-brand">СБЕРЕЖЕНИЯ И ИНВЕСТИЦИИ</a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link">Налоговая декларация</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Курс «Налоги инвестора в Казахстане»</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <!-- Forms -->
     <main class="content">
-        <form action="https://form2channel.com?form=taxform240" method="POST" enctype="multipart/form-data">
+
+        <form action="https://form2channel.com?form=sberinvesttaxform240" method="POST" enctype="multipart/form-data">
+
+            <!-- Recipients for the form info -->
+            <input type="hidden" name="formto_googlesheets" value="sbekk85@gmail.com">
+            <input type="hidden" name="formto_email" value="s-bek-k@mail.ru">
+
+            <!-- Custom redirects -->
+            <input type="hidden" name="formto_redirect" value="index.html">
+            <input type="hidden" name="formto_error" value="services.html">
+
+            <!-- Form fields need name and value attributes -->
             <div class="container p-0">
 
                 <div class="mb-3">
-                    <h1 class="h3 d-inline align-middle">Форма оформления заказа</h1>
+                    <h1 class="h3 d-inline pt-5 align-middle">Форма оформления заказа</h1>
                 </div>
+
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <div class="card">
@@ -34,7 +72,7 @@
                                 <h5 class="card-title mb-0">Фамилия</h5>
                             </div>
                             <div class="card-body">
-                                <input type="text" class="form-control" placeholder="Фамилия">
+                                <input type="text" name="surname" class="form-control" placeholder="Фамилия">
                             </div>
                         </div>
 
@@ -43,23 +81,23 @@
                                 <h5 class="card-title mb-0">Имя</h5>
                             </div>
                             <div class="card-body">
-                                <input type="text" class="form-control" placeholder="Имя">
+                                <input type="text" name="name" class="form-control" placeholder="Имя">
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title mb-0">Отчество</h5>
+                                <h5 class="card-title mb-0" >Отчество</h5>
                             </div>
                             <div class="card-body">
-                                <input type="text" class="form-control" placeholder="Отчество">
+                                <input type="text" name="patronomic" class="form-control" placeholder="Отчество">
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title mb-0">Электроная почта</h5>
+                                <h5 class="card-title mb-0" >Электроная почта</h5>
                             </div>
                             <div class="card-body">
-                                <input type="email" class="form-control" placeholder="e-mail">
+                                <input type="email" name="email" class="form-control" placeholder="e-mail">
                             </div>
                         </div>
                         <div class="card">
@@ -67,7 +105,7 @@
                                 <h5 class="card-title mb-0">Телефон для связи (сотовый)</h5>
                             </div>
                             <div class="card-body">
-                                <input type="tel" class="form-control" pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                <input type="tel" name="mobile" class="form-control" pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                     value="+7">
                             </div>
                         </div>
@@ -76,7 +114,7 @@
                                 <h5 class="card-title mb-0">Гражданство</h5>
                             </div>
                             <div class="card-body">
-                                <input type="text" class="form-control" placeholder="Казахстан">
+                                <input type="text" name="citizen" class="form-control" placeholder="Казахстан">
                             </div>
                         </div>
                         <div class="card">
@@ -84,7 +122,7 @@
                                 <h5 class="card-title mb-0">Адрес прописки</h5>
                             </div>
                             <div class="card-body">
-                                <input type="text" class="form-control">
+                                <input type="text" name="adressregistration" class="form-control">
                             </div>
                         </div>
                         <div class="card">
@@ -92,7 +130,7 @@
                                 <h5 class="card-title mb-0">Адрес проживания</h5>
                             </div>
                             <div class="card-body">
-                                <input type="text" class="form-control">
+                                <input type="text" name="adress" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -108,14 +146,14 @@
                             <div class="card-body">
                                 <div>
                                     <label class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inline-radios-example"
+                                        <input class="form-check-input" type="radio" name="taxresident"
                                             value="option2">
                                         <span class="form-check-label">
                                             Да
                                         </span>
                                     </label>
                                     <label class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inline-radios-example"
+                                        <input class="form-check-input" type="radio" name="taxresident"
                                             value="option3">
                                         <span class="form-check-label">
                                             Нет
@@ -134,21 +172,21 @@
                                 <div>
                                     <label class="form-check">
                                         <input id="hhh" class="form-check-input" oninput='on_change("hhh","KolOpPoPro")' type="radio"
-                                        name="optradio" value="Yes">
+                                        name="sale1" value="Yes">
                                         <span class="form-check-label">
                                             Да
                                         </span>
                                     </label>
                                     <label class="form-check">
                                         <input class="form-check-input" oninput='on_change("hhh","KolOpPoPro")' type="radio"
-                                        name="optradio" value="No">
+                                        name="sale1" value="No">
                                         <span class="form-check-label">
                                             Нет
                                         </span>
                                     </label>
                                     <label class="form-check">
                                         <input class="form-check-input" oninput='on_change("hhh","KolOpPoPro")' type="radio"
-                                        name="optradio" value="IDK">
+                                        name="sale1" value="IDK">
                                         <span class="form-check-label">
                                             Не знаю
                                         </span>
@@ -163,7 +201,7 @@
                                     отчетный период (календарный год)</h5>
                             </div>
                             <div class="card-body">
-                                <input type="text" class="form-control" placeholder="Введите количество">
+                                <input type="text" name="sale1quant" class="form-control" placeholder="Введите количество">
                             </div>
                         </div>
 
@@ -175,21 +213,21 @@
                                 <div>
                                     <label class="form-check">
                                         <input class="form-check-input" type="radio" value="option1"
-                                            name="radios-example">
+                                            name="dividend">
                                         <span class="form-check-label">
                                             Да
                                         </span>
                                     </label>
                                     <label class="form-check">
                                         <input class="form-check-input" type="radio" value="option2"
-                                            name="radios-example">
+                                            name="dividend">
                                         <span class="form-check-label">
                                             Нет
                                         </span>
                                     </label>
                                     <label class="form-check">
                                         <input class="form-check-input" type="radio" value="option3"
-                                            name="radios-example">
+                                            name="dividend">
                                         <span class="form-check-label">
                                             Не знаю
                                         </span>
@@ -207,14 +245,14 @@
                                 <div>
                                     <label class="form-check">
                                         <input id="EstLiOsnovDl" class="form-check-input" type="radio" value="option1"
-                                            name="EstLiOsnovDl" oninput='on_change("EstLiOsnovDl","UkKaDrSd")' value="Yes">
+                                            name="includedeclr" oninput='on_change("EstLiOsnovDl","UkKaDrSd")' value="Yes">
                                         <span class="form-check-label">
                                             Да
                                         </span>
                                     </label>
                                     <label class="form-check">
                                         <input class="form-check-input" type="radio" value="option2"
-                                            name="EstLiOsnovDl" oninput='on_change("EstLiOsnovDl","UkKaDrSd")' value="No">
+                                            name="includedeclr" oninput='on_change("EstLiOsnovDl","UkKaDrSd")' value="No">
                                         <span class="form-check-label">
                                             Нет
                                         </span>
@@ -229,7 +267,7 @@
                                     период (календарный год).</h5>
                             </div>
                             <div class="card-body">
-                                <textarea class="form-control" placeholder="Введите другие сделки"></textarea>
+                                <textarea class="form-control" name="otherdeal" placeholder="Введите другие сделки"></textarea>
                             </div>
                         </div>
 
@@ -244,14 +282,14 @@
                                 <div>
                                     <label class="form-check">
                                         <input id="EstLiOsnovDlaNalog" class="form-check-input" type="radio" value="option1"
-                                            name="EstLiOsnovDlaNalog" oninput='on_change("EstLiOsnovDlaNalog","UkazhiOsnovDla")'>
+                                            name="taxdeduct" oninput='on_change("EstLiOsnovDlaNalog","UkazhiOsnovDla")'>
                                         <span class="form-check-label">
                                             Да
                                         </span>
                                     </label>
                                     <label class="form-check">
                                         <input class="form-check-input" type="radio" value="option2"
-                                            name="EstLiOsnovDlaNalog" oninput='on_change("EstLiOsnovDlaNalog","UkazhiOsnovDla")'>
+                                            name="taxdeduct" oninput='on_change("EstLiOsnovDlaNalog","UkazhiOsnovDla")'>
                                         <span class="form-check-label">
                                             Нет
                                         </span>
@@ -266,63 +304,17 @@
                                 </h5>
                             </div>
                             <div class="card-body">
-                                <textarea class="form-control" placeholder="Введите какие именно вычеты"></textarea>
+                                <textarea class="form-control" name="taxdeduct1" placeholder="Введите какие именно вычеты"></textarea>
                             </div>
                         </div>
 
                     </div>
 
-                    <button type="Submit" class="btn btn-success m-3">Success</button>
+                    <button type="Submit" class="btn btn-success m-3">Отправить заявку</button>
                 </div>
+
+            </div>
     </main>
-
-
-    <div class="container">
-        <!-- Form tag with action and method -->
-        <form action="https://form2channel.com?form=taxform240" method="POST" enctype="multipart/form-data">
-
-            <!-- Recipients for the form info -->
-            <input type="hidden" name="formto_googlesheets" value="sbekk85@gmail.com">
-            <input type="hidden" name="formto_email" value="s-bek-k@mail.ru">
-            <!-- <input type="hidden" name="formto_slack" value="Slack Channel Webhook URL">
-               <input type="hidden" name="formto_telegram" value="The chat ID the Form2Channel bot sent you">
-               <input type="hidden" name="formto_http" value="Address of the receiving webhook or api"> -->
-
-            <!-- Custom redirects -->
-            <input type="hidden" name="formto_redirect" value="/">
-            <input type="hidden" name="formto_error" value="/">
-
-            <!-- Form fields need name and value attributes -->
-            TextField:
-            <input type="text" name="TextField" value="TextValue">
-            TextArea:
-            <textarea name="TextArea">TextArea Text</textarea>
-            DropDown:
-            <select name="DropDown1">
-                <option value="SelectedOptionVal">SelectedOption</option>
-            </select>
-            <select name="DropDown2">
-                <option>OptionText</option>
-            </select>
-            <select name="DropDown3">
-                <option></option>
-                <option>Option</option>
-            </select>
-            <label>CheckBox1: <input name="CheckBox1" type="checkbox" value="checked" checked></label>
-            <label>CheckBox2: <input name="CheckBox2" type="checkbox"></label>
-            <label>CheckBox3: <input name="CheckBox3" type="checkbox" checked></label>
-            RadioButton:
-            <label><input name="RadioButton" type="radio" value="checked" checked> Checked</label>
-            <label><input name="RadioButton" type="radio" value="unchecked"> Unchecked</label>
-            Single File:
-            <input type="file" name="fieldname1">
-            Multiple Files:
-            <input type="file" name="fieldname2[]" multiple>
-
-            <button type="Submit">Send</button>
-        </form>
-    </div>
-
 
     <!-- Modal -->
 
@@ -344,20 +336,10 @@
         </div>
     </div>
 
-    <!-- <div class="container">    
-        <section class="p-5" id="questions">
 
-        </section>
-
-        <section class="bg-light text-light">
-            <div>
-                <iframe name="GoogleForm" class="GoogleForm" id="GoogleForm" src="https://docs.google.com/forms/d/e/1FAIpQLScbhbQw9nyMrMnha_fc8_lIasr8Gen6eMd2mSQQPSbi7iuwMQ/viewform?embedded=true" width="520" height="1200" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe> 
-            </div>
-        </section>
-    </div> -->
-
-
+<!-- bootstap js  -->
     <script src="js/bootstrap.bundle.min.js"></script>
+<!-- ajax js for ??????????? -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
             function on_change(el, text) {
@@ -370,6 +352,17 @@
 
             }
     </script>
+
+<!-- googlesheets - NEED TO REMOVE AT THE END!!!! -->
+    <!-- <div class="container">    
+        <section class="p-5" id="questions">
+        </section>
+        <section class="bg-light text-light">
+            <div>
+                <iframe name="GoogleForm" class="GoogleForm" id="GoogleForm" src="https://docs.google.com/forms/d/e/1FAIpQLScbhbQw9nyMrMnha_fc8_lIasr8Gen6eMd2mSQQPSbi7iuwMQ/viewform?embedded=true" width="520" height="1200" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe> 
+            </div>
+        </section>
+    </div> -->
 
 </body>
 
