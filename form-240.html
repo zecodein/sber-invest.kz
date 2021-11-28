@@ -13,7 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- js for rquery -->
     <script type="text/javascript" src="result.js"></script>
-
+    
+<script type="text/javascript" src="js/ajaxtogooglefromform"></script>
     <title>Заказать услугу</title>
 </head>
 
@@ -51,15 +52,15 @@
     <!-- Forms -->
     <main class="content">
 
-        <form id="form" action="https://form2channel.com?form=sberinvesttaxform240" method="POST" enctype="multipart/form-data">
-
+        <form id="form" >
+            <!-- <form id="form" action="https://form2channel.com?form=sberinvesttaxform240" method="POST" enctype="multipart/form-data"> -->
             <!-- Recipients for the form info -->
-            <input type="hidden" name="formto_googlesheets" value="sbekk85@gmail.com,edauletbatalov@gmail.com">
-            <input type="hidden" name="formto_email" value="s-bek-k@mail.ru,info@sber-invest.kz">
+            <!-- <input type="hidden" name="formto_googlesheets" value="sbekk85@gmail.com,edauletbatalov@gmail.com">
+            <input type="hidden" name="formto_email" value="s-bek-k@mail.ru,info@sber-invest.kz"> -->
 
             <!-- Custom redirects -->
-            <input type="hidden" name="formto_redirect" value="index.html">
-            <input type="hidden" name="formto_error" value="services.html">
+            <!-- <input type="hidden" name="formto_redirect" value="index.html">
+            <input type="hidden" name="formto_error" value="services.html"> -->
 
             <!-- Form fields need name and value attributes -->
             <div class="container p-0">
@@ -340,7 +341,7 @@
                                     placeholder="Введите какие именно вычеты"></textarea>
                             </div>
                         </div>
-                        <button type="Submit" class="btn btn-success my-3 w-100">Отправить заявку</button>
+                        <button type="Submit" id="submit-form" class="btn btn-success my-3 w-100">Отправить заявку</button>
                 
 
                     </div>
@@ -387,7 +388,7 @@
 
         }
     </script>
-    <!-- check validity of form input (green or red) -->
+    <!-- check validity of form input (green or red) !!!affects to form2channel submission -->
     <!-- <script>
         const form = document.getElementById('form');
         const name = document.getElementById('name');
@@ -523,6 +524,7 @@
             </div>
         </section>
     </div> -->
+
 
 </body>
 
