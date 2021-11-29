@@ -52,3 +52,13 @@ a {
     background-color: #122448;
 }
 
+ion-icon {
+    color: #5b9bd5;
+    font-size: 100px;
+    --ionicon-stroke-width: 20px;
+}
+
+.mx-5 {
+	margin-right: 3rem !important;
+	margin-left: 10rem !important;
+}
