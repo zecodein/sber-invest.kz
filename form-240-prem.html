@@ -21,32 +21,27 @@
 
     <!-- Navbar menu -->
     <nav class="navbar navbar-expand-md navbar-dark py-3 bg-dark">
-        <div class="container">
-            <a href="#" class="navbar-brand">СБЕРЕЖЕНИЯ И ИНВЕСТИЦИИ</a>
-
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navmenu">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="services.html" class="nav-link">Налоговая декларация</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Курс «Налоги инвестора в Казахстане»</a>
-                    </li>
-
-                </ul>
+            <div class="container">
+                <div class="d-flex w-100">
+                    <a href="index.html"><img src="/style/img/logo0-0bg2.png" alt="" width="50px" class="mx-3"></a>
+                    <a href="index.html" class="navbar-brand text-wrap mt-0 mt-sm-1">СБЕРЕЖЕНИЯ И ИНВЕСТИЦИИ</a>
+                </div>
+    
+                <div class="" id="">
+                    <ul class="navbar-nav">
+    
+                        <li class="nav-item d-none d-sm-block">
+                            <a href="services.html" class="nav-link ">Налоговая декларация</a>
+                        </li>
+    
+                        <li class="nav-item d-none d-sm-block">
+                            <a href="index.html" class="nav-link">Курс «Налоги инвестора в Казахстане»</a>
+                        </li>
+    
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
     <!-- Forms -->
     <main class="content">
@@ -84,10 +79,10 @@
 
                         <div class="card">
                             <div class="card-header" style="background-color: orange;">
-                                <h5 class="card-title mb-0">Тариф</h5>
+                                <h5 class="card-title mb-0">Пакет</h5>
                             </div>
                             <div class="card-body form-control">
-                                <input type="text" name="tarif" value="Разумный инвестор - 40000" class="form-control" disabled>
+                                <input type="text" name="tarif" value="Премиум - Налоговая деклорация+++" class="form-control" disabled>
                                 <small>Error Message</small>
                             </div>
                         </div>
@@ -398,142 +393,12 @@
 
         }
     </script>
-    <!-- check validity of form input (green or red) -->
-    <!-- <script>
-        const form = document.getElementById('form');
-        const name = document.getElementById('name');
-        const surname = document.getElementById('surname');
-        const lastname = document.getElementById('lastname');
-        const email = document.getElementById('email');
-        const tel = document.getElementById('tel');
-        const citizen = document.getElementById('citizen');
-        const adressProp = document.getElementById('adressProp');
-        const adressProzh = document.getElementById('adressProzh');
-
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-
-            checkInputs();
-        });
-
-        function checkInputs() {
-            // trim to remove the whitespaces
-            const nameValue = name.value.trim();
-            const surnameValue = surname.value.trim();
-            const lastnameValue = lastname.value.trim();
-            const emailValue = email.value.trim();
-            const telValue = tel.value.trim();
-            const citizenValue = citizen.value.trim();
-            const adressPropValue = adressProp.value.trim();
-            const adressProzhValue = adressProzh.value.trim();
-
-            if (nameValue === '') {
-                setErrorFor(name, 'Заполните поле Имя');
-            } else {
-                setSuccessFor(name);
-            }
-
-            if (surnameValue === '') {
-                setErrorFor(surname, 'Заполните поле Фамилия');
-            } else {
-                setSuccessFor(surname);
-            }
-
-            if (lastnameValue === '') {
-
-            } else {
-                setSuccessFor(lastname);
-            }
-
-            if (emailValue === '') {
-                setErrorFor(email, 'Заполните поле Почта');
-            } else if (!isEmail(emailValue)) {
-                setErrorFor(email, 'Неверный формат почты');
-            } else {
-                if (!isEmail(emailValue)) {
-                    setErrorFor(email, 'Неверный формат почты');
-                } else {
-                    setSuccessFor(email);
-                }
-            }
-
-            if (telValue === '') {
-                setErrorFor(tel, 'Заполните поле Номер');
-            } else if (!validatePhone(telValue)) {
-                setErrorFor(tel, 'Неверный номер');
-            } else {
-                setSuccessFor(tel);
-            }
-
-            if (citizenValue === '') {
-                setErrorFor(citizen, 'Заполните поле Гражданство');
-            } else {
-                setSuccessFor(citizen);
-            }
-
-            if (adressPropValue === '') {
-                setErrorFor(adressProp, 'Заполните поле Адрес прописки');
-            } else {
-                setSuccessFor(adressProp);
-            }
-
-            if (adressProzhValue === '') {
-                setErrorFor(adressProzh, 'Заполните поле Адрес проживания');
-            } else {
-                setSuccessFor(adressProzh);
-            }
-
-
-        }
-
-        function setErrorFor(input, message) {
-            const formControl = input.parentElement;
-            const small = formControl.querySelector('small');
-            formControl.className = 'form-control error';
-            small.innerText = message;
-        }
-
-        function setSuccessFor(input) {
-            const formControl = input.parentElement;
-            formControl.className = 'form-control success';
-        }
-
-        function isEmail(email) {
-            return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-        }
-
-        function validatePhone(phoneNumber) {
-            var phoneNumberPattern = /^([+]?\d{1,2}[-\s]?|)\d{3}[-\s]?\d{3}[-\s]?\d{4}$/;
-            return phoneNumberPattern.test(phoneNumber);
-        }
-
-        // SOCIAL PANEL JS
-        const floating_btn = document.querySelector('.floating-btn');
-        const close_btn = document.querySelector('.close-btn');
-        const social_panel_container = document.querySelector('.social-panel-container');
-
-        floating_btn.addEventListener('click', () => {
-            social_panel_container.classList.toggle('visible')
-        });
-
-        close_btn.addEventListener('click', () => {
-            social_panel_container.classList.remove('visible')
-        });
-    </script> -->
+   
 
     <!-- Read a page's GET URL variables and return them as an associative array. -->
     <script src="js/geturl.js"></script>
 
-    <!-- googlesheets - NEED TO REMOVE AT THE END!!!! -->
-    <!-- <div class="container">    
-        <section class="p-5" id="questions">
-        </section>
-        <section class="bg-light text-light">
-            <div>
-                <iframe name="GoogleForm" class="GoogleForm" id="GoogleForm" src="https://docs.google.com/forms/d/e/1FAIpQLScbhbQw9nyMrMnha_fc8_lIasr8Gen6eMd2mSQQPSbi7iuwMQ/viewform?embedded=true" width="520" height="1200" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe> 
-            </div>
-        </section>
-    </div> -->
+ 
 
 </body>
 
