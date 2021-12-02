@@ -3,13 +3,16 @@ a {
 } 
 
 .ZapisNaKurs {
-    transition: 1s;
     padding: 6px 12px;
-    cursor: pointer;
     background: #122448 none repeat scroll 0% 0%;
     border-radius: 0.5rem;   
     border-color: #122448;
     color: rgb(255, 255, 255);
+    
+    align-items: center;
+    display: flex;
+
+    cursor: pointer;
     transition: all 0.01s cubic-bezier(0.4, 0, 0.2, 1);  
 }
 
@@ -62,4 +65,21 @@ ion-icon {
 .mx-5 {
 	margin-right: 3rem !important;
 	margin-left: 10rem !important;
+}
+
+.fullbody {
+    width: 420px;
+}
+
+.kurs {
+
+}
+
+@media(max-width: 400px) {
+    .fullbody {
+    width: 100%;
+    }
+    .kurs {
+        font-size: 14px;
+    }
 }

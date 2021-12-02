@@ -1,86 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- bootstrap link to icons and css styles -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
-    <link href="style/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- bootstrap link to icons and css styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="style/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
 
     <title>SberInvest - Сбережения и Инвестиции</title>
-<!-- custom css -->
-    <link rel="stylesheet" href="style/style.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
 
-</head>
-  
-<body style="background-color: #F7F7F7;">
-
-    <!-- logo and intro message section with telegram link -->
-    <div class="container pt-3 pb-2 px-4 text-center w-80">  
+  <body style="background-color: #F7F7F7;">
+    <div class="fullbody container mt-5">
+      <!-- logo and intro message section with telegram link -->
+      <div class="container pb-2 text-center w-100">
         <a name="MainLogo" href="https://t.me/savingandinvesting">
-          <img src="style/img/logo.jpeg" alt="логотип" width="200" class="img-fluid w-50 ">
+          <img
+            src="style/img/logo.jpeg"
+            alt="логотип"
+            width="200"
+            class="img-fluid w-100 mb-3"
+          />
         </a>
-        <h2 class="mt-3 h5">Пока сайт находится в разработке всю <br> информацию можно найти на нашем <br> Телеграм канале - <a href="https://t.me/savingandinvesting">https://t.me/savingandinvesting</a></h2>
-    </div>
-
-    <!-- general container for all links and buttons -->
-    <div class="container pt-2 pb-4 px-4 text-center">
-
-      <!-- buttons and social links section -->
-
-
-      <div class="d-grid gap-2 col-lg-5 col-md-9 col-sm-9  mx-auto">
-        <button onclick="location.href='services.html';" class="btn btn-primary ZapisNaKurs" type="button"><i class="bi bi-pencil-square fs-3 float-start"></i>Курс «Налоги инвестора в Казахстане»</button>
-        <button onclick="location.href='services.html';" class="btn btn-primary ZapisNaKurs" type="button"><i class="bi bi-mortarboard fs-3 float-start" style="margin-right: 5px"></i>Подготовка декларации (форма 240)</button>
+        <h2 class="mt-3 h5 fs-6 ">
+          Пока сайт находится в разработке всю <br />
+          информацию можно найти на нашем <br />
+          Телеграм канале -
+          <a href="https://t.me/savingandinvesting"
+            >https://t.me/savingandinvesting</a
+          >
+        </h2>
       </div>
-      
-<!--       
-      <div class="d-grid">
-          <div class="mt-2 d-flex links justify-content-center">            
-            <div id="NalogObl" href="" class="me-2 ZapisNaKurs">     
-              <div>
-                <i class="bi bi-pencil-square fs-3 float-start"></i>
-              </div>       
-              <div>
-                <h6 style="font-size: 0.8rem; margin-bottom: 0px;"><span class="">Курс «Налоги инвестора в Казахстане»</span></h6>
-              </div>
-            </div>
-          </div>
-          <div class="mt-3 d-flex links justify-content-center">        
-            <a href="services.html" id="ZapisNaKursOpen" class="me-2 ZapisNaKurs ZapisNaKursOpen">          
-              <i class="bi bi-mortarboard fs-3 float-start" style="margin-right: 5px"></i>
-              <div>
-                <h6 style="font-size: 0.8rem; margin-bottom: 0px;"><span class="align-middle">Подготовка декларации (форма 240)</span></h6>
-              </div>
-            </a>         
-          </div>    
-        </div> -->
 
-      <!-- original social links -->
+      <!-- general container for all links and buttons -->
+      <div class="container pt-2 pb-4 text-center">
+        <!-- buttons and social links section -->
 
-      <div class="mt-4 d-flex align-items-center links justify-content-center">       
+        <div class="d-grid gap-2 mx-auto w-100">
+          <button
+            onclick="location.href='services.html';"
+            class="btn btn-primary ZapisNaKurs"
+            type="button"
+          >
+            <i class="bi bi-pencil-square fs-3 float-start me-3"></i><span class="kurs">Курс «Налоги
+            инвестора в Казахстане»</span>
+          </button>
+          <button
+            onclick="location.href='services.html';"
+            class="btn btn-primary ZapisNaKurs "
+            type="button"
+          >
+            <i
+              class="bi bi-mortarboard fs-3 float-start  me-3"
+            ></i
+            > <span class="kurs">Подготовка декларации (форма 240)</span>
+          </button>
+        </div>
 
-          <a href="https://instagram.com/sber_invest.kz" class="me-md-4 me-3 ms-3">
-            <i class="bi bi-instagram fs-3"></i>
+        <div
+          class="mt-4 d-flex links w-100" style="justify-content: space-between"
+        >
+          <a
+            href="https://instagram.com/sber_invest.kz"
+            class="" 
+          >
+            <i class="bi bi-instagram fs-3 p-0" ></i>
           </a>
-          <a href="tel:+77055995673" class="me-md-4 me-3">
-            <i class="bi bi-telephone fs-3"></i>
+          <a href="tel:+77055995673" class="">
+            <i class="bi bi-telephone fs-3" ></i>
           </a>
-          <a href="https://wa.me/77055995673" class="me-md-4 me-3">
-            <i class="bi bi-whatsapp fs-3"></i>
+          <a href="https://wa.me/77055995673" class="" >
+            <i class="bi bi-whatsapp fs-3" ></i>
           </a>
-          <a href="https://t.me/saveandinvestchat" class="me-md-4 me-3">
-            <i class="bi bi-telegram fs-3"></i>
+          <a href="https://t.me/saveandinvestchat" class="" >
+            <i class="bi bi-telegram fs-3" ></i>
           </a>
-          <a href="mailto:info@sber-invest.kz" class="me-md-4 me-3">
-            <i class="bi bi-envelope fs-3"></i>
-          </a>          
-        </div>   
+          <a href="mailto:info@sber-invest.kz" class="">
+            <i class="bi bi-envelope fs-3" ></i>
+          </a>
+        </div>
+      </div>
 
+      <!-- bootstrap js -->
+      <script src="js/bootstrap.bundle.min.js"></script>
     </div>
-
-<!-- bootstrap js -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-</body>
-
+  </body>
 </html>
