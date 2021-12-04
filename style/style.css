@@ -87,6 +87,10 @@ ion-icon {
   font-size: 15px
 }
 
+.ZakazUsl {
+
+}
+
 @media (max-width: 400px) {
   .fullbody {
     width: 100%;
@@ -117,5 +121,11 @@ ion-icon {
   }
   .premPacket {
     height: 100%;
+  }
+}
+
+@media (min-width: 766px) and (max-width: 992px) {
+  .ZakazUsl {
+    font-size: 15px;
   }
 }
