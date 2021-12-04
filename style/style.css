@@ -83,6 +83,10 @@ ion-icon {
 .kurs {
 }
 
+.sberInv {
+  font-size: 15px
+}
+
 @media (max-width: 400px) {
   .fullbody {
     width: 100%;
@@ -92,9 +96,15 @@ ion-icon {
   }
 }
 
-@media (max-width: 386px) {
+@media (max-width: 400px) {
   .sberInv {
-    width: 150px;
+    width: 120px;
+  }
+}
+
+@media (min-width: 576px) {
+  .sberInv {
+    font-size: 19px;
   }
 }
 
