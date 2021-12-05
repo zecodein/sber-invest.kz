@@ -23,7 +23,7 @@
     <!-- js for rquery -->
     <script type="text/javascript" src="result.js"></script>
 
-    <title> Заказать услугу</title>
+    <title>Заказать услугу</title>
   </head>
 
   <body>
@@ -234,6 +234,10 @@
               <div class="card">
                 <div class="card-header">
                   <h5 class="card-title mb-0">Адрес проживания</h5>
+                  <input id="adressSame" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label fs-6" for="flexCheckDefault">
+                      Такой же как адрес прописки?
+                    </label>
                 </div>
                 <div class="card-body form-control">
                   <input
@@ -251,7 +255,15 @@
               <div class="card">
                 <div class="card-header">
                   <h5 class="card-title mb-0">
-                    Вы налоговый резидент РК в отчетном периоде?
+                    Вы налоговый резидент РК в
+                    <span
+                      data-container="body"
+                      data-toggle="popover"
+                      data-placement="top"
+                      data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                      class=""
+                      >отчетном периоде</span
+                    > (календарный год)?
                     <div
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalFullscreen"
@@ -279,6 +291,7 @@
                         type="radio"
                         name="taxresident"
                         value="No"
+                        checked
                       />
                       <span class="form-check-label">
                         Нет
@@ -292,16 +305,16 @@
                 <div class="card-header">
                   <h5 class="card-title mb-0">
                     У вас были операции по продаже ценных бумаг в отчетном
-                    периоде?
+                    периоде? (календарный год)
                   </h5>
                 </div>
                 <div class="card-body">
                   <div>
                     <label class="form-check">
                       <input
-                        id="hhh"
+                        id="sale1"
                         class="form-check-input"
-                        oninput='on_change("hhh","KolOpPoPro")'
+                        oninput='on_change("sale1","KolOpPoPro")'
                         type="radio"
                         name="sale1"
                         value="Yes"
@@ -313,10 +326,11 @@
                     <label class="form-check">
                       <input
                         class="form-check-input"
-                        oninput='on_change("hhh","KolOpPoPro")'
+                        oninput='on_change("sale1","KolOpPoPro")'
                         type="radio"
                         name="sale1"
                         value="No"
+                        checked
                       />
                       <span class="form-check-label">
                         Нет
@@ -325,7 +339,7 @@
                     <label class="form-check">
                       <input
                         class="form-check-input"
-                        oninput='on_change("hhh","KolOpPoPro")'
+                        oninput='on_change("sale1","KolOpPoPro")'
                         type="radio"
                         name="sale1"
                         value="IDK"
@@ -345,7 +359,7 @@
                     отчетный период (календарный год)
                   </h5>
                 </div>
-                <div class="card-body">
+                <div class="card-body form-control">
                   <input
                     type="text"
                     name="sale1quant"
@@ -353,13 +367,14 @@
                     class="form-control"
                     placeholder="Введите количество"
                   />
+                  <small>Error Message</small>
                 </div>
               </div>
 
               <div class="card">
                 <div class="card-header">
                   <h5 class="card-title mb-0">
-                    Вы получали дивиденды в отчетном периоде?
+                    Вы получали дивиденды в отчетном периоде (календарный год)?
                   </h5>
                 </div>
                 <div class="card-body">
@@ -381,6 +396,7 @@
                         type="radio"
                         value="No"
                         name="dividend"
+                        checked
                       />
                       <span class="form-check-label">
                         Нет
@@ -406,19 +422,23 @@
                   <h5 class="card-title mb-0">
                     Есть ли основания для включения в налоговую декларацию
                     других доходов (продажа имущества, авто, получения других
-                    доходов)?
+                    доходов)? <div
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModalFullscreen2"
+                    class="btn btn-outline-secondary bi bi-mortarboard-fill py-0 fs-4 text-reset"
+                  ></div>
                   </h5>
                 </div>
                 <div class="card-body">
                   <div>
                     <label class="form-check">
                       <input
-                        id="EstLiOsnovDl"
+                        id="includedeclr"
                         class="form-check-input"
                         type="radio"
                         value="Yes"
                         name="includedeclr"
-                        oninput='on_change("EstLiOsnovDl","UkKaDrSd")'
+                        oninput='on_change("includedeclr","UkKaDrSd")'
                       />
                       <span class="form-check-label">
                         Да
@@ -430,7 +450,8 @@
                         type="radio"
                         value="No"
                         name="includedeclr"
-                        oninput='on_change("EstLiOsnovDl","UkKaDrSd")'
+                        checked
+                        oninput='on_change("includedeclr","UkKaDrSd")'
                       />
                       <span class="form-check-label">
                         Нет
@@ -447,13 +468,15 @@
                     период (календарный год).
                   </h5>
                 </div>
-                <div class="card-body">
-                  <textarea
-                    class="form-control"
+                <div class="card-body form-control">
+                  <input
+                    type="text"
                     name="otherdeal"
                     id="otherdeal"
+                    class="form-control"
                     placeholder="Введите другие сделки"
-                  ></textarea>
+                  ></input>
+                  <small>Error Message</small>
                 </div>
               </div>
 
@@ -471,12 +494,12 @@
                   <div>
                     <label class="form-check">
                       <input
-                        id="EstLiOsnovDlaNalog"
+                        id="taxdeduct"
                         class="form-check-input"
                         type="radio"
                         value="Yes"
                         name="taxdeduct"
-                        oninput='on_change("EstLiOsnovDlaNalog","UkazhiOsnovDla")'
+                        oninput='on_change("taxdeduct","UkazhiOsnovDla")'
                       />
                       <span class="form-check-label">
                         Да
@@ -488,7 +511,8 @@
                         type="radio"
                         value="No"
                         name="taxdeduct"
-                        oninput='on_change("EstLiOsnovDlaNalog","UkazhiOsnovDla")'
+                        checked
+                        oninput='on_change("taxdeduct","UkazhiOsnovDla")'
                       />
                       <span class="form-check-label">
                         Нет
@@ -504,18 +528,36 @@
                     Укажите основания для каких налоговых вычетов у вас есть.
                   </h5>
                 </div>
-                <div class="card-body">
-                  <textarea
-                    class="form-control"
+                <div class="card-body form-control">
+                  <input
+                    type="text"
                     name="taxdeduct1"
                     id="taxdeduct1"
+                    class="form-control"
                     placeholder="Введите какие именно вычеты"
-                  ></textarea>
+                  ></input>
+                  <small>Error Message</small>
                 </div>
               </div>
-              <button type="Submit" class="btn btn-success my-3 w-100">
-                Отправить заявку
-              </button>
+              <div class="container">
+                <div class="row mt-2">
+                  <div class="col-1">
+                    <input id="adressSame" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  </div>
+                  <div class="col-11">
+                    <label class="form-check-label " for="flexCheckDefault">«С политикой конфиденциальности и договором оказания услуг (договор - оферта) ознакомлен. С правилами оказания услуг согласен»
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+                <button type="Submit" class="btn btn-success my-3 w-100">
+                  Отправить заявку
+                </button>
+              </div>
+              <div class="container">
+                <span class="text-danger">*</span> Нажимая на кнопку, вы соглашаетесь на обработку персональных данных.
+              </div>
             </div>
           </div>
         </div>
@@ -528,7 +570,7 @@
       class="modal fade"
       id="exampleModalFullscreen"
       tabindex="-1"
-      aria-labelledby="exampleModalFullscreenLabel"
+      aria-labelledby="exampleModalFullscreenLabel"slide
       style="display: none;"
       aria-hidden="true"
     >
@@ -565,11 +607,87 @@
       </div>
     </div>
 
+    <div
+      class="modal fade"
+      id="exampleModalFullscreen2"
+      tabindex="-1"
+      aria-labelledby="exampleModalFullscreen2Label"slide
+      style="display: none;"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title h4" id="exampleModalFullscreen2Label">
+              Full screen modal
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img
+              class="img-fluid px-md-5 d-md-block"
+              src="style/img/slide2.png"
+              alt=""
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center text-white mt-2" style="background-color: #21081a;">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <div class="row">
+            <div class="col-12 col-sm-6">
+                Сбережения и Инвестиции – это проект направленный на развитие общей финансовой грамотности в Казахстане.
+            </div>
+            <div class="col-12 col-sm-6">
+              <p>Политика конфиденциальности</p>
+              <p>Договор - Оферта</p>
+                 
+                                
+            </div>
+          </div>
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+
     <!-- bootstap js  -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- ajax js for showing some forms if radiobuttons on or off -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
+      document.getElementById("adressSame").addEventListener("change", function() {
+        if (this.checked) {
+          document.getElementById("adressProzh").value = document.getElementById("adressProp").value;
+        } else {
+          document.getElementById("adressProzh").value = "";
+        }
+      });
+      
+      
+      
       function on_change(el, text) {
         var selectedOption = document.getElementById(el);
         if (selectedOption.checked) {
@@ -590,7 +708,14 @@
       const citizen = document.getElementById("citizen");
       const adressProp = document.getElementById("adressProp");
       const adressProzh = document.getElementById("adressProzh");
+
       const taxresident = document.getElementsByName("taxresident");
+      const sale1 = document.getElementById("sale1");
+      const sale1quant = document.getElementById("sale1quant");
+
+      const otherdeal = document.getElementById("otherdeal");
+
+      const taxdeduct1 = document.getElementById("taxdeduct1");
 
       form.addEventListener("submit", e => {
         e.preventDefault();
@@ -608,6 +733,10 @@
         const citizenValue = citizen.value.trim();
         const adressPropValue = adressProp.value.trim();
         const adressProzhValue = adressProzh.value.trim();
+
+        const sale1quantValue = sale1quant.value.trim();
+        const otherdealValue = otherdeal.value.trim();
+        const taxdeduct1Value = taxdeduct1.value.trim();
 
         if (nameValue === "") {
           setErrorFor(name, "Заполните поле Имя");
@@ -664,7 +793,29 @@
           setSuccessFor(adressProzh);
         }
 
-        // if (taxresident.)
+        if (sale1.checked && sale1quantValue === "") {
+          setErrorFor(sale1quant, "Заполните Данное поле");
+        } else {
+          setSuccessFor(sale1quant);
+        }
+
+        if (includedeclr.checked && otherdealValue === "") {
+          setErrorFor(otherdeal, "Заполните Данное поле");
+        } else {
+          setSuccessFor(otherdeal);
+        }
+
+        if (taxdeduct.checked && taxdeduct1Value === "") {
+          setErrorFor(taxdeduct1, "Заполните Данное поле");
+        } else {
+          setSuccessFor(taxdeduct1);
+        }
+
+        // if(taxresident[0].checked || taxresident[0].checked) {
+        //   //Male radio button is checked
+        // }else if(document.getElementById('gender_Female').checked) {
+        //   //Female radio button is checked
+        // }
       }
 
       function setErrorFor(input, message) {
@@ -707,6 +858,7 @@
     </script>
 
     <!-- Read a page's GET URL variables and return them as an associative array. -->
+
     <script src="js/geturl.js"></script>
   </body>
 </html>
