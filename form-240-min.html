@@ -175,7 +175,7 @@
 
               <div class="card">
                 <div class="card-header">
-                  <h5 class="card-title mb-0"><span class="text-danger">*</span> Отчество</h5>
+                  <h5 class="card-title mb-0">Отчество</h5>
                 </div>
                 <div class="card-body">
                   <input
@@ -566,10 +566,10 @@
               <div class="container">
                 <div class="row mt-2">
                   <div class="col-1">
-                    <input id="adressSame" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input id="PolitikaKonf" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                   </div>
                   <div class="col-11">
-                    <label class="form-check-label " for="flexCheckDefault">«С политикой конфиденциальности и договором оказания услуг (договор - оферта) ознакомлен. С правилами оказания услуг согласен»
+                    <label required class="form-check-label " for="flexCheckDefault">«С политикой конфиденциальности и договором оказания услуг (договор - оферта) ознакомлен. С правилами оказания услуг согласен»
                     </label>
                   </div>
                 </div>
@@ -709,6 +709,14 @@
           document.getElementById("adressProzh").value = "";
         }
       });
+
+      document.getElementById("PolitikaKonf").addEventListener("change", function() {
+        if (this.checked) {
+          document.getElementById("adressProzh").value = document.getElementById("adressProp").value;
+        } else {
+          document.getElementById("adressProzh").value = "";
+        }
+      });
       
       
       
@@ -819,18 +827,24 @@
 
         if (sale1.checked && sale1quantValue === "") {
           setErrorFor(sale1quant, "Заполните Данное поле");
+        } else if (!sale1.checked) {
+
         } else {
           setSuccessFor(sale1quant);
         }
 
         if (includedeclr.checked && otherdealValue === "") {
           setErrorFor(otherdeal, "Заполните Данное поле");
+        } else if (!includedeclr.checked) {
+          
         } else {
           setSuccessFor(otherdeal);
         }
 
         if (taxdeduct.checked && taxdeduct1Value === "") {
           setErrorFor(taxdeduct1, "Заполните Данное поле");
+        } else if (!taxdeduct.checked) {
+          
         } else {
           setSuccessFor(taxdeduct1);
         }
