@@ -65,7 +65,7 @@
           <div class="navbar-collapse collapse" id="navbarID">
             <ul class="navbar-nav">
               <li class="nav-item d-block">
-                <a href="services.html" class="nav-link active text-nowrap"
+                <a href="services.html" class="nav-link text-nowrap"
                   >Налоговая декларация</a
                 >
               </li>
@@ -81,10 +81,11 @@
       </nav>
 
     <!-- Forms -->
+    <!-- action="https://form2channel.com?form=sberinvesttaxform240" -->
     <main class="content">
       <form
         id="form"
-        action="https://form2channel.com?form=sberinvesttaxform240"
+        action="index.html"
         method="POST"
         enctype="multipart/form-data"
       >
@@ -133,11 +134,11 @@
                   <input
                     type="text"
                     name="tarif"
-                    value="Минимальный - Налоговая декларация+"
+                    value="Стандартный - Налоговая декларация++"
                     class="form-control"
                     disabled
                   />
-                  <p class="card-title mb-0 mt-1">Цена: от 100 тыс. тенге</p>
+                  <p class="card-title mb-0 mt-1">Цена: от 70 тыс. тенге</p>
                 </div>
               </div>
 
@@ -561,15 +562,15 @@
                 </div>
               </div>
               <div class="container">
-                Поля отмеченные <span class="text-danger">*</span> обязательны к заполнению
-             </div>
+                 Поля отмеченные <span class="text-danger">*</span> обязательны к заполнению
+              </div>
               <div class="container">
                 <div class="row mt-2">
                   <div class="col-1">
-                    <input id="adressSame" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input id="PolitikaKonf" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                   </div>
                   <div class="col-11">
-                    <label class="form-check-label " for="flexCheckDefault">«С политикой конфиденциальности и договором оказания услуг (договор - оферта) ознакомлен. С правилами оказания услуг согласен»
+                    <label required class="form-check-label " for="flexCheckDefault">«С политикой конфиденциальности и договором оказания услуг (договор - оферта) ознакомлен. С правилами оказания услуг согласен»
                     </label>
                   </div>
                 </div>
@@ -709,9 +710,6 @@
           document.getElementById("adressProzh").value = "";
         }
       });
-      
-      
-      
       function on_change(el, text) {
         var selectedOption = document.getElementById(el);
         if (selectedOption.checked) {
@@ -741,13 +739,23 @@
 
       const taxdeduct1 = document.getElementById("taxdeduct1");
 
-      form.addEventListener("submit", e => {
-        e.preventDefault();
+      const PolitikaKonf = document.getElementById("PolitikaKonf");
 
-        checkInputs();
+
+
+      form.addEventListener("submit", e => {
+        submit = checkInputs();
+        if (!submit) {
+        e.preventDefault();
+        } else {
+          document.getElementById('form').submit();
+        }
       });
 
       function checkInputs() {
+
+        var sumbitForm = true;
+        
         // trim to remove the whitespaces
         const nameValue = name.value.trim();
         const surnameValue = surname.value.trim();
@@ -762,77 +770,109 @@
         const otherdealValue = otherdeal.value.trim();
         const taxdeduct1Value = taxdeduct1.value.trim();
 
-        if (nameValue === "") {
-          setErrorFor(name, "Заполните поле Имя");
-        } else {
-          setSuccessFor(name);
-        }
-
+        submitForm = true;
         if (surnameValue === "") {
           setErrorFor(surname, "Заполните поле Фамилия");
+          submitForm = false;
         } else {
           setSuccessFor(surname);
         }
+        
+        if (nameValue === "") {
+          setErrorFor(name, "Заполните поле Имя");
+          submitForm = false;
+        } else {
+          setSuccessFor(name);
+        }
+        
 
         if (lastnameValue === "") {
         } else {
           setSuccessFor(lastname);
         }
+        
 
         if (emailValue === "") {
           setErrorFor(email, "Заполните поле Почта");
+          submitForm = false;
         } else if (!isEmail(emailValue)) {
           setErrorFor(email, "Неверный формат почты");
+          submitForm = false;
         } else {
-          if (!isEmail(emailValue)) {
-            setErrorFor(email, "Неверный формат почты");
-          } else {
-            setSuccessFor(email);
-          }
+          setSuccessFor(email);
         }
+
+        
 
         if (telValue === "") {
           setErrorFor(tel, "Заполните поле Номер");
+          submitForm = false;
         } else if (!validatePhone(telValue)) {
           setErrorFor(tel, "Неверный номер");
+          submitForm = false;
         } else {
           setSuccessFor(tel);
         }
-
+        
         if (citizenValue === "") {
           setErrorFor(citizen, "Заполните поле Гражданство");
+          submitForm = false;
         } else {
           setSuccessFor(citizen);
         }
+        
+        
 
         if (adressPropValue === "") {
           setErrorFor(adressProp, "Заполните поле Адрес прописки");
+          submitForm = false;
         } else {
           setSuccessFor(adressProp);
         }
 
+        
+
         if (adressProzhValue === "") {
           setErrorFor(adressProzh, "Заполните поле Адрес проживания");
+          submitForm = false;
         } else {
           setSuccessFor(adressProzh);
         }
-
+        
         if (sale1.checked && sale1quantValue === "") {
           setErrorFor(sale1quant, "Заполните Данное поле");
+          submitForm = false;
+        } else if (!sale1.checked) {
+
         } else {
           setSuccessFor(sale1quant);
         }
-
+        
         if (includedeclr.checked && otherdealValue === "") {
           setErrorFor(otherdeal, "Заполните Данное поле");
+          submitForm = false;
+        } else if (!includedeclr.checked) {
+          
         } else {
           setSuccessFor(otherdeal);
         }
+        
 
         if (taxdeduct.checked && taxdeduct1Value === "") {
           setErrorFor(taxdeduct1, "Заполните Данное поле");
+          submitForm = false;
+        } else if (!taxdeduct.checked) {
+          
         } else {
           setSuccessFor(taxdeduct1);
+        }
+
+        
+
+        if (PolitikaKonf.checked) {
+
+        } else {
+          submitForm = false;
         }
 
         // if(taxresident[0].checked || taxresident[0].checked) {
@@ -840,6 +880,8 @@
         // }else if(document.getElementById('gender_Female').checked) {
         //   //Female radio button is checked
         // }
+          return submitForm;
+
       }
 
       function setErrorFor(input, message) {
