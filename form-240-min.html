@@ -28,7 +28,7 @@
       rel="stylesheet"
     />
     <!-- js for rquery -->
-    <script type="text/javascript" src="result.js"></script>
+    <!-- <script type="text/javascript" src="result.js"></script> -->
 
     <title>Заказать услугу</title>
   </head>
@@ -83,14 +83,14 @@
     <!-- Forms -->
     <!-- action="https://form2channel.com?form=sberinvesttaxform240" -->
     <main class="content">
+      <!-- action="index.html" -->
       <form
         id="form"
-        action="index.html"
-        method="POST"
+        method="post"
         enctype="multipart/form-data"
-      >
-        <!-- Recipients for the form info -->
-        <input
+        >
+        <!-- Recipients for the form info formtochannel -->
+        <!-- <input
           type="hidden"
           name="formto_googlesheets"
           value="sbekk85@gmail.com,erdauletbatalov@gmail.com"
@@ -99,11 +99,11 @@
           type="hidden"
           name="formto_email"
           value="s-bek-k@mail.ru,info@sber-invest.kz"
-        />
+        /> -->
 
         <!-- Custom redirects -->
-        <input type="hidden" name="formto_redirect" value="index.html" />
-        <input type="hidden" name="formto_error" value="services.html" />
+        <!-- <input type="hidden" name="formto_redirect" value="index.html" />
+        <input type="hidden" name="formto_error" value="services.html" /> -->
 
         <!-- Form fields need name and value attributes -->
         <div class="container p-0">
@@ -111,6 +111,8 @@
             <h1 class="h3 d-inline pt-5 align-middle">
               Форма оформления заказа
             </h1>
+
+  <div id="feedback"></div>
           </div>
 
           <!-- <div class="btn btn-warning w-100 w-md-50 px-5 my-3 text-start">
@@ -731,8 +733,8 @@
       const adressProp = document.getElementById("adressProp");
       const adressProzh = document.getElementById("adressProzh");
 
-      const taxresident = document.getElementsByName("taxresident");
       const sale1 = document.getElementById("sale1");
+
       const sale1quant = document.getElementById("sale1quant");
 
       const otherdeal = document.getElementById("otherdeal");
@@ -926,5 +928,102 @@
     <!-- Read a page's GET URL variables and return them as an associative array. -->
 
     <script src="js/geturl.js"></script>
+    <script>
+          $('#form').submit(function(event) {
+        event.preventDefault();
+        $('#feedback').html('');
+        setTimeout(function() {
+
+        const taxresidentnames = document.getElementsByName("taxresident");
+        const sale1names = document.getElementsByName("sale1");
+        const dividendnames = document.getElementsByName("dividend");
+        const includedeclrnames = document.getElementsByName("includedeclr");
+        const taxdeductnames = document.getElementsByName("taxdeduct");
+
+
+        var taxresidentnames_value;
+        var sale1names_value;
+        var dividendnames_value;
+        var includedeclrnames_value;
+        var taxdeductnames_value;
+        for(var i = 0; i < taxresidentnames.length; i++){
+            if(taxresidentnames[i].checked){
+                taxresidentnames_value = taxresidentnames[i].value;
+            }
+        }
+        for(var i = 0; i < sale1names.length; i++){
+            if(sale1names[i].checked){
+                sale1names_value = sale1names[i].value;
+            }
+        }
+        for(var i = 0; i < dividendnames.length; i++){
+            if(dividendnames[i].checked){
+                dividendnames_value = dividendnames[i].value;
+            }
+        }
+        for(var i = 0; i < includedeclrnames.length; i++){
+            if(includedeclrnames[i].checked){
+                includedeclrnames_value = includedeclrnames[i].value;
+            }
+        }
+        for(var i = 0; i < taxdeductnames.length; i++){
+            if(taxdeductnames[i].checked){
+                taxdeductnames_value = taxdeductnames[i].value;
+            }
+        }
+        
+            // Get data
+          var data = {
+            'entry.2005620554': $('#form-surname').val(),
+            'entry.1065046570': $('#form-name').val(),
+            'entry.1045781291': $('#form-lastname').val(),
+            'entry.1861226139': $('#form-email').val(),
+            'entry.1166974658': $('#form-tel').val(),
+            'entry.839337160': $('#form-citizen').val(),
+            'entry.433364251': $('#form-adressProp').val(),
+            'entry.537497422': $('#form-adressProzh').val(),
+            'entry.2055792815': taxresidentnames_value,
+            'entry.2114019434': sale1names_value,
+            'entry.576407941': $('#form-sale1quant').val(),
+            'entry.2059019536': dividendnames_value,
+            'entry.647440173': includedeclrnames_value,
+            'entry.2019584137': $('#form-otherdeal').val(),
+            'entry.1428466992': taxdeductnames_value,
+            'entry.873435385': $('#form-taxdeduct1').val(),
+          };
+      
+          // Validate form
+          var formSuccess = true;
+          Object.keys(data).forEach(function(key, index) {
+            if (!data[key]) {
+              formSuccess = false;
+              $('#feedback').html('<label class="text-danger">Please complete all fields</label>');
+            }
+          });
+      
+          if (formSuccess) {
+            // Send request
+            $.ajax({
+              // url: 'https://docs.google.com/forms/d/e/1FAIpQLSdnW7ixrovoi7V7sJQihWouPztZL4GoRMAP5SpoVh2UfMhxOQ/formResponse',
+      
+              url: 'https://docs.google.com/forms/d/e/1FAIpQLSdvcX5VR24xIjMeHO9Y-enPIyf7U0_mL3Oc_9xlgJ1ND1rZgw/formResponse',
+              // url: 'https://docs.google.com/forms/d/1WrqRqGKkbmaoLWeJjN4JcxfkJzbu7lfNsBDGOAE_hhM/edit',
+              type: 'POST',
+              crossDomain: true,
+              dataType: "xml",
+              data: data,
+              success: function(jqXHR, textStatus, errorThrown) {
+                console.log('Enter on success');
+                $('#feedback').html('<label class="text-success">Message sent!</label>');
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                console.log('Enter on error');
+                $('#feedback').html('<label class="text-success">Message sent!</label>');
+              }
+            });
+          }
+        }, 300);
+      });
+    </script>
   </body>
 </html>
