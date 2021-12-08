@@ -28,101 +28,76 @@
       rel="stylesheet"
     />
     <!-- js for rquery -->
-    <script type="text/javascript" src="result.js"></script>
+    <!-- <script type="text/javascript" src="result.js"></script> -->
 
     <title>Заказать услугу</title>
   </head>
 
   <body>
     <!-- Navbar menu -->
-    <nav class="navbar navbar-expand-lg navbar-dark py-1 py-sm-3 bg-dark sticky-top">
-        <div class="container">
-          <div class="d-flex text-nowrap">
-            <a href="index.html"
-              ><img
-                src="/style/img/logo0-0bg.png"
-                alt=""
-                width="50px"
-                class="mx-3"
-            /></a>
-            <a href="index.html" class="d-flex sberInv navbar-brand my-0 my-sm-1 text-wrap align-items-center"
-              >СБЕРЕЖЕНИЯ И ИНВЕСТИЦИИ</a
-            >
-          </div>
-          
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarID"
-            aria-controls="navbarID"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+    <nav
+      class="navbar navbar-expand-lg navbar-dark py-1 py-sm-3 bg-dark sticky-top"
+    >
+      <div class="container">
+        <div class="d-flex text-nowrap">
+          <a href="index.html"
+            ><img
+              src="/style/img/logo0-0bg.png"
+              alt=""
+              width="50px"
+              class="mx-3"
+          /></a>
+          <a
+            href="index.html"
+            class="d-flex sberInv navbar-brand my-0 my-sm-1 text-wrap align-items-center"
+            >СБЕРЕЖЕНИЯ И ИНВЕСТИЦИИ</a
           >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-  
-          <div class="navbar-collapse collapse" id="navbarID">
-            <ul class="navbar-nav">
-              <li class="nav-item d-block">
-                <a href="services.html" class="nav-link text-nowrap"
-                  >Налоговая декларация</a
-                >
-              </li>
-  
-              <li class="nav-item d-block">
-                <a href="courses.html" class="nav-link text-nowrap"
-                  >Курс «Налоги инвестора в Казахстане»</a
-                >
-              </li>
-            </ul>
-          </div>
         </div>
-      </nav>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarID"
+          aria-controls="navbarID"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navbarID">
+          <ul class="navbar-nav">
+            <li class="nav-item d-block">
+              <a href="services.html" class="nav-link text-nowrap"
+                >Налоговая декларация</a
+              >
+            </li>
+
+            <li class="nav-item d-block">
+              <a href="courses.html" class="nav-link text-nowrap"
+                >Курс «Налоги инвестора в Казахстане»</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <!-- Forms -->
     <!-- action="https://form2channel.com?form=sberinvesttaxform240" -->
     <main class="content">
-      <form
-        id="form"
-        action="index.html"
-        method="POST"
-        enctype="multipart/form-data"
-      >
-        <!-- Recipients for the form info -->
-        <input
-          type="hidden"
-          name="formto_googlesheets"
-          value="sbekk85@gmail.com,erdauletbatalov@gmail.com"
-        />
-        <input
-          type="hidden"
-          name="formto_email"
-          value="s-bek-k@mail.ru,info@sber-invest.kz"
-        />
-
-        <!-- Custom redirects -->
-        <input type="hidden" name="formto_redirect" value="index.html" />
-        <input type="hidden" name="formto_error" value="services.html" />
-
+      <!-- action="index.html" -->
+      <form id="form" method="post">
         <!-- Form fields need name and value attributes -->
         <div class="container p-0">
           <div class="m-3">
             <h1 class="h3 d-inline pt-5 align-middle">
               Форма оформления заказа
             </h1>
-          </div>
 
-          <!-- <div class="btn btn-warning w-100 w-md-50 px-5 my-3 text-start">
-                    <div>
-                     
-                        Тариф: <span id="result-tarif" />
-                    </div>
-                    <div>
-                     
-                        Стоимость: <span id="result-price" />
-                    </div>
-                </div> -->
+            <div id="feedback"></div>
+          </div>
 
           <div class="row">
             <div class="col-12 col-lg-6">
@@ -134,7 +109,8 @@
                   <input
                     type="text"
                     name="tarif"
-                    value="Стандартный - Налоговая декларация++"
+                    id="tarif"
+                    value="Стандартный - Налоговая декларация+"
                     class="form-control"
                     disabled
                   />
@@ -144,7 +120,9 @@
 
               <div class="card">
                 <div class="card-header">
-                  <h5 class="card-title mb-0"><span class="text-danger">*</span> Фамилия</h5>
+                  <h5 class="card-title mb-0">
+                    <span class="text-danger">*</span> Фамилия
+                  </h5>
                 </div>
                 <div class="card-body form-control">
                   <input
@@ -160,7 +138,9 @@
 
               <div class="card">
                 <div class="card-header">
-                  <h5 class="card-title mb-0"><span class="text-danger">*</span> Имя</h5>
+                  <h5 class="card-title mb-0">
+                    <span class="text-danger">*</span> Имя
+                  </h5>
                 </div>
                 <div class="card-body form-control">
                   <input
@@ -191,7 +171,9 @@
 
               <div class="card">
                 <div class="card-header">
-                  <h5 class="card-title mb-0"><span class="text-danger">*</span> Электроная почта</h5>
+                  <h5 class="card-title mb-0">
+                    <span class="text-danger">*</span> Электроная почта
+                  </h5>
                 </div>
                 <div class="card-body form-control">
                   <input
@@ -207,7 +189,10 @@
 
               <div class="card">
                 <div class="card-header">
-                  <h5 class="card-title mb-0"><span class="text-danger">*</span> Телефон для связи (сотовый)</h5>
+                  <h5 class="card-title mb-0">
+                    <span class="text-danger">*</span> Телефон для связи
+                    (сотовый)
+                  </h5>
                 </div>
                 <div class="card-body form-control">
                   <input
@@ -224,7 +209,9 @@
 
               <div class="card">
                 <div class="card-header">
-                  <h5 class="card-title mb-0"><span class="text-danger">*</span> Гражданство</h5>
+                  <h5 class="card-title mb-0">
+                    <span class="text-danger">*</span> Гражданство
+                  </h5>
                 </div>
                 <div class="card-body form-control">
                   <input
@@ -240,7 +227,9 @@
 
               <div class="card">
                 <div class="card-header">
-                  <h5 class="card-title mb-0"><span class="text-danger">*</span> Адрес прописки</h5>
+                  <h5 class="card-title mb-0">
+                    <span class="text-danger">*</span> Адрес прописки
+                  </h5>
                 </div>
                 <div class="card-body form-control">
                   <input
@@ -255,11 +244,19 @@
 
               <div class="card">
                 <div class="card-header">
-                  <h5 class="card-title mb-0"><span class="text-danger">*</span> Адрес проживания</h5>
-                  <input id="adressSame" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label fs-6" for="flexCheckDefault">
-                      Такой же как адрес прописки?
-                    </label>
+                  <h5 class="card-title mb-0">
+                    <span class="text-danger">*</span> Адрес проживания
+                  </h5>
+                  <input
+                    id="adressSame"
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label fs-6" for="flexCheckDefault">
+                    Такой же как адрес прописки?
+                  </label>
                 </div>
                 <div class="card-body form-control">
                   <input
@@ -277,7 +274,8 @@
               <div class="card">
                 <div class="card-header">
                   <h5 class="card-title mb-0">
-                      <span class="text-danger">*</span> Вы налоговый резидент РК в
+                    <span class="text-danger">*</span> Вы налоговый резидент РК
+                    в
                     <span
                       data-container="body"
                       data-toggle="popover"
@@ -285,7 +283,8 @@
                       data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
                       class=""
                       >отчетном периоде</span
-                    > (календарный год)?
+                    >
+                    (календарный год)?
                     <div
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModalFullscreen"
@@ -326,8 +325,8 @@
               <div class="card">
                 <div class="card-header">
                   <h5 class="card-title mb-0">
-                      <span class="text-danger">*</span> У вас были операции по продаже ценных бумаг в отчетном
-                    периоде? (календарный год)
+                    <span class="text-danger">*</span> У вас были операции по
+                    продаже ценных бумаг в отчетном периоде? (календарный год)
                   </h5>
                 </div>
                 <div class="card-body">
@@ -377,8 +376,9 @@
               <div class="card" id="KolOpPoPro" style="display:none;">
                 <div class="card-header">
                   <h5 class="card-title mb-0">
-                      <span class="text-danger">*</span> Укажите количество операций по продаже ценных бумаг за
-                    отчетный период (календарный год)
+                    <span class="text-danger">*</span> Укажите количество
+                    операций по продаже ценных бумаг за отчетный период
+                    (календарный год)
                   </h5>
                 </div>
                 <div class="card-body form-control">
@@ -396,7 +396,8 @@
               <div class="card">
                 <div class="card-header">
                   <h5 class="card-title mb-0">
-                      <span class="text-danger">*</span> Вы получали дивиденды в отчетном периоде (календарный год)?
+                    <span class="text-danger">*</span> Вы получали дивиденды в
+                    отчетном периоде (календарный год)?
                   </h5>
                 </div>
                 <div class="card-body">
@@ -442,13 +443,14 @@
               <div class="card">
                 <div class="card-header">
                   <h5 class="card-title mb-0">
-                      <span class="text-danger">*</span> Есть ли основания для включения в налоговую декларацию
-                    других доходов (продажа имущества, авто, получения других
-                    доходов)? <div
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModalFullscreen2"
-                    class="btn btn-outline-secondary bi bi-mortarboard-fill py-0 fs-4 text-reset"
-                  ></div>
+                    <span class="text-danger">*</span> Есть ли основания для
+                    включения в налоговую декларацию других доходов (продажа
+                    имущества, авто, получения других доходов)?
+                    <div
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModalFullscreen2"
+                      class="btn btn-outline-secondary bi bi-mortarboard-fill py-0 fs-4 text-reset"
+                    ></div>
                   </h5>
                 </div>
                 <div class="card-body">
@@ -486,8 +488,9 @@
               <div class="card" id="UkKaDrSd" style="display: none">
                 <div class="card-header">
                   <h5 class="card-title mb-0">
-                      <span class="text-danger">*</span> Укажите какие другие сделки и доходы у вас были за отчетный
-                    период (календарный год).
+                    <span class="text-danger">*</span> Укажите какие другие
+                    сделки и доходы у вас были за отчетный период (календарный
+                    год).
                   </h5>
                 </div>
                 <div class="card-body form-control">
@@ -497,7 +500,7 @@
                     id="otherdeal"
                     class="form-control"
                     placeholder="Введите другие сделки"
-                  ></input>
+                  />
                   <small>Error Message</small>
                 </div>
               </div>
@@ -505,11 +508,11 @@
               <div class="card">
                 <div class="card-header">
                   <h5 class="card-title mb-0">
-                      <span class="text-danger">*</span> Есть ли основания для налоговых вычетов (стандартные,
-                    другие)? Должна быть шапочка студента рядом, чтобы человек
-                    мог нажать ее и посмотреть какие бывают налоговые вычеты.
-                    При нажатии шапочки надо чтобы появлялся слайд 2. (слайды в
-                    приложении).
+                    <span class="text-danger">*</span> Есть ли основания для
+                    налоговых вычетов (стандартные, другие)? Должна быть шапочка
+                    студента рядом, чтобы человек мог нажать ее и посмотреть
+                    какие бывают налоговые вычеты. При нажатии шапочки надо
+                    чтобы появлялся слайд 2. (слайды в приложении).
                   </h5>
                 </div>
                 <div class="card-body">
@@ -547,7 +550,8 @@
               <div class="card" id="UkazhiOsnovDla" style="display: none">
                 <div class="card-header">
                   <h5 class="card-title mb-0">
-                      <span class="text-danger">*</span> Укажите основания для каких налоговых вычетов у вас есть.
+                    <span class="text-danger">*</span> Укажите основания для
+                    каких налоговых вычетов у вас есть.
                   </h5>
                 </div>
                 <div class="card-body form-control">
@@ -557,31 +561,45 @@
                     id="taxdeduct1"
                     class="form-control"
                     placeholder="Введите какие именно вычеты"
-                  ></input>
+                  />
                   <small>Error Message</small>
                 </div>
               </div>
               <div class="container">
-                 Поля отмеченные <span class="text-danger">*</span> обязательны к заполнению
+                Поля отмеченные <span class="text-danger">*</span> обязательны к
+                заполнению
               </div>
               <div class="container">
                 <div class="row mt-2">
                   <div class="col-1">
-                    <input id="PolitikaKonf" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input
+                      id="PolitikaKonf"
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
                   </div>
                   <div class="col-11">
-                    <label required class="form-check-label " for="flexCheckDefault">«С политикой конфиденциальности и договором оказания услуг (договор - оферта) ознакомлен. С правилами оказания услуг согласен»
+                    <label
+                      required
+                      class="form-check-label "
+                      for="flexCheckDefault"
+                      >«С политикой конфиденциальности и договором оказания
+                      услуг (договор - оферта) ознакомлен. С правилами оказания
+                      услуг согласен»
                     </label>
                   </div>
                 </div>
               </div>
               <div class="container">
-                <button type="Submit" class="btn btn-success my-3 w-100">
+                <button type="Submit" id="submit" class="btn btn-success my-3 w-100">
                   Отправить заявку
                 </button>
               </div>
               <div class="container">
-                <span class="text-danger">*</span> Нажимая на кнопку, вы соглашаетесь на обработку персональных данных.
+                <span class="text-danger">*</span> Нажимая на кнопку, вы
+                соглашаетесь на обработку персональных данных.
               </div>
             </div>
           </div>
@@ -595,7 +613,8 @@
       class="modal fade"
       id="exampleModalFullscreen"
       tabindex="-1"
-      aria-labelledby="exampleModalFullscreenLabel"slide
+      aria-labelledby="exampleModalFullscreenLabel"
+      slide
       style="display: none;"
       aria-hidden="true"
     >
@@ -636,7 +655,8 @@
       class="modal fade"
       id="exampleModalFullscreen2"
       tabindex="-1"
-      aria-labelledby="exampleModalFullscreen2Label"slide
+      aria-labelledby="exampleModalFullscreen2Label"
+      slide
       style="display: none;"
       aria-hidden="true"
     >
@@ -673,258 +693,36 @@
       </div>
     </div>
 
-    <footer class="text-center text-white mt-2" style="background-color: #21081a;">
-        <!-- Grid container -->
-        <div class="container p-4 pb-0">
-          <div class="row">
-            <div class="col-12 col-sm-6 text-start">
-                Сбережения и Инвестиции – это проект направленный на развитие общей финансовой грамотности в Казахстане.
-            </div>
-            <div class="col-12 col-sm-6 text-end">
-              <p>Политика конфиденциальности</p>
-              <p>Договор - Оферта</p>
-                 
-                                
-            </div>
+    <footer
+      class="text-center text-white mt-2"
+      style="background-color: #21081a;"
+    >
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <div class="row">
+          <div class="col-12 col-sm-6 text-start">
+            Сбережения и Инвестиции – это проект направленный на развитие общей
+            финансовой грамотности в Казахстане.
+          </div>
+          <div class="col-12 col-sm-6 text-end">
+            <p>Политика конфиденциальности</p>
+            <p>Договор - Оферта</p>
           </div>
         </div>
-        <!-- Grid container -->
-      
-        <!-- Copyright -->
-        <!-- <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2020 Copyright:
-          <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div> -->
-        <!-- Copyright -->
-      </footer>
+      </div>
+    </footer>
+
+    <!-- ajax js for showing some forms if radiobuttons on or off -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="form-240.js"></script>
+    <!-- <script src="googleform.js"></script> -->
 
     <!-- bootstap js  -->
     <script src="js/bootstrap.bundle.min.js"></script>
-    <!-- ajax js for showing some forms if radiobuttons on or off -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>
-      document.getElementById("adressSame").addEventListener("change", function() {
-        if (this.checked) {
-          document.getElementById("adressProzh").value = document.getElementById("adressProp").value;
-        } else {
-          document.getElementById("adressProzh").value = "";
-        }
-      });
-      function on_change(el, text) {
-        var selectedOption = document.getElementById(el);
-        if (selectedOption.checked) {
-          document.getElementById(text).style.display = "block";
-        } else {
-          document.getElementById(text).style.display = "none"; // Hide el
-        }
-      }
-    </script>
 
-    <script>
-      const form = document.getElementById("form");
-      const name = document.getElementById("name");
-      const surname = document.getElementById("surname");
-      const lastname = document.getElementById("lastname");
-      const email = document.getElementById("email");
-      const tel = document.getElementById("tel");
-      const citizen = document.getElementById("citizen");
-      const adressProp = document.getElementById("adressProp");
-      const adressProzh = document.getElementById("adressProzh");
-
-      const taxresident = document.getElementsByName("taxresident");
-      const sale1 = document.getElementById("sale1");
-      const sale1quant = document.getElementById("sale1quant");
-
-      const otherdeal = document.getElementById("otherdeal");
-
-      const taxdeduct1 = document.getElementById("taxdeduct1");
-
-      const PolitikaKonf = document.getElementById("PolitikaKonf");
-
-
-
-      form.addEventListener("submit", e => {
-        submit = checkInputs();
-        if (!submit) {
-        e.preventDefault();
-        } else {
-          document.getElementById('form').submit();
-        }
-      });
-
-      function checkInputs() {
-
-        var sumbitForm = true;
-        
-        // trim to remove the whitespaces
-        const nameValue = name.value.trim();
-        const surnameValue = surname.value.trim();
-        const lastnameValue = lastname.value.trim();
-        const emailValue = email.value.trim();
-        const telValue = tel.value.trim();
-        const citizenValue = citizen.value.trim();
-        const adressPropValue = adressProp.value.trim();
-        const adressProzhValue = adressProzh.value.trim();
-
-        const sale1quantValue = sale1quant.value.trim();
-        const otherdealValue = otherdeal.value.trim();
-        const taxdeduct1Value = taxdeduct1.value.trim();
-
-        submitForm = true;
-        if (surnameValue === "") {
-          setErrorFor(surname, "Заполните поле Фамилия");
-          submitForm = false;
-        } else {
-          setSuccessFor(surname);
-        }
-        
-        if (nameValue === "") {
-          setErrorFor(name, "Заполните поле Имя");
-          submitForm = false;
-        } else {
-          setSuccessFor(name);
-        }
-        
-
-        if (lastnameValue === "") {
-        } else {
-          setSuccessFor(lastname);
-        }
-        
-
-        if (emailValue === "") {
-          setErrorFor(email, "Заполните поле Почта");
-          submitForm = false;
-        } else if (!isEmail(emailValue)) {
-          setErrorFor(email, "Неверный формат почты");
-          submitForm = false;
-        } else {
-          setSuccessFor(email);
-        }
-
-        
-
-        if (telValue === "") {
-          setErrorFor(tel, "Заполните поле Номер");
-          submitForm = false;
-        } else if (!validatePhone(telValue)) {
-          setErrorFor(tel, "Неверный номер");
-          submitForm = false;
-        } else {
-          setSuccessFor(tel);
-        }
-        
-        if (citizenValue === "") {
-          setErrorFor(citizen, "Заполните поле Гражданство");
-          submitForm = false;
-        } else {
-          setSuccessFor(citizen);
-        }
-        
-        
-
-        if (adressPropValue === "") {
-          setErrorFor(adressProp, "Заполните поле Адрес прописки");
-          submitForm = false;
-        } else {
-          setSuccessFor(adressProp);
-        }
-
-        
-
-        if (adressProzhValue === "") {
-          setErrorFor(adressProzh, "Заполните поле Адрес проживания");
-          submitForm = false;
-        } else {
-          setSuccessFor(adressProzh);
-        }
-        
-        if (sale1.checked && sale1quantValue === "") {
-          setErrorFor(sale1quant, "Заполните Данное поле");
-          submitForm = false;
-        } else if (!sale1.checked) {
-
-        } else {
-          setSuccessFor(sale1quant);
-        }
-        
-        if (includedeclr.checked && otherdealValue === "") {
-          setErrorFor(otherdeal, "Заполните Данное поле");
-          submitForm = false;
-        } else if (!includedeclr.checked) {
-          
-        } else {
-          setSuccessFor(otherdeal);
-        }
-        
-
-        if (taxdeduct.checked && taxdeduct1Value === "") {
-          setErrorFor(taxdeduct1, "Заполните Данное поле");
-          submitForm = false;
-        } else if (!taxdeduct.checked) {
-          
-        } else {
-          setSuccessFor(taxdeduct1);
-        }
-
-        
-
-        if (PolitikaKonf.checked) {
-
-        } else {
-          submitForm = false;
-        }
-
-        // if(taxresident[0].checked || taxresident[0].checked) {
-        //   //Male radio button is checked
-        // }else if(document.getElementById('gender_Female').checked) {
-        //   //Female radio button is checked
-        // }
-          return submitForm;
-
-      }
-
-      function setErrorFor(input, message) {
-        const formControl = input.parentElement;
-        const small = formControl.querySelector("small");
-        formControl.className = "form-control error";
-        small.innerText = message;
-      }
-
-      function setSuccessFor(input) {
-        const formControl = input.parentElement;
-        formControl.className = "form-control success";
-      }
-
-      function isEmail(email) {
-        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-          email
-        );
-      }
-
-      function validatePhone(phoneNumber) {
-        var phoneNumberPattern = /^([+]?\d{1,2}[-\s]?|)\d{3}[-\s]?\d{3}[-\s]?\d{4}$/;
-        return phoneNumberPattern.test(phoneNumber);
-      }
-
-      // SOCIAL PANEL JS
-      const floating_btn = document.querySelector(".floating-btn");
-      const close_btn = document.querySelector(".close-btn");
-      const social_panel_container = document.querySelector(
-        ".social-panel-container"
-      );
-
-      floating_btn.addEventListener("click", () => {
-        social_panel_container.classList.toggle("visible");
-      });
-
-      close_btn.addEventListener("click", () => {
-        social_panel_container.classList.remove("visible");
-      });
-    </script>
 
     <!-- Read a page's GET URL variables and return them as an associative array. -->
 
-    <script src="js/geturl.js"></script>
+    <!-- <script src="js/geturl.js"></script> -->
   </body>
 </html>

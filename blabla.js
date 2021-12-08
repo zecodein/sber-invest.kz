@@ -23,7 +23,7 @@ $('#contact-form').submit(function(event) {
       if (formSuccess) {
         // Send request
         $.ajax({
-          url: 'https://docs.google.com/forms/d/e/1FAIpQLSdnW7ixrovoi7V7sJQihWouPztZL4GoRMAP5SpoVh2UfMhxOQ/formResponse',
+          url: 'https://docs.google.com/forms/d/e/1FAIpQLScIylSgpFus8Xnwcm5Tf5bHUB8gvQDYls64BQFgRnfWkJLTxw/formResponse',
           type: 'POST',
           crossDomain: true,
           dataType: "xml",
