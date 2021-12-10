@@ -1,8 +1,7 @@
-document.getElementById("adressSame").addEventListener("change", function() {
+document.getElementById("adressSame").addEventListener("change", function () {
   if (this.checked) {
-    document.getElementById("adressProzh").value = document.getElementById(
-      "adressProp"
-    ).value;
+    document.getElementById("adressProzh").value =
+      document.getElementById("adressProp").value;
   } else {
     document.getElementById("adressProzh").value = "";
   }
@@ -36,7 +35,7 @@ const taxdeduct1 = document.getElementById("taxdeduct1");
 
 const PolitikaKonf = document.getElementById("PolitikaKonf");
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit", (e) => {
   submit = checkInputs();
   if (!submit) {
     e.preventDefault();
@@ -179,10 +178,10 @@ function validatePhone(phoneNumber) {
 
 // AJAZ GOOGLE FORM
 
-$("#form").submit(function(event) {
+$("#form").submit(function (event) {
   event.preventDefault();
   $("#feedback").html("");
-  setTimeout(function() {
+  setTimeout(function () {
     const taxresidentnames = document.getElementsByName("taxresident");
     const sale1names = document.getElementsByName("sale1");
     const dividendnames = document.getElementsByName("dividend");
@@ -243,7 +242,7 @@ $("#form").submit(function(event) {
 
     // Validate form
     var formSuccess = true;
-    Object.keys(data).forEach(function(key, index) {
+    Object.keys(data).forEach(function (key, index) {
       if (
         !data[key] &&
         key != "entry.576407941" &&
@@ -253,37 +252,35 @@ $("#form").submit(function(event) {
       ) {
         formSuccess = false;
         $("#feedback").html(
-          '<label class="text-danger">Заполните все вопросы</label>'
+          '<label class="text-danger">Заполните поля корректно</label>'
         );
       }
     });
 
     if (formSuccess) {
-        document.getElementById("submit").disabled = true;
+      document.getElementById("submit").disabled = true;
       // Send request
       $.ajax({
         // url: 'https://docs.google.com/forms/d/e/1FAIpQLSdnW7ixrovoi7V7sJQihWouPztZL4GoRMAP5SpoVh2UfMhxOQ/formResponse',
 
-        url:
-          "https://docs.google.com/forms/d/e/1FAIpQLSdvcX5VR24xIjMeHO9Y-enPIyf7U0_mL3Oc_9xlgJ1ND1rZgw/formResponse",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSdvcX5VR24xIjMeHO9Y-enPIyf7U0_mL3Oc_9xlgJ1ND1rZgw/formResponse",
         // url: 'https://docs.google.com/forms/d/1WrqRqGKkbmaoLWeJjN4JcxfkJzbu7lfNsBDGOAE_hhM/edit',
         type: "POST",
         crossDomain: true,
         dataType: "xml",
         data: data,
-        success: function(jqXHR, textStatus, errorThrown) {
-          
+        success: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on success");
           $("#feedback").html(
             '<label class="text-success">Форма отправлена!</label>'
           );
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on error");
           $("#feedback").html(
             '<label class="text-success">Форма отправлена!</label>'
           );
-        }
+        },
       });
     }
   }, 300);
