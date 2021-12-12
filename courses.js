@@ -1,20 +1,20 @@
-function myFunction() {
-  // Get the checkbox
-  var checkBox = document.getElementById("Podarok");
-  // Get the output text
-  var text = document.getElementById("PodarochniySertif");
-
-  // If the checkbox is checked, display the output text
-  if (checkBox.checked == true) {
+// Get the checkbox
+var checkBox = document.getElementById("Podarok");
+// Get the output text
+var text = document.getElementById("PodarochniySertif");
+document.getElementById("Podarok").addEventListener("change", function () {
+  if (this.checked) {
     text.style.display = "block";
   } else {
     text.style.display = "none";
   }
-}
+});
 
 const surname = document.getElementById("surname");
-const email = document.getElementById("email");
+const fname = document.getElementById("fname");
+const lastname = document.getElementById("lastname");
 const tel = document.getElementById("tel");
+const email = document.getElementById("email");
 form.addEventListener("submit", (e) => {
   submit = checkInputs();
   if (!submit) {
@@ -27,7 +27,7 @@ function checkInputs() {
   var sumbitForm = true;
 
   // trim to remove the whitespaces
-  const nameValue = name.value.trim();
+  const fnameValue = fname.value.trim();
   const surnameValue = surname.value.trim();
   const lastnameValue = lastname.value.trim();
   const emailValue = email.value.trim();
@@ -41,7 +41,7 @@ function checkInputs() {
     setSuccessFor(surname);
   }
 
-  if (nameValue === "") {
+  if (fnameValue === "") {
     setErrorFor(name, "Заполните поле Имя");
     submitForm = false;
   } else {
@@ -135,7 +135,7 @@ $("#form").submit(function (event) {
       "entry.785559364": $("#Podarok").is(":checked"),
 
       "entry.1132072097": $("#surname").val(),
-      "entry.1308261533": $("#name").val(),
+      "entry.1308261533": $("#fname").val(),
       "entry.210657771": $("#lastname").val(),
       "entry.1965831746": $("#tel").val(),
       "entry.2121781874": $("#email").val(),
@@ -150,13 +150,7 @@ $("#form").submit(function (event) {
     // Validate form
     var formSuccess = true;
     Object.keys(data).forEach(function (key, index) {
-      if (
-        !data[key] &&
-        key != "entry.576407941" &&
-        key != "entry.2019584137" &&
-        key != "entry.873435385" &&
-        key != "entry.1548640145"
-      ) {
+      if (!data[key]) {
         formSuccess = false;
         $("#feedback").html(
           '<label class="text-danger">Заполните поля корректно</label>'
@@ -170,7 +164,7 @@ $("#form").submit(function (event) {
       $.ajax({
         // url: 'https://docs.google.com/forms/d/e/1FAIpQLSdnW7ixrovoi7V7sJQihWouPztZL4GoRMAP5SpoVh2UfMhxOQ/formResponse',
 
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSdvcX5VR24xIjMeHO9Y-enPIyf7U0_mL3Oc_9xlgJ1ND1rZgw/formResponse",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSdXEosfgyMNreIXx66UP-L5ZaRPKSqt8DObJRLEaFQKjYt5cw/formResponse",
         // url: 'https://docs.google.com/forms/d/1WrqRqGKkbmaoLWeJjN4JcxfkJzbu7lfNsBDGOAE_hhM/edit',
         type: "POST",
         crossDomain: true,
@@ -178,15 +172,11 @@ $("#form").submit(function (event) {
         data: data,
         success: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on success");
-          $("#feedback").html(
-            '<label class="text-success">Форма отправлена!</label>'
-          );
+          $("#feedback").html('<label class="text-success">Успешно!</label>');
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on error");
-          $("#feedback").html(
-            '<label class="text-success">Форма отправлена!</label>'
-          );
+          $("#feedback").html('<label class="text-success">Успешно!</label>');
         },
       });
     }
