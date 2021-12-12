@@ -11,10 +11,18 @@ document.getElementById("Podarok").addEventListener("change", function () {
 });
 
 const surname = document.getElementById("surname");
-const fname = document.getElementById("fname");
+const name = document.getElementById("name");
 const lastname = document.getElementById("lastname");
 const tel = document.getElementById("tel");
 const email = document.getElementById("email");
+
+const surname_Pol = document.getElementById("surname");
+const name_Pol = document.getElementById("name");
+const lastname_Pol = document.getElementById("lastname");
+const tel_Pol = document.getElementById("tel");
+const email_Pol = document.getElementById("email");
+
+const Podarok = document.getElementById("Podarok");
 form.addEventListener("submit", (e) => {
   submit = checkInputs();
   if (!submit) {
@@ -27,11 +35,17 @@ function checkInputs() {
   var sumbitForm = true;
 
   // trim to remove the whitespaces
-  const fnameValue = fname.value.trim();
+  const nameValue = name.value.trim();
   const surnameValue = surname.value.trim();
   const lastnameValue = lastname.value.trim();
   const emailValue = email.value.trim();
   const telValue = tel.value.trim();
+
+  const name_PolValue = name_Pol.value.trim();
+  const surname_PolValue = surname_Pol.value.trim();
+  const lastname_PolValue = lastname_Pol.value.trim();
+  const email_PolValue = email_Pol.value.trim();
+  const tel_PolValue = tel_Pol.value.trim();
 
   submitForm = true;
   if (surnameValue === "") {
@@ -41,7 +55,7 @@ function checkInputs() {
     setSuccessFor(surname);
   }
 
-  if (fnameValue === "") {
+  if (nameValue === "") {
     setErrorFor(name, "Заполните поле Имя");
     submitForm = false;
   } else {
@@ -71,6 +85,47 @@ function checkInputs() {
     submitForm = false;
   } else {
     setSuccessFor(tel);
+  }
+
+  if (Podarok.checked) {
+    if (surname_PolValue === "") {
+      setErrorFor(surname_Pol, "Заполните поле Фамилия");
+      submitForm = false;
+    } else {
+      setSuccessFor(surname_Pol);
+    }
+
+    if (name_PolValue === "") {
+      setErrorFor(name_Pol, "Заполните поле Имя");
+      submitForm = false;
+    } else {
+      setSuccessFor(name_Pol);
+    }
+
+    if (lastname_PolValue === "") {
+    } else {
+      setSuccessFor(lastname_Pol);
+    }
+
+    if (email_PolValue === "") {
+      setErrorFor(email_Pol, "Заполните поле Почта");
+      submitForm = false;
+    } else if (!isEmail(email_PolValue)) {
+      setErrorFor(email_Pol, "Неверный формат почты");
+      submitForm = false;
+    } else {
+      setSuccessFor(email_Pol);
+    }
+
+    if (tel_PolValue === "") {
+      setErrorFor(tel_Pol, "Заполните поле Номер");
+      submitForm = false;
+    } else if (!validatePhone(tel_PolValue)) {
+      setErrorFor(tel_Pol, "Неверный номер");
+      submitForm = false;
+    } else {
+      setSuccessFor(tel_Pol);
+    }
   }
 
   if (PolitikaKonf.checked) {
@@ -135,7 +190,7 @@ $("#form").submit(function (event) {
       "entry.785559364": $("#Podarok").is(":checked"),
 
       "entry.1132072097": $("#surname").val(),
-      "entry.1308261533": $("#fname").val(),
+      "entry.1308261533": $("#name").val(),
       "entry.210657771": $("#lastname").val(),
       "entry.1965831746": $("#tel").val(),
       "entry.2121781874": $("#email").val(),
