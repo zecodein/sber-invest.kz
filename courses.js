@@ -25,21 +25,25 @@ OformitZayav.addEventListener("click", function () {
 
 const VesKurs = document.getElementById("VesKurs");
 // Get the output text
+
 const LocalRynok = document.getElementById("LocalRynok");
 const ZaPredelami = document.getElementById("ZaPredelami");
 const VychetyISald = document.getElementById("VychetyISald");
 const Skidka = document.getElementById("Skidka");
+const ObrSvz = document.getElementById("ObrSvz");
 VesKurs.addEventListener("change", function () {
   if (this.checked) {
     LocalRynok.checked = "true";
     ZaPredelami.checked = "true";
     VychetyISald.checked = "true";
     Skidka.checked = "true";
+    ObrSvz.checked = "true";
   } else {
     $("#LocalRynok").prop("checked", false);
     $("#ZaPredelami").prop("checked", false);
     $("#VychetyISald").prop("checked", false);
     $("#Skidka").prop("checked", false);
+    $("#ObrSvz").prop("checked", false);
     // LocalRynok.checked = "false";
     // ZaPredelami.checked = "false";
     // VychetyISald.checked = "false";
@@ -213,6 +217,7 @@ $("#form").submit(function (event) {
     var PodgRaschet = "Нет";
     var Skidka = "Нет";
     var Podarok = "Нет";
+    var ObrSvz = "Нет";
 
     if ($("#VesKurs").is(":checked")) {
       VesKurs = "Да";
@@ -247,6 +252,9 @@ $("#form").submit(function (event) {
     if ($("#Podarok").is(":checked")) {
       Podarok = "Да";
     }
+    if ($("#ObrSvz").is(":checked")) {
+      ObrSvz = "Да";
+    }
     // Get data
     var data = {
       "entry.312643852": VesKurs,
@@ -258,6 +266,7 @@ $("#form").submit(function (event) {
       "entry.470403761": VychetyISald,
       "entry.770136661": Diagramma,
       "entry.1084585482": PodgRaschet,
+      "entry.889249229": ObrSvz,
       "entry.973358631": Skidka,
       "entry.785559364": Podarok,
 
@@ -314,11 +323,15 @@ $("#form").submit(function (event) {
         data: data,
         success: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on success");
-          $("#feedback").html('<label class="text-success">Успешно!</label>');
+          $("#feedback").html(
+            '<label class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
+          );
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on error");
-          $("#feedback").html('<label class="text-success">Успешно!</label>');
+          $("#feedback").html(
+            '<label class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
+          );
         },
       });
     }
