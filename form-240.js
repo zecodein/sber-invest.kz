@@ -280,14 +280,13 @@ $("#form").submit(function (event) {
           '<label class="text-danger">Заполните поля корректно</label>'
         );
       }
-
-      if (!checkInputs()) {
-        formSuccess = false;
-        $("#feedback").html(
-          '<label class="text-danger">Заполните поля корректно</label>'
-        );
-      }
     });
+    if (!checkInputs()) {
+      formSuccess = false;
+      $("#feedback").html(
+        '<label class="text-danger">Заполните поля корректно</label>'
+      );
+    }
 
     if (formSuccess) {
       document.getElementById("submit").disabled = true;

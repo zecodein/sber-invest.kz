@@ -1,31 +1,40 @@
 // Get the checkbox
 var checkBox = document.getElementById("Podarok");
 // Get the output text
-var text = document.getElementById("PodarochniySertif");
+var PodarochniySertif = document.getElementById("PodarochniySertif");
 document.getElementById("Podarok").addEventListener("change", function () {
   if (this.checked) {
-    text.style.display = "block";
+    PodarochniySertif.style.display = "block";
   } else {
-    text.style.display = "none";
+    PodarochniySertif.style.display = "none";
   }
+});
+// Get the checkbox
+var OformitSert = document.getElementById("OformitSert");
+var OformitZayav = document.getElementById("OformitZayav");
+// Get the output text
+var PodarokOnClick = document.getElementById("Podarok");
+OformitSert.addEventListener("click", function () {
+  PodarokOnClick.checked = "true";
+  PodarochniySertif.style.display = "block";
+});
+OformitZayav.addEventListener("click", function () {
+  $("#Podarok").prop("checked", false);
+  PodarochniySertif.style.display = "none";
 });
 
 const VesKurs = document.getElementById("VesKurs");
 // Get the output text
-// const LocalRynok = document.getElementById("LocalRynok");
-// const ZaPredelami = document.getElementById("ZaPredelami");
-// const VychetyISald = document.getElementById("VychetyISald");
-// const Skidka = document.getElementById("Skidka");
+const LocalRynok = document.getElementById("LocalRynok");
+const ZaPredelami = document.getElementById("ZaPredelami");
+const VychetyISald = document.getElementById("VychetyISald");
+const Skidka = document.getElementById("Skidka");
 VesKurs.addEventListener("change", function () {
   if (this.checked) {
-    $("#LocalRynok").prop("checked", true);
-    $("#ZaPredelami").prop("checked", true);
-    $("#VychetyISald").prop("checked", true);
-    $("#Skidka").prop("checked", true);
-    // LocalRynok.checked = "true";
-    // ZaPredelami.checked = "true";
-    // VychetyISald.checked = "true";
-    // Skidka.checked = "true";
+    LocalRynok.checked = "true";
+    ZaPredelami.checked = "true";
+    VychetyISald.checked = "true";
+    Skidka.checked = "true";
   } else {
     $("#LocalRynok").prop("checked", false);
     $("#ZaPredelami").prop("checked", false);
@@ -193,30 +202,64 @@ $("#form").submit(function (event) {
   event.preventDefault();
   $("#feedback").html("");
   setTimeout(function () {
-    // var VesKurs=$("#VesKurs").is(":checked");
-    // var Vstuplenie=$("#Vstuplenie").is(":checked");
-    // var ProgrammaKursa=$("#ProgrammaKursa").is(":checked");
-    // var PoryadokNal=$("#PoryadokNal").is(":checked");
-    // var LocalRynok=$("#LocalRynok").is(":checked");
-    // var ZaPredelami=$("#ZaPredelami").is(":checked");
-    // var VychetyISald=$("#VychetyISald").is(":checked");
-    // var Diagramma=$("#Diagramma").is(":checked");
-    // var PodgRaschet=$("#PodgRaschet").is(":checked");
-    // var Skidka=$("#Skidka").is(":checked");
-    // var Podarok=$("#Podarok").is(":checked");
+    var VesKurs = "Нет";
+    var Vstuplenie = "Нет";
+    var ProgrammaKursa = "Нет";
+    var PoryadokNal = "Нет";
+    var LocalRynok = "Нет";
+    var ZaPredelami = "Нет";
+    var VychetyISald = "Нет";
+    var Diagramma = "Нет";
+    var PodgRaschet = "Нет";
+    var Skidka = "Нет";
+    var Podarok = "Нет";
+
+    if ($("#VesKurs").is(":checked")) {
+      VesKurs = "Да";
+    }
+    if ($("#Vstuplenie").is(":checked")) {
+      Vstuplenie = "Да";
+    }
+    if ($("#ProgrammaKursa").is(":checked")) {
+      ProgrammaKursa = "Да";
+    }
+    if ($("#PoryadokNal").is(":checked")) {
+      PoryadokNal = "Да";
+    }
+    if ($("#LocalRynok").is(":checked")) {
+      LocalRynok = "Да";
+    }
+    if ($("#ZaPredelami").is(":checked")) {
+      ZaPredelami = "Да";
+    }
+    if ($("#VychetyISald").is(":checked")) {
+      VychetyISald = "Да";
+    }
+    if ($("#Diagramma").is(":checked")) {
+      Diagramma = "Да";
+    }
+    if ($("#PodgRaschet").is(":checked")) {
+      PodgRaschet = "Да";
+    }
+    if ($("#Skidka").is(":checked")) {
+      Skidka = "Да";
+    }
+    if ($("#Podarok").is(":checked")) {
+      Podarok = "Да";
+    }
     // Get data
     var data = {
-      "entry.312643852": $("#VesKurs").is(":checked"),
-      "entry.1900210667": $("#Vstuplenie").is(":checked"),
-      "entry.445182499": $("#ProgrammaKursa").is(":checked"),
-      "entry.110349566": $("#PoryadokNal").is(":checked"),
-      "entry.1270709721": $("#LocalRynok").is(":checked"),
-      "entry.1985937576": $("#ZaPredelami").is(":checked"),
-      "entry.470403761": $("#VychetyISald").is(":checked"),
-      "entry.770136661": $("#Diagramma").is(":checked"),
-      "entry.1084585482": $("#PodgRaschet").is(":checked"),
-      "entry.973358631": $("#Skidka").is(":checked"),
-      "entry.785559364": $("#Podarok").is(":checked"),
+      "entry.312643852": VesKurs,
+      "entry.1900210667": Vstuplenie,
+      "entry.445182499": ProgrammaKursa,
+      "entry.110349566": PoryadokNal,
+      "entry.1270709721": LocalRynok,
+      "entry.1985937576": ZaPredelami,
+      "entry.470403761": VychetyISald,
+      "entry.770136661": Diagramma,
+      "entry.1084585482": PodgRaschet,
+      "entry.973358631": Skidka,
+      "entry.785559364": Podarok,
 
       "entry.1132072097": $("#surname").val(),
       "entry.1308261533": $("#name").val(),
@@ -234,13 +277,28 @@ $("#form").submit(function (event) {
     // Validate form
     var formSuccess = true;
     Object.keys(data).forEach(function (key, index) {
-      if (!data[key]) {
+      if (
+        !data[key] &&
+        key != "entry.210657771" &&
+        key != "entry.2085742647" &&
+        key != "entry.802595060" &&
+        key != "entry.1214734007" &&
+        key != "entry.637914283" &&
+        key != "entry.505551139"
+      ) {
         formSuccess = false;
         $("#feedback").html(
           '<label class="text-danger">Заполните поля корректно</label>'
         );
       }
     });
+
+    if (!checkInputs()) {
+      formSuccess = false;
+      $("#feedback").html(
+        '<label class="text-danger">Заполните  ff поля корректно</label>'
+      );
+    }
 
     if (formSuccess) {
       document.getElementById("submit").disabled = true;
