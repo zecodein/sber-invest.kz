@@ -10,17 +10,46 @@ document.getElementById("Podarok").addEventListener("change", function () {
   }
 });
 
+const VesKurs = document.getElementById("VesKurs");
+// Get the output text
+// const LocalRynok = document.getElementById("LocalRynok");
+// const ZaPredelami = document.getElementById("ZaPredelami");
+// const VychetyISald = document.getElementById("VychetyISald");
+// const Skidka = document.getElementById("Skidka");
+VesKurs.addEventListener("change", function () {
+  if (this.checked) {
+    $("#LocalRynok").prop("checked", true);
+    $("#ZaPredelami").prop("checked", true);
+    $("#VychetyISald").prop("checked", true);
+    $("#Skidka").prop("checked", true);
+    // LocalRynok.checked = "true";
+    // ZaPredelami.checked = "true";
+    // VychetyISald.checked = "true";
+    // Skidka.checked = "true";
+  } else {
+    $("#LocalRynok").prop("checked", false);
+    $("#ZaPredelami").prop("checked", false);
+    $("#VychetyISald").prop("checked", false);
+    $("#Skidka").prop("checked", false);
+    // LocalRynok.checked = "false";
+    // ZaPredelami.checked = "false";
+    // VychetyISald.checked = "false";
+    // Skidka.checked = "false";
+  }
+});
+
+const form = document.getElementById("form");
 const surname = document.getElementById("surname");
 const name = document.getElementById("name");
 const lastname = document.getElementById("lastname");
 const tel = document.getElementById("tel");
 const email = document.getElementById("email");
 
-const surname_Pol = document.getElementById("surname");
-const name_Pol = document.getElementById("name");
-const lastname_Pol = document.getElementById("lastname");
-const tel_Pol = document.getElementById("tel");
-const email_Pol = document.getElementById("email");
+const surname_Pol = document.getElementById("surname_Pol");
+const name_Pol = document.getElementById("name_Pol");
+const lastname_Pol = document.getElementById("lastname_Pol");
+const tel_Pol = document.getElementById("tel_Pol");
+const email_Pol = document.getElementById("email_Pol");
 
 const Podarok = document.getElementById("Podarok");
 form.addEventListener("submit", (e) => {
@@ -158,7 +187,7 @@ function validatePhone(phoneNumber) {
   return phoneNumberPattern.test(phoneNumber);
 }
 
-// AJAZ GOOGLE FORM
+// AJAX GOOGLE FORM
 
 $("#form").submit(function (event) {
   event.preventDefault();
@@ -169,7 +198,7 @@ $("#form").submit(function (event) {
     // var ProgrammaKursa=$("#ProgrammaKursa").is(":checked");
     // var PoryadokNal=$("#PoryadokNal").is(":checked");
     // var LocalRynok=$("#LocalRynok").is(":checked");
-    // var ZaPredekamix=$("#ZaPredekamix").is(":checked");
+    // var ZaPredelami=$("#ZaPredelami").is(":checked");
     // var VychetyISald=$("#VychetyISald").is(":checked");
     // var Diagramma=$("#Diagramma").is(":checked");
     // var PodgRaschet=$("#PodgRaschet").is(":checked");
@@ -182,7 +211,7 @@ $("#form").submit(function (event) {
       "entry.445182499": $("#ProgrammaKursa").is(":checked"),
       "entry.110349566": $("#PoryadokNal").is(":checked"),
       "entry.1270709721": $("#LocalRynok").is(":checked"),
-      "entry.1985937576": $("#ZaPredekamix").is(":checked"),
+      "entry.1985937576": $("#ZaPredelami").is(":checked"),
       "entry.470403761": $("#VychetyISald").is(":checked"),
       "entry.770136661": $("#Diagramma").is(":checked"),
       "entry.1084585482": $("#PodgRaschet").is(":checked"),

@@ -1,3 +1,27 @@
+var queryString = location.search.substring(1);
+var tarif = document.getElementById("tarif");
+var tarifOptions = document.getElementById("tarifOptions");
+if (queryString === "min") {
+  tarifOptions.value = "min";
+  $("#price").html("<label >От 20 тыс. тенге*</label>");
+} else if (queryString === "stand") {
+  tarifOptions.value = "stand";
+  $("#price").html("<label >От 70 тыс. тенге*</label>");
+} else if (queryString === "prem") {
+  tarifOptions.value = "prem";
+  $("#price").html("<label >От 100 тыс. тенге*</label>");
+}
+
+tarifOptions.addEventListener("change", function () {
+  if (tarifOptions.value === "min") {
+    $("#price").html("<label >От 20 тыс. тенге*</label>");
+  } else if (tarifOptions.value === "stand") {
+    $("#price").html("<label >От 70 тыс. тенге*</label>");
+  } else if (tarifOptions.value === "prem") {
+    $("#price").html("<label >От 100 тыс. тенге*</label>");
+  }
+});
+
 document.getElementById("adressSame").addEventListener("change", function () {
   if (this.checked) {
     document.getElementById("adressProzh").value =
@@ -237,7 +261,7 @@ $("#form").submit(function (event) {
       "entry.2019584137": $("#otherdeal").val(),
       "entry.1428466992": taxdeductnames_value,
       "entry.873435385": $("#taxdeduct1").val(),
-      "entry.1548640145": $("#tarif").val(),
+      "entry.1548640145": $("#tarifOptions").val(),
     };
 
     // Validate form
@@ -248,8 +272,16 @@ $("#form").submit(function (event) {
         key != "entry.576407941" &&
         key != "entry.2019584137" &&
         key != "entry.873435385" &&
-        key != "entry.1548640145"
+        key != "entry.1548640145" &&
+        key != "entry.1045781291"
       ) {
+        formSuccess = false;
+        $("#feedback").html(
+          '<label class="text-danger">Заполните поля корректно</label>'
+        );
+      }
+
+      if (!checkInputs()) {
         formSuccess = false;
         $("#feedback").html(
           '<label class="text-danger">Заполните поля корректно</label>'
@@ -272,13 +304,13 @@ $("#form").submit(function (event) {
         success: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on success");
           $("#feedback").html(
-            '<label class="text-success">Форма отправлена!</label>'
+            '<label class="text-success">Форма заполнена! На ваш почтовый ящик отправлено письмо с дальнейшими инструкциями!</label>'
           );
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on error");
           $("#feedback").html(
-            '<label class="text-success">Форма отправлена!</label>'
+            '<label class="text-success">Форма заполнена! На ваш почтовый ящик отправлено письмо с дальнейшими инструкциями!</label>'
           );
         },
       });

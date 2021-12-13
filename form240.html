@@ -116,15 +116,21 @@
                   <h5 class="card-title mb-0">Пакет</h5>
                 </div>
                 <div class="card-body form-control">
-                  <input
-                    type="text"
-                    name="tarif"
-                    id="tarif"
-                    value="Минимальный - Налоговая декларация"
-                    class="form-control"
-                    disabled
-                  />
-                  <p class="card-title mb-0 mt-1">Цена: 20 - 150 тыс. тенге</p>
+                  <div class="form-group">
+                    <label for="tarifOptions"></label>
+                    <select class="form-control" id="tarifOptions">
+                      <option value="min">
+                        Минимальный - Налоговая декларация
+                      </option>
+                      <option value="stand">
+                        Стандартный - Налоговая декларация+
+                      </option>
+                      <option value="prem">
+                        Премиум - Налоговая декларация+++
+                      </option>
+                    </select>
+                  </div>
+                  <p id="price" class="card-title mb-0 mt-1"></p>
                 </div>
               </div>
 
@@ -238,7 +244,7 @@
               <div class="card">
                 <div class="card-header">
                   <h5 class="card-title mb-0">
-                    <span class="text-danger">*</span> Адрес прописки
+                    <span class="text-danger">*</span> Адрес прописки (полный)
                   </h5>
                 </div>
                 <div class="card-body form-control">
@@ -330,6 +336,15 @@
                       />
                       <span class="form-check-label"> Нет </span>
                     </label>
+                    <label class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="taxresident"
+                        value="IDK"
+                      />
+                      <span class="form-check-label"> Не знаю </span>
+                    </label>
                   </div>
                 </div>
               </div>
@@ -393,7 +408,7 @@
                     name="sale1quant"
                     id="sale1quant"
                     class="form-control"
-                    placeholder="Введите количество"
+                    placeholder="Менее 50, 50-100 или более 100"
                   />
                   <small>Error Message</small>
                 </div>
@@ -561,8 +576,8 @@
                 </div>
               </div>
               <div class="container">
-                Поля отмеченные <span class="text-danger">*</span> обязательны к
-                заполнению
+                Поля отмеченные <span class="text-danger">*</span> - обязательны
+                к заполнению
               </div>
               <div class="container">
                 <div class="row mt-2">
@@ -588,7 +603,7 @@
                 </div>
               </div>
               <div class="container">
-                <div id="feedback"></div>
+                <div class="text-center mt-1" id="feedback"></div>
                 <button
                   type="Submit"
                   id="submit"
@@ -702,9 +717,11 @@
             Сбережения и Инвестиции – это проект направленный на развитие общей
             финансовой грамотности в Казахстане.
           </div>
-          <div class="col-12 col-sm-6 text-start">
-            <p>Политика конфиденциальности</p>
-            <p>Договор - Оферта</p>
+          <div class="col-12 col-sm-6 text-end">
+            <p>
+              Политика конфиденциальности <br />
+              Договор - Оферта
+            </p>
           </div>
         </div>
       </div>
