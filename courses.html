@@ -1,4 +1,4 @@
-<?php include 'sentMail.php';?>
+<!-- <?php include 'sentMail.php';?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -93,7 +93,7 @@
         <div class="navbar-collapse collapse" id="navbarID">
           <ul class="navbar-nav">
             <li class="nav-item d-block">
-              <a href="services.html" class="nav-link  text-nowrap"
+              <a href="services.html" class="nav-link text-nowrap"
                 >Налоговая декларация</a
               >
             </li>
@@ -1255,9 +1255,15 @@
                             <div class="container">
                               <div class="mt-1 text-center" id="feedback"></div>
                               <div>
-                                  <p class="success"> <?php echo $success;  ?></p>
-                                  <p class="failed"> <?php echo $failed;  ?></p>
+                                <p class="success">
+                                  <!-- <?php echo $success;  ?></p> -->
+                                </p>
+
+                                <p class="failed">
+                                  <!-- <?php echo $failed;  ?></p> -->
+                                </p>
                               </div>
+
                               <button
                                 type="submit"
                                 id="submit"
@@ -1394,5 +1400,3 @@
     <script src="js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-
-
