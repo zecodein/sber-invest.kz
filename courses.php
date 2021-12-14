@@ -1,3 +1,5 @@
+<?php include 'sentMail.php';?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -1252,9 +1254,14 @@
                           <div class="modal-footer">
                             <div class="container">
                               <div class="mt-1 text-center" id="feedback"></div>
+                              <div>
+                                  <p class="success"> <?php echo $success;  ?></p>
+                                  <p class="failed"> <?php echo $failed;  ?></p>
+                              </div>
                               <button
                                 type="submit"
                                 id="submit"
+                                name="submit"
                                 class="btn btn-success my-3 w-100"
                               >
                                 Отправить заявку
