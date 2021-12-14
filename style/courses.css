@@ -19,6 +19,15 @@
   display: block;
 }
 
+
+.sberInv {
+  font-size: 15px
+}
+
+.ZakazUsl {
+
+}
+
 @media (min-width: 768px) {
   .minPacket {
     height: 100%;
@@ -31,8 +40,32 @@
   }
 }
 
+
 @media (min-width: 766px) and (max-width: 992px) {
   .ZakazUsl {
     font-size: 15px;
+  }
+}
+
+
+
+@media (max-width: 400px) {
+  .fullbody {
+    width: 100%;
+  }
+  .kurs {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sberInv {
+    width: 120px;
+  }
+}
+
+@media (min-width: 576px) {
+  .sberInv {
+    font-size: 19px;
   }
 }

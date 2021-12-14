@@ -305,7 +305,7 @@ $("#form").submit(function (event) {
     if (!checkInputs()) {
       formSuccess = false;
       $("#feedback").html(
-        '<label class="text-danger">Заполните  ff поля корректно</label>'
+        '<label class="text-danger">Заполните поля корректно</label>'
       );
     }
 
