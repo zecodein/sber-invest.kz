@@ -277,14 +277,14 @@ $("#form").submit(function (event) {
       ) {
         formSuccess = false;
         $("#feedback").html(
-          '<label class="text-danger">Заполните поля корректно</label>'
+          '<label  style=" border-radius: 1em; padding:10px;border: solid red 2px" class="text-danger text-center">Заполните поля корректно</label>'
         );
       }
     });
     if (!checkInputs()) {
       formSuccess = false;
       $("#feedback").html(
-        '<label class="text-danger">Заполните поля корректно</label>'
+        '<label  style=" border-radius: 1em; padding:10px;border: solid red 2px" class="text-danger text-center">Заполните поля корректно</label>'
       );
     }
 
@@ -303,13 +303,13 @@ $("#form").submit(function (event) {
         success: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on success");
           $("#feedback").html(
-            '<label class="text-success">Форма заполнена! На ваш почтовый ящик отправлено письмо с дальнейшими инструкциями!</label>'
+            '<label  style=" border-radius: 1em; padding:10px;border: solid green 2px" class="text-success text-center">Форма заполнена! На ваш почтовый ящик отправлено письмо с дальнейшими инструкциями!</label>'
           );
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on error");
           $("#feedback").html(
-            '<label class="text-success">Форма заполнена! На ваш почтовый ящик отправлено письмо с дальнейшими инструкциями!</label>'
+            '<label style=" border-radius: 1em; padding:10px;border: solid green 2px"  class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
           );
         },
       });

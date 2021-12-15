@@ -26,11 +26,14 @@ OformitZayav.addEventListener("click", function () {
 const VesKurs = document.getElementById("VesKurs");
 // Get the output text
 
+const PoryadokNal = document.getElementById("PoryadokNal");
 const LocalRynok = document.getElementById("LocalRynok");
 const ZaPredelami = document.getElementById("ZaPredelami");
 const VychetyISald = document.getElementById("VychetyISald");
-const Skidka = document.getElementById("Skidka");
+const Diagramma = document.getElementById("Diagramma");
 const ObrSvz = document.getElementById("ObrSvz");
+const Skidka = document.getElementById("Skidka");
+
 VesKurs.addEventListener("change", function () {
   if (this.checked) {
     LocalRynok.checked = "true";
@@ -43,12 +46,45 @@ VesKurs.addEventListener("change", function () {
     $("#ZaPredelami").prop("checked", false);
     $("#VychetyISald").prop("checked", false);
     $("#Skidka").prop("checked", false);
-    $("#ObrSvz").prop("checked", false);
+
     // LocalRynok.checked = "false";
     // ZaPredelami.checked = "false";
     // VychetyISald.checked = "false";
     // Skidka.checked = "false";
   }
+});
+
+const elements = document.querySelectorAll(".form-check-input");
+
+// adding the event listener by looping
+elements.forEach((element) => {
+  element.addEventListener("change", function () {
+    if (element.checked === false) {
+      $("#VesKurs").prop("checked", false);
+      $("#Skidka").prop("checked", false);
+    }
+
+    if (
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === true &&
+      ObrSvz.checked === true
+    ) {
+      $("#VesKurs").prop("checked", true);
+      $("#Skidka").prop("checked", true);
+    }
+
+    total_fee = totalFee();
+
+    if (VesKurs.checked) {
+      total_fee = $("#VesKurs").val();
+    }
+
+    console.log(total_fee);
+    // $("#feedback").html(total_fee);
+
+    $("#totalPrice").html(total_fee + " тг");
+  });
 });
 
 const form = document.getElementById("form");
@@ -73,6 +109,60 @@ form.addEventListener("submit", (e) => {
     // document.getElementById("form").submit();
   }
 });
+function totalFee() {
+  var PoryadokNal = document.getElementById("PoryadokNal");
+  var LocalRynok = document.getElementById("LocalRynok");
+  var ZaPredelami = document.getElementById("ZaPredelami");
+  var VychetyISald = document.getElementById("VychetyISald");
+  var Diagramma = document.getElementById("Diagramma");
+  var ObrSvz = document.getElementById("ObrSvz");
+  if (PoryadokNal.checked) {
+    var PoryadokNal_fee = $("#PoryadokNal").val();
+  } else {
+    var PoryadokNal_fee = 0;
+  }
+
+  if (LocalRynok.checked) {
+    var LocalRynok_fee = $("#LocalRynok").val();
+  } else {
+    var LocalRynok_fee = 0;
+  }
+
+  if (ZaPredelami.checked) {
+    var ZaPredelami_fee = $("#ZaPredelami").val();
+  } else {
+    var ZaPredelami_fee = 0;
+  }
+
+  if (VychetyISald.checked) {
+    var VychetyISald_fee = $("#VychetyISald").val();
+  } else {
+    var VychetyISald_fee = 0;
+  }
+
+  if (Diagramma.checked) {
+    var Diagramma_fee = $("#Diagramma").val();
+  } else {
+    var Diagramma_fee = 0;
+  }
+
+  if (ObrSvz.checked) {
+    var ObrSvz_fee = $("#ObrSvz").val();
+  } else {
+    var ObrSvz_fee = 0;
+  }
+
+  // alert(tuition_fee)
+  var total_fee =
+    parseInt(PoryadokNal_fee) +
+    parseInt(LocalRynok_fee) +
+    parseInt(ZaPredelami_fee) +
+    parseInt(VychetyISald_fee) +
+    parseInt(Diagramma_fee) +
+    parseInt(ObrSvz_fee);
+  return total_fee;
+}
+
 function checkInputs() {
   var sumbitForm = true;
 
@@ -281,6 +371,8 @@ $("#form").submit(function (event) {
       "entry.1214734007": $("#lastname_Pol").val(),
       "entry.637914283": $("#tel_Pol").val(),
       "entry.505551139": $("#email_Pol").val(),
+
+      "entry.1916921526": totalFee(),
     };
 
     // Validate form
@@ -297,7 +389,7 @@ $("#form").submit(function (event) {
       ) {
         formSuccess = false;
         $("#feedback").html(
-          '<label class="text-danger">Заполните поля корректно</label>'
+          '<label style=" border-radius: 1em; padding:10px;border: solid red 2px" class="text-danger text-center">Заполните поля корректно</label>'
         );
       }
     });
@@ -305,7 +397,7 @@ $("#form").submit(function (event) {
     if (!checkInputs()) {
       formSuccess = false;
       $("#feedback").html(
-        '<label class="text-danger">Заполните поля корректно</label>'
+        '<label style=" border-radius: 1em; padding:10px;border: solid red 2px" class="text-danger text-center">Заполните поля корректно</label>'
       );
     }
 
@@ -330,7 +422,7 @@ $("#form").submit(function (event) {
         error: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on error");
           $("#feedback").html(
-            '<label class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
+            '<label style=" border-radius: 1em; padding:10px;border: solid green 2px"  class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
           );
         },
       });
