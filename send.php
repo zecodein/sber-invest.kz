@@ -29,7 +29,7 @@ try {
     $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
 
     // Настройки вашей почты
-    $mail->Host       = 'smtp.sber-invest.kz'; // SMTP сервера вашей почты
+    $mail->Host       = 'mail.sber-invest.kz'; // SMTP сервера вашей почты
     $mail->Username   = 'ARepnikov'; // Логин на почте
      // Пароль на почте
     $mail->Password   = '0bA&t90w';
