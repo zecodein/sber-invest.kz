@@ -43,6 +43,7 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script src="js/send.js"></script>
     <link href="style/courses.css" rel="stylesheet" crossorigin="anonymous" />
   </head>
   <body>
@@ -884,7 +885,7 @@
                         ></button>
                       </div>
                       <div class="modal-body text-start">
-                        <form id="form" method="post">
+                        <form id="form" method="post" onsubmit="send(event, 'send.php')">
                           <div class="form-check form-switch">
                             <input
                               class="form-check-input"
