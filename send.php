@@ -29,11 +29,12 @@ try {
     $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
 
     // Настройки вашей почты
-    $mail->Host       = 'smtp.sber-invest.kz'; // SMTP сервера вашей почты
-    $mail->Username   = 'ARepnikov'; // Логин на почте
-    $mail->Password   = '417a974'; // Пароль на почте
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port       = 465;
+    $mail->Host       = 'mail.sber-invest.kz'; // SMTP сервера вашей почты
+    $mail->Username   = 'ARepnikov@sber-invest.kz'; // Логин на почте
+     // Пароль на почте
+    // $mail->Password   = '417a974';
+    $mail->SMTPSecure = 'no';
+    $mail->Port       = 25;
     $mail->setFrom('ARepnikov@sber-invest.kz', 'Alex Repnikov'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
