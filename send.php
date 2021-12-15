@@ -32,7 +32,7 @@ try {
     $mail->Host       = 'mail.sber-invest.kz'; // SMTP сервера вашей почты
     $mail->Username   = 'ARepnikov@sber-invest.kz'; // Логин на почте
      // Пароль на почте
-    // $mail->Password   = '417a974';
+    $mail->Password   = '0bA&t90w';
     $mail->SMTPSecure = 'no';
     $mail->Port       = 25;
     $mail->setFrom('ARepnikov@sber-invest.kz', 'Alex Repnikov'); // Адрес самой почты и имя отправителя
