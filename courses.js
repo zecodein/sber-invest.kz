@@ -292,140 +292,140 @@ function validatePhone(phoneNumber) {
 
 // AJAX GOOGLE FORM
 
-$("#form").submit(function (event) {
-  event.preventDefault();
-  $("#feedback").html("");
-  setTimeout(function () {
-    var VesKurs = "Нет";
-    var Vstuplenie = "Нет";
-    var ProgrammaKursa = "Нет";
-    var PoryadokNal = "Нет";
-    var LocalRynok = "Нет";
-    var ZaPredelami = "Нет";
-    var VychetyISald = "Нет";
-    var Diagramma = "Нет";
-    var PodgRaschet = "Нет";
-    var Skidka = "Нет";
-    var Podarok = "Нет";
-    var ObrSvz = "Нет";
+// $("#form").submit(function (event) {
+//   event.preventDefault();
+//   $("#feedback").html("");
+//   setTimeout(function () {
+//     var VesKurs = "Нет";
+//     var Vstuplenie = "Нет";
+//     var ProgrammaKursa = "Нет";
+//     var PoryadokNal = "Нет";
+//     var LocalRynok = "Нет";
+//     var ZaPredelami = "Нет";
+//     var VychetyISald = "Нет";
+//     var Diagramma = "Нет";
+//     var PodgRaschet = "Нет";
+//     var Skidka = "Нет";
+//     var Podarok = "Нет";
+//     var ObrSvz = "Нет";
 
-    if ($("#VesKurs").is(":checked")) {
-      VesKurs = "Да";
-    }
-    if ($("#Vstuplenie").is(":checked")) {
-      Vstuplenie = "Да";
-    }
-    if ($("#ProgrammaKursa").is(":checked")) {
-      ProgrammaKursa = "Да";
-    }
-    if ($("#PoryadokNal").is(":checked")) {
-      PoryadokNal = "Да";
-    }
-    if ($("#LocalRynok").is(":checked")) {
-      LocalRynok = "Да";
-    }
-    if ($("#ZaPredelami").is(":checked")) {
-      ZaPredelami = "Да";
-    }
-    if ($("#VychetyISald").is(":checked")) {
-      VychetyISald = "Да";
-    }
-    if ($("#Diagramma").is(":checked")) {
-      Diagramma = "Да";
-    }
-    if ($("#PodgRaschet").is(":checked")) {
-      PodgRaschet = "Да";
-    }
-    if ($("#Skidka").is(":checked")) {
-      Skidka = "Да";
-    }
-    if ($("#Podarok").is(":checked")) {
-      Podarok = "Да";
-    }
-    if ($("#ObrSvz").is(":checked")) {
-      ObrSvz = "Да";
-    }
-    // Get data
-    var data = {
-      "entry.312643852": VesKurs,
-      "entry.1900210667": Vstuplenie,
-      "entry.445182499": ProgrammaKursa,
-      "entry.110349566": PoryadokNal,
-      "entry.1270709721": LocalRynok,
-      "entry.1985937576": ZaPredelami,
-      "entry.470403761": VychetyISald,
-      "entry.770136661": Diagramma,
-      "entry.1084585482": PodgRaschet,
-      "entry.889249229": ObrSvz,
-      "entry.973358631": Skidka,
-      "entry.785559364": Podarok,
+//     if ($("#VesKurs").is(":checked")) {
+//       VesKurs = "Да";
+//     }
+//     if ($("#Vstuplenie").is(":checked")) {
+//       Vstuplenie = "Да";
+//     }
+//     if ($("#ProgrammaKursa").is(":checked")) {
+//       ProgrammaKursa = "Да";
+//     }
+//     if ($("#PoryadokNal").is(":checked")) {
+//       PoryadokNal = "Да";
+//     }
+//     if ($("#LocalRynok").is(":checked")) {
+//       LocalRynok = "Да";
+//     }
+//     if ($("#ZaPredelami").is(":checked")) {
+//       ZaPredelami = "Да";
+//     }
+//     if ($("#VychetyISald").is(":checked")) {
+//       VychetyISald = "Да";
+//     }
+//     if ($("#Diagramma").is(":checked")) {
+//       Diagramma = "Да";
+//     }
+//     if ($("#PodgRaschet").is(":checked")) {
+//       PodgRaschet = "Да";
+//     }
+//     if ($("#Skidka").is(":checked")) {
+//       Skidka = "Да";
+//     }
+//     if ($("#Podarok").is(":checked")) {
+//       Podarok = "Да";
+//     }
+//     if ($("#ObrSvz").is(":checked")) {
+//       ObrSvz = "Да";
+//     }
+//     // Get data
+//     var data = {
+//       "entry.312643852": VesKurs,
+//       "entry.1900210667": Vstuplenie,
+//       "entry.445182499": ProgrammaKursa,
+//       "entry.110349566": PoryadokNal,
+//       "entry.1270709721": LocalRynok,
+//       "entry.1985937576": ZaPredelami,
+//       "entry.470403761": VychetyISald,
+//       "entry.770136661": Diagramma,
+//       "entry.1084585482": PodgRaschet,
+//       "entry.889249229": ObrSvz,
+//       "entry.973358631": Skidka,
+//       "entry.785559364": Podarok,
 
-      "entry.1132072097": $("#surname").val(),
-      "entry.1308261533": $("#name").val(),
-      "entry.210657771": $("#lastname").val(),
-      "entry.1965831746": $("#tel").val(),
-      "entry.2121781874": $("#email").val(),
+//       "entry.1132072097": $("#surname").val(),
+//       "entry.1308261533": $("#name").val(),
+//       "entry.210657771": $("#lastname").val(),
+//       "entry.1965831746": $("#tel").val(),
+//       "entry.2121781874": $("#email").val(),
 
-      "entry.2085742647": $("#surname_Pol").val(),
-      "entry.802595060": $("#name_Pol").val(),
-      "entry.1214734007": $("#lastname_Pol").val(),
-      "entry.637914283": $("#tel_Pol").val(),
-      "entry.505551139": $("#email_Pol").val(),
+//       "entry.2085742647": $("#surname_Pol").val(),
+//       "entry.802595060": $("#name_Pol").val(),
+//       "entry.1214734007": $("#lastname_Pol").val(),
+//       "entry.637914283": $("#tel_Pol").val(),
+//       "entry.505551139": $("#email_Pol").val(),
 
-      "entry.1916921526": totalFee(),
-    };
+//       "entry.1916921526": totalFee(),
+//     };
 
-    // Validate form
-    var formSuccess = true;
-    Object.keys(data).forEach(function (key, index) {
-      if (
-        !data[key] &&
-        key != "entry.210657771" &&
-        key != "entry.2085742647" &&
-        key != "entry.802595060" &&
-        key != "entry.1214734007" &&
-        key != "entry.637914283" &&
-        key != "entry.505551139"
-      ) {
-        formSuccess = false;
-        $("#feedback").html(
-          '<label style=" border-radius: 1em; padding:10px;border: solid red 2px" class="text-danger text-center">Заполните поля корректно</label>'
-        );
-      }
-    });
+//     // Validate form
+//     var formSuccess = true;
+//     Object.keys(data).forEach(function (key, index) {
+//       if (
+//         !data[key] &&
+//         key != "entry.210657771" &&
+//         key != "entry.2085742647" &&
+//         key != "entry.802595060" &&
+//         key != "entry.1214734007" &&
+//         key != "entry.637914283" &&
+//         key != "entry.505551139"
+//       ) {
+//         formSuccess = false;
+//         $("#feedback").html(
+//           '<label style=" border-radius: 1em; padding:10px;border: solid red 2px" class="text-danger text-center">Заполните поля корректно</label>'
+//         );
+//       }
+//     });
 
-    if (!checkInputs()) {
-      formSuccess = false;
-      $("#feedback").html(
-        '<label style=" border-radius: 1em; padding:10px;border: solid red 2px" class="text-danger text-center">Заполните поля корректно</label>'
-      );
-    }
+//     if (!checkInputs()) {
+//       formSuccess = false;
+//       $("#feedback").html(
+//         '<label style=" border-radius: 1em; padding:10px;border: solid red 2px" class="text-danger text-center">Заполните поля корректно</label>'
+//       );
+//     }
 
-    if (formSuccess) {
-      document.getElementById("submit").disabled = true;
-      // Send request
-      $.ajax({
-        // url: 'https://docs.google.com/forms/d/e/1FAIpQLSdnW7ixrovoi7V7sJQihWouPztZL4GoRMAP5SpoVh2UfMhxOQ/formResponse',
+//     if (formSuccess) {
+//       document.getElementById("submit").disabled = true;
+//       // Send request
+//       $.ajax({
+//         // url: 'https://docs.google.com/forms/d/e/1FAIpQLSdnW7ixrovoi7V7sJQihWouPztZL4GoRMAP5SpoVh2UfMhxOQ/formResponse',
 
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSdXEosfgyMNreIXx66UP-L5ZaRPKSqt8DObJRLEaFQKjYt5cw/formResponse",
-        // url: 'https://docs.google.com/forms/d/1WrqRqGKkbmaoLWeJjN4JcxfkJzbu7lfNsBDGOAE_hhM/edit',
-        type: "POST",
-        crossDomain: true,
-        dataType: "xml",
-        data: data,
-        success: function (jqXHR, textStatus, errorThrown) {
-          console.log("Enter on success");
-          $("#feedback").html(
-            '<label class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
-          );
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-          console.log("Enter on error");
-          $("#feedback").html(
-            '<label style=" border-radius: 1em; padding:10px;border: solid green 2px"  class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
-          );
-        },
-      });
-    }
-  }, 300);
-});
+//         url: "https://docs.google.com/forms/d/e/1FAIpQLSdXEosfgyMNreIXx66UP-L5ZaRPKSqt8DObJRLEaFQKjYt5cw/formResponse",
+//         // url: 'https://docs.google.com/forms/d/1WrqRqGKkbmaoLWeJjN4JcxfkJzbu7lfNsBDGOAE_hhM/edit',
+//         type: "POST",
+//         crossDomain: true,
+//         dataType: "xml",
+//         data: data,
+//         success: function (jqXHR, textStatus, errorThrown) {
+//           console.log("Enter on success");
+//           $("#feedback").html(
+//             '<label class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
+//           );
+//         },
+//         error: function (jqXHR, textStatus, errorThrown) {
+//           console.log("Enter on error");
+//           $("#feedback").html(
+//             '<label style=" border-radius: 1em; padding:10px;border: solid green 2px"  class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
+//           );
+//         },
+//       });
+//     }
+//   }, 300);
+// });

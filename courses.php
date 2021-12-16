@@ -1,4 +1,4 @@
-<?php include 'send0.php';?>
+<?php include 'sentMail.php';?>
 
 <!DOCTYPE html>
 <html lang="en">
