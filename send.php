@@ -33,7 +33,7 @@ try {
     $mail->Username   = 'ARepnikov'; // Логин на почте
      // Пароль на почте
     $mail->Password   = '0bA&t90w';
-    $mail->SMTPSecure = 'yes';
+    $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
     $mail->setFrom('ARepnikov@sber-invest.kz', 'Alex Repnikov'); // Адрес самой почты и имя отправителя
 
