@@ -30,7 +30,7 @@ try {
 
     // Настройки вашей почты
     $mail->Host       = 'mail.sber-invest.kz'; // SMTP сервера вашей почты
-    $mail->Username   = 'ARepnikov'; // Логин на почте
+    $mail->Username   = 'ARepnikov@sber-invest.kz'; // Логин на почте
      // Пароль на почте
     $mail->Password   = '0bA&t90w';
     $mail->SMTPSecure = 'ssl';
@@ -39,7 +39,7 @@ try {
 
     // Получатель письма
     $mail->addAddress('s-bek-k@mail.ru');  
-    // $mail->addAddress('youremail@yandex.ru');
+    $mail->addAddress('$email');
     // Ещё один, если нужен
     // $mail->addAddress('youremail@gmail.com'); 
 
