@@ -884,7 +884,8 @@
                         ></button>
                       </div>
                       <div class="modal-body text-start">
-                        <form id="form" method="post" onsubmit="send(event, 'send0.php')">
+                      <!-- onsubmit="send(event, 'send0.php')" -->
+                        <form id="form" method="post" >
                           <div class="form-check form-switch">
                             <input
                               class="form-check-input"
