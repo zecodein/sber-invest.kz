@@ -33,13 +33,13 @@ try {
     $mail->Username   = 'ARepnikov@sber-invest.kz'; // Логин на почте
      // Пароль на почте
     $mail->Password   = '0bA&t90w';
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port       = 465;
+    $mail->SMTPSecure = 'no';
+    $mail->Port       = 25;
     $mail->setFrom('ARepnikov@sber-invest.kz', 'Alex Repnikov'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
     $mail->addAddress('s-bek-k@mail.ru');  
-    $mail->addAddress('$email');
+    $mail->addAddress($email);
     // Ещё один, если нужен
     // $mail->addAddress('youremail@gmail.com'); 
 
