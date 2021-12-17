@@ -884,7 +884,7 @@
                         ></button>
                       </div>
                       <div class="modal-body text-start">
-                        <form id="form" method="post" onsubmit="/send0.php" >
+                        <form id="form" method="post" >
                           <div class="form-check form-switch">
                             <input
                               class="form-check-input"
@@ -1162,7 +1162,7 @@
                                   <input
                                     id="tel"
                                     type="tel"
-                                    name="mobile"
+                                    name="tel"
                                     class="form-control"
                                     pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                     value="+7"
