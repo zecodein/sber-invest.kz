@@ -14,9 +14,10 @@ if(isset($_POST['submit'])) {
     . "Phone Number: " . $phone . "\n\n";
     
  //Message for client confirmation
-    $message2 = "Уважаемый " . $name . "\n\n"
-    . "Спасибо за обращение! Мы свяжемся с вами в ближайщее время!  подтверждением заявки и запрос необходимых для подготовки расчета и заполнения декларации документов. " . "\n\n"
-    . "С уважением," . "\n" . "SberInvest";
+   $message2 = "Уважаемый " . $name . "\n\n"
+   . "Спасибо за обращение! Мы свяжемся с вами в ближайщее время!" . "\n\n"
+   . "Вы обратились со следующим запросом: " . "\n\n"
+   . "С уважением," . "\n" . "sber-invest";
     
  //Email headers
  $headers = "From: " . $mailto; // Client email, I will receive (optionally, can be client email)
