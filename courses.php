@@ -884,7 +884,7 @@
                         ></button>
                       </div>
                       <div class="modal-body text-start">
-                        <form id="form" method="post" >
+                        <form id="form" method="post" action="">
                           <div class="form-check form-switch">
                             <input
                               class="form-check-input"
@@ -1470,7 +1470,7 @@
       </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <!-- <script src="courses.js"></script> -->
     <script src="js/bootstrap.bundle.min.js"></script>
   </body>
