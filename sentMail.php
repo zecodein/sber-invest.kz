@@ -31,8 +31,12 @@ if(isset($_POST['submit'])) {
     
     if ($result1 && $result2) {
     $success = "Ваше запрос был отправлен успешно!";
-    } else {
-    $failed = "Извините! Ваш запрос не был отправлен, проверьте данные и попробуйте отправить снова.";
+    } else if (!$result1 && !$result2) {
+    $failed = "Извините! result1 and result2 failed";
+    } else if (!$result1) {
+    $failed = "Извините! result1 failed";
+    } else if (!$result2) {
+    $failed = "Извините! result2 failed";
     }
     
 }
