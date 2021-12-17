@@ -1181,10 +1181,10 @@
                                 <div class="card-body form-control">
                                   <input
                                     id="email"
-                                    type="text"
+                                    type="email"
                                     name="email"
                                     class="form-control"
-                                    placeholder="e-mail"
+                                    placeholder="name@example.com"
                                   />
                                   <small>Error Message</small>
                                 </div>
