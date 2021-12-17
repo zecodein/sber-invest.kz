@@ -1331,11 +1331,11 @@
                               <div class="mt-1 text-center" id="feedback"></div>
                               <div>
                                 <p class="success">
-                                  <!-- <?php echo $success;  ?></p> -->
+                                  <?php echo $success;  ?></p>
                                 </p>
 
                                 <p class="failed">
-                                  <!-- <?php echo $failed;  ?></p> -->
+                                  <?php echo $failed;  ?></p>
                                 </p>
                               </div>
 
