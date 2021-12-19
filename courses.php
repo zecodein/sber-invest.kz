@@ -1,5 +1,5 @@
 <?php 
-if(isset($_POST['submit'])) {
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
  $mailto = "info@sber-invest.kz";  //My email address
  //getting customer data
  $name = $_POST['name']; //getting customer name
