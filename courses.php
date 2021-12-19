@@ -1582,16 +1582,6 @@ elements.forEach((element) => {
       $("#Skidka").prop("checked", false);
     }
 
-    if (
-      LocalRynok.checked === true &&
-      ZaPredelami.checked === true &&
-      VychetyISald.checked === true &&
-      ObrSvz.checked === true
-    ) {
-      $("#VesKurs").prop("checked", true);
-      $("#Skidka").prop("checked", true);
-    }
-
     total_fee = totalFee();
 
     if (VesKurs.checked) {
