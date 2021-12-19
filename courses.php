@@ -884,45 +884,481 @@
                         ></button>
                       </div>
                       <div class="modal-body text-start">
-                      <form action="" method="post" class="needs-validation">
-<div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Ваше Имя*</label>
-            <input type="text" class="form-control"  name="name" required id="exampleFormControlInput1" placeholder="Иван Иванов">
-            <div class="invalid-tooltip">
-              Введите свое имя.
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Номер телефона*</label>
-            <input type="tel" pattern="[8]{1}[0-9]{10}" required name="tel" class="form-control" id="exampleFormControlInput1" size="11" placeholder="8 (777) 123 4567">
-            <div class="invalid-tooltip">
-              Номер не заполнен.
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Электронная почта</label>
-            <input type="email" required name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div>
+                        <form id="form" method="post" action="" class="needs-validation">
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="VesKurs"
+                              value="80000"
+                              checked
+                            />
+                            <label class="form-check-label w-75" for="VesKurs"
+                              >Налоги Инвестора в Казахстане. Весь курс целиком </label
+                            ><span class="text-end" style="float: right"
+                              >80 000 тг</span
+                            >
+                          </div>
+                          <p class="mt-3">
+                            или выбрать только интересующие вас темы:
+                          </p>
+                          <!-- <hr class="my-1" /> -->
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="Vstuplenie"
+                              value="Yes"
+                              checked
+                              disabled
+                            />
+                            <label
+                              class="form-check-label w-75"
+                              for="Vstuplenie"
+                              >Вступление к курсу «Налоги инвестора в
+                              Казахстане»</label
+                            >
+                          </div>
+                          <hr class="my-1" />
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="ProgrammaKursa"
+                              value="Yes"
+                              checked
+                              disabled
+                            />
+                            <label
+                              class="form-check-label w-75"
+                              for="ProgrammaKursa"
+                              >Программа курса «Налоги инвестора в
+                              Казахстане»</label
+                            >
+                          </div>
+                          <hr class="my-1" />
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="PoryadokNal"
+                              value="10000"
+                              checked
+                              disabled
+                            />
+                            <label
+                              class="form-check-label w-75"
+                              for="PoryadokNal"
+                              >Порядок налогообложения физических лиц в
+                              РК</label
+                            ><span class="text-end" style="float: right"
+                              >10 000 тг</span
+                            >
+                          </div>
+                          <hr class="my-1" />
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="LocalRynok"
+                              value="10000"
+                              checked
+                            />
+                            <label
+                              class="form-check-label w-75"
+                              for="LocalRynok"
+                              >Налогообложение доходов на локальных
+                              рынках</label
+                            ><span class="text-end" style="float: right"
+                              >10 000 тг</span
+                            >
+                          </div>
+                          <hr class="my-1" />
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="ZaPredelami"
+                              value="10000"
+                              checked
+                            />
+                            <label
+                              class="form-check-label w-75"
+                              for="ZaPredelami"
+                              >Налогообложение доходов за пределами РК</label
+                            ><span class="text-end" style="float: right"
+                              >10 000 тг</span
+                            >
+                          </div>
+                          <hr class="my-1" />
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="VychetyISald"
+                              value="10000"
+                              checked
+                            />
+                            <label
+                              class="form-check-label w-75"
+                              for="VychetyISald"
+                              >Налоговые вычеты и сальдирование</label
+                            ><span class="text-end" style="float: right"
+                              >10 000 тг</span
+                            >
+                          </div>
+                          <hr class="my-1" />
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="Diagramma"
+                              value="10000"
+                              checked
+                              disabled
+                            />
+                            <label class="form-check-label w-75" for="Diagramma"
+                              >Диаграмма налогообложения активов</label
+                            ><span class="text-end" style="float: right"
+                              >10 000 тг</span
+                            >
+                          </div>
+                          <hr class="my-1" />
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="PodgRaschet"
+                              value="Yes"
+                              checked
+                              disabled
+                            />
+                            <label
+                              class="form-check-label w-75"
+                              for="PodgRaschet"
+                              >Подготовка расчета & Заполнение декларации</label
+                            >
+                          </div>
+                          <hr class="my-1" />
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="ObrSvz"
+                              value="20000"
+                              checked
+                            />
+                            <label class="form-check-label w-75" for="ObrSvz"
+                              >Обратная связь и чат учеников в течении 2-х
+                              месяцев</label
+                            ><span class="text-end" style="float: right"
+                              >20 000 тг</span
+                            >
+                          </div>
+                          <hr class="my-1" />
 
-          <select class="form-select mb-3"  name="subject" aria-label="Default select example">
-            <option selected>Выберите категорию</option>
-            <option value="1">Веб-сайт</option>
-            <option value="2">Программное обеспечение и веб-сервисы</option>
-            <option value="3">Мобильные приложения</option>
-          </select>
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="Skidka"
+                              value="10"
+                              checked
+                              disabled
+                            />
+                            <label class="form-check-label w-75" for="Skidka"
+                              >Скидка 10% на услугу
+                              <a href="/form240.html"
+                                >«Подготовка декларации (форма 240)»</a
+                              ></label
+                            ><span class="text-end" style="float: right"
+                              >-10%</span
+                            >
+                          </div>
 
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Комментарии</label>
-            <textarea class="form-control" name="message" id="exampleFormControlTextarea1" placeholder="Расскажите нам о своем запросе" rows="3"></textarea>
-          </div>
-          <div>
-            <p class="success"> <?php echo $success;  ?></p>
-            <p class="failed"> <?php echo $failed;  ?></p>
-          </div>
-          <div class="mb-3">
-            <button class="btn btn-primary" type="submit" name="submit">Связаться</button>
-          </div>
-</form>
+                          <br />
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="Podarok"
+                            />
+                            <label class="form-check-label w-75" for="Podarok"
+                              >Оформить подарочный сертификат</label
+                            >
+                          </div>
+                          <br />
+                          <div class="form-check form-switch">
+                            <label class="form-check-label w-75">Итого:</label
+                            ><span
+                              id="totalPrice"
+                              class="text-end"
+                              style="float: right"
+                            ></span>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-12 col-lg-6">
+                              <div class="card">
+                                <div class="card-header">
+                                  <h5 class="card-title mb-0">
+                                    <span class="text-danger">*</span> Фамилия
+                                  </h5>
+                                </div>
+                                <div class="card-body form-control">
+                                  <input
+                                    id="surname"
+                                    type="text"
+                                    required
+                                    name="surname"
+                                    class="form-control"
+                                    placeholder="Фамилия"
+                                  />
+                                  <small>Error Message</small>
+                                </div>
+                              </div>
+
+                              <div class="card">
+                                <div class="card-header">
+                                  <h5 class="card-title mb-0">
+                                    <span class="text-danger">*</span> Имя
+                                  </h5>
+                                </div>
+                                <div class="card-body form-control">
+                                  <input
+                                    type="text"
+                                    id="name"
+                                    required
+                                    name="name"
+                                    class="form-control"
+                                    placeholder="Имя"
+                                  />
+                                  <small>Error Message</small>
+                                </div>
+                              </div>
+
+                              <div class="card">
+                                <div class="card-header">
+                                  <h5 class="card-title mb-0">Отчество</h5>
+                                </div>
+                                <div class="card-body">
+                                  <input
+                                    id="lastname"
+                                    type="text"
+                                    name="patronomic"
+                                    class="form-control"
+                                    placeholder="Отчество"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                              <div class="card">
+                                <div class="card-header">
+                                  <h5 class="card-title mb-0">
+                                    <span class="text-danger">*</span> Телефон
+                                    для связи (сотовый)
+                                  </h5>
+                                </div>
+                                <div class="card-body form-control">
+                                  <input
+                                    id="tel"
+                                    type="tel"
+                                    required
+                                    name="tel"
+                                    class="form-control"
+                                    pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    value="+7"
+                                  />
+                                  <small>Error Message</small>
+                                </div>
+                              </div>
+
+                              <div class="card">
+                                <div class="card-header">
+                                  <h5 class="card-title mb-0">
+                                    <span class="text-danger">*</span>
+                                    Электроная почта
+                                  </h5>
+                                </div>
+                                <div class="card-body form-control">
+                                  <input
+                                    id="email"
+                                    type="email"
+                                    required
+                                    name="email"
+                                    class="form-control"
+                                    placeholder="name@example.com"
+                                  />
+                                  <small>Error Message</small>
+                                </div>
+                              </div>
+                            </div>
+
+                            <br />
+
+                            <div
+                              class="container px-0"
+                              id="PodarochniySertif"
+                              style="display: none"
+                            >
+                              <div class="card mt-3">
+                                <div class="card-header">
+                                  <h5 class="card-title mb-0">
+                                    Получатель подарочного сертификата
+                                  </h5>
+                                  <br />
+                                  <div class="row">
+                                    <div class="col-12 col-lg-6">
+                                      <div class="card">
+                                        <div class="card-header">
+                                          <h5 class="card-title mb-0">
+                                            <span class="text-danger">*</span>
+                                            Фамилия
+                                          </h5>
+                                        </div>
+                                        <div class="card-body form-control">
+                                          <input
+                                            id="surname_Pol"
+                                            type="text"
+                                            name="surname_Pol"
+                                            class="form-control"
+                                            placeholder="Фамилия"
+                                          />
+                                          <small>Error Message</small>
+                                        </div>
+                                      </div>
+
+                                      <div class="card">
+                                        <div class="card-header">
+                                          <h5 class="card-title mb-0">
+                                            <span class="text-danger">*</span>
+                                            Имя
+                                          </h5>
+                                        </div>
+                                        <div class="card-body form-control">
+                                          <input
+                                            type="text"
+                                            id="name_Pol"
+                                            name="name_Pol"
+                                            class="form-control"
+                                            placeholder="Имя"
+                                          />
+                                          <small>Error Message</small>
+                                        </div>
+                                      </div>
+
+                                      <div class="card">
+                                        <div class="card-header">
+                                          <h5 class="card-title mb-0">
+                                            Отчество
+                                          </h5>
+                                        </div>
+                                        <div class="card-body">
+                                          <input
+                                            id="lastname_Pol"
+                                            type="text"
+                                            name="lastname_Pol"
+                                            class="form-control"
+                                            placeholder="Отчество"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                      <div class="card">
+                                        <div class="card-header">
+                                          <h5 class="card-title mb-0">
+                                            <span class="text-danger">*</span>
+                                            Телефон для связи (сотовый)
+                                          </h5>
+                                        </div>
+                                        <div class="card-body form-control">
+                                          <input
+                                            id="tel_Pol"
+                                            type="tel"
+                                            name="tel_Pol"
+                                            class="form-control"
+                                            pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                            value="+7"
+                                          />
+                                          <small>Error Message</small>
+                                        </div>
+                                      </div>
+
+                                      <div class="card">
+                                        <div class="card-header">
+                                          <h5 class="card-title mb-0">
+                                            <span class="text-danger">*</span>
+                                            Электроная почта
+                                          </h5>
+                                        </div>
+                                        <div class="card-body form-control">
+                                          <input
+                                            id="email_Pol"
+                                            type="email"
+                                            name="email_Pol"
+                                            class="form-control"
+                                            placeholder="e-mail"
+                                          />
+                                          <small>Error Message</small>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <br />
+                          <div class="" style="display: flex">
+                            <input
+                              id="PolitikaKonf"
+                              class="m-1"
+                              type="checkbox"
+                              value=""
+                            />
+                            <label
+                              required
+                              class="form-check-label ms-2"
+                              for="flexCheckDefault"
+                              >«С политикой конфиденциальности и договором
+                              оказания услуг (договор - оферта) ознакомлен. С
+                              правилами оказания услуг согласен»
+                            </label>
+
+                            <br />
+                          </div>
+                          <div class="modal-footer">
+                            <div class="container">
+                              <div class="mt-1 text-center" id="feedback"></div>
+                              <div>
+                                <p class="success">
+                                  <?php echo $success;  ?></p>
+                                </p>
+
+                                <p class="failed">
+                                  <?php echo $failed;  ?></p>
+                                </p>
+                              </div>
+
+                              <button
+                                type="submit"
+                                id="submit"
+                                name="submit"
+                                class="btn btn-success my-3 w-100"
+                              >
+                                Отправить заявку
+                              </button>
+                            </div>
+                            <div class="container">
+                              <span class="text-danger">*</span> Нажимая на
+                              кнопку, вы соглашаетесь на обработку персональных
+                              данных.
+                            </div>
+                          </div>
+                        </form>
                       </div>
                     </div>
                   </div>
