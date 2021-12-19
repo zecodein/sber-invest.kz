@@ -1,4 +1,3 @@
-// Get the checkbox
 var checkBox = document.getElementById("Podarok");
 // Get the output text
 var PodarochniySertif = document.getElementById("PodarochniySertif");
@@ -62,16 +61,6 @@ elements.forEach((element) => {
     if (element.checked === false) {
       $("#VesKurs").prop("checked", false);
       $("#Skidka").prop("checked", false);
-    }
-
-    if (
-      LocalRynok.checked === true &&
-      ZaPredelami.checked === true &&
-      VychetyISald.checked === true &&
-      ObrSvz.checked === true
-    ) {
-      $("#VesKurs").prop("checked", true);
-      $("#Skidka").prop("checked", true);
     }
 
     total_fee = totalFee();
