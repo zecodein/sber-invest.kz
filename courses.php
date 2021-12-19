@@ -38,7 +38,8 @@ if(isset($_POST['submit'])) {
     } else if (!$result2) {
     $failed = "Извините! result2 failed";
     }
-    ?>
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
