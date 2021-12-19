@@ -884,7 +884,7 @@
                         ></button>
                       </div>
                       <div class="modal-body text-start">
-                        <form id="form" method="post" action="" class="needs-validation">
+                        <form id="form" method="post" class="needs-validation">
                           <div class="form-check form-switch">
                             <input
                               class="form-check-input"
