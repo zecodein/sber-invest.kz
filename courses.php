@@ -1,4 +1,48 @@
-
+<?php  
+    
+if(isset($_POST['submit'])) {
+ $mailto = "info@sber-invest.kz";  //My email address
+ //getting customer data
+ $name = $_POST['name']; //getting customer name
+ $fromEmail = $_POST['email']; //getting customer email
+ $phone = $_POST['tel']; //getting customer Phome number
+ $subject = $_POST['surname']; //getting subject line from client
+ $subject2 = "Подтверждение: Ваш запрос был отправлен успешно!"; // For customer confirmation
+    
+ //Email body I will receive
+    $message = "Cleint Name: " . $name . "\n"
+    . "Phone Number: " . $phone . "\n\n";
+    
+ //Message for client confirmation
+   $message2 = "Уважаемый " . $name . "\n\n"
+   . "Спасибо за обращение! Мы свяжемся с вами в ближайщее время!" . "\n\n"
+   . "Вы обратились со следующим запросом: " . "\n\n"
+   . "С уважением," . "\n" . "sber-invest";
+    
+ //Email headers
+ $headers = "From: " . $mailto; // Client email, I will receive (optionally, can be client email)
+ $headers2 = "From: " . $mailto; // This will receive client 
+    
+ //PHP mailer function
+    
+  $result1 = mail($mailto, $subject, $message, $headers); // This email sent to My address
+  $result2 = mail($fromEmail, $subject2, $message2, $headers2); //This confirmation email to client
+    
+  //Checking if Mails sent successfully
+    
+    if ($result1 && $result2) {
+    $success = "Ваше запрос был отправлен успешно!";
+    } else if (!$result1 && !$result2) {
+    $failed = "Извините! result1 and result2 failed";
+    } else if (!$result1) {
+    $failed = "Извините! result1 failed";
+    } else if (!$result2) {
+    $failed = "Извините! result2 failed";
+    }
+    
+}
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,6 +54,7 @@
       rel="stylesheet"
       crossorigin="anonymous"
     />
+    <link rel="icon" type="image/x-icon" href="style/img/favicon.ico" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
@@ -288,7 +333,6 @@
                 </div>
               </div>
               <div class="col-12 col-lg-2 ps-0">
-                <div class="h1 text-center">+</div>
               </div>
             </div>
           </div>
@@ -325,7 +369,6 @@
                 </div>
               </div>
               <div class="col-12 col-lg-2 ps-0">
-                <div class="h1 text-center">+</div>
               </div>
             </div>
           </div>
@@ -665,7 +708,7 @@
         <br />
         <br />
         <div class="container text-end my-2">
-          <button class="btn btn-secondary text-start">
+          <button class="btn btn-secondary text-start" disabled>
             Скачать Силлабус курса «Налоги инвестора в Казахстане» полностью
           </button>
         </div>
@@ -801,7 +844,7 @@
     <section>
       <div class="container">
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-          <h1 class="display-4 fw-normal">Стоимость</h1>
+          <strong class="display-4 fw-normal">Стоимость</strong>
           <p class="fs-5 text-muted"></p>
         </div>
 
@@ -810,7 +853,7 @@
             <div class="card mb-4 rounded-3 shadow-sm border-dark minPacket">
               <div class="card-header py-2 text-white bg-dark border-dark">
                 <h4 class="my-0 fw-normal">
-                  Курс Общий порядок налогообложения
+                  Расчет суммы налога и заполнение декларации (ФНО 240)
                 </h4>
                 <!-- <hr class="my-2"/><h4 class="my-0 fw-normal py-0">Налоговая декларация</h4> -->
               </div>
@@ -818,7 +861,7 @@
                 <div class="list-group-flush mt-3 mb-4 text-start">
                   <div class="text-center">
                     Видео-инструкции как самостоятельно подготовить расчет и
-                    подать декларацию (практическая часть) находится в общем
+                    подать декларацию (практическая часть курса) находится в общем
                     доступе на нашем YouTube канале и доступны бесплатно.
                   </div>
                 </div>
@@ -838,7 +881,7 @@
                 class="card-header py-2 text-white bg-warning border-warning"
               >
                 <h4 class="my-0 fw-normal">
-                  Налоги инвестора. Весь цикл курсов
+                  Весь курс “Налоги инвестора в Казахстане”
                 </h4>
                 <!-- <hr class="my-2"/><h4 class="my-0 fw-normal py-0">Налоговая декларация+</h4> -->
               </div>
@@ -892,13 +935,13 @@
                               class="form-check-input"
                               type="checkbox"
                               id="VesKurs"
-                              value="80000"
+                              value="70000"
                               checked
                             />
                             <label class="form-check-label w-75" for="VesKurs"
                               >Налоги Инвестора в Казахстане. Весь курс целиком </label
                             ><span class="text-end" style="float: right"
-                              >80 000 тг</span
+                              >70 000 тг</span
                             >
                           </div>
                           <p class="mt-3">
@@ -1049,12 +1092,11 @@
                               id="ObrSvz"
                               value="20000"
                               checked
+                              disabled
                             />
                             <label class="form-check-label w-75" for="ObrSvz"
                               >Обратная связь и чат учеников в течении 2-х
                               месяцев</label
-                            ><span class="text-end" style="float: right"
-                              >20 000 тг</span
                             >
                           </div>
                           <hr class="my-1" />
@@ -1070,31 +1112,21 @@
                             />
                             <label class="form-check-label w-75" for="Skidka"
                               >Скидка 10% на услугу
-                              <a href="/form240.html"
+                              <a href="/services.html" target="_blank"
                                 >«Подготовка декларации (форма 240)»</a
                               ></label
                             >
                           </div>
 
                           <br />
-                          <div class="form-check form-switch">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              id="Podarok"
-                            />
-                            <label class="form-check-label w-75" for="Podarok"
-                              >Оформить подарочный сертификат</label
-                            >
-                          </div>
-                          <br />
+                          
                           <div class="form-check form-switch">
                             <label class="form-check-label w-75">Итого:</label
                             ><span
                               id="totalPrice"
                               class="text-end"
                               style="float: right"
-                            >80000 тг</span>
+                            >70000 тг</span>
                           </div>
 
                           <div class="row">
@@ -1109,7 +1141,6 @@
                                   <input
                                     id="surname"
                                     type="text"
-                                    required
                                     name="surname"
                                     class="form-control"
                                     placeholder="Фамилия"
@@ -1128,7 +1159,6 @@
                                   <input
                                     type="text"
                                     id="name"
-                                    required
                                     name="name"
                                     class="form-control"
                                     placeholder="Имя"
@@ -1164,7 +1194,6 @@
                                   <input
                                     id="tel"
                                     type="tel"
-                                    required
                                     name="tel"
                                     class="form-control"
                                     pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
@@ -1185,7 +1214,6 @@
                                   <input
                                     id="email"
                                     type="email"
-                                    required
                                     name="email"
                                     class="form-control"
                                     placeholder="name@example.com"
@@ -1196,7 +1224,19 @@
                             </div>
 
                             <br />
-
+                            <div class="container mt-2">
+                              <div class="form-check form-switch">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="Podarok"
+                                />
+                                <label class="form-check-label w-75" for="Podarok"
+                                  >Оформить подарочный сертификат</label
+                                >
+                              </div>
+                            </div>
+                            <br />
                             <div
                               class="container px-0"
                               id="PodarochniySertif"
@@ -1280,7 +1320,7 @@
                                             name="tel_Pol"
                                             class="form-control"
                                             pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                            value="+7"
+                                            value=""
                                           />
                                           <small>Error Message</small>
                                         </div>
@@ -1323,8 +1363,7 @@
                               required
                               class="form-check-label ms-2"
                               for="flexCheckDefault"
-                              >«С политикой конфиденциальности и договором
-                              оказания услуг (договор - оферта) ознакомлен. С
+                              >«С <a href="privacyPolicy.html" class=" text-decoration-underline" target="_blank" >политикой конфиденциальности</a> и <a href="contractOffer.html" target="_blank"  class="DogOfr text-decoration-underline">договором оказания</a> услуг (договор - оферта) ознакомлен. С
                               правилами оказания услуг согласен»
                             </label>
 

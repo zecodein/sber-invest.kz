@@ -45,6 +45,7 @@ VesKurs.addEventListener("change", function () {
     $("#ZaPredelami").prop("checked", false);
     $("#VychetyISald").prop("checked", false);
     $("#Skidka").prop("checked", false);
+    $("#ObrSvz").prop("checked", false);
 
     // LocalRynok.checked = "false";
     // ZaPredelami.checked = "false";

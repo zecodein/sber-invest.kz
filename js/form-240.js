@@ -30,6 +30,18 @@ document.getElementById("adressSame").addEventListener("change", function () {
     document.getElementById("adressProzh").value = "";
   }
 });
+$('input[type=radio][name=sale1quantradio]').change(function() {
+  if (this.value == 'Менее 50') {
+    document.getElementById("sale1quant").value =
+    this.value;
+  } else if (this.value == '50-100') {
+    document.getElementById("sale1quant").value =
+    this.value;
+  } else if (this.value == 'более 100') {
+    document.getElementById("sale1quant").value =
+    this.value;
+  }
+});
 function on_change(el, text) {
   var selectedOption = document.getElementById(el);
   if (selectedOption.checked) {
