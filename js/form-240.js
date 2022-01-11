@@ -257,23 +257,23 @@ $("#form").submit(function (event) {
 
     // Get data
     var data = {
-      "entry.2005620554": $("#surname").val(),
-      "entry.1065046570": $("#name").val(),
-      "entry.1045781291": $("#lastname").val(),
-      "entry.1861226139": $("#email").val(),
-      "entry.1166974658": $("#tel").val(),
-      "entry.839337160": $("#citizen").val(),
-      "entry.433364251": $("#adressProp").val(),
-      "entry.537497422": $("#adressProzh").val(),
-      "entry.2055792815": taxresidentnames_value,
-      "entry.2114019434": sale1names_value,
-      "entry.576407941": $("#sale1quant").val(),
-      "entry.2059019536": dividendnames_value,
-      "entry.647440173": includedeclrnames_value,
-      "entry.2019584137": $("#otherdeal").val(),
-      "entry.1428466992": taxdeductnames_value,
-      "entry.873435385": $("#taxdeduct1").val(),
-      "entry.1548640145": $("#tarifOptions").val(),
+      "entry.552099895": $("#surname").val(),
+      "entry.552135976": $("#name").val(),
+      "entry.1462956229": $("#lastname").val(),
+      "entry.601304414": $("#email").val(),
+      "entry.940607535": $("#tel").val(),
+      "entry.1315104526": $("#citizen").val(),
+      "entry.513607428": $("#adressProp").val(),
+      "entry.1070097278": $("#adressProzh").val(),
+      "entry.516662231": taxresidentnames_value,
+      "entry.956035623": sale1names_value,
+      "entry.833732978": $("#sale1quant").val(),
+      "entry.1741365612": dividendnames_value,
+      "entry.1612478037": includedeclrnames_value,
+      "entry.1486739758": $("#otherdeal").val(),
+      "entry.530956502": taxdeductnames_value,
+      "entry.949391439": $("#taxdeduct1").val(),
+      "entry.1182572961": $("#tarifOptions").val(),
     };
 
     // Validate form
@@ -281,11 +281,11 @@ $("#form").submit(function (event) {
     Object.keys(data).forEach(function (key, index) {
       if (
         !data[key] &&
-        key != "entry.576407941" &&
-        key != "entry.2019584137" &&
-        key != "entry.873435385" &&
-        key != "entry.1548640145" &&
-        key != "entry.1045781291"
+        key != "entry.833732978" &&
+        key != "entry.1486739758" &&
+        key != "entry.949391439" &&
+        key != "entry.1182572961" &&
+        key != "entry.1462956229"
       ) {
         formSuccess = false;
         $("#feedback").html(
@@ -306,8 +306,8 @@ $("#form").submit(function (event) {
       $.ajax({
         // url: 'https://docs.google.com/forms/d/e/1FAIpQLSdnW7ixrovoi7V7sJQihWouPztZL4GoRMAP5SpoVh2UfMhxOQ/formResponse',
 
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSdvcX5VR24xIjMeHO9Y-enPIyf7U0_mL3Oc_9xlgJ1ND1rZgw/formResponse",
-        // url: 'https://docs.google.com/forms/d/1WrqRqGKkbmaoLWeJjN4JcxfkJzbu7lfNsBDGOAE_hhM/edit',
+        // url: "https://docs.google.com/forms/d/e/1FAIpQLSdvcX5VR24xIjMeHO9Y-enPIyf7U0_mL3Oc_9xlgJ1ND1rZgw/formResponse",
+        url: 'https://docs.google.com/forms/d/e/1FAIpQLSfe3Z44BKFQr8FaUUfRthzeYEruJerk-rtR-gq-D0cxczHK-g/formResponse',
         type: "POST",
         crossDomain: true,
         dataType: "xml",

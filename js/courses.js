@@ -62,6 +62,7 @@ elements.forEach((element) => {
     if (element.checked === false) {
       $("#VesKurs").prop("checked", false);
       $("#Skidka").prop("checked", false);
+      $("#ObrSvz").prop("checked", false);
     }
 
     total_fee = totalFee();
@@ -289,18 +290,24 @@ $("#form").submit(function (event) {
     var VesKurs = "Нет";
     var Vstuplenie = "Нет";
     var ProgrammaKursa = "Нет";
-    var PoryadokNal = "Нет";
-    var LocalRynok = "Нет";
-    var ZaPredelami = "Нет";
-    var VychetyISald = "Нет";
-    var Diagramma = "Нет";
+    var PoryadokNal = "Нет, 0 тг";
+    var LocalRynok = "Нет, 0 тг";
+    var ZaPredelami = "Нет, 0 тг";
+    var VychetyISald = "Нет, 0 тг";
+    var Diagramma = "Нет, 0 тг";
     var PodgRaschet = "Нет";
     var Skidka = "Нет";
     var Podarok = "Нет";
     var ObrSvz = "Нет";
 
+    var VK = false;
+    var LK = false;
+    var ZPR = false;
+    var VS = false;
+
     if ($("#VesKurs").is(":checked")) {
       VesKurs = "Да";
+      VK = true;
     }
     if ($("#Vstuplenie").is(":checked")) {
       Vstuplenie = "Да";
@@ -309,19 +316,22 @@ $("#form").submit(function (event) {
       ProgrammaKursa = "Да";
     }
     if ($("#PoryadokNal").is(":checked")) {
-      PoryadokNal = "Да";
+      PoryadokNal = "Да, 10 000 тг";
     }
     if ($("#LocalRynok").is(":checked")) {
-      LocalRynok = "Да";
+      LocalRynok = "Да, 10 000 тг";
+      LK = true;
     }
     if ($("#ZaPredelami").is(":checked")) {
-      ZaPredelami = "Да";
+      ZaPredelami = "Да, 10 000 тг";
+      ZPR = true;
     }
     if ($("#VychetyISald").is(":checked")) {
-      VychetyISald = "Да";
+      VychetyISald = "Да, 10 000 тг";
+      VS = true;
     }
     if ($("#Diagramma").is(":checked")) {
-      Diagramma = "Да";
+      Diagramma = "Да, 10 000 тг";
     }
     if ($("#PodgRaschet").is(":checked")) {
       PodgRaschet = "Да";
@@ -335,34 +345,65 @@ $("#form").submit(function (event) {
     if ($("#ObrSvz").is(":checked")) {
       ObrSvz = "Да";
     }
+
+    if (!VK && !LK && !ZPR && !VS) {
+      Link =
+        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=20000&SignatureValue=8dba8adb7f284f09a20952144974e80c";
+    } else if (!VK && LK && !ZPR && !VS) {
+      Link =
+        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=30000&SignatureValue=2919adfad560d8a8c71abe153a829b23";
+    } else if (!VK && LK && !ZPR && VS) {
+      Link =
+        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=40000&SignatureValue=58f58616e4725eecc19c9ad9afcfa873";
+    } else if (!VK && !LK && ZPR && !VS) {
+      Link =
+        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=30000&SignatureValue=2919adfad560d8a8c71abe153a829b23";
+    } else if (!VK && !LK && ZPR && VS) {
+      Link =
+        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=40000&SignatureValue=58f58616e4725eecc19c9ad9afcfa873";
+    } else if (!VK && !LK && !ZPR && VS) {
+      Link =
+        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=30000&SignatureValue=2919adfad560d8a8c71abe153a829b23";
+    } else if (!VK && LK && ZPR && !VS) {
+      Link =
+        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=40000&SignatureValue=58f58616e4725eecc19c9ad9afcfa873";
+    } else if (VK && LK && ZPR && VS) {
+      Link =
+        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=70000&SignatureValue=a01653dbac12aa9087fa1d312ef395c7";
+    } else if (!VK && LK && ZPR && VS) {
+      Link =
+        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=50000&SignatureValue=6ca1be5c595e59dacc09b7802b20886c";
+    }
     // Get data
     var data = {
-      "entry.312643852": VesKurs,
-      "entry.1900210667": Vstuplenie,
-      "entry.445182499": ProgrammaKursa,
-      "entry.110349566": PoryadokNal,
-      "entry.1270709721": LocalRynok,
-      "entry.1985937576": ZaPredelami,
-      "entry.470403761": VychetyISald,
-      "entry.770136661": Diagramma,
-      "entry.1084585482": PodgRaschet,
-      "entry.889249229": ObrSvz,
-      "entry.973358631": Skidka,
-      "entry.785559364": Podarok,
+      "entry.157247829": VesKurs,
+      "entry.827809678": Vstuplenie,
+      "entry.66218428": ProgrammaKursa,
+      "entry.1202909372": PoryadokNal,
+      "entry.1799324774": LocalRynok,
+      "entry.1383402806": ZaPredelami,
+      "entry.1987514379": VychetyISald,
+      "entry.1965411966": Diagramma,
+      "entry.1996471710": PodgRaschet,
+      "entry.1143691647": ObrSvz,
+      "entry.1923884229": Skidka,
+      "entry.527132034": Podarok,
 
-      "entry.1132072097": $("#surname").val(),
-      "entry.1308261533": $("#name").val(),
-      "entry.210657771": $("#lastname").val(),
-      "entry.1965831746": $("#tel").val(),
-      "entry.2121781874": $("#email").val(),
+      "entry.407960184": $("#surname").val(),
+      "entry.1370446521": $("#name").val(),
+      "entry.393019122": $("#lastname").val(),
+      "entry.426447496": $("#tel").val(),
+      "entry.1865767076": $("#email").val(),
 
-      "entry.2085742647": $("#surname_Pol").val(),
-      "entry.802595060": $("#name_Pol").val(),
-      "entry.1214734007": $("#lastname_Pol").val(),
-      "entry.637914283": $("#tel_Pol").val(),
-      "entry.505551139": $("#email_Pol").val(),
+      "entry.1463319336": $("#surname_Pol").val(),
+      "entry.755249184": $("#name_Pol").val(),
+      "entry.1106846703": $("#lastname_Pol").val(),
+      "entry.132568228": $("#tel_Pol").val(),
+      "entry.341313495": $("#email_Pol").val(),
 
-      "entry.1916921526": totalFee(),
+      "entry.51422421": totalFee(),
+
+      "entry.64658960": Link,
     };
 
     // Validate form
@@ -370,12 +411,12 @@ $("#form").submit(function (event) {
     Object.keys(data).forEach(function (key, index) {
       if (
         !data[key] &&
-        key != "entry.210657771" &&
-        key != "entry.2085742647" &&
-        key != "entry.802595060" &&
-        key != "entry.1214734007" &&
-        key != "entry.637914283" &&
-        key != "entry.505551139"
+        key != "entry.393019122" &&
+        key != "entry.1463319336" &&
+        key != "entry.755249184" &&
+        key != "entry.1106846703" &&
+        key != "entry.132568228" &&
+        key != "entry.341313495"
       ) {
         formSuccess = false;
         $("#feedback").html(
@@ -395,10 +436,9 @@ $("#form").submit(function (event) {
       document.getElementById("submit").disabled = true;
       // Send request
       $.ajax({
-        // url: 'https://docs.google.com/forms/d/e/1FAIpQLSdnW7ixrovoi7V7sJQihWouPztZL4GoRMAP5SpoVh2UfMhxOQ/formResponse',
+        // url: "https://docs.google.com/forms/d/e/1FAIpQLSdXEosfgyMNreIXx66UP-L5ZaRPKSqt8DObJRLEaFQKjYt5cw/formResponse",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLScp_RH5HFvOTT8H92WGZRcpZxOw7c4Nw97Cblm2GXqPtUqRpA/formResponse",
 
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSdXEosfgyMNreIXx66UP-L5ZaRPKSqt8DObJRLEaFQKjYt5cw/formResponse",
-        // url: 'https://docs.google.com/forms/d/1WrqRqGKkbmaoLWeJjN4JcxfkJzbu7lfNsBDGOAE_hhM/edit',
         type: "POST",
         crossDomain: true,
         dataType: "xml",
