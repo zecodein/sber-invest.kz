@@ -59,7 +59,10 @@ const elements = document.querySelectorAll(".form-check-input");
 // adding the event listener by looping
 elements.forEach((element) => {
   element.addEventListener("change", function () {
-    if (element.checked === false) {
+    if (
+      element.checked === false &&
+      element != document.getElementById("Podarok")
+    ) {
       $("#VesKurs").prop("checked", false);
       $("#Skidka").prop("checked", false);
       $("#ObrSvz").prop("checked", false);

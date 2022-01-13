@@ -23,6 +23,11 @@
   font-size: 15px;
 }
 
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
 @media (max-width: 400px) {
   .sberInv {
     width: 120px;

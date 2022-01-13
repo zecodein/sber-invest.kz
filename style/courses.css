@@ -19,13 +19,16 @@
   display: block;
 }
 
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
 
 .sberInv {
-  font-size: 15px
+  font-size: 15px;
 }
 
 .ZakazUsl {
-
 }
 
 @media (min-width: 768px) {
@@ -40,14 +43,11 @@
   }
 }
 
-
 @media (min-width: 766px) and (max-width: 992px) {
   .ZakazUsl {
     font-size: 15px;
   }
 }
-
-
 
 @media (max-width: 400px) {
   .fullbody {

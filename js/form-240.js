@@ -6,7 +6,7 @@ if (queryString === "min") {
   $("#price").html("<label >От 20 тыс. тенге*</label>");
 } else if (queryString === "stand") {
   tarifOptions.value = "stand";
-  $("#price").html("<label >От 70 тыс. тенге*</label>");
+  $("#price").html("<label >От 50 тыс. тенге*</label>");
 } else if (queryString === "prem") {
   tarifOptions.value = "prem";
   $("#price").html("<label >От 100 тыс. тенге*</label>");
@@ -16,7 +16,7 @@ tarifOptions.addEventListener("change", function () {
   if (tarifOptions.value === "min") {
     $("#price").html("<label >От 20 тыс. тенге*</label>");
   } else if (tarifOptions.value === "stand") {
-    $("#price").html("<label >От 70 тыс. тенге*</label>");
+    $("#price").html("<label >От 50 тыс. тенге*</label>");
   } else if (tarifOptions.value === "prem") {
     $("#price").html("<label >От 100 тыс. тенге*</label>");
   }
@@ -30,16 +30,13 @@ document.getElementById("adressSame").addEventListener("change", function () {
     document.getElementById("adressProzh").value = "";
   }
 });
-$('input[type=radio][name=sale1quantradio]').change(function() {
-  if (this.value == 'Менее 50') {
-    document.getElementById("sale1quant").value =
-    this.value;
-  } else if (this.value == '50-100') {
-    document.getElementById("sale1quant").value =
-    this.value;
-  } else if (this.value == 'более 100') {
-    document.getElementById("sale1quant").value =
-    this.value;
+$("input[type=radio][name=sale1quantradio]").change(function () {
+  if (this.value == "Менее 50") {
+    document.getElementById("sale1quant").value = this.value;
+  } else if (this.value == "50-100") {
+    document.getElementById("sale1quant").value = this.value;
+  } else if (this.value == "более 100") {
+    document.getElementById("sale1quant").value = this.value;
   }
 });
 function on_change(el, text) {
@@ -307,7 +304,7 @@ $("#form").submit(function (event) {
         // url: 'https://docs.google.com/forms/d/e/1FAIpQLSdnW7ixrovoi7V7sJQihWouPztZL4GoRMAP5SpoVh2UfMhxOQ/formResponse',
 
         // url: "https://docs.google.com/forms/d/e/1FAIpQLSdvcX5VR24xIjMeHO9Y-enPIyf7U0_mL3Oc_9xlgJ1ND1rZgw/formResponse",
-        url: 'https://docs.google.com/forms/d/e/1FAIpQLSfe3Z44BKFQr8FaUUfRthzeYEruJerk-rtR-gq-D0cxczHK-g/formResponse',
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSfe3Z44BKFQr8FaUUfRthzeYEruJerk-rtR-gq-D0cxczHK-g/formResponse",
         type: "POST",
         crossDomain: true,
         dataType: "xml",
