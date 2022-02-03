@@ -1,3 +1,11 @@
+var form = document.getElementById("ltForm1787271");
+$(form).submit(function (e) {
+  e.preventDefault();
+  if (document.getElementById("PolitikaKonf").checked === false) {
+    alert("Please accept the terms and conditions!");
+    return false;
+  }
+});
 // Get the checkbox
 var OformitSert = document.getElementById("OformitSert");
 var OformitZayav = document.getElementById("OformitZayav");
