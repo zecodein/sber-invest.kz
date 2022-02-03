@@ -34,6 +34,18 @@ const SeventhForm = document.getElementById("SeventhForm");
 const EighthForm = document.getElementById("EighthForm");
 const NinethForm = document.getElementById("NinethForm");
 
+const PodFirstForm = document.getElementById("PodFirstForm");
+const PodSecondForm = document.getElementById("PodSecondForm");
+const PodThirdForm = document.getElementById("PodThirdForm");
+const PodForthForm = document.getElementById("PodForthForm");
+const PodFifthForm = document.getElementById("PodFifthForm");
+const PodSixthForm = document.getElementById("PodSixthForm");
+const PodSeventhForm = document.getElementById("PodSeventhForm");
+const PodEighthForm = document.getElementById("PodEighthForm");
+const PodNinethForm = document.getElementById("PodNinethForm");
+
+const Podarok = document.getElementById("Podarok");
+
 VesKurs.addEventListener("change", function () {
   if (this.checked) {
     LocalRynok.checked = "true";
@@ -63,7 +75,8 @@ elements.forEach((element) => {
     if (
       LocalRynok.checked === false &&
       ZaPredelami.checked === true &&
-      VychetyISald.checked === false
+      VychetyISald.checked === false &&
+      Podarok.checked === false
     ) {
       SeventhForm.style.display = "block"; //////////////////
     } else {
@@ -73,7 +86,8 @@ elements.forEach((element) => {
     if (
       LocalRynok.checked === true &&
       ZaPredelami.checked === false &&
-      VychetyISald.checked === false
+      VychetyISald.checked === false &&
+      Podarok.checked === false
     ) {
       EighthForm.style.display = "block"; //////////////
     } else {
@@ -83,7 +97,8 @@ elements.forEach((element) => {
     if (
       LocalRynok.checked === false &&
       ZaPredelami.checked === false &&
-      VychetyISald.checked === true
+      VychetyISald.checked === true &&
+      Podarok.checked === false
     ) {
       SixthForm.style.display = "block"; ///////////
     } else {
@@ -93,7 +108,8 @@ elements.forEach((element) => {
     if (
       LocalRynok.checked === true &&
       ZaPredelami.checked === true &&
-      VychetyISald.checked === false
+      VychetyISald.checked === false &&
+      Podarok.checked === false
     ) {
       ThirdForm.style.display = "block"; /////////////
     } else {
@@ -103,7 +119,8 @@ elements.forEach((element) => {
     if (
       LocalRynok.checked === false &&
       ZaPredelami.checked === true &&
-      VychetyISald.checked === true
+      VychetyISald.checked === true &&
+      Podarok.checked === false
     ) {
       FirstForm.style.display = "block"; ////////////////////
     } else {
@@ -113,7 +130,8 @@ elements.forEach((element) => {
     if (
       LocalRynok.checked === true &&
       ZaPredelami.checked === false &&
-      VychetyISald.checked === true
+      VychetyISald.checked === true &&
+      Podarok.checked === false
     ) {
       SecondForm.style.display = "block"; ////////////////////
     } else {
@@ -123,7 +141,8 @@ elements.forEach((element) => {
     if (
       LocalRynok.checked === false &&
       ZaPredelami.checked === false &&
-      VychetyISald.checked === false
+      VychetyISald.checked === false &&
+      Podarok.checked === false
     ) {
       NinethForm.style.display = "block"; ////////////////
     } else {
@@ -134,7 +153,8 @@ elements.forEach((element) => {
       VesKurs.checked === false &&
       LocalRynok.checked === true &&
       ZaPredelami.checked === true &&
-      VychetyISald.checked === true
+      VychetyISald.checked === true &&
+      Podarok.checked === false
     ) {
       ForthForm.style.display = "block"; //////////////
     } else {
@@ -145,11 +165,113 @@ elements.forEach((element) => {
       VesKurs.checked === true &&
       LocalRynok.checked === true &&
       ZaPredelami.checked === true &&
-      VychetyISald.checked === true
+      VychetyISald.checked === true &&
+      Podarok.checked === false
     ) {
       FifthForm.style.display = "block"; /////////////
     } else {
       FifthForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === false &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === false &&
+      Podarok.checked === true
+    ) {
+      PodSeventhForm.style.display = "block"; //////////////////
+    } else {
+      PodSeventhForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === false &&
+      VychetyISald.checked === false &&
+      Podarok.checked === true
+    ) {
+      PodEighthForm.style.display = "block"; //////////////
+    } else {
+      PodEighthForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === false &&
+      ZaPredelami.checked === false &&
+      VychetyISald.checked === true &&
+      Podarok.checked === true
+    ) {
+      PodSixthForm.style.display = "block"; ///////////
+    } else {
+      PodSixthForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === false &&
+      Podarok.checked === true
+    ) {
+      PodThirdForm.style.display = "block"; /////////////
+    } else {
+      PodThirdForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === false &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === true &&
+      Podarok.checked === true
+    ) {
+      PodFirstForm.style.display = "block"; ////////////////////
+    } else {
+      PodFirstForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === false &&
+      VychetyISald.checked === true &&
+      Podarok.checked === true
+    ) {
+      PodSecondForm.style.display = "block"; ////////////////////
+    } else {
+      PodSecondForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === false &&
+      ZaPredelami.checked === false &&
+      VychetyISald.checked === false &&
+      Podarok.checked === true
+    ) {
+      PodNinethForm.style.display = "block"; ////////////////
+    } else {
+      PodNinethForm.style.display = "none";
+    }
+
+    if (
+      VesKurs.checked === false &&
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === true &&
+      Podarok.checked === true
+    ) {
+      PodForthForm.style.display = "block"; //////////////
+    } else {
+      PodForthForm.style.display = "none";
+    }
+
+    if (
+      VesKurs.checked === true &&
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === true &&
+      Podarok.checked === true
+    ) {
+      PodFifthForm.style.display = "block"; /////////////
+    } else {
+      PodFifthForm.style.display = "none";
     }
 
     if (
