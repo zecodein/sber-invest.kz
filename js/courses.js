@@ -3,15 +3,17 @@ var OformitSert = document.getElementById("OformitSert");
 var OformitZayav = document.getElementById("OformitZayav");
 // Get the output text
 
-// var PodarokOnClick = document.getElementById("Podarok");
-// OformitSert.addEventListener("click", function () {
-//   PodarokOnClick.checked = "true";
-//   PodarochniySertif.style.display = "block";
-// });
-// OformitZayav.addEventListener("click", function () {
-//   $("#Podarok").prop("checked", false);
-//   PodarochniySertif.style.display = "none";
-// });
+var PodarokOnClick = document.getElementById("Podarok");
+OformitSert.addEventListener("click", function () {
+  PodarokOnClick.checked = "true";
+  PodFifthForm.style.display = "block";
+  FifthForm.style.display = "none";
+});
+OformitZayav.addEventListener("click", function () {
+  $("#Podarok").prop("checked", false);
+  PodFifthForm.style.display = "none";
+  FifthForm.style.display = "block";
+});
 
 const VesKurs = document.getElementById("VesKurs");
 // Get the output text
