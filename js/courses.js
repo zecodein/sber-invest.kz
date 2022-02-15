@@ -1,3 +1,44 @@
+const queryString = window.location.search;
+console.log(queryString);
+
+const firstUTM = document.getElementById("firstUTM");
+const secondUTM = document.getElementById("secondUTM");
+const thirdUTM = document.getElementById("thirdUTM");
+const forthUTM = document.getElementById("forthUTM");
+const fifthUTM = document.getElementById("fifthUTM");
+const sixthUTM = document.getElementById("sixthUTM");
+const seventhUTM = document.getElementById("seventhUTM");
+const eighthUTM = document.getElementById("eighthUTM");
+const ninethUTM = document.getElementById("ninethUTM");
+const PODfirstUTM = document.getElementById("PODfirstUTM");
+const PODsecondUTM = document.getElementById("PODsecondUTM");
+const PODthirdUTM = document.getElementById("PODthirdUTM");
+const PODforthUTM = document.getElementById("PODforthUTM");
+const PODfifthUTM = document.getElementById("PODfifthUTM");
+const PODsixthUTM = document.getElementById("PODsixthUTM");
+const PODseventhUTM = document.getElementById("PODseventhUTM");
+const PODeighthUTM = document.getElementById("PODeighthUTM");
+const PODninethUTM = document.getElementById("PODninethUTM");
+
+firstUTM.value = queryString;
+secondUTM.value = queryString;
+thirdUTM.value = queryString;
+forthUTM.value = queryString;
+fifthUTM.value = queryString;
+sixthUTM.value = queryString;
+seventhUTM.value = queryString;
+eighthUTM.value = queryString;
+ninethUTM.value = queryString;
+PODfirstUTM.value = queryString;
+PODsecondUTM.value = queryString;
+PODthirdUTM.value = queryString;
+PODforthUTM.value = queryString;
+PODfifthUTM.value = queryString;
+PODsixthUTM.value = queryString;
+PODseventhUTM.value = queryString;
+PODeighthUTM.value = queryString;
+PODninethUTM.value = queryString;
+
 var form = document.getElementById("ltForm1787271");
 $(form).submit(function (e) {
   e.preventDefault();
