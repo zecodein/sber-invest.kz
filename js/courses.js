@@ -1,3 +1,13 @@
+const PolitikaKonf = document.getElementById("PolitikaKonf");
+
+PolitikaKonf.addEventListener("change", function () {
+  if (this.checked) {
+    PolKonfCheck.style.display = "block";
+  } else {
+    PolKonfCheck.style.display = "none";
+  }
+});
+
 const queryString = window.location.search;
 console.log(queryString);
 
@@ -39,14 +49,6 @@ PODseventhUTM.value = queryString;
 PODeighthUTM.value = queryString;
 PODninethUTM.value = queryString;
 
-var form = document.getElementById("ltForm1787271");
-$(form).submit(function (e) {
-  e.preventDefault();
-  if (document.getElementById("PolitikaKonf").checked === false) {
-    alert("Please accept the terms and conditions!");
-    return false;
-  }
-});
 // Get the checkbox
 var OformitSert = document.getElementById("OformitSert");
 var OformitZayav = document.getElementById("OformitZayav");
