@@ -1,25 +1,69 @@
-var checkBox = document.getElementById("Podarok");
-// Get the output text
-var PodarochniySertif = document.getElementById("PodarochniySertif");
-document.getElementById("Podarok").addEventListener("change", function () {
+const PolitikaKonf = document.getElementById("PolitikaKonf");
+
+PolitikaKonf.addEventListener("change", function () {
   if (this.checked) {
-    PodarochniySertif.style.display = "block";
+    PolKonfCheck.style.display = "block";
   } else {
-    PodarochniySertif.style.display = "none";
+    PolKonfCheck.style.display = "none";
   }
 });
+
+const queryString = window.location.search;
+console.log(queryString);
+
+const firstUTM = document.getElementById("firstUTM");
+const secondUTM = document.getElementById("secondUTM");
+const thirdUTM = document.getElementById("thirdUTM");
+const forthUTM = document.getElementById("forthUTM");
+const fifthUTM = document.getElementById("fifthUTM");
+const sixthUTM = document.getElementById("sixthUTM");
+const seventhUTM = document.getElementById("seventhUTM");
+const eighthUTM = document.getElementById("eighthUTM");
+const ninethUTM = document.getElementById("ninethUTM");
+const PODfirstUTM = document.getElementById("PODfirstUTM");
+const PODsecondUTM = document.getElementById("PODsecondUTM");
+const PODthirdUTM = document.getElementById("PODthirdUTM");
+const PODforthUTM = document.getElementById("PODforthUTM");
+const PODfifthUTM = document.getElementById("PODfifthUTM");
+const PODsixthUTM = document.getElementById("PODsixthUTM");
+const PODseventhUTM = document.getElementById("PODseventhUTM");
+const PODeighthUTM = document.getElementById("PODeighthUTM");
+const PODninethUTM = document.getElementById("PODninethUTM");
+
+firstUTM.value = queryString;
+secondUTM.value = queryString;
+thirdUTM.value = queryString;
+forthUTM.value = queryString;
+fifthUTM.value = queryString;
+sixthUTM.value = queryString;
+seventhUTM.value = queryString;
+eighthUTM.value = queryString;
+ninethUTM.value = queryString;
+PODfirstUTM.value = queryString;
+PODsecondUTM.value = queryString;
+PODthirdUTM.value = queryString;
+PODforthUTM.value = queryString;
+PODfifthUTM.value = queryString;
+PODsixthUTM.value = queryString;
+PODseventhUTM.value = queryString;
+PODeighthUTM.value = queryString;
+PODninethUTM.value = queryString;
+
 // Get the checkbox
 var OformitSert = document.getElementById("OformitSert");
 var OformitZayav = document.getElementById("OformitZayav");
 // Get the output text
+
 var PodarokOnClick = document.getElementById("Podarok");
 OformitSert.addEventListener("click", function () {
   PodarokOnClick.checked = "true";
-  PodarochniySertif.style.display = "block";
+  PodFifthForm.style.display = "block";
+  FifthForm.style.display = "none";
 });
 OformitZayav.addEventListener("click", function () {
   $("#Podarok").prop("checked", false);
-  PodarochniySertif.style.display = "none";
+  PodFifthForm.style.display = "none";
+  FifthForm.style.display = "block";
 });
 
 const VesKurs = document.getElementById("VesKurs");
@@ -32,6 +76,28 @@ const VychetyISald = document.getElementById("VychetyISald");
 const Diagramma = document.getElementById("Diagramma");
 const ObrSvz = document.getElementById("ObrSvz");
 const Skidka = document.getElementById("Skidka");
+
+const FirstForm = document.getElementById("FirstForm");
+const SecondForm = document.getElementById("SecondForm");
+const ThirdForm = document.getElementById("ThirdForm");
+const ForthForm = document.getElementById("ForthForm");
+const FifthForm = document.getElementById("FifthForm");
+const SixthForm = document.getElementById("SixthForm");
+const SeventhForm = document.getElementById("SeventhForm");
+const EighthForm = document.getElementById("EighthForm");
+const NinethForm = document.getElementById("NinethForm");
+
+const PodFirstForm = document.getElementById("PodFirstForm");
+const PodSecondForm = document.getElementById("PodSecondForm");
+const PodThirdForm = document.getElementById("PodThirdForm");
+const PodForthForm = document.getElementById("PodForthForm");
+const PodFifthForm = document.getElementById("PodFifthForm");
+const PodSixthForm = document.getElementById("PodSixthForm");
+const PodSeventhForm = document.getElementById("PodSeventhForm");
+const PodEighthForm = document.getElementById("PodEighthForm");
+const PodNinethForm = document.getElementById("PodNinethForm");
+
+const Podarok = document.getElementById("Podarok");
 
 VesKurs.addEventListener("change", function () {
   if (this.checked) {
@@ -60,6 +126,208 @@ const elements = document.querySelectorAll(".form-check-input");
 elements.forEach((element) => {
   element.addEventListener("change", function () {
     if (
+      LocalRynok.checked === false &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === false &&
+      Podarok.checked === false
+    ) {
+      SeventhForm.style.display = "block"; //////////////////
+    } else {
+      SeventhForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === false &&
+      VychetyISald.checked === false &&
+      Podarok.checked === false
+    ) {
+      EighthForm.style.display = "block"; //////////////
+    } else {
+      EighthForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === false &&
+      ZaPredelami.checked === false &&
+      VychetyISald.checked === true &&
+      Podarok.checked === false
+    ) {
+      SixthForm.style.display = "block"; ///////////
+    } else {
+      SixthForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === false &&
+      Podarok.checked === false
+    ) {
+      ThirdForm.style.display = "block"; /////////////
+    } else {
+      ThirdForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === false &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === true &&
+      Podarok.checked === false
+    ) {
+      FirstForm.style.display = "block"; ////////////////////
+    } else {
+      FirstForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === false &&
+      VychetyISald.checked === true &&
+      Podarok.checked === false
+    ) {
+      SecondForm.style.display = "block"; ////////////////////
+    } else {
+      SecondForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === false &&
+      ZaPredelami.checked === false &&
+      VychetyISald.checked === false &&
+      Podarok.checked === false
+    ) {
+      NinethForm.style.display = "block"; ////////////////
+    } else {
+      NinethForm.style.display = "none";
+    }
+
+    if (
+      VesKurs.checked === false &&
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === true &&
+      Podarok.checked === false
+    ) {
+      ForthForm.style.display = "block"; //////////////
+    } else {
+      ForthForm.style.display = "none";
+    }
+
+    if (
+      VesKurs.checked === true &&
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === true &&
+      Podarok.checked === false
+    ) {
+      FifthForm.style.display = "block"; /////////////
+    } else {
+      FifthForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === false &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === false &&
+      Podarok.checked === true
+    ) {
+      PodSeventhForm.style.display = "block"; //////////////////
+    } else {
+      PodSeventhForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === false &&
+      VychetyISald.checked === false &&
+      Podarok.checked === true
+    ) {
+      PodEighthForm.style.display = "block"; //////////////
+    } else {
+      PodEighthForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === false &&
+      ZaPredelami.checked === false &&
+      VychetyISald.checked === true &&
+      Podarok.checked === true
+    ) {
+      PodSixthForm.style.display = "block"; ///////////
+    } else {
+      PodSixthForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === false &&
+      Podarok.checked === true
+    ) {
+      PodThirdForm.style.display = "block"; /////////////
+    } else {
+      PodThirdForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === false &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === true &&
+      Podarok.checked === true
+    ) {
+      PodFirstForm.style.display = "block"; ////////////////////
+    } else {
+      PodFirstForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === false &&
+      VychetyISald.checked === true &&
+      Podarok.checked === true
+    ) {
+      PodSecondForm.style.display = "block"; ////////////////////
+    } else {
+      PodSecondForm.style.display = "none";
+    }
+
+    if (
+      LocalRynok.checked === false &&
+      ZaPredelami.checked === false &&
+      VychetyISald.checked === false &&
+      Podarok.checked === true
+    ) {
+      PodNinethForm.style.display = "block"; ////////////////
+    } else {
+      PodNinethForm.style.display = "none";
+    }
+
+    if (
+      VesKurs.checked === false &&
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === true &&
+      Podarok.checked === true
+    ) {
+      PodForthForm.style.display = "block"; //////////////
+    } else {
+      PodForthForm.style.display = "none";
+    }
+
+    if (
+      VesKurs.checked === true &&
+      LocalRynok.checked === true &&
+      ZaPredelami.checked === true &&
+      VychetyISald.checked === true &&
+      Podarok.checked === true
+    ) {
+      PodFifthForm.style.display = "block"; /////////////
+    } else {
+      PodFifthForm.style.display = "none";
+    }
+
+    if (
       element.checked === false &&
       element != document.getElementById("Podarok")
     ) {
@@ -81,28 +349,29 @@ elements.forEach((element) => {
   });
 });
 
-const form = document.getElementById("form");
-const surname = document.getElementById("surname");
-const name = document.getElementById("name");
-const lastname = document.getElementById("lastname");
-const tel = document.getElementById("tel");
-const email = document.getElementById("email");
+// const form = document.getElementById("form");
+// const surname = document.getElementById("surname");
+// const name = document.getElementById("name");
+// const lastname = document.getElementById("lastname");
+// const tel = document.getElementById("tel");
+// const email = document.getElementById("email");
 
-const surname_Pol = document.getElementById("surname_Pol");
-const name_Pol = document.getElementById("name_Pol");
-const lastname_Pol = document.getElementById("lastname_Pol");
-const tel_Pol = document.getElementById("tel_Pol");
-const email_Pol = document.getElementById("email_Pol");
+// const surname_Pol = document.getElementById("surname_Pol");
+// const name_Pol = document.getElementById("name_Pol");
+// const lastname_Pol = document.getElementById("lastname_Pol");
+// const tel_Pol = document.getElementById("tel_Pol");
+// const email_Pol = document.getElementById("email_Pol");
 
-const Podarok = document.getElementById("Podarok");
-form.addEventListener("submit", (e) => {
-  submit = checkInputs();
-  if (!submit) {
-    e.preventDefault();
-  } else {
-    // document.getElementById("form").submit();
-  }
-});
+// const Podarok = document.getElementById("Podarok");
+// form.addEventListener("submit", (e) => {
+//   submit = checkInputs();
+//   if (!submit) {
+//     e.preventDefault();
+//   } else {
+//     // document.getElementById("form").submit();
+//   }
+// });
+
 function totalFee() {
   var PoryadokNal = document.getElementById("PoryadokNal");
   var LocalRynok = document.getElementById("LocalRynok");
@@ -156,309 +425,3 @@ function totalFee() {
     parseInt(ObrSvz_fee);
   return total_fee;
 }
-
-function checkInputs() {
-  var sumbitForm = true;
-
-  // trim to remove the whitespaces
-  const nameValue = name.value.trim();
-  const surnameValue = surname.value.trim();
-  const lastnameValue = lastname.value.trim();
-  const emailValue = email.value.trim();
-  const telValue = tel.value.trim();
-
-  const name_PolValue = name_Pol.value.trim();
-  const surname_PolValue = surname_Pol.value.trim();
-  const lastname_PolValue = lastname_Pol.value.trim();
-  const email_PolValue = email_Pol.value.trim();
-  const tel_PolValue = tel_Pol.value.trim();
-
-  submitForm = true;
-  if (surnameValue === "") {
-    setErrorFor(surname, "Заполните поле Фамилия");
-    submitForm = false;
-  } else {
-    setSuccessFor(surname);
-  }
-
-  if (nameValue === "") {
-    setErrorFor(name, "Заполните поле Имя");
-    submitForm = false;
-  } else {
-    setSuccessFor(name);
-  }
-
-  if (lastnameValue === "") {
-  } else {
-    setSuccessFor(lastname);
-  }
-
-  if (emailValue === "") {
-    setErrorFor(email, "Заполните поле Почта");
-    submitForm = false;
-  } else if (!isEmail(emailValue)) {
-    setErrorFor(email, "Неверный формат почты");
-    submitForm = false;
-  } else {
-    setSuccessFor(email);
-  }
-
-  if (telValue === "") {
-    setErrorFor(tel, "Заполните поле Номер");
-    submitForm = false;
-  } else if (!validatePhone(telValue)) {
-    setErrorFor(tel, "Неверный номер");
-    submitForm = false;
-  } else {
-    setSuccessFor(tel);
-  }
-
-  if (Podarok.checked) {
-    if (surname_PolValue === "") {
-      setErrorFor(surname_Pol, "Заполните поле Фамилия");
-      submitForm = false;
-    } else {
-      setSuccessFor(surname_Pol);
-    }
-
-    if (name_PolValue === "") {
-      setErrorFor(name_Pol, "Заполните поле Имя");
-      submitForm = false;
-    } else {
-      setSuccessFor(name_Pol);
-    }
-
-    if (lastname_PolValue === "") {
-    } else {
-      setSuccessFor(lastname_Pol);
-    }
-
-    if (email_PolValue === "") {
-      setErrorFor(email_Pol, "Заполните поле Почта");
-      submitForm = false;
-    } else if (!isEmail(email_PolValue)) {
-      setErrorFor(email_Pol, "Неверный формат почты");
-      submitForm = false;
-    } else {
-      setSuccessFor(email_Pol);
-    }
-
-    if (tel_PolValue === "") {
-      setErrorFor(tel_Pol, "Заполните поле Номер");
-      submitForm = false;
-    } else if (!validatePhone(tel_PolValue)) {
-      setErrorFor(tel_Pol, "Неверный номер");
-      submitForm = false;
-    } else {
-      setSuccessFor(tel_Pol);
-    }
-  }
-
-  if (PolitikaKonf.checked) {
-  } else {
-    submitForm = false;
-  }
-  return submitForm;
-}
-
-function setErrorFor(input, message) {
-  const formControl = input.parentElement;
-  const small = formControl.querySelector("small");
-  formControl.className = "form-control error";
-  small.innerText = message;
-}
-
-function setSuccessFor(input) {
-  const formControl = input.parentElement;
-  formControl.className = "form-control success";
-}
-
-function isEmail(email) {
-  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    email
-  );
-}
-
-function validatePhone(phoneNumber) {
-  var phoneNumberPattern = /^([+]?\d{1,2}[-\s]?|)\d{3}[-\s]?\d{3}[-\s]?\d{4}$/;
-  return phoneNumberPattern.test(phoneNumber);
-}
-
-// AJAX GOOGLE FORM
-
-$("#form").submit(function (event) {
-  event.preventDefault();
-  $("#feedback").html("");
-  setTimeout(function () {
-    var VesKurs = "Нет";
-    var Vstuplenie = "Нет";
-    var ProgrammaKursa = "Нет";
-    var PoryadokNal = "Нет, 0 тг";
-    var LocalRynok = "Нет, 0 тг";
-    var ZaPredelami = "Нет, 0 тг";
-    var VychetyISald = "Нет, 0 тг";
-    var Diagramma = "Нет, 0 тг";
-    var PodgRaschet = "Нет";
-    var Skidka = "Нет";
-    var Podarok = "Нет";
-    var ObrSvz = "Нет";
-
-    var VK = false;
-    var LK = false;
-    var ZPR = false;
-    var VS = false;
-
-    if ($("#VesKurs").is(":checked")) {
-      VesKurs = "Да";
-      VK = true;
-    }
-    if ($("#Vstuplenie").is(":checked")) {
-      Vstuplenie = "Да";
-    }
-    if ($("#ProgrammaKursa").is(":checked")) {
-      ProgrammaKursa = "Да";
-    }
-    if ($("#PoryadokNal").is(":checked")) {
-      PoryadokNal = "Да, 10 000 тг";
-    }
-    if ($("#LocalRynok").is(":checked")) {
-      LocalRynok = "Да, 10 000 тг";
-      LK = true;
-    }
-    if ($("#ZaPredelami").is(":checked")) {
-      ZaPredelami = "Да, 10 000 тг";
-      ZPR = true;
-    }
-    if ($("#VychetyISald").is(":checked")) {
-      VychetyISald = "Да, 10 000 тг";
-      VS = true;
-    }
-    if ($("#Diagramma").is(":checked")) {
-      Diagramma = "Да, 10 000 тг";
-    }
-    if ($("#PodgRaschet").is(":checked")) {
-      PodgRaschet = "Да";
-    }
-    if ($("#Skidka").is(":checked")) {
-      Skidka = "Да";
-    }
-    if ($("#Podarok").is(":checked")) {
-      Podarok = "Да";
-    }
-    if ($("#ObrSvz").is(":checked")) {
-      ObrSvz = "Да";
-    }
-
-    if (!VK && !LK && !ZPR && !VS) {
-      Link =
-        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=20000&SignatureValue=8dba8adb7f284f09a20952144974e80c";
-    } else if (!VK && LK && !ZPR && !VS) {
-      Link =
-        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=30000&SignatureValue=2919adfad560d8a8c71abe153a829b23";
-    } else if (!VK && LK && !ZPR && VS) {
-      Link =
-        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=40000&SignatureValue=58f58616e4725eecc19c9ad9afcfa873";
-    } else if (!VK && !LK && ZPR && !VS) {
-      Link =
-        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=30000&SignatureValue=2919adfad560d8a8c71abe153a829b23";
-    } else if (!VK && !LK && ZPR && VS) {
-      Link =
-        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=40000&SignatureValue=58f58616e4725eecc19c9ad9afcfa873";
-    } else if (!VK && !LK && !ZPR && VS) {
-      Link =
-        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=30000&SignatureValue=2919adfad560d8a8c71abe153a829b23";
-    } else if (!VK && LK && ZPR && !VS) {
-      Link =
-        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=40000&SignatureValue=58f58616e4725eecc19c9ad9afcfa873";
-    } else if (VK && LK && ZPR && VS) {
-      Link =
-        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=70000&SignatureValue=a01653dbac12aa9087fa1d312ef395c7";
-    } else if (!VK && LK && ZPR && VS) {
-      Link =
-        "https://auth.robokassa.kz/Merchant/Index.aspx?MerchantLogin=Sber-Invest&InvId=0&Culture=ru&Encoding=utf-8&OutSum=50000&SignatureValue=6ca1be5c595e59dacc09b7802b20886c";
-    }
-    // Get data
-    var data = {
-      "entry.157247829": VesKurs,
-      "entry.827809678": Vstuplenie,
-      "entry.66218428": ProgrammaKursa,
-      "entry.1202909372": PoryadokNal,
-      "entry.1799324774": LocalRynok,
-      "entry.1383402806": ZaPredelami,
-      "entry.1987514379": VychetyISald,
-      "entry.1965411966": Diagramma,
-      "entry.1996471710": PodgRaschet,
-      "entry.1143691647": ObrSvz,
-      "entry.1923884229": Skidka,
-      "entry.527132034": Podarok,
-
-      "entry.407960184": $("#surname").val(),
-      "entry.1370446521": $("#name").val(),
-      "entry.393019122": $("#lastname").val(),
-      "entry.426447496": $("#tel").val(),
-      "entry.1865767076": $("#email").val(),
-
-      "entry.1463319336": $("#surname_Pol").val(),
-      "entry.755249184": $("#name_Pol").val(),
-      "entry.1106846703": $("#lastname_Pol").val(),
-      "entry.132568228": $("#tel_Pol").val(),
-      "entry.341313495": $("#email_Pol").val(),
-
-      "entry.51422421": totalFee(),
-
-      "entry.64658960": Link,
-    };
-
-    // Validate form
-    var formSuccess = true;
-    Object.keys(data).forEach(function (key, index) {
-      if (
-        !data[key] &&
-        key != "entry.393019122" &&
-        key != "entry.1463319336" &&
-        key != "entry.755249184" &&
-        key != "entry.1106846703" &&
-        key != "entry.132568228" &&
-        key != "entry.341313495"
-      ) {
-        formSuccess = false;
-        $("#feedback").html(
-          '<label style=" border-radius: 1em; padding:10px;border: solid red 2px" class="text-danger text-center">Заполните поля корректно</label>'
-        );
-      }
-    });
-
-    if (!checkInputs()) {
-      formSuccess = false;
-      $("#feedback").html(
-        '<label style=" border-radius: 1em; padding:10px;border: solid red 2px" class="text-danger text-center">Заполните поля корректно</label>'
-      );
-    }
-
-    if (formSuccess) {
-      document.getElementById("submit").disabled = true;
-      // Send request
-      $.ajax({
-        // url: "https://docs.google.com/forms/d/e/1FAIpQLSdXEosfgyMNreIXx66UP-L5ZaRPKSqt8DObJRLEaFQKjYt5cw/formResponse",
-        url: "https://docs.google.com/forms/d/e/1FAIpQLScp_RH5HFvOTT8H92WGZRcpZxOw7c4Nw97Cblm2GXqPtUqRpA/formResponse",
-
-        type: "POST",
-        crossDomain: true,
-        dataType: "xml",
-        data: data,
-        success: function (jqXHR, textStatus, errorThrown) {
-          console.log("Enter on success");
-          $("#feedback").html(
-            '<label class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
-          );
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-          console.log("Enter on error");
-          $("#feedback").html(
-            '<label style=" border-radius: 1em; padding:10px;border: solid green 2px"  class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
-          );
-        },
-      });
-    }
-  }, 300);
-});

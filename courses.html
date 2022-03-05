@@ -43,16 +43,30 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
     <link href="style/courses.css" rel="stylesheet" crossorigin="anonymous" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5CH4THS");
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
+
   <body>
     <!-- Navbar menu -->
     <nav
-      class="
-        navbar navbar-expand-lg navbar-dark
-        py-1 py-sm-3
-        bg-dark
-        sticky-top
-      "
+      class="navbar navbar-expand-lg navbar-dark py-1 py-sm-3 bg-dark sticky-top"
     >
       <div class="container">
         <div class="d-flex text-nowrap">
@@ -65,14 +79,7 @@
           /></a>
           <a
             href="index.html"
-            class="
-              d-flex
-              sberInv
-              navbar-brand
-              my-0 my-sm-1
-              text-wrap
-              align-items-center
-            "
+            class="d-flex sberInv navbar-brand my-0 my-sm-1 text-wrap align-items-center"
             >СБЕРЕЖЕНИЯ И ИНВЕСТИЦИИ</a
           >
         </div>
@@ -120,9 +127,9 @@
             rgba(0, 0, 0, 0.7)
           ),
           /* bottom, image */ url(style/img/courses_bg.png);
-          background-repeat: no-repeat;
-          text-align: center;
-          background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+        background-size: cover;
       "
     >
       <header
@@ -287,8 +294,7 @@
                   Видео-лекций теории
                 </div>
               </div>
-              <div class="col-12 col-lg-2 ps-0">
-              </div>
+              <div class="col-12 col-lg-2 ps-0"></div>
             </div>
           </div>
 
@@ -323,8 +329,7 @@
                   Видео-лекций практики
                 </div>
               </div>
-              <div class="col-12 col-lg-2 ps-0">
-              </div>
+              <div class="col-12 col-lg-2 ps-0"></div>
             </div>
           </div>
 
@@ -536,16 +541,20 @@
             >
               <div class="card-body">
                 <ul>
-                  <li>Операции с ценными бумагами на зарубежных рынках</li>
-                  <li>Страны со льготным налогообложением</li>
-                  <li>Дивиденды, купоны и вознаграждения</li>
+                  <li>Доходы, не подлежащие налогообложению</li>
                   <li>
-                    Производные финансовые инструменты, IPO, крипто валюты
+                    Вычеты по медицине, по вознаграждениям ипотечных жилищных
+                    займов и премиям накопительного страхования
                   </li>
+                  <li>Когда и зачем нужны налоговые консультанты?</li>
                   <li>
+                    Что делать, если вы получили уведомление от налоговых
+                    органов?
+                  </li>
+                  <!-- <li>
                     Налогообложение Активов – На что нужно обратить внимание
                     перед включением актива в портфель
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </div>
@@ -647,14 +656,14 @@
                     Пошагово разберем заполнение декларации по форме 240.00 в
                     личном кабинете налогоплательщика
                   </li>
-                  <li>
+                  <!-- <li>
                     Пошаговая видео инструкция по расчету налогооблагаемой базы
                     и сумм налогов на основе условного портфеля. (+ расчет в
                     excel формате)
                   </li>
                   <li>
                     Пошаговая инструкция заполнения декларации по форме 240
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </div>
@@ -663,7 +672,11 @@
         <br />
         <br />
         <div class="container text-end my-2">
-          <a class="btn btn-secondary text-start" target="_blank" href="https://drive.google.com/file/d/1hGuAXdYoDjpOqofOLHlWsKOGi_Omd2OW/view?usp=sharing">
+          <a
+            class="btn btn-secondary text-start"
+            target="_blank"
+            href="https://drive.google.com/file/d/1hGuAXdYoDjpOqofOLHlWsKOGi_Omd2OW/view?usp=sharing"
+          >
             Скачать Силлабус курса «Налоги инвестора в Казахстане» полностью
           </a>
         </div>
@@ -686,7 +699,7 @@
           <div class="col-md-4">
             <img style="max-width: 250px" src="style/img/success.png" alt="" />
           </div>
-          <div class="col-md-8">  
+          <div class="col-md-8">
             <div class="card-body">
               <ul>
                 <li>Все презентации курса в PDF формате</li>
@@ -800,6 +813,7 @@
       <div class="container">
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
           <strong class="h1 fw-bold">СТОИМОСТЬ</strong>
+<<<<<<< HEAD
           
           <p class="fs-5 text-muted"></p>
         </div>
@@ -827,10 +841,52 @@
                   class="btn btn-dark w-50 mt-auto mx-auto ZakazUsl"
                   >Учитесь бесплатно</a
                 >
+=======
+          <p class="fs-5 text-muted"></p>
+        </div>
+
+        <div
+          class="card mb-4 rounded-3 shadow-sm bg-white border-dark minPacket d-flex"
+        >
+          <div
+            class="card-header py-2 text-white bg-dark border-dark text-center"
+          >
+            <h4 class="my-0 fw-normal">
+              Расчет суммы налога и заполнение декларации (ФНО 240)
+            </h4>
+            <!-- <hr class="my-2"/><h4 class="my-0 fw-normal py-0">Налоговая декларация</h4> -->
+          </div>
+          <div class="card-body d-flex flex-column">
+            <div class="list-group-flush mt-3 mb-4 text-start">
+              <div class="text-center">
+                Видео-инструкции как самостоятельно подготовить расчет и подать
+                декларацию ( 2 видео - часть 1 & 2) находятся в общем доступе на
+                нашем YouTube канале и доступны бесплатно.
+>>>>>>> da641d8664f30a16832e08380cab33521eaa0800
               </div>
             </div>
+            <!-- <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=53TEGwfAN3I&t=1s"
+              class="btn btn-dark w-50 mt-auto mx-auto ZakazUsl"
+              >Учитесь бесплатно</a
+            > -->
+            <div class="col-12 col-md-8 col-lg-6 col-xl-4 mx-auto">
+              <iframe
+                class="m-auto w-100"
+                width="450"
+                height="258"
+                src="https://www.youtube.com/embed/53TEGwfAN3I"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
+        </div>
 
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
           <div class="col-md-6">
             <div class="card mb-4 rounded-3 shadow-sm border-warning stdPacket">
               <div
@@ -853,6 +909,7 @@
                   data-bs-toggle="modal"
                   href="#exampleModalToggle"
                   role="button"
+<<<<<<< HEAD
                   class="
                     btn btn-warning
                     w-50
@@ -862,6 +919,9 @@
                     ZakazUsl
                   "
                   
+=======
+                  class="btn btn-warning mt-auto mx-auto text-white ZakazUsl"
+>>>>>>> da641d8664f30a16832e08380cab33521eaa0800
                   >Оформить заявку</a
                 >
 
@@ -872,9 +932,13 @@
                   aria-labelledby="exampleModalToggleLabel"
                   tabindex="-1"
                 >
+<<<<<<< HEAD
 
                   <div class="modal-dialog modal-dialog-centered modal-xl">
 
+=======
+                  <div class="modal-dialog modal-dialog-centered modal-lg">
+>>>>>>> da641d8664f30a16832e08380cab33521eaa0800
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalToggleLabel">
@@ -1078,16 +1142,18 @@
                           </div>
 
                           <br />
-                          
+
                           <div class="form-check form-switch">
                             <label class="form-check-label w-75">Итого:</label
                             ><span
                               id="totalPrice"
                               class="text-end"
                               style="float: right"
-                            >70000 тг</span>
+                              >70000 тг</span
+                            >
                           </div>
 
+<<<<<<< HEAD
                           <div>
                             <script id="70e951e143a9ad2da897737085fad296e492d196" src="https://courses.sber-invest.kz/pl/lite/widget/script?id=592956"></script>    
                           </div>
@@ -1184,176 +1250,2327 @@
                                   <small>Error Message</small>
                                 </div>
                               </div>
-                            </div>
+=======
+                          <br />
 
-                            <br />
-                            <div class="container mt-2">
-                              <div class="form-check form-switch">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  id="Podarok"
-                                />
-                                <label class="form-check-label w-75" for="Podarok"
-                                  >Оформить подарочный сертификат</label
-                                >
-                              </div>
-                            </div>
-                            <br />
-                            <div
-                              class="container px-0"
-                              id="PodarochniySertif"
-                              style="display: none"
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="Podarok"
+                            />
+                            <label class="form-check-label w-75" for="Podarok"
+                              >Оформить подарочный сертификат</label
                             >
-                              <div class="card mt-3">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    Получатель подарочного сертификата
-                                  </h5>
-                                  <br />
-                                  <div class="row">
-                                    <div class="col-12 col-lg-6">
-                                      <div class="card">
-                                        <div class="card-header">
-                                          <h5 class="card-title mb-0">
-                                            <span class="text-danger">*</span>
-                                            Фамилия
-                                          </h5>
-                                        </div>
-                                        <div class="card-body form-control">
-                                          <input
-                                            id="surname_Pol"
-                                            type="text"
-                                            name="surname_Pol"
-                                            class="form-control"
-                                            placeholder="Фамилия"
-                                          />
-                                          <small>Error Message</small>
-                                        </div>
-                                      </div>
-
-                                      <div class="card">
-                                        <div class="card-header">
-                                          <h5 class="card-title mb-0">
-                                            <span class="text-danger">*</span>
-                                            Имя
-                                          </h5>
-                                        </div>
-                                        <div class="card-body form-control">
-                                          <input
-                                            type="text"
-                                            id="name_Pol"
-                                            name="name_Pol"
-                                            class="form-control"
-                                            placeholder="Имя"
-                                          />
-                                          <small>Error Message</small>
-                                        </div>
-                                      </div>
-
-                                      <div class="card">
-                                        <div class="card-header">
-                                          <h5 class="card-title mb-0">
-                                            Отчество
-                                          </h5>
-                                        </div>
-                                        <div class="card-body">
-                                          <input
-                                            id="lastname_Pol"
-                                            type="text"
-                                            name="lastname_Pol"
-                                            class="form-control"
-                                            placeholder="Отчество"
-                                          />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                      <div class="card">
-                                        <div class="card-header">
-                                          <h5 class="card-title mb-0">
-                                            <span class="text-danger">*</span>
-                                            Телефон для связи (сотовый)
-                                          </h5>
-                                        </div>
-                                        <div class="card-body form-control">
-                                          <input
-                                            id="tel_Pol"
-                                            type="tel"
-                                            name="tel_Pol"
-                                            class="form-control"
-                                            pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                            value=""
-                                          />
-                                          <small>Error Message</small>
-                                        </div>
-                                      </div>
-
-                                      <div class="card">
-                                        <div class="card-header">
-                                          <h5 class="card-title mb-0">
-                                            <span class="text-danger">*</span>
-                                            Электроная почта
-                                          </h5>
-                                        </div>
-                                        <div class="card-body form-control">
-                                          <input
-                                            id="email_Pol"
-                                            type="email"
-                                            name="email_Pol"
-                                            class="form-control"
-                                            placeholder="e-mail"
-                                          />
-                                          <small>Error Message</small>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
                           </div>
 
                           <br />
+
+                          <div id="PolKonfCheck">
+                            <!-- 1 new Налоги инвестора в Казахстане - Порядок, иностранные рынки и вычеты -->
+                            <div
+                              class="FirstForm"
+                              id="FirstForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Налоги инвестора в Казахстане - Порядок,
+                                иностранные рынки и вычеты:</label
+                              ><br />
+                              <form
+                                id="ltForm6395121"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1303028987"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="40000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3010222"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="firstUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button6332323"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b92547fcec']){return false;}window['btnprs620b92547fcec']=true;setTimeout(function(){window['btnprs620b92547fcec']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="592956620b92546b714"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="592956620b92546b714ref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644925524"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="2849796595bf498dd4c330439a165d46"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "592956620b92546b714"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "592956620b92546b714ref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+>>>>>>> da641d8664f30a16832e08380cab33521eaa0800
+                            </div>
+
+                            <!-- 1.2 Налоги инвестора в Казахстане - Подарок - Порядок, иностранные рынки и вычеты -->
+                            <div
+                              class="PodFirstForm"
+                              id="PodFirstForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Подарок - Налоги инвестора в Казахстане -
+                                Порядок, иностранные рынки и вычеты:</label
+                              ><br />
+                              <form
+                                id="ltForm4591991"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1308476965"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="40000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3035115"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="PODfirstUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button2626744"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b97569b8c6']){return false;}window['btnprs620b97569b8c6']=true;setTimeout(function(){window['btnprs620b97569b8c6']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="596406620b975679f98"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="596406620b975679f98ref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644926806"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="3730d35d9782ee47677b19941e028c46"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "596406620b975679f98"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "596406620b975679f98ref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 2 Налоги инвестора в Казахстане - Порядок, локальные рынки и вычеты -->
+                            <div
+                              class="SecondForm"
+                              id="SecondForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Налоги инвестора в Казахстане - Порядок,
+                                локальные рынки и вычеты:</label
+                              ><br />
+                              <form
+                                id="ltForm6704026"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1307930028"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="40000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3010220"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="secondUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button5063472"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b98a4a5849']){return false;}window['btnprs620b98a4a5849']=true;setTimeout(function(){window['btnprs620b98a4a5849']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="595651620b98a48c86e"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="595651620b98a48c86eref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644927140"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="6a216303b1403f581a5a45fa9b965610"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "595651620b98a48c86e"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "595651620b98a48c86eref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 2.2 Налоги инвестора в Казахстане - Подарок - Порядок, локальные рынки и вычеты -->
+                            <div
+                              class="PodSecondForm"
+                              id="PodSecondForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Подарок - Налоги инвестора в Казахстане -
+                                Порядок, локальные рынки и вычеты:</label
+                              ><br />
+                              <form
+                                id="ltForm7596212"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1308479369"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="40000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3035322"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="PODsecondUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button2837063"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b990b8649d']){return false;}window['btnprs620b990b8649d']=true;setTimeout(function(){window['btnprs620b990b8649d']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="596415620b990b6d3c8"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="596415620b990b6d3c8ref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644927243"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="c5708d9f082c4aa48861db8090d30571"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "596415620b990b6d3c8"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "596415620b990b6d3c8ref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 3 Налоги инвестора в Казахстане - Порядок, локальные и иностранные рынки -->
+
+                            <div
+                              class="ThirdForm"
+                              id="ThirdForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Налоги инвестора в Казахстане - Порядок,
+                                локальные и иностранные рынки:</label
+                              ><br />
+                              <form
+                                id="ltForm6841421"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1307930034"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="40000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3010217"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="thirdUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button1808993"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b99447e161']){return false;}window['btnprs620b99447e161']=true;setTimeout(function(){window['btnprs620b99447e161']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="595653620b994468bfb"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="595653620b994468bfbref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644927300"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="0158c462b8c41abc7cf78a8f9e3db1c3"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "595653620b994468bfb"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "595653620b994468bfbref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+<<<<<<< HEAD
+        <div
+          class="
+            card
+            mb-4
+            rounded-3
+            shadow-sm
+            bg-white
+            border-success
+            minPacket
+            d-flex
+          "
+        >
+          <div class="row">
+            <div class="col-12 col-lg-8 m-auto text-center">
+              <div class="row">
+                <div class="col-12 col-lg-4">
+                  <img
+                    src="style/img/gift.png"
+                    alt=""
+                    width="150px"
+                    class="mx-3"
+                  />
+                </div>
+                <div class="col-12 col-lg-8 text-center m-auto">
+                  <span class="h3"> Этот курс можно подарить </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-4 d-flex my-4 my-lg-0">
+              <a
+                id="OformitSert"
+                data-bs-toggle="modal"
+                href="#exampleModalToggle"
+                role="button"
+                class="
+                  btn btn-success
+                  h4
+                  m-auto
+                  justify-content-center
+                  text-center text-white
+                  ZakazUsl
+                "
+                >Оформить сертификат</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+=======
+                            <!-- 3.2 Налоги инвестора в Казахстане - Подарок - Порядок, локальные и иностранные рынки -->
+>>>>>>> da641d8664f30a16832e08380cab33521eaa0800
+
+                            <div
+                              class="PodThirdForm"
+                              id="PodThirdForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Подарок - Налоги инвестора в Казахстане -
+                                Порядок, локальные и иностранные рынки:</label
+                              ><br />
+                              <form
+                                id="ltForm2241074"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1308480090"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="40000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3035361"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="PODthirdUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button8141231"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b9978c83d2']){return false;}window['btnprs620b9978c83d2']=true;setTimeout(function(){window['btnprs620b9978c83d2']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="596417620b9978a5f7b"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="596417620b9978a5f7bref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644927352"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="18640ef16789f03740afc1a0514485b3"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "596417620b9978a5f7b"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "596417620b9978a5f7bref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 4 Налоги инвестора в Казахстане - Весь курс целиком без обратной связи -->
+                            <div
+                              class="ForthForm"
+                              id="ForthForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Налоги инвестора в Казахстане - Весь курс
+                                целиком без обратной связи:</label
+                              ><br />
+                              <form
+                                id="ltForm9482422"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1307930038"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="50000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3010153"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="forthUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button4954952"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b99cac63e2']){return false;}window['btnprs620b99cac63e2']=true;setTimeout(function(){window['btnprs620b99cac63e2']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="595654620b99caaeebb"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="595654620b99caaeebbref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644927434"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="96c1157049615404301487add39df719"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "595654620b99caaeebb"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "595654620b99caaeebbref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 4.2 Налоги инвестора в Казахстане - Подарок - Весь курс целиком без обратной связи -->
+                            <div
+                              class="PodForthForm"
+                              id="PodForthForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Подарок - Налоги инвестора в Казахстане - Весь
+                                курс целиком без обратной связи:</label
+                              ><br />
+                              <form
+                                id="ltForm2340079"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1308480348"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="50000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3035375"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="PODforthUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button8063601"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b9a10482a3']){return false;}window['btnprs620b9a10482a3']=true;setTimeout(function(){window['btnprs620b9a10482a3']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="596419620b9a10359c6"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="596419620b9a10359c6ref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644927504"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="371f374789f1897330192d36f71d98cd"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "596419620b9a10359c6"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "596419620b9a10359c6ref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 5 Налоги инвестора в Казахстане - Весь курс целиком -->
+                            <div
+                              class="FifthForm"
+                              id="FifthForm"
+                              style="display: block"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Налоги инвестора в Казахстане - Весь курс
+                                целиком:</label
+                              ><br />
+                              <form
+                                id="ltForm1070532"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1307930051"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="70000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3010143"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="fifthUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button4129888"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b9a46ea8e5']){return false;}window['btnprs620b9a46ea8e5']=true;setTimeout(function(){window['btnprs620b9a46ea8e5']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="595655620b9a46d273d"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="595655620b9a46d273dref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644927558"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="7a1a83b63249459239aa65d4794a762c"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "595655620b9a46d273d"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "595655620b9a46d273dref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 5.2 Налоги инвестора в Казахстане - Подарок - Весь курс целиком -->
+                            <div
+                              class="PodFifthForm"
+                              id="PodFifthForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Подарок - Налоги инвестора в Казахстане - Весь
+                                курс целиком:</label
+                              ><br />
+                              <form
+                                id="ltForm1919752"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1308482188"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="70000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3035424"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="PODfifthUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button1919381"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b9a7131710']){return false;}window['btnprs620b9a7131710']=true;setTimeout(function(){window['btnprs620b9a7131710']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="596420620b9a7119d23"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="596420620b9a7119d23ref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644927601"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="e086a01cda1352166eaf64ff01e152ba"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "596420620b9a7119d23"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "596420620b9a7119d23ref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 6 Налоги инвестора в Казахстане - Налоговые вычеты и сальдирование -->
+                            <div
+                              class="SixthForm"
+                              id="SixthForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Налоги инвестора в Казахстане - Налоговые
+                                вычеты и сальдирование:</label
+                              ><br />
+                              <form
+                                id="ltForm8038883"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1307930059"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="30000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3010212"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="sixthUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button6070263"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b9aa7799d9']){return false;}window['btnprs620b9aa7799d9']=true;setTimeout(function(){window['btnprs620b9aa7799d9']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="595656620b9aa7608fe"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="595656620b9aa7608feref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644927655"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="4a9697cca8f95c607b4a0ae9c23fd5b3"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "595656620b9aa7608fe"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "595656620b9aa7608feref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 6.2 Налоги инвестора в Казахстане - Подарок - Налоговые вычеты и сальдирование -->
+                            <div
+                              class="PodSixthForm"
+                              id="PodSixthForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Подарок - Налоги инвестора в Казахстане -
+                                Налоговые вычеты и сальдирование:</label
+                              ><br />
+                              <form
+                                id="ltForm5116942"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1308483103"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="30000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3035437"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="PODsixthUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button6472240"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b9ad4568b8']){return false;}window['btnprs620b9ad4568b8']=true;setTimeout(function(){window['btnprs620b9ad4568b8']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="596423620b9ad43d04e"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="596423620b9ad43d04eref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644927700"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="9a57a8b14851d1b95d6d24302f59e11e"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "596423620b9ad43d04e"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "596423620b9ad43d04eref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 7 Налоги инвестора в Казахстане - Иностранные рынки -->
+                            <div
+                              class="SeventhForm"
+                              id="SeventhForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Налоги инвестора в Казахстане - Иностранные
+                                рынки:</label
+                              ><br />
+                              <form
+                                id="ltForm4460574"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1307930061"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="30000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3010208"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="seventhUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button800814"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b9afb71825']){return false;}window['btnprs620b9afb71825']=true;setTimeout(function(){window['btnprs620b9afb71825']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="595658620b9afb52201"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="595658620b9afb52201ref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644927739"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="0f2162c05683f48b5a441dc01bf8c2f9"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "595658620b9afb52201"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "595658620b9afb52201ref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 7.2 Налоги инвестора в Казахстане - Подарок - Подарок - Иностранные рынки -->
+                            <div
+                              class="PodSeventhForm"
+                              id="PodSeventhForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Подарок - Налоги инвестора в Казахстане -
+                                Иностранные рынки:</label
+                              ><br />
+                              <form
+                                id="ltForm6349480"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1308483563"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="30000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3035460"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="PODseventhUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button1314653"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b9b340b6ab']){return false;}window['btnprs620b9b340b6ab']=true;setTimeout(function(){window['btnprs620b9b340b6ab']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="596424620b9b33e64ca"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="596424620b9b33e64caref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644927796"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="9af1405c911ed7b5e70def183600560a"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "596424620b9b33e64ca"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "596424620b9b33e64caref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 8 Налоги инвестора в Казахстане - Локальный рынок -->
+                            <div
+                              class="EighthForm"
+                              id="EighthForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Налоги инвестора в Казахстане - Локальный
+                                рынок:</label
+                              ><br />
+                              <form
+                                id="ltForm9133791"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1307930107"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="30000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3010204"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="eighthUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button1647490"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b9b580bd73']){return false;}window['btnprs620b9b580bd73']=true;setTimeout(function(){window['btnprs620b9b580bd73']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="595659620b9b57e75a7"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="595659620b9b57e75a7ref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644927832"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="1a74fc9f9778ba1d81fb7b02e299bf65"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "595659620b9b57e75a7"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "595659620b9b57e75a7ref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 8.2 Налоги инвестора в Казахстане - Подарок - Локальный рынок -->
+                            <div
+                              class="PodEighthForm"
+                              id="PodEighthForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Подарок - Налоги инвестора в Казахстане -
+                                Локальный рынок:</label
+                              ><br />
+                              <form
+                                id="ltForm430023"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1308483894"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="30000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3035486"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="PODeighthUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button4906947"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b9b7e89ef2']){return false;}window['btnprs620b9b7e89ef2']=true;setTimeout(function(){window['btnprs620b9b7e89ef2']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="596426620b9b7e6f854"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="596426620b9b7e6f854ref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644927870"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="73846dfcf907ae3de8dc5ab601be3740"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "596426620b9b7e6f854"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "596426620b9b7e6f854ref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 9 Налоги инвестора в Казахстане - Порядок налогообложения физических лиц -->
+                            <div
+                              class="NinethForm"
+                              id="NinethForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Налоги инвестора в Казахстане - Порядок
+                                налогообложения физических лиц:</label
+                              ><br />
+                              <form
+                                id="ltForm5057491"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1307930116"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="20000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3009899"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="ninethUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button9002366"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b9c0acd88f']){return false;}window['btnprs620b9c0acd88f']=true;setTimeout(function(){window['btnprs620b9c0acd88f']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="595660620b9c0ab5f12"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="595660620b9c0ab5f12ref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644928010"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="c11079d4f3bf9b3225bfe2ed5da447d7"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "595660620b9c0ab5f12"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "595660620b9c0ab5f12ref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+
+                            <!-- 9.2 Налоги инвестора в Казахстане - Подарок - Порядок налогообложения физических лиц -->
+                            <div
+                              class="PodNinethForm"
+                              id="PodNinethForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Подарок - Налоги инвестора в Казахстане -
+                                Порядок налогообложения физических лиц:</label
+                              ><br />
+                              <form
+                                id="ltForm68027"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1308484209"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="20000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3035493"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="PODninethUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button8746755"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b9c2ba4846']){return false;}window['btnprs620b9c2ba4846']=true;setTimeout(function(){window['btnprs620b9c2ba4846']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="596427620b9c2b8b344"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="596427620b9c2b8b344ref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644928043"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="4389b0e91206af53a1700f27c6a8c99b"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "596427620b9c2b8b344"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "596427620b9c2b8b344ref"
+                                  );
+                                  ref.value = document.referrer;
+
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
+                            </div>
+                          </div>
+
                           <div class="" style="display: flex">
                             <input
                               id="PolitikaKonf"
                               class="m-1"
                               type="checkbox"
                               value=""
+                              checked
                             />
                             <label
                               required
                               class="form-check-label ms-2"
                               for="flexCheckDefault"
-                              >«С <a href="privacyPolicy.html" class=" text-decoration-underline" target="_blank" >политикой конфиденциальности</a> и <a href="contractOffer.html" target="_blank"  class="DogOfr text-decoration-underline">договором оказания</a> услуг (договор - оферта) ознакомлен. С
-                              правилами оказания услуг согласен»
+                              >«С
+                              <a
+                                href="privacyPolicy.html"
+                                class="text-decoration-underline"
+                                target="_blank"
+                                >политикой конфиденциальности</a
+                              >
+                              и
+                              <a
+                                href="contractOffer.html"
+                                target="_blank"
+                                class="DogOfr text-decoration-underline"
+                                >договором оказания услуг</a
+                              >
+                              (договор - оферта) ознакомлен. С правилами
+                              оказания услуг согласен»
                             </label>
 
                             <br />
                           </div>
+
                           <div class="modal-footer">
-                            <div class="container">
-                              <div class="mt-1 text-center" id="feedback"></div>
-                              <div>
-                                <p class="success">
-                                  <?php echo $success;  ?></p>
-                                </p>
-
-                                <p class="failed">
-                                  <?php echo $failed;  ?></p>
-                                </p>
-                              </div>
-
-                              <button
-                                type="submit"
-                                id="submit"
-                                name="submit"
-                                class="btn btn-success my-3 w-100"
-                              >
-                                Отправить заявку
-                              </button>
-                            </div>
                             <div class="container">
                               <span class="text-danger">*</span> Нажимая на
                               кнопку, вы соглашаетесь на обработку персональных
@@ -1405,52 +3622,74 @@
               </div>
             </div>
           </div>
-        </div>
+          <div class="col-md-6">
+            <div class="card mb-4 rounded-3 shadow-sm border-success minPacket">
+              <div
+                class="card-header py-2 text-white bg-success border-success"
+              >
+                <h4 class="my-0 fw-normal">Этот курс можно подарить</h4>
+                <!-- <hr class="my-2"/><h4 class="my-0 fw-normal py-0">Налоговая декларация+</h4> -->
+              </div>
 
-        <div
-          class="
-            card
-            mb-4
-            rounded-3
-            shadow-sm
-            bg-white
-            border-success
-            minPacket
-            d-flex
-          "
-        >
-          <div class="row">
-            <div class="col-12 col-lg-8 m-auto text-center">
-              <div class="row">
-                <div class="col-12 col-lg-4">
-                  <img
-                    src="style/img/gift.png"
-                    alt=""
-                    width="150px"
-                    class="mx-3"
-                  />
+              <div class="card-body d-flex flex-column">
+                <div class="col-12 m-auto text-center">
+                  <div class="row">
+                    <div class="col-12">
+                      <img
+                        src="style/img/gift.png"
+                        alt=""
+                        width="150px"
+                        class="mx-3"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div class="col-12 col-lg-8 text-center m-auto">
-                  <span class="h3"> Этот курс можно подарить </span>
+                <!-- <a
+                  target="_blank"
+                  href="https://www.youtube.com/watch?v=53TEGwfAN3I&t=1s"
+                  class="btn btn-dark w-50 mt-auto mx-auto ZakazUsl"
+                  >Учитесь бесплатно</a
+                > -->
+                <div class="col-12 d-flex my-0">
+                  <a
+                    id="OformitSert"
+                    data-bs-toggle="modal"
+                    href="#exampleModalToggle"
+                    role="button"
+                    class="btn btn-success h4 m-auto justify-content-center text-center text-white ZakazUsl"
+                    >Оформить сертификат</a
+                  >
                 </div>
               </div>
-            </div>
-            <div class="col-12 col-lg-4 d-flex my-4 my-lg-0">
-              <a
-                id="OformitSert"
-                data-bs-toggle="modal"
-                href="#exampleModalToggle"
-                role="button"
-                class="
-                  btn btn-success
-                  h4
-                  m-auto
-                  justify-content-center
-                  text-center text-white
-                  ZakazUsl
-                "
-                >Оформить сертификат</a
-              >
+
+              <!-- 
+              <div class="row">
+                <div class="col-12 col-lg-8 m-auto text-center">
+                  <div class="row">
+                    <div class="col-12 col-lg-4">
+                      <img
+                        src="style/img/gift.png"
+                        alt=""
+                        width="150px"
+                        class="mx-3"
+                      />
+                    </div>
+                    <div class="col-12 col-lg-8 text-center m-auto">
+                      <span class="h3"> Этот курс можно подарить </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-4 d-flex my-4 my-lg-0">
+                  <a
+                    id="OformitSert"
+                    data-bs-toggle="modal"
+                    href="#exampleModalToggle"
+                    role="button"
+                    class="btn btn-success h4 m-auto justify-content-center text-center text-white ZakazUsl"
+                    >Оформить сертификат</a
+                  >
+                </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -1467,17 +3706,33 @@
             финансовой грамотности в Казахстане.
           </div>
           <div class="col-12 col-sm-6 text-end">
-              <p>
-                  <a href="privacyPolicy.html" class="polKonf text-white">Политика конфиденциальности</a><br />
-                  <a href="contractOffer.html" class="DogOfr text-white">Договор - Оферта</a>
-                </p>
+            <p>
+              <a href="privacyPolicy.html" class="polKonf text-white"
+                >Политика конфиденциальности</a
+              ><br />
+              <a href="contractOffer.html" class="DogOfr text-white"
+                >Договор - Оферта</a
+              >
+            </p>
           </div>
         </div>
       </div>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/courses.js" > // Get the checkbox</script>
+    <script src="js/courses.js">
+      // Get the checkbox
+    </script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5CH4THS"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
   </body>
 </html>

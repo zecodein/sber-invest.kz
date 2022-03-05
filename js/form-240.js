@@ -1,16 +1,26 @@
-var queryString = location.search.substring(1);
+const queryString = window.location.search;
+console.log(queryString);
+
+// var queryString = location.search.substring(1);
 var tarif = document.getElementById("tarif");
 var tarifOptions = document.getElementById("tarifOptions");
-if (queryString === "min") {
+
+var form240min = document.getElementById("form240min");
+var form240stand = document.getElementById("form240stand");
+var form240prem = document.getElementById("form240prem");
+
+form240min.addEventListener("click", function () {
   tarifOptions.value = "min";
   $("#price").html("<label >От 20 тыс. тенге*</label>");
-} else if (queryString === "stand") {
+});
+form240stand.addEventListener("click", function () {
   tarifOptions.value = "stand";
   $("#price").html("<label >От 50 тыс. тенге*</label>");
-} else if (queryString === "prem") {
+});
+form240prem.addEventListener("click", function () {
   tarifOptions.value = "prem";
   $("#price").html("<label >От 100 тыс. тенге*</label>");
-}
+});
 
 tarifOptions.addEventListener("change", function () {
   if (tarifOptions.value === "min") {
@@ -271,6 +281,8 @@ $("#form").submit(function (event) {
       "entry.530956502": taxdeductnames_value,
       "entry.949391439": $("#taxdeduct1").val(),
       "entry.1182572961": $("#tarifOptions").val(),
+
+      "entry.1148544009": queryString,
     };
 
     // Validate form
@@ -282,7 +294,8 @@ $("#form").submit(function (event) {
         key != "entry.1486739758" &&
         key != "entry.949391439" &&
         key != "entry.1182572961" &&
-        key != "entry.1462956229"
+        key != "entry.1462956229" &&
+        key != "entry.1148544009"
       ) {
         formSuccess = false;
         $("#feedback").html(
