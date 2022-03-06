@@ -33,19 +33,6 @@
 
     <title>Заказать услугу</title>
     <style>
-      section {
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-          url("style/img/podarokBlue.png");
-        background-color: #cccccc;
-        /* Used if the image is unavailable */
-        background-position: right;
-        /* Center the image */
-        background-repeat: no-repeat;
-        /* Do not repeat the image */
-        background-size: cover;
-        /* Resize the background image to cover the entire container */
-      }
-
       p {
         text-indent: 20px;
       }
@@ -215,7 +202,9 @@
                 <ul class="navbar-nav m-auto">
                   <a class="nav-link" href="services.html">Услуги</a>
                   <a class="nav-link" href="courses.html">Курсы</a>
-                  <a class="nav-link" href="knowledgebase.html">База знаний</a>
+                  <a class="nav-link active" href="knowledgebase.html"
+                    >База знаний</a
+                  >
                   <a class="nav-link" href="videos.html">Видео</a>
                   <a class="nav-link" href="tools.html">Инструменты</a>
                   <a class="nav-link" href="aboutus.html">О нас</a>
@@ -310,113 +299,20 @@
         align-items: center;
       "
     >
-      <div class="container w-100">
+      <div class="container d-flex">
         <div class="row">
-          <div class="col-6-md col-sm d-flex justify-content-center my-3 w-100">
-            <!-- Налоги инвестора в Казахстане - Весь курс целиком -->
-            <div class="FifthForm w-100" id="FifthForm">
-              <label class="form-check-label w-100">Получить подарок:</label
-              ><br />
-              <form
-                id="ltForm8513697"
-                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1307930051"
-                method="post"
-                data-open-new-window="0"
-              >
-                <input type="hidden" name="formParams[setted_offer_id]" />
-                <input
-                  class="form-position-input"
-                  data-price-value="70000"
-                  data-price-currency="KZT"
-                  name="formParams[offer_id][]"
-                  type="hidden"
-                  value="3010143"
-                /><br />
-                <div class="form-group">
-                  <input
-                    class="form-control"
-                    type="text"
-                    maxlength="60"
-                    placeholder="Введите ваш эл. адрес"
-                    name="formParams[email]"
-                    value=""
-                  /><br />
-                </div>
-                <div class="form-group">
-                  <input
-                    class="form-control"
-                    type="text"
-                    maxlength="60"
-                    placeholder="Введите ваше имя и фамилию"
-                    name="formParams[full_name]"
-                    value=""
-                  /><br />
-                </div>
-                <div class="form-group">
-                  <input
-                    class="form-control"
-                    type="text"
-                    maxlength="60"
-                    placeholder="Введите ваш телефон"
-                    name="formParams[phone]"
-                    value=""
-                  /><br />
-                </div>
-                <button
-                  class="btn btn-success my-3 w-100"
-                  type="submit"
-                  id="button8391315"
-                  style="color: ; background-color: "
-                  onclick="if(window['btnprs61fac2757312a']){return false;}window['btnprs61fac2757312a']=true;setTimeout(function(){window['btnprs61fac2757312a']=false},6000);return true;"
-                >
-                  Оформить заказ</button
-                ><br />
-                <input
-                  type="hidden"
-                  id="59565561fac275639c7"
-                  name="__gc__internal__form__helper"
-                  class="__gc__internal__form__helper"
-                  value=""
-                />
-                <input
-                  type="hidden"
-                  id="59565561fac275639c7ref"
-                  name="__gc__internal__form__helper_ref"
-                  class="__gc__internal__form__helper_ref"
-                  value=""
-                />
-                <input type="hidden" name="requestTime" value="1643823733" />
-                <input
-                  type="hidden"
-                  name="requestSimpleSign"
-                  value="18aec202960305404f6454dfcfb2bfc2"
-                />
-                <input type="hidden" name="isHtmlWidget" value="1" />
-              </form>
-              <span id="gccounterImgContainer"></span>
-              <script>
-                window.addEventListener("load", function () {
-                  let loc = document.getElementById("59565561fac275639c7");
-                  loc.value = window.location.href;
-                  let ref = document.getElementById("59565561fac275639c7ref");
-                  ref.value = document.referrer;
-
-                  let statUrl =
-                    "https://courses.sber-invest.kz/stat/counter?ref=" +
-                    encodeURIComponent(document.referrer) +
-                    "&loc=" +
-                    encodeURIComponent(document.location.href);
-                  document.getElementById("gccounterImgContainer").innerHTML =
-                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
-                    statUrl +
-                    "'/>";
-                });
-              </script>
-            </div>
+          <div class="col-6-md col-sm d-flex justify-content-center my-3">
+            <img
+              src="/style/img/failPage.png"
+              class="w-50 text-center"
+              alt=""
+            />
           </div>
           <div
             class="col-6-md col-sm d-flex justify-content-center h3 d-flex align-items-center"
-          ></div>
+          >
+            <div class="text-center">Такой страницы пока нет</div>
+          </div>
         </div>
       </div>
     </section>
