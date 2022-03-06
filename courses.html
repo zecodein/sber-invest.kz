@@ -286,7 +286,6 @@
         </div>
       </div>
     </nav>
-
     <!-- HEADER -->
     <!-- style="background: url('https://fs03.getcourse.ru/fileservice/file/download/a/143375/sc/212/h/9d9ba98ec777006c32a619c070f9cf8d.jpg') no-repeat fixed; background-size: cover; background-position:center; 
     height: 100%; height: 500px; background-blend-mode: darken; opacity: 0;" -->
@@ -986,33 +985,26 @@
       <div class="container">
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
           <strong class="h1 fw-bold">СТОИМОСТЬ</strong>
-          
           <p class="fs-5 text-muted"></p>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-          <div class="col-md-6">
-            <div class="card mb-4 rounded-3 shadow-sm border-dark minPacket">
-              <div class="card-header py-2 text-white bg-dark border-dark">
-                <h4 class="my-0 fw-normal">
-                  Расчет суммы налога и заполнение декларации (ФНО 240)
-                </h4>
-                <!-- <hr class="my-2"/><h4 class="my-0 fw-normal py-0">Налоговая декларация</h4> -->
-              </div>
-              <div class="card-body d-flex flex-column">
-                <div class="list-group-flush mt-3 mb-4 text-start">
-                  <div class="text-center">
-                    Видео-инструкции как самостоятельно подготовить расчет и
-                    подать декларацию (практическая часть курса) находится в общем
-                    доступе на нашем YouTube канале и доступны бесплатно.
-                  </div>
-                </div>
-                <a
-                  target="_blank"
-                  href="https://www.youtube.com/watch?v=QYYXfve5YcU&ab_channel=BatyrkhanYelemes"
-                  class="btn btn-dark w-50 mt-auto mx-auto ZakazUsl"
-                  >Учитесь бесплатно</a
-                >
+        <div
+          class="card mb-4 rounded-3 shadow-sm bg-white border-dark minPacket d-flex"
+        >
+          <div
+            class="card-header py-2 text-white bg-dark border-dark text-center"
+          >
+            <h4 class="my-0 fw-normal">
+              Расчет суммы налога и заполнение декларации (ФНО 240)
+            </h4>
+            <!-- <hr class="my-2"/><h4 class="my-0 fw-normal py-0">Налоговая декларация</h4> -->
+          </div>
+          <div class="card-body d-flex flex-column">
+            <div class="list-group-flush mt-3 mb-4 text-start">
+              <div class="text-center">
+                Видео-инструкции как самостоятельно подготовить расчет и подать
+                декларацию ( 2 видео - часть 1 & 2) находятся в общем доступе на
+                нашем YouTube канале и доступны бесплатно.
               </div>
             </div>
             <!-- <a
@@ -1059,15 +1051,7 @@
                   data-bs-toggle="modal"
                   href="#exampleModalToggle"
                   role="button"
-                  class="
-                    btn btn-warning
-                    w-50
-                    mt-auto
-                    mx-auto
-                    text-white
-                    ZakazUsl
-                  "
-                  
+                  class="btn btn-warning mt-auto mx-auto text-white ZakazUsl"
                   >Оформить заявку</a
                 >
 
@@ -1078,9 +1062,7 @@
                   aria-labelledby="exampleModalToggleLabel"
                   tabindex="-1"
                 >
-
-                  <div class="modal-dialog modal-dialog-centered modal-xl">
-
+                  <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalToggleLabel">
@@ -1295,102 +1277,143 @@
                             >
                           </div>
 
-                          <div>
-                            <script id="70e951e143a9ad2da897737085fad296e492d196" src="https://courses.sber-invest.kz/pl/lite/widget/script?id=592956"></script>    
+                          <br />
+
+                          <div class="form-check form-switch">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="Podarok"
+                            />
+                            <label class="form-check-label w-75" for="Podarok"
+                              >Оформить подарочный сертификат</label
+                            >
                           </div>
 
-                          <div class="row">
-                            <div class="col-12 col-lg-6">
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Фамилия
-                                  </h5>
-                                </div>
-                                <div class="card-body form-control">
-                                  <input
-                                    id="surname"
-                                    type="text"
-                                    name="surname"
-                                    class="form-control"
-                                    placeholder="Фамилия"
-                                  />
-                                  <small>Error Message</small>
-                                </div>
-                              </div>
+                          <br />
 
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Имя
-                                  </h5>
-                                </div>
-                                <div class="card-body form-control">
-                                  <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    class="form-control"
-                                    placeholder="Имя"
-                                  />
-                                  <small>Error Message</small>
-                                </div>
-                              </div>
+                          <div id="PolKonfCheck">
+                            <!-- 1 new Налоги инвестора в Казахстане - Порядок, иностранные рынки и вычеты -->
+                            <div
+                              class="FirstForm"
+                              id="FirstForm"
+                              style="display: none"
+                            >
+                              <label class="form-check-label w-100 text-center"
+                                >Налоги инвестора в Казахстане - Порядок,
+                                иностранные рынки и вычеты:</label
+                              ><br />
+                              <form
+                                id="ltForm6395121"
+                                action="https://courses.sber-invest.kz/pl/lite/block-public/process-html?id=1303028987"
+                                method="post"
+                                data-open-new-window="0"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="formParams[setted_offer_id]"
+                                /><br />
+                                <input
+                                  class="form-position-input"
+                                  data-price-value="40000"
+                                  data-price-currency="KZT"
+                                  name="formParams[offer_id][]"
+                                  type="hidden"
+                                  value="3010222"
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш эл. адрес"
+                                  name="formParams[email]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваше имя и фамилию"
+                                  name="formParams[full_name]"
+                                  value=""
+                                /><br />
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  maxlength="60"
+                                  placeholder="Введите ваш телефон"
+                                  name="formParams[phone]"
+                                  value=""
+                                /><br />
+                                <input
+                                  id="firstUTM"
+                                  name="formParams[dealCustomFields][1041908]"
+                                  type="hidden"
+                                /><br />
+                                <button
+                                  class="btn btn-success my-3 justify-content-center w-100"
+                                  type="submit"
+                                  id="button6332323"
+                                  style="color: ; background-color: "
+                                  onclick="if(window['btnprs620b92547fcec']){return false;}window['btnprs620b92547fcec']=true;setTimeout(function(){window['btnprs620b92547fcec']=false},6000);return true;"
+                                >
+                                  Оформить заказ</button
+                                ><br />
+                                <input
+                                  type="hidden"
+                                  id="592956620b92546b714"
+                                  name="__gc__internal__form__helper"
+                                  class="__gc__internal__form__helper"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  id="592956620b92546b714ref"
+                                  name="__gc__internal__form__helper_ref"
+                                  class="__gc__internal__form__helper_ref"
+                                  value=""
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestTime"
+                                  value="1644925524"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="requestSimpleSign"
+                                  value="2849796595bf498dd4c330439a165d46"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="isHtmlWidget"
+                                  value="1"
+                                />
+                              </form>
+                              <span id="gccounterImgContainer"></span>
+                              <script>
+                                window.addEventListener("load", function () {
+                                  let loc = document.getElementById(
+                                    "592956620b92546b714"
+                                  );
+                                  loc.value = window.location.href;
+                                  let ref = document.getElementById(
+                                    "592956620b92546b714ref"
+                                  );
+                                  ref.value = document.referrer;
 
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">Отчество</h5>
-                                </div>
-                                <div class="card-body">
-                                  <input
-                                    id="lastname"
-                                    type="text"
-                                    name="patronomic"
-                                    class="form-control"
-                                    placeholder="Отчество"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Телефон
-                                    для связи (сотовый)
-                                  </h5>
-                                </div>
-                                <div class="card-body form-control">
-                                  <input
-                                    id="tel"
-                                    type="tel"
-                                    name="tel"
-                                    class="form-control"
-                                    pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                    value="+7"
-                                  />
-                                  <small>Error Message</small>
-                                </div>
-                              </div>
-
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span>
-                                    Электроная почта
-                                  </h5>
-                                </div>
-                                <div class="card-body form-control">
-                                  <input
-                                    id="email"
-                                    type="email"
-                                    name="email"
-                                    class="form-control"
-                                    placeholder="name@example.com"
-                                  />
-                                  <small>Error Message</small>
-                                </div>
-                              </div>
+                                  let statUrl =
+                                    "https://courses.sber-invest.kz/stat/counter?ref=" +
+                                    encodeURIComponent(document.referrer) +
+                                    "&loc=" +
+                                    encodeURIComponent(document.location.href);
+                                  document.getElementById(
+                                    "gccounterImgContainer"
+                                  ).innerHTML =
+                                    "<img width=1 height=1 style='display:none' id='gccounterImg' src='" +
+                                    statUrl +
+                                    "'/>";
+                                });
+                              </script>
                             </div>
 
                             <!-- 1.2 Налоги инвестора в Казахстане - Подарок - Порядок, иностранные рынки и вычеты -->
@@ -1886,55 +1909,7 @@
                               </script>
                             </div>
 
-        <div
-          class="
-            card
-            mb-4
-            rounded-3
-            shadow-sm
-            bg-white
-            border-success
-            minPacket
-            d-flex
-          "
-        >
-          <div class="row">
-            <div class="col-12 col-lg-8 m-auto text-center">
-              <div class="row">
-                <div class="col-12 col-lg-4">
-                  <img
-                    src="style/img/gift.png"
-                    alt=""
-                    width="150px"
-                    class="mx-3"
-                  />
-                </div>
-                <div class="col-12 col-lg-8 text-center m-auto">
-                  <span class="h3"> Этот курс можно подарить </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-lg-4 d-flex my-4 my-lg-0">
-              <a
-                id="OformitSert"
-                data-bs-toggle="modal"
-                href="#exampleModalToggle"
-                role="button"
-                class="
-                  btn btn-success
-                  h4
-                  m-auto
-                  justify-content-center
-                  text-center text-white
-                  ZakazUsl
-                "
-                >Оформить сертификат</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+                            <!-- 3.2 Налоги инвестора в Казахстане - Подарок - Порядок, локальные и иностранные рынки -->
 
                             <div
                               class="PodThirdForm"
@@ -3721,7 +3696,7 @@
     <script src="js/courses.js">
       // Get the checkbox
     </script>
-    <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+    <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
