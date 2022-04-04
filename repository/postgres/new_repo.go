@@ -18,7 +18,7 @@ func NewPostgresRepository(config *configs.Config) (*pgxpool.Pool, error) {
 		return nil, fmt.Errorf("postgres: %w", err)
 	}
 
-	cfg.MaxConns = 25
+	cfg.MaxConns = 5 // TODO 25
 	cfg.MaxConnLifetime = 5 * time.Minute
 
 	db, err := pgxpool.ConnectConfig(context.Background(), cfg)

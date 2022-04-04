@@ -1,8 +1,9 @@
 CREATE TABLE IF NOT EXISTS "user"(
     "user_id" BIGSERIAL PRIMARY KEY,
-    "username" TEXT NOT NULL,
+    "first_name" TEXT NOT NULL,
+    "last_name" TEXT NOT NULL,
     "email" TEXT NOT NULL UNIQUE,
-    "access" TEXT DEFAULT "basic_user",
+    "access" TEXT,
     "password" TEXT NOT NULL,
     "created_at" TIMESTAMP NOT NULL,
     "updated_at" TIMESTAMP NOT NULL

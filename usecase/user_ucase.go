@@ -2,6 +2,8 @@ package usecase
 
 import (
 	"context"
+	"strings"
+	"time"
 
 	"github.com/zecodein/sber-invest.kz/domain"
 )
@@ -17,7 +19,15 @@ func NewUserUsecase(u domain.UserRepository) domain.UserUsecase {
 }
 
 func (u *userUsecase) Create(ctx context.Context, user *domain.User) (int64, error) {
-	return 0, nil
+	if strings.TrimSpace(user.FirstName) == "" || strings.TrimSpace(user.LastName) == "" || strings.TrimSpace(user.Email) == "" || strings.TrimSpace(user.Password) == "" {
+		return 0, domain.ErrNotValid
+	}
+	if user.Password != user.ConfirmPassword {
+		return 0, domain.ErrNotValid
+	}
+	user.CreatedAt = time.Now().UTC()
+	user.UpdatedAt = time.Now().UTC()
+	return u.userRepo.Create(ctx, user)
 }
 
 func (u *userUsecase) Update(ctx context.Context, user *domain.User) (int64, error) {

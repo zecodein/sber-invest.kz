@@ -1,6 +1,8 @@
 package web
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"github.com/zecodein/sber-invest.kz/domain"
 )
@@ -23,25 +25,37 @@ func NewUserHandler(r *gin.Engine, us domain.UserUsecase) {
 }
 
 func (u *UserHandler) signUp(c *gin.Context) {
-	// sign up
+	// TODO sign up
+	user := &domain.User{}
+	err := c.BindJSON(user)
+	if err != nil {
+		c.Writer.WriteHeader(http.StatusBadRequest)
+		return
+	}
+	_, err = u.userUsecase.Create(c.Request.Context(), user)
+	if err != nil {
+		c.Writer.WriteHeader(http.StatusBadRequest)
+		return
+	}
+	c.Writer.WriteHeader(http.StatusCreated)
 }
 
 func (u *UserHandler) signIn(c *gin.Context) {
-	// sign in
+	// TODO sign in
 }
 
 func (u *UserHandler) signOut(c *gin.Context) {
-	// sign out
+	// TODO sign out
 }
 
 func (u *UserHandler) update(c *gin.Context) {
-	// update
+	// TODO update
 }
 
 func (u *UserHandler) getByID(c *gin.Context) {
-	// get by id
+	// TODO get by id
 }
 
 func (u *UserHandler) delete(c *gin.Context) {
-	// delete
+	// TODO delete
 }

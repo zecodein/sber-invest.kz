@@ -2,6 +2,7 @@ package repository
 
 import (
 	"context"
+	"log"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/zecodein/sber-invest.kz/domain"
@@ -18,7 +19,21 @@ func NewUserRepository(db *pgxpool.Pool) domain.UserRepository {
 }
 
 func (u *userRepository) Create(ctx context.Context, user *domain.User) (int64, error) {
-	return 0, nil
+	statement := `INSERT INTO "user"(
+		"first_name",
+		"last_name",
+		"email",
+		"password",
+		"created_at",
+		"updated_at"
+	) VALUES ($1, $2, $3, $4, $5, $6) RETURNING "user_id"`
+	var id int64 = 0
+	err := u.db.QueryRow(ctx, statement, user.FirstName, user.LastName, user.Email, user.Password, user.CreatedAt, user.UpdatedAt).Scan(&id)
+	if err != nil {
+		log.Println(err)
+		return 0, err
+	}
+	return id, nil
 }
 
 func (u *userRepository) Update(ctx context.Context, user *domain.User) (int64, error) {
