@@ -1,0 +1,32 @@
+version: '3'
+services:
+  psql:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_DB: sber-invest-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: PostgresInvest2022
+      PGDATA: /data/postgres
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/1-init.sql
+      - pg-data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    restart: unless-stopped
+
+  redis:
+    image: redis:6.2-alpine
+    container_name: redis
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass RedisInvest2022
+    volumes:
+      - cache:/data
+
+volumes:
+  pg-data:
+    driver: local
+  cache:
+    driver: local
