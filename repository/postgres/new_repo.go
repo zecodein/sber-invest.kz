@@ -10,7 +10,7 @@ import (
 )
 
 func NewPostgresRepository(config *configs.Config) (*pgxpool.Pool, error) {
-	// * postgres://postgres:@localhost:5432/postgres
+	// * postgres://postgres:PostgresInvest2022@localhost:5432/sber-invest-db
 	DSN := fmt.Sprintf("postgres://%s:%s@%s%s/%s", config.UserDB, config.PasswordDB, config.HostDB, config.PortDB, config.NameDB)
 
 	cfg, err := pgxpool.ParseConfig(DSN)

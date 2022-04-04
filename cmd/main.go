@@ -2,15 +2,19 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"log"
+	"net/http"
+	"time"
 
 	"github.com/BurntSushi/toml"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/redis"
 	"github.com/gin-gonic/gin"
 	"github.com/zecodein/sber-invest.kz/configs"
+	"github.com/zecodein/sber-invest.kz/delivery/web"
+	"github.com/zecodein/sber-invest.kz/repository"
 	"github.com/zecodein/sber-invest.kz/repository/postgres"
+	"github.com/zecodein/sber-invest.kz/usecase"
 )
 
 var configPath string
@@ -30,8 +34,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(config)
-
 	// * CONNECT DATABASE
 	db, err := postgres.NewPostgresRepository(config)
 	if err != nil {
@@ -50,7 +52,28 @@ func main() {
 
 	// * SESSION MIDDLEWARE
 	router.Use(sessions.Sessions("sber-invest", store))
+
 	// * STATIC FILES & PARSE *.html files
 	// router.Static("/static", "./ui/static")
 	// router.LoadHTMLGlob("./ui/html/*")
+
+	// * REPOSITORY
+	userRepository := repository.NewUserRepository(db)
+
+	// * USECASE
+	userUsecase := usecase.NewUserUsecase(userRepository)
+
+	// * HANDLER
+	web.NewUserHandler(router, userUsecase)
+
+	// * SERVER
+	server := &http.Server{
+		Addr:         config.BindAddr,
+		Handler:      router,
+		ReadTimeout:  15 * time.Second,
+		WriteTimeout: 15 * time.Second,
+		IdleTimeout:  15 * time.Second,
+	}
+
+	log.Println(server.ListenAndServe())
 }
