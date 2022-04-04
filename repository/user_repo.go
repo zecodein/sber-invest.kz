@@ -41,11 +41,23 @@ func (u *userRepository) Update(ctx context.Context, user *domain.User) (int64, 
 }
 
 func (u *userRepository) GetByID(ctx context.Context, id int64) (*domain.User, error) {
-	return nil, nil
+	stmt := `SELECT * FROM "user" WHERE "user_id"=$1`
+	user := domain.User{}
+	err := u.db.QueryRow(ctx, stmt, id).Scan(&user.ID, &user.FirstName, &user.LastName, &user.Email, &user.Access, &user.Password, &user.CreatedAt, &user.UpdatedAt)
+	if err != nil {
+		return nil, err
+	}
+	return &user, nil
 }
 
 func (u *userRepository) GetByEmail(ctx context.Context, email string) (*domain.User, error) {
-	return nil, nil
+	stmt := `SELECT * FROM "user" WHERE "email"=$1`
+	user := domain.User{}
+	err := u.db.QueryRow(ctx, stmt, email).Scan(&user.ID, &user.FirstName, &user.LastName, &user.Email, &user.Access, &user.Password, &user.CreatedAt, &user.UpdatedAt)
+	if err != nil {
+		return nil, err
+	}
+	return &user, nil
 }
 
 func (u *userRepository) Delete(ctx context.Context, id int64) error {

@@ -1,6 +1,7 @@
 package web
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -25,7 +26,6 @@ func NewUserHandler(r *gin.Engine, us domain.UserUsecase) {
 }
 
 func (u *UserHandler) signUp(c *gin.Context) {
-	// TODO sign up
 	user := &domain.User{}
 	err := c.BindJSON(user)
 	if err != nil {
@@ -42,6 +42,22 @@ func (u *UserHandler) signUp(c *gin.Context) {
 
 func (u *UserHandler) signIn(c *gin.Context) {
 	// TODO sign in
+	user := &domain.User{}
+	err := c.BindJSON(user)
+	if err != nil {
+		fmt.Println(err)
+		c.Writer.WriteHeader(http.StatusBadRequest)
+		return
+	}
+	id, err := u.userUsecase.GetByEmail(c.Request.Context(), user)
+	if err != nil {
+		fmt.Println(err)
+		c.Writer.WriteHeader(http.StatusBadRequest)
+		return
+	}
+	fmt.Println(id)
+	// TODO set session
+	c.Writer.WriteHeader(http.StatusOK)
 }
 
 func (u *UserHandler) signOut(c *gin.Context) {

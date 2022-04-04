@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS "user"(
     "first_name" TEXT NOT NULL,
     "last_name" TEXT NOT NULL,
     "email" TEXT NOT NULL UNIQUE,
-    "access" TEXT,
+    "access" TEXT NOT NULL DEFAULT 'basic_user',
     "password" TEXT NOT NULL,
     "created_at" TIMESTAMP NOT NULL,
     "updated_at" TIMESTAMP NOT NULL
