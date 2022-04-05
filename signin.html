@@ -28,7 +28,6 @@
 
 <body>
     <div class="container">
-        <form action="/user/signin" method="POST">
 
             <div class="auth-form">
                 <!-- Email -->
@@ -47,10 +46,9 @@
                 </div>
 
                 <!-- Submit -->
-                <button type="submit" class="btn btn-warning">Войти</button>
+                <button onclick="signin()" type="submit" class="btn btn-warning">Войти</button>
 
             </div>
-        </form>
     </div>
 
     <!-- bootstrap js -->
@@ -59,6 +57,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CH4THS" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <script src="js/user.js"></script>
 </body>
 
 </html>
