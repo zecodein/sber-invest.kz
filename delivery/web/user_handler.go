@@ -29,12 +29,12 @@ func (u *UserHandler) signUp(c *gin.Context) {
 	user := &domain.User{}
 	err := c.BindJSON(user)
 	if err != nil {
-		c.Writer.WriteHeader(http.StatusBadRequest)
+		c.Writer.WriteHeader(getStatusCode(err))
 		return
 	}
 	_, err = u.userUsecase.Create(c.Request.Context(), user)
 	if err != nil {
-		c.Writer.WriteHeader(http.StatusBadRequest)
+		c.Writer.WriteHeader(getStatusCode(err))
 		return
 	}
 	c.Writer.WriteHeader(http.StatusCreated)
@@ -45,14 +45,12 @@ func (u *UserHandler) signIn(c *gin.Context) {
 	user := &domain.User{}
 	err := c.BindJSON(user)
 	if err != nil {
-		fmt.Println(err)
 		c.Writer.WriteHeader(http.StatusBadRequest)
 		return
 	}
 	id, err := u.userUsecase.GetByEmail(c.Request.Context(), user)
 	if err != nil {
-		fmt.Println(err)
-		c.Writer.WriteHeader(http.StatusBadRequest)
+		c.Writer.WriteHeader(getStatusCode(err))
 		return
 	}
 	fmt.Println(id)

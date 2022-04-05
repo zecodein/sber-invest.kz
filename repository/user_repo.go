@@ -2,7 +2,6 @@ package repository
 
 import (
 	"context"
-	"log"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/zecodein/sber-invest.kz/domain"
@@ -30,7 +29,6 @@ func (u *userRepository) Create(ctx context.Context, user *domain.User) (int64, 
 	var id int64 = 0
 	err := u.db.QueryRow(ctx, statement, user.FirstName, user.LastName, user.Email, user.Password, user.CreatedAt, user.UpdatedAt).Scan(&id)
 	if err != nil {
-		log.Println(err)
 		return 0, err
 	}
 	return id, nil
