@@ -1,3 +1,15 @@
+function handleSubmit () {
+  const tarif = document.getElementById('tarif').value;
+  const price = document.getElementById('price').value;
+  
+  sessionStorage.setItem("TARIF", tarif);
+  sessionStorage.setItem("PRICE", price);
+
+  return;
+}
+
+const queryString = window.location.search;
+console.log(queryString);
 
 // var queryString = location.search.substring(1);
 var tarif = document.getElementById("tarif");

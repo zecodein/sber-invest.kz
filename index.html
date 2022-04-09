@@ -21,6 +21,7 @@
     <title>Сбережения и инвестиции</title>
     <link href="style/form-240.css" rel="stylesheet" crossorigin="anonymous" />
 
+
     <link
       href="style/bootstrap.min.css"
       rel="stylesheet"
@@ -589,7 +590,7 @@
                     <span class="text-danger">*</span> Имя
                   </h5>
                 </div>
-                <div class="form-control error">
+                <div class="form-control">
                   <input type="text" id="name" name="name" class="form-control" placeholder="Имя">
                   <small>Заполните поле Имя</small>
                 </div>
@@ -602,8 +603,8 @@
                     Электроная почта
                   </h5>
                 </div>
-                <div class="form-control error">
-                  <input id="email" type="text" name="email" class="form-control" placeholder="e-mail">
+                <div class="form-control">
+                  <input  id="email" type="text" name="email" class="form-control" placeholder="e-mail">
                   <small>Заполните поле Почта</small>
                 </div>
               </div>
@@ -615,7 +616,7 @@
                     (сотовый)
                   </h5>
                 </div>
-                <div class="form-control error">
+                <div class="form-control">
                   <input id="tel" type="tel" name="mobile" class="form-control" pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}" value="+7">
                   <small>Неверный номер</small>
                 </div>
@@ -640,7 +641,7 @@
                 </div>
               </div>
               <div class="container">
-                <div class="text-center mt-1" id="feedback"><label style=" border-radius: 1em; padding:10px;border: solid red 2px" class="text-danger text-center">Заполните поля корректно</label></div>
+                <div class="text-center mt-1" id="feedback"><label style="display: none; border-radius: 1em; padding:10px;border: solid red 2px" class="text-danger text-center">Заполните поля корректно</label></div>
                 <button type="Submit" id="submit" class="btn btn-success my-3 w-100">
                   Отправить заявку
                 </button>

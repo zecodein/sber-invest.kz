@@ -116,9 +116,6 @@ $("#form").submit(function (event) {
       document.getElementById("submit").disabled = true;
       // Send request
       $.ajax({
-        // url: 'https://docs.google.com/forms/d/e/1FAIpQLSdnW7ixrovoi7V7sJQihWouPztZL4GoRMAP5SpoVh2UfMhxOQ/formResponse',
-
-        // url: "https://docs.google.com/forms/d/e/1FAIpQLSdvcX5VR24xIjMeHO9Y-enPIyf7U0_mL3Oc_9xlgJ1ND1rZgw/formResponse",
         url: "https://docs.google.com/forms/d/e/1FAIpQLScLyZl5LsrxnbhBdPeKtWcBRZRVzgZOIdAhP_bBUUygzI9ZrA/formResponse",
         type: "POST",
         crossDomain: true,
