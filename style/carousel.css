@@ -55,10 +55,10 @@
   display: none;
 }
 
-.card {
+a .card {
   width: 360px;
   height: 524px;
-  margin: 20px;
+  margin: 10px 0 20px 0;
 }
 
 @media (max-width: 1200px) {
@@ -73,11 +73,15 @@
     white-space: nowrap;
   }
 
-  .card {
+  a .card {
     width: 290px;
-    height: 524px;
+    height: 550px;
     margin: 10px;
     display: inline-block;
     white-space: normal;
   }
+}
+
+div a {
+  color: #292d30;
 }

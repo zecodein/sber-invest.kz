@@ -1,5 +1,3 @@
-const queryString = window.location.search;
-console.log(queryString);
 
 // var queryString = location.search.substring(1);
 var tarif = document.getElementById("tarif");
