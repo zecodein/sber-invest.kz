@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"github.com/zecodein/sber-invest.kz/domain"
 )
@@ -11,6 +12,8 @@ import (
 type UserHandler struct {
 	userUsecase domain.UserUsecase
 }
+
+const key = "sber-session"
 
 func NewUserHandler(r *gin.Engine, us domain.UserUsecase) {
 	handler := &UserHandler{
@@ -55,6 +58,11 @@ func (u *UserHandler) signIn(c *gin.Context) {
 	}
 	fmt.Println(id)
 	// TODO set session
+	err = u.session(c, id)
+	if err != nil {
+		c.Writer.WriteHeader(getStatusCode(err))
+		return
+	}
 	c.Writer.WriteHeader(http.StatusOK)
 }
 
@@ -72,4 +80,16 @@ func (u *UserHandler) getByID(c *gin.Context) {
 
 func (u *UserHandler) delete(c *gin.Context) {
 	// TODO delete
+}
+
+func (u *UserHandler) session(c *gin.Context, id int64) error {
+	session := sessions.Default(c)
+	session.Options(sessions.Options{MaxAge: 3600 * 24, Path: "/", HttpOnly: true})
+	session.Set(key, id)
+	err := session.Save()
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

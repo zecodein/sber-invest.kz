@@ -54,8 +54,8 @@ func main() {
 	router.Use(sessions.Sessions("sber-invest", store))
 
 	// * STATIC FILES & PARSE *.html files
-	// router.Static("/static", "./ui/static")
-	// router.LoadHTMLGlob("./ui/html/*")
+	router.Static("/static", "./ui/static")
+	router.LoadHTMLGlob("./ui/html/*")
 
 	// * REPOSITORY
 	userRepository := repository.NewUserRepository(db)
@@ -64,6 +64,7 @@ func main() {
 	userUsecase := usecase.NewUserUsecase(userRepository)
 
 	// * HANDLER
+	web.NewHandler(router)
 	web.NewUserHandler(router, userUsecase)
 
 	// * SERVER
