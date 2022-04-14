@@ -2,11 +2,14 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"net/http"
+	"path/filepath"
 	"time"
 
 	"github.com/BurntSushi/toml"
+	"github.com/gin-contrib/multitemplate"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/redis"
 	"github.com/gin-gonic/gin"
@@ -55,7 +58,7 @@ func main() {
 
 	// * STATIC FILES & PARSE *.html files
 	router.Static("/static", "./ui/static")
-	router.LoadHTMLGlob("./ui/html/*")
+	router.HTMLRender = loadTemplates("./ui/html/")
 
 	// * REPOSITORY
 	userRepository := repository.NewUserRepository(db)
@@ -77,4 +80,28 @@ func main() {
 	}
 
 	log.Println(server.ListenAndServe())
+}
+
+func loadTemplates(templatesDir string) multitemplate.Renderer {
+	r := multitemplate.NewRenderer()
+
+	layouts, err := filepath.Glob(templatesDir + "/layouts/*.html")
+	if err != nil {
+		panic(err.Error())
+	}
+
+	includes, err := filepath.Glob(templatesDir + "/includes/*.html")
+	if err != nil {
+		panic(err.Error())
+	}
+
+	// Generate our templates map from our layouts/ and includes/ directories
+	for _, include := range includes {
+		layoutCopy := make([]string, len(layouts))
+		copy(layoutCopy, layouts)
+		files := append(layoutCopy, include)
+		r.AddFromFiles(filepath.Base(include), files...)
+		fmt.Println(files)
+	}
+	return r
 }

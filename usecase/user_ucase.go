@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/zecodein/sber-invest.kz/domain"
+	"golang.org/x/crypto/bcrypt"
 )
 
 type userUsecase struct {
@@ -25,8 +26,16 @@ func (u *userUsecase) Create(ctx context.Context, user *domain.User) (int64, err
 	if user.Password != user.ConfirmPassword {
 		return 0, domain.ErrNotValid
 	}
+
+	hash, err := bcrypt.GenerateFromPassword([]byte(user.Password), 14)
+	if err != nil {
+		return 0, err
+	}
+
+	user.Password = string(hash)
 	user.CreatedAt = time.Now().UTC()
 	user.UpdatedAt = time.Now().UTC()
+
 	return u.userRepo.Create(ctx, user)
 }
 
@@ -35,7 +44,11 @@ func (u *userUsecase) Update(ctx context.Context, user *domain.User) (int64, err
 }
 
 func (u *userUsecase) GetByID(ctx context.Context, id int64) (*domain.User, error) {
-	return nil, nil
+	user, err := u.userRepo.GetByID(ctx, id)
+	if err != nil {
+		return nil, err
+	}
+	return user, nil
 }
 
 func (u *userUsecase) GetByEmail(ctx context.Context, user *domain.User) (int64, error) {
@@ -43,9 +56,12 @@ func (u *userUsecase) GetByEmail(ctx context.Context, user *domain.User) (int64,
 	if err != nil {
 		return 0, err
 	}
-	if usr.Password != user.Password {
+
+	err = bcrypt.CompareHashAndPassword([]byte(usr.Password), []byte(user.Password))
+	if err != nil {
 		return 0, domain.ErrWrongPassword
 	}
+
 	return usr.ID, nil
 }
 

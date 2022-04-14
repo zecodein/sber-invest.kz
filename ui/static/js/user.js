@@ -12,8 +12,8 @@ function signup() {
         password: password.value,
         confirm_password: confirm.value,
     });
-    console.log(data)
-    let url = "http://localhost:8080/user/signup";
+    
+    let url = "/user/signup";
     (async () => {
         const rawResponse = await fetch(url, {
             mode: 'no-cors',
@@ -26,7 +26,7 @@ function signup() {
         });
         // const content = await rawResponse.status();
         if (rawResponse.status == 201) {
-            // window.location.replace("/")
+            window.location.replace("/user/signin")
         }
     })();
 }
@@ -39,8 +39,8 @@ function signin() {
         email: email.value,
         password: password.value,
     });
-    console.log(data)
-    let url = "http://localhost:8080/user/signin";
+
+    let url = "/user/signin";
     (async () => {
         const rawResponse = await fetch(url, {
             mode: 'no-cors',
@@ -52,8 +52,8 @@ function signin() {
             body: data,
         });
         // const content = await rawResponse.status();
-        if (rawResponse.status == 201) {
-            // window.location.replace("/")
+        if (rawResponse.status == 200) {
+            window.location.replace("/")
         }
     })();
 }
