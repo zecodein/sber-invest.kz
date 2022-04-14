@@ -88,9 +88,10 @@ $("#form").submit(function (event) {
   setTimeout(function () {
     // Get data
     var data = {
-      "entry.750815494": $("#name").val(),
-      "entry.1808378347": $("#email").val(),
-      "entry.1884718043": $("#tel").val(),
+      "entry.640670863": "Перезвонить",
+      "entry.552135976": $("#name").val(),
+      "entry.601304414": $("#email").val(),
+      "entry.940607535": $("#tel").val(),
     };
 
     // Validate form
@@ -116,7 +117,8 @@ $("#form").submit(function (event) {
       document.getElementById("submit").disabled = true;
       // Send request
       $.ajax({
-        url: "https://docs.google.com/forms/d/e/1FAIpQLScLyZl5LsrxnbhBdPeKtWcBRZRVzgZOIdAhP_bBUUygzI9ZrA/formResponse",
+        // url: "https://docs.google.com/forms/d/e/1FAIpQLScLyZl5LsrxnbhBdPeKtWcBRZRVzgZOIdAhP_bBUUygzI9ZrA/formResponse",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSfe3Z44BKFQr8FaUUfRthzeYEruJerk-rtR-gq-D0cxczHK-g/formResponse",
         type: "POST",
         crossDomain: true,
         dataType: "xml",
