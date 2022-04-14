@@ -204,9 +204,32 @@
     </nav>
 
 
+    <section
+    id="bgphotoindex"
+      class="text-white p-lg-50 text-center pt-5"
+      style="
+        height: 95vh;
+        background:
+      /* top, transparent black, faked with gradient */ linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+          ),
+          /* bottom, image */ url(style/img/indexBGPhone.jpg);
+        background-repeat: no-repeat;
+        text-align: center;
+        background-size: cover;
+      "
+    >
+      
+      <div id="videoMessage" style="height: 100%" class="styling text-white"> 
+        <h1 class="mb-5" style="text-align: center; line-height: 1.5; font-size:30px"><strong>Платформа финансовой грамотности</strong></h1>
+        <h4 class="" style="width: 80%; text-align: center; line-height: 1.5; font-size:15px">Предлагаем материалы для обучения и консультации в области семейных финансов инвестиций и налогообложения.</h4>          
+      </div>     
+    </section>
+
     <div id="videowrapper">
       <div id="fullScreenDiv">
-         <video id="video" role="presentation" preload="auto" playsinline="" crossorigin="anonymous" loop="" muted="" autoplay="" class="blur">
+         <video  id="video" role="presentation" preload="auto" playsinline="" crossorigin="anonymous" loop="" muted="" autoplay="" class="blur">
               <source src="./style/img/background.mp4" type="video/webm">
               <source src="./style/img/background.mp4" type="video/mp4">
           </video> 
@@ -225,84 +248,84 @@
           <h2>Нам доверяют:</h2>
           <br />
           <div class="row text-center gy-4">
-            <div class="col-md">
+            <div class="col">
               <div class="text-dark">
                 <div class="card-body p-0 text-center">
                   <div class="mb-3">
                     <a target="_blank" href="https://rostsber.ru/">
-                      <img src="./style/img/first.png" style="height: 52px;"/>
+                      <img src="./style/img/first.png" class="partners" />
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-md">
+            <div class="col">
               <div class="text-dark">
                 <div class="card-body p-0 text-left">
                   <div class="mb-3">
                     <a target="_blank" href="https://finmentor.kz/">
-                      <img src="./style/img/second.png" style="height: 52px;"/>
+                      <img src="./style/img/second.png" class="partners" />
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-md">
+            <div class="col">
               <div class="text-dark">
                 <div class="card-body p-0 text-left">
                   <div class="mb-3">
                     <a target="_blank" href="https://aligee-investor.kz/">
-                      <img src="./style/img/third.png" style="height: 52px;"/>
+                      <img src="./style/img/third.png" class="partners" />
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-md">
+            <div class="col">
               <div class="text-dark">
                 <div class="card-body p-0 text-center">
                   <div class="mb-3">
                     <a target="_blank" href="https://ffin.kz/">
-                      <img src="./style/img/freedom.png" style="height: 52px;"/>
+                      <img src="./style/img/freedom.png" class="partners" />
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-md">
+            <div class="col">
               <div class="text-dark">
                 <div class="card-body p-0 text-left">
                   <div class="mb-3">
                     <a target="_blank" href="https://aix.kz/ru/home-ru/">
-                      <img src="./style/img/aie.png" style="height: 52px;"/>
+                      <img src="./style/img/aie.png" class="partners" />
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-md">
+            <div class="col">
               <div class="text-dark">
                 <div class="card-body p-0 text-left">
                   <div class="mb-3">
                     <a target="_blank" href="https://www.ikapitalist.kz/">
-                      <img src="./style/img/ikapitalist.png" style="height: 52px;"/>
+                      <img src="./style/img/ikapitalist.png" class="partners" />
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-md">
+            <div class="col">
               <div class="text-dark">
                 <div class="card-body p-0 text-left">
                   <div class="mb-3">
                     <a target="_blank" href="https://proportunity.kz/">
-                      <img src="./style/img/proportunity.png" style="height: 52px;"/>
+                      <img src="./style/img/proportunity.png" class="partners" />
                     </a>
                   </div>
                 </div>
@@ -314,7 +337,7 @@
                 <div class="card-body p-0 text-left">
                   <div class="mb-3">
                     <a target="_blank" href="https://www.instagram.com/quantdart.kz/?hl=ru">
-                      <img src="./style/img/quantdart.png" style="height: 52px;" />
+                      <img src="./style/img/quantdart.png" class="partners"  />
                     </a>
                   </div>
                 </div>
@@ -331,7 +354,7 @@
     <section class="">
       <div class="container px-0">
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-          <h1 class="display-4 fw-normal">Наши материалы, курсы и услуги</h1>
+          <h2 class="">Наши материалы, курсы и услуги</h2>
           <p class="fs-5 text-muted"></p>
         </div>
 
@@ -427,13 +450,12 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-7 d-flex flex-column">
-            <h2>«Сбережения и Инвестиции» - некоммерческая организация</h2>
+            <h2>«Сбережения и Инвестиции»</h2>
               <p
                 class="m-auto"
                 style="text-align: left; max-width: 1280px; width: auto"
               >
-              Все наши материалы, (книги, лекции, видео-инструкции) находятся в открытом доступе чтобы каждый мог разобраться сам — это один из принципов проекта. При этом команда проекта должна стать незаменимым помощником в ситуациях, когда требуется профессиональная помощь.
-
+              В основу проекта проекта легла диссертация основателя на тему сбережений и инвестиций в Казахстане. Работа переведена на русский язык и находится в открытом доступе в виде книги. Скачать книгу можно в <a class="text-secondary" href="https://t.me/savingandinvesting/">телеграмм канале</a> проекта или по ссылке: <a class="text-secondary " href="https://t.me/savingandinvesting/145">Книга “Сбережения и Инвестиции” - коротко о самом главном</a>
               </p>
             </div>
             <div class="col-lg-5">
@@ -442,6 +464,9 @@
               width="450"
               height="300" src="https://www.youtube.com/embed/8Tbv5KbLE-0?list=PLVf_4hKzwcLufSUh52fLfFD6rSsehvNqv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 
+
+              </p>
+              
             </div>
           </div>
         </div>
@@ -449,8 +474,8 @@
                 class="m-auto pt-2"
                 style="text-align: left; max-width: 1280px; width: auto"
               >
-              Мы нацелены на результат и можем консультировать и сопровождать начиная с вопросов ведения личных/семейных финансов и до подбора инструментов в портфель, ребалансировки и подачи ежегодной налоговой декларации.
-              </p>
+              Каждый может во всем разобраться сам  — это один из принципов проекта. Все наши материалы, (книги, лекции, видео-инструкции) находятся в открытом доступе  - в нашей базе знаний.
+            </p>
       </div>
     </section>
 
@@ -459,9 +484,8 @@
       class="text-uppercase text-center m-auto"
       style="max-width: 960px; width: auto;"
     >
-      <strong
-        >Проект "Сбережения и Инвестиции"</strong
-      > <br> <br>
+      
+        Наша команда <br> <br>
     </h2>
       <div class="container">
         <div class="row">
@@ -488,14 +512,8 @@
                 </div>
               </div>
             </div>
-            <h5><strong>Директор Сбережения и Инвестиции.</strong></h5>
-
             <p>
-              Ведущий курсов по портфельным инвестициям и финансовой грамотности, независимый финансовый советник, автор книги «Сбережения и Инвестиции».
-            </p>
-            <p>
-              С 2016 года работает над темой сбережений и инвестиций в Казахстане. Имеет диплом MBA в Geneva Business School со специализацией в международных финансах. Работа над диссертацией легла в основу книги и проекта «Сбережения и Инвестиции».
-            </p>
+              Директор Учреждения «Сбережения и Инвестиции». Ведущий курсов по портфельным инвестициям и финансовой грамотности, независимый финансовый советник, автор книги «Сбережения и Инвестиции»            </p>
           </div>
 
           <div class="col-xl">
@@ -519,41 +537,37 @@
                 </div>
               </div>
             </div>
-            <h5><strong>Эксперт по налогооблажению</strong></h5>
             <p>
-              Налоговый консультант 1-й категории, член Палаты Налоговых
-              Консультантов Казахстана. Ведущая курсов по финансовой грамотности
-              и налогообложению.
-            </p>
-            <p>
-              С 2010 года работает в компании EY. Имеет обширный опыт
-              предоставления услуг по вопросам налогообложения для местных и
-              иностранных компаний.
-            </p>
-            <p>
-              С 2020 года Людмила в рамках проекта «Сбережения и Инвестиции»
-              консультирует частных инвесторов касательно налоговой отчетности.
+              Налоговый консультант 1-й категории.  Ведущая курсов по финансовой грамотности и налогообложению. Более 10 лет опыта работы в налоговом департаменте компании EY.
             </p>
           </div>
 
+        </div>
+        <div class="row">
+          <hr>
+          <p>Команда проекта может стать незаменимым помощником в ситуациях, когда требуется профессиональная помощь.
+</p>
+<p>
+            Мы нацелены на результат и можем консультировать и сопровождать начиная с вопросов ведения личных/семейных финансов и до подбора инструментов в портфель, ребалансировки и подачи ежегодной налоговой декларации.
+            </p>
         </div>
       </div>
     </section>
 
     <section class="p-5 text-light bg-dark" >
         <div class="container">
-          <div class="row oProekte">
+          <div class="row">
             <div class="col">
               <div class="lead">
                 <p
                   class="m-auto"
-                  style="text-align: left; max-width: 1280px; width: auto"
+                  style="text-align: left; max-width: 1280px; width: auto; font-size: 16px;"
                 >
                 Команда проекта может стать незаменимым помощником в ситуациях, когда требуется профессиональная помощь.
               </p>
                 <p
                   class="m-auto pt-2"
-                  style="text-align: left; max-width: 1280px; width: auto"
+                  style="text-align: left; max-width: 1280px; width: auto; font-size: 16px;"
                 >
                 Мы нацелены на результат и можем консультировать и сопровождать начиная с вопросов ведения личных/семейных финансов и до подбора инструментов в портфель, ребалансировки и подачи ежегодной налоговой декларации.
                 </p>
@@ -568,16 +582,15 @@
         <!-- Form fields need name and value attributes -->
         <div class="container p-0">
           <div class="m-3">
-            <h1 class="h3 d-inline pt-5 align-middle">
-              Поможем выбрать и ответим на ваши вопросы.
-            </h1>
+            
           </div>
 
           <div class="row">
-            <div class="col-12 col-md-6">
-              <p>Если у вас есть вопросы или вы не знаете, что выбрать, оставьте свой номер - мы вам перезвоним!
-                Или можете связаться с нами в <a href="https://t.me/SberInvestTeam">Телеграм чате</a>
-                </p>
+            <div class="col-12 col-md-6 d-flex align-items-center">
+              <p class="d-inline pt-5 align-middle">
+                Если у вас есть вопросы или вы не знаете, что выбрать, оставьте свой номер - мы вам перезвоним!
+                Или можете связаться с нами в <a href="https://t.me/saveandinvestchat">Телеграм чате</a>
+              </p>
             </div>
 
             <div class="col-12 col-md-6">
@@ -590,7 +603,7 @@
                   </h5>
                 </div>
                 <div class="form-control">
-                  <input type="text" id="name" name="name" class="form-control" placeholder="Имя">
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Иванов Иван">
                   <small>Заполните поле Имя</small>
                 </div>
               </div>
@@ -603,7 +616,7 @@
                   </h5>
                 </div>
                 <div class="form-control">
-                  <input  id="email" type="text" name="email" class="form-control" placeholder="e-mail">
+                  <input  id="email" type="text" name="email" class="form-control" placeholder="IIvanov@gmail.com">
                   <small>Заполните поле Почта</small>
                 </div>
               </div>
@@ -616,7 +629,7 @@
                   </h5>
                 </div>
                 <div class="form-control">
-                  <input id="tel" type="tel" name="mobile" class="form-control" pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}" value="+7">
+                  <input id="tel" type="tel" name="mobile" class="form-control" placeholder="+7 777 777 77 77" pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}" >
                   <small>Неверный номер</small>
                 </div>
               </div>
@@ -642,7 +655,7 @@
               <div class="container">
                 <div class="text-center mt-1" id="feedback"><label style="display: none; border-radius: 1em; padding:10px;border: solid red 2px" class="text-danger text-center">Заполните поля корректно</label></div>
                 <button type="Submit" id="submit" class="btn btn-success my-3 w-100">
-                  Отправить заявку
+                  Отправить
                 </button>
               </div>
               <div class="container">
@@ -655,6 +668,29 @@
         </div>
       </form>
     </section>
+
+    <div class="iconBottom d-flex align-items-end">
+      <p style="background: white;font-size: 10px; font-weight: bold; margin:0 10px 10px 0; padding: 7px; border-radius:20px 20px 0 20px">Задай вопрос</p>
+      <a
+        class="nav-link me-2"
+        href="https://t.me/savingandinvesting"
+        style="padding: 0"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          fill="currentColor"
+          class="bi bi-telegram"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"
+          />
+        </svg>
+      </a>
+    </div>
+
+
     <!-- FOOTER -->
     <footer class="text-center text-white pb-2 bg-dark">
       <!-- Grid container -->

@@ -1,3 +1,7 @@
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 #videowrapper {
   position: relative;
   overflow: hidden;
@@ -84,4 +88,38 @@ a .card {
 
 div a {
   color: #292d30;
+}
+
+#videowrapper {
+  display: block;
+}
+
+#bgphotoindex {
+  display: none;
+}
+
+.partners {
+  height: 52px;
+  width: auto;
+}
+
+@media (max-width: 540px) {
+  #videowrapper {
+    display: none;
+  }
+
+  #bgphotoindex {
+    display: block;
+  }
+
+  .partners {
+    height: 30px;
+    width: fit-content;
+  }
+}
+
+.iconBottom {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
 }
