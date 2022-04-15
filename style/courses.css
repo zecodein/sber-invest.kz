@@ -28,16 +28,17 @@ a.disabled {
   font-size: 15px;
 }
 
-.ZakazUsl {
-}
+.ZakazUsl {}
 
 @media (min-width: 768px) {
   .minPacket {
     height: 100%;
   }
+
   .stdPacket {
     height: 100%;
   }
+
   .premPacket {
     height: 100%;
   }
@@ -53,6 +54,7 @@ a.disabled {
   .fullbody {
     width: 100%;
   }
+
   .kurs {
     font-size: 14px;
   }
@@ -67,5 +69,12 @@ a.disabled {
 @media (min-width: 576px) {
   .sberInv {
     font-size: 19px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .message {
+    font-size: 10px;
   }
 }
