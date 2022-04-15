@@ -14,6 +14,10 @@ func NewHandler(r *gin.Engine) {
 	r.GET("/courses", courses)
 	r.GET("/videos", videos)
 	r.GET("/tools", tools)
+	r.GET("/privacyPolicy", privacyPolicy)
+	r.GET("/contractOffer", contractOffer)
+	r.GET("/taxreturn", taxreturn)
+	r.GET("/NalInvVKaz", nalInvVKAZ)
 }
 
 func index(c *gin.Context) {
@@ -39,4 +43,20 @@ func videos(c *gin.Context) {
 
 func tools(c *gin.Context) {
 	c.HTML(http.StatusOK, "tools.html", gin.H{})
+}
+
+func privacyPolicy(c *gin.Context) {
+	c.HTML(http.StatusOK, "privacyPolicy.html", gin.H{})
+}
+
+func contractOffer(c *gin.Context) {
+	c.HTML(http.StatusOK, "contractOffer.html", gin.H{})
+}
+
+func taxreturn(c *gin.Context) {
+	c.HTML(http.StatusOK, "taxreturn.html", gin.H{})
+}
+
+func nalInvVKAZ(c *gin.Context) {
+	c.HTML(http.StatusOK, "NalInvVKaz.html", gin.H{})
 }
