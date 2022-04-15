@@ -3,7 +3,6 @@ package web
 import (
 	"fmt"
 	"net/http"
-	"strconv"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
@@ -29,7 +28,7 @@ func NewUserHandler(r *gin.Engine, us domain.UserUsecase) {
 
 	r.GET("/user/signout", handler.signOut)
 	r.POST("/user/update", handler.update)
-	r.GET("/user/profile/:id", handler.getByID)
+	r.GET("/user/profile", handler.profile)
 	r.POST("/user/delete", handler.delete)
 }
 
@@ -100,21 +99,21 @@ func (u *UserHandler) update(c *gin.Context) {
 	// TODO update
 }
 
-func (u *UserHandler) getByID(c *gin.Context) {
-	// TODO get by id
-	id, err := strconv.ParseInt(c.Param("id"), 10, 64)
-	if err != nil {
-		c.Writer.WriteHeader(http.StatusNotFound)
+func (u *UserHandler) profile(c *gin.Context) {
+	id := getSession(c)
+	if id == 0 {
+		c.Redirect(http.StatusSeeOther, "/")
 		return
 	}
-
 	user, err := u.userUsecase.GetByID(c.Request.Context(), id)
 	if err != nil {
 		c.Writer.WriteHeader(http.StatusNotFound)
 		return
 	}
 
-	c.JSON(http.StatusOK, user)
+	c.HTML(http.StatusOK, "profile.html", gin.H{
+		"user": user,
+	})
 }
 
 func (u *UserHandler) delete(c *gin.Context) {
