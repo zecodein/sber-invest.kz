@@ -71,10 +71,3 @@ a.disabled {
     font-size: 19px;
   }
 }
-
-
-@media (max-width: 576px) {
-  .message {
-    font-size: 10px;
-  }
-}
