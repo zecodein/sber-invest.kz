@@ -425,8 +425,9 @@
                 <button
                   id="form240min"
                   class="btn btn-warning w-50 mt-auto mx-auto ZakazUsl"
-                  data-toggle="modal"
-                  data-target=".bd-example-modal-xl"
+                  data-bs-toggle="modal"
+                  href="#exampleModalToggle"
+                  role="button"
                 >
                   Заказать услугу
                 </button>
@@ -438,642 +439,665 @@
                 modal</button> -->
 
                 <div
-                  class="modal fade bd-example-modal-xl"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-labelledby="myLargeModalLabel"
+                  class="modal fade"
+                  id="exampleModalToggle"
                   aria-hidden="true"
+                  aria-labelledby="exampleModalToggleLabel"
+                  tabindex="-1"
                 >
-                  <div class="modal-dialog modal-xl">
-                    <div class="modal-content text-start">
-                      <form id="form" method="post">
-                        <!-- Form fields need name and value attributes -->
-                        <div class="container p-0">
-                          <div class="m-3">
-                            <h1 class="h3 d-inline pt-5 align-middle">
-                              Форма заказа
-                            </h1>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-12 col-lg-6">
-                              <div class="card">
-                                <div
-                                  class="card-header"
-                                  style="background-color: orange"
-                                >
-                                  <h5 class="card-title mb-0">Пакет</h5>
-                                </div>
-                                <div class="card-body form-control">
-                                  <div class="form-group">
-                                    <label for="tarifOptions"></label>
-                                    <select
-                                      class="form-control"
-                                      id="tarifOptions"
-                                    >
-                                      <option value="min">
-                                        Минимальный - Налоговая декларация
-                                      </option>
-                                      <option value="stand">
-                                        Стандартный - Налоговая декларация+
-                                      </option>
-                                      <option value="prem">
-                                        Премиум - Налоговая декларация+++
-                                      </option>
-                                    </select>
-                                  </div>
-                                  <p
-                                    id="price"
-                                    class="card-title mb-0 mt-1"
-                                  ></p>
-                                </div>
-                              </div>
-
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Фамилия
-                                  </h5>
-                                </div>
-                                <div class="card-body form-control">
-                                  <input
-                                    id="surname"
-                                    type="text"
-                                    name="surname"
-                                    class="form-control"
-                                    placeholder="Фамилия"
-                                  />
-                                  <small>Error Message</small>
-                                </div>
-                              </div>
-
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Имя
-                                  </h5>
-                                </div>
-                                <div class="card-body form-control">
-                                  <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    class="form-control"
-                                    placeholder="Имя"
-                                  />
-                                  <small>Error Message</small>
-                                </div>
-                              </div>
-
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">Отчество</h5>
-                                </div>
-                                <div class="card-body">
-                                  <input
-                                    id="lastname"
-                                    type="text"
-                                    name="patronomic"
-                                    class="form-control"
-                                    placeholder="Отчество"
-                                  />
-                                </div>
-                              </div>
-
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span>
-                                    Электроная почта
-                                  </h5>
-                                </div>
-                                <div class="card-body form-control">
-                                  <input
-                                    id="email"
-                                    type="text"
-                                    name="email"
-                                    class="form-control"
-                                    placeholder="e-mail"
-                                  />
-                                  <small>Error Message</small>
-                                </div>
-                              </div>
-
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Телефон
-                                    для связи (сотовый)
-                                  </h5>
-                                </div>
-                                <div class="card-body form-control">
-                                  <input
-                                    id="tel"
-                                    type="tel"
-                                    name="mobile"
-                                    class="form-control"
-                                    pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                    value="+7"
-                                  />
-                                  <small>Error Message</small>
-                                </div>
-                              </div>
-
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span>
-                                    Гражданство
-                                  </h5>
-                                </div>
-                                <div class="card-body form-control">
-                                  <input
-                                    id="citizen"
-                                    type="text"
-                                    name="citizen"
-                                    class="form-control"
-                                    placeholder="Казахстан"
-                                  />
-                                  <small>Error Message</small>
-                                </div>
-                              </div>
-
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Адрес
-                                    прописки (полный)
-                                  </h5>
-                                </div>
-                                <div class="card-body form-control">
-                                  <input
-                                    id="adressProp"
-                                    type="text"
-                                    name="adressregistration"
-                                    class="form-control"
-                                  />
-                                  <small>Error Message</small>
-                                </div>
-                              </div>
-
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Адрес
-                                    проживания
-                                  </h5>
-                                  <input
-                                    id="adressSame"
-                                    class="form-check-input"
-                                    type="checkbox"
-                                    value=""
-                                    id="flexCheckDefault"
-                                  />
-                                  <label
-                                    class="form-check-label fs-6"
-                                    for="flexCheckDefault"
-                                  >
-                                    Такой же как адрес прописки?
-                                  </label>
-                                </div>
-                                <div class="card-body form-control">
-                                  <input
-                                    id="adressProzh"
-                                    type="text"
-                                    name="adress"
-                                    class="form-control"
-                                  />
-                                  <small>Error Message</small>
-                                </div>
-                              </div>
+                  <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalToggleLabel">
+                          Отправить заявку
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body text-start">
+                        <form id="form" method="post">
+                          <!-- Form fields need name and value attributes -->
+                          <div class="container p-0">
+                            <div class="m-3">
+                              <h1 class="h3 d-inline pt-5 align-middle">
+                                Форма заказа
+                              </h1>
                             </div>
-
-                            <div class="col-12 col-lg-6">
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Вы
-                                    налоговый резидент РК в
-                                    <span
-                                      data-container="body"
-                                      data-toggle="popover"
-                                      data-placement="top"
-                                      data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-                                      class=""
-                                      >отчетном периоде</span
-                                    >
-                                    (календарный год)?
-                                    <div
-                                      data-bs-toggle="modal"
-                                      data-bs-target="#exampleModalFullscreen"
-                                      class="btn btn-outline-secondary bi bi-mortarboard"
-                                    ></div>
-                                  </h5>
-                                </div>
-
-                                <div class="card-body">
-                                  <div>
-                                    <label class="form-check form-check-inline">
-                                      <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        name="taxresident"
-                                        value="Yes"
-                                      />
-                                      <span class="form-check-label"> Да </span>
-                                    </label>
-                                    <label class="form-check form-check-inline">
-                                      <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        name="taxresident"
-                                        value="No"
-                                        checked
-                                      />
-                                      <span class="form-check-label">
-                                        Нет
-                                      </span>
-                                    </label>
-                                    <label class="form-check form-check-inline">
-                                      <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        name="taxresident"
-                                        value="IDK"
-                                      />
-                                      <span class="form-check-label">
-                                        Не знаю
-                                      </span>
-                                    </label>
+  
+                            <div class="row">
+                              <div class="col-12 col-lg-6">
+                                <div class="card">
+                                  <div
+                                    class="card-header"
+                                    style="background-color: orange"
+                                  >
+                                    <h5 class="card-title mb-0">Пакет</h5>
+                                  </div>
+                                  <div class="card-body form-control">
+                                    <div class="form-group">
+                                      <label for="tarifOptions"></label>
+                                      <select
+                                        class="form-control"
+                                        id="tarifOptions"
+                                      >
+                                        <option value="min">
+                                          Минимальный - Налоговая декларация
+                                        </option>
+                                        <option value="stand">
+                                          Стандартный - Налоговая декларация+
+                                        </option>
+                                        <option value="prem">
+                                          Премиум - Налоговая декларация+++
+                                        </option>
+                                      </select>
+                                    </div>
+                                    <p
+                                      id="price"
+                                      class="card-title mb-0 mt-1"
+                                    ></p>
                                   </div>
                                 </div>
-                              </div>
-
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> У вас
-                                    были операции по продаже ценных бумаг в
-                                    отчетном периоде? (календарный год)
-                                  </h5>
-                                </div>
-                                <div class="card-body">
-                                  <div>
-                                    <label class="form-check">
-                                      <input
-                                        id="sale1"
-                                        class="form-check-input"
-                                        oninput='on_change("sale1","KolOpPoPro")'
-                                        type="radio"
-                                        name="sale1"
-                                        value="Yes"
-                                      />
-                                      <span class="form-check-label"> Да </span>
-                                    </label>
-                                    <label class="form-check">
-                                      <input
-                                        class="form-check-input"
-                                        oninput='on_change("sale1","KolOpPoPro")'
-                                        type="radio"
-                                        name="sale1"
-                                        value="No"
-                                        checked
-                                      />
-                                      <span class="form-check-label">
-                                        Нет
-                                      </span>
-                                    </label>
-                                    <label class="form-check">
-                                      <input
-                                        class="form-check-input"
-                                        oninput='on_change("sale1","KolOpPoPro")'
-                                        type="radio"
-                                        name="sale1"
-                                        value="IDK"
-                                      />
-                                      <span class="form-check-label">
-                                        Не знаю
-                                      </span>
-                                    </label>
+  
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span> Фамилия
+                                    </h5>
                                   </div>
-                                </div>
-                              </div>
-
-                              <div
-                                class="card"
-                                id="KolOpPoPro"
-                                style="display: none"
-                              >
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Укажите
-                                    количество операций по продаже ценных бумаг
-                                    за отчетный период (календарный год)
-                                  </h5>
-                                </div>
-
-                                <div class="card-body">
-                                  <div>
-                                    <label class="form-check">
-                                      <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        value="Менее 50"
-                                        name="sale1quantradio"
-                                      />
-                                      <span class="form-check-label">
-                                        Менее 50
-                                      </span>
-                                    </label>
-                                    <label class="form-check">
-                                      <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        value="50-100"
-                                        name="sale1quantradio"
-                                      />
-                                      <span class="form-check-label">
-                                        50-100
-                                      </span>
-                                    </label>
-                                    <label class="form-check">
-                                      <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        value="более 100"
-                                        name="sale1quantradio"
-                                      />
-                                      <span class="form-check-label">
-                                        более 100
-                                      </span>
-                                    </label>
-                                  </div>
-                                </div>
-
-                                <div
-                                  class="card-body form-control"
-                                  style="display: none"
-                                >
-                                  <input
-                                    type="text"
-                                    name="sale1quant"
-                                    id="sale1quant"
-                                    class="form-control"
-                                    placeholder="Менее 50, 50-100 или более 100"
-                                  />
-                                </div>
-                              </div>
-
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Вы
-                                    получали дивиденды в отчетном периоде
-                                    (календарный год)?
-                                  </h5>
-                                </div>
-                                <div class="card-body">
-                                  <div>
-                                    <label class="form-check">
-                                      <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        value="Yes"
-                                        name="dividend"
-                                      />
-                                      <span class="form-check-label"> Да </span>
-                                    </label>
-                                    <label class="form-check">
-                                      <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        value="No"
-                                        name="dividend"
-                                        checked
-                                      />
-                                      <span class="form-check-label">
-                                        Нет
-                                      </span>
-                                    </label>
-                                    <label class="form-check">
-                                      <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        value="IDK"
-                                        name="dividend"
-                                      />
-                                      <span class="form-check-label">
-                                        Не знаю
-                                      </span>
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Есть ли
-                                    основания для включения в налоговую
-                                    декларацию других доходов (продажа
-                                    имущества, авто, получения других доходов)?
-                                  </h5>
-                                </div>
-                                <div class="card-body">
-                                  <div>
-                                    <label class="form-check">
-                                      <input
-                                        id="includedeclr"
-                                        class="form-check-input"
-                                        type="radio"
-                                        value="Yes"
-                                        name="includedeclr"
-                                        oninput='on_change("includedeclr","UkKaDrSd")'
-                                      />
-                                      <span class="form-check-label"> Да </span>
-                                    </label>
-                                    <label class="form-check">
-                                      <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        value="No"
-                                        name="includedeclr"
-                                        checked
-                                        oninput='on_change("includedeclr","UkKaDrSd")'
-                                      />
-                                      <span class="form-check-label">
-                                        Нет
-                                      </span>
-                                    </label>
-                                    <label class="form-check">
-                                      <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        value="IDK"
-                                        name="includedeclr"
-                                        oninput='on_change("includedeclr","UkKaDrSd")'
-                                      />
-                                      <span class="form-check-label">
-                                        Не знаю
-                                      </span>
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div
-                                class="card"
-                                id="UkKaDrSd"
-                                style="display: none"
-                              >
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Укажите
-                                    какие другие сделки и доходы у вас были за
-                                    отчетный период (календарный год).
-                                  </h5>
-                                </div>
-                                <div class="card-body form-control">
-                                  <input
-                                    type="text"
-                                    name="otherdeal"
-                                    id="otherdeal"
-                                    class="form-control"
-                                    placeholder="Введите другие сделки"
-                                  />
-                                  <small>Error Message</small>
-                                </div>
-                              </div>
-
-                              <div class="card">
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Есть ли
-                                    основания для налоговых вычетов
-                                    (стандартные, другие)?
-                                    <div
-                                      data-bs-toggle="modal"
-                                      data-bs-target="#exampleModalFullscreen2"
-                                      class="btn btn-outline-secondary bi bi-mortarboard-fill py-0 fs-4 text-reset"
-                                    ></div>
-                                  </h5>
-                                </div>
-                                <div class="card-body">
-                                  <div>
-                                    <label class="form-check">
-                                      <input
-                                        id="taxdeduct"
-                                        class="form-check-input"
-                                        type="radio"
-                                        value="Yes"
-                                        name="taxdeduct"
-                                        oninput='on_change("taxdeduct","UkazhiOsnovDla")'
-                                      />
-                                      <span class="form-check-label"> Да </span>
-                                    </label>
-                                    <label class="form-check">
-                                      <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        value="No"
-                                        name="taxdeduct"
-                                        checked
-                                        oninput='on_change("taxdeduct","UkazhiOsnovDla")'
-                                      />
-                                      <span class="form-check-label">
-                                        Нет
-                                      </span>
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div
-                                class="card"
-                                id="UkazhiOsnovDla"
-                                style="display: none"
-                              >
-                                <div class="card-header">
-                                  <h5 class="card-title mb-0">
-                                    <span class="text-danger">*</span> Укажите
-                                    основания для каких налоговых вычетов у вас
-                                    есть.
-                                  </h5>
-                                </div>
-                                <div class="card-body form-control">
-                                  <input
-                                    type="text"
-                                    name="taxdeduct1"
-                                    id="taxdeduct1"
-                                    class="form-control"
-                                    placeholder="Введите какие именно вычеты"
-                                  />
-                                  <small>Error Message</small>
-                                </div>
-                              </div>
-                              <div class="container">
-                                Поля отмеченные
-                                <span class="text-danger">*</span> - обязательны
-                                к заполнению
-                              </div>
-                              <div class="container">
-                                <div class="row mt-2">
-                                  <div class="col-1">
+                                  <div class="card-body form-control">
                                     <input
-                                      id="PolitikaKonf"
+                                      id="surname"
+                                      type="text"
+                                      name="surname"
+                                      class="form-control"
+                                      placeholder="Фамилия"
+                                    />
+                                    <small>Error Message</small>
+                                  </div>
+                                </div>
+  
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span> Имя
+                                    </h5>
+                                  </div>
+                                  <div class="card-body form-control">
+                                    <input
+                                      type="text"
+                                      id="name"
+                                      name="name"
+                                      class="form-control"
+                                      placeholder="Имя"
+                                    />
+                                    <small>Error Message</small>
+                                  </div>
+                                </div>
+  
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">Отчество</h5>
+                                  </div>
+                                  <div class="card-body">
+                                    <input
+                                      id="lastname"
+                                      type="text"
+                                      name="patronomic"
+                                      class="form-control"
+                                      placeholder="Отчество"
+                                    />
+                                  </div>
+                                </div>
+  
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span>
+                                      Электроная почта
+                                    </h5>
+                                  </div>
+                                  <div class="card-body form-control">
+                                    <input
+                                      id="email"
+                                      type="text"
+                                      name="email"
+                                      class="form-control"
+                                      placeholder="e-mail"
+                                    />
+                                    <small>Error Message</small>
+                                  </div>
+                                </div>
+  
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span> Телефон
+                                      для связи (сотовый)
+                                    </h5>
+                                  </div>
+                                  <div class="card-body form-control">
+                                    <input
+                                      id="tel"
+                                      type="tel"
+                                      name="mobile"
+                                      class="form-control"
+                                      pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                      value="+7"
+                                    />
+                                    <small>Error Message</small>
+                                  </div>
+                                </div>
+  
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span>
+                                      Гражданство
+                                    </h5>
+                                  </div>
+                                  <div class="card-body form-control">
+                                    <input
+                                      id="citizen"
+                                      type="text"
+                                      name="citizen"
+                                      class="form-control"
+                                      placeholder="Казахстан"
+                                    />
+                                    <small>Error Message</small>
+                                  </div>
+                                </div>
+  
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span> Адрес
+                                      прописки (полный)
+                                    </h5>
+                                  </div>
+                                  <div class="card-body form-control">
+                                    <input
+                                      id="adressProp"
+                                      type="text"
+                                      name="adressregistration"
+                                      class="form-control"
+                                    />
+                                    <small>Error Message</small>
+                                  </div>
+                                </div>
+  
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span> Адрес
+                                      проживания
+                                    </h5>
+                                    <input
+                                      id="adressSame"
                                       class="form-check-input"
                                       type="checkbox"
                                       value=""
                                       id="flexCheckDefault"
                                     />
-                                  </div>
-                                  <div class="col-11">
                                     <label
-                                      required
-                                      class="form-check-label"
+                                      class="form-check-label fs-6"
                                       for="flexCheckDefault"
-                                      >«С
-                                      <a
-                                        href="privacyPolicy.html"
-                                        class="text-decoration-underline"
-                                        target="_blank"
-                                        >политикой конфиденциальности</a
-                                      >
-                                      и
-                                      <a
-                                        href="contractOffer.html"
-                                        target="_blank"
-                                        class="DogOfr text-decoration-underline"
-                                        >договором оказания услуг</a
-                                      >
-                                      (договор - оферта) ознакомлен. С правилами
-                                      оказания услуг согласен»
+                                    >
+                                      Такой же как адрес прописки?
                                     </label>
+                                  </div>
+                                  <div class="card-body form-control">
+                                    <input
+                                      id="adressProzh"
+                                      type="text"
+                                      name="adress"
+                                      class="form-control"
+                                    />
+                                    <small>Error Message</small>
                                   </div>
                                 </div>
                               </div>
-                              <div class="container">
+  
+                              <div class="col-12 col-lg-6">
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span> Вы
+                                      налоговый резидент РК в
+                                      <span
+                                        data-container="body"
+                                        data-toggle="popover"
+                                        data-placement="top"
+                                        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                                        class=""
+                                        >отчетном периоде</span
+                                      >
+                                      (календарный год)?
+                                      <div
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalFullscreen"
+                                        class="btn btn-outline-secondary m-0 p-0 px-2"
+                                      >
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
+                                        <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5ZM8 8.46 1.758 5.965 8 3.052l6.242 2.913L8 8.46Z"/>
+                                        <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46l-3.892-1.556Z"/>
+                                      </svg>
+                                    </div>
+                                    </h5>
+                                  </div>
+  
+                                  <div class="card-body">
+                                    <div>
+                                      <label class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="taxresident"
+                                          value="Yes"
+                                        />
+                                        <span class="form-check-label"> Да </span>
+                                      </label>
+                                      <label class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="taxresident"
+                                          value="No"
+                                          checked
+                                        />
+                                        <span class="form-check-label">
+                                          Нет
+                                        </span>
+                                      </label>
+                                      <label class="form-check form-check-inline">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          name="taxresident"
+                                          value="IDK"
+                                        />
+                                        <span class="form-check-label">
+                                          Не знаю
+                                        </span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+  
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span> У вас
+                                      были операции по продаже ценных бумаг в
+                                      отчетном периоде? (календарный год)
+                                    </h5>
+                                  </div>
+                                  <div class="card-body">
+                                    <div>
+                                      <label class="form-check">
+                                        <input
+                                          id="sale1"
+                                          class="form-check-input"
+                                          oninput='on_change("sale1","KolOpPoPro")'
+                                          type="radio"
+                                          name="sale1"
+                                          value="Yes"
+                                        />
+                                        <span class="form-check-label"> Да </span>
+                                      </label>
+                                      <label class="form-check">
+                                        <input
+                                          class="form-check-input"
+                                          oninput='on_change("sale1","KolOpPoPro")'
+                                          type="radio"
+                                          name="sale1"
+                                          value="No"
+                                          checked
+                                        />
+                                        <span class="form-check-label">
+                                          Нет
+                                        </span>
+                                      </label>
+                                      <label class="form-check">
+                                        <input
+                                          class="form-check-input"
+                                          oninput='on_change("sale1","KolOpPoPro")'
+                                          type="radio"
+                                          name="sale1"
+                                          value="IDK"
+                                        />
+                                        <span class="form-check-label">
+                                          Не знаю
+                                        </span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+  
                                 <div
-                                  class="text-center mt-1"
-                                  id="feedback"
-                                ></div>
-                                <button
-                                  type="Submit"
-                                  id="submit"
-                                  class="btn btn-success my-3 w-100"
+                                  class="card"
+                                  id="KolOpPoPro"
+                                  style="display: none"
                                 >
-                                  Отправить заявку
-                                </button>
-                              </div>
-                              <div class="container">
-                                <span class="text-danger">*</span> Нажимая на
-                                кнопку, вы соглашаетесь на обработку
-                                персональных данных.
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span> Укажите
+                                      количество операций по продаже ценных бумаг
+                                      за отчетный период (календарный год)
+                                    </h5>
+                                  </div>
+  
+                                  <div class="card-body">
+                                    <div>
+                                      <label class="form-check">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          value="Менее 50"
+                                          name="sale1quantradio"
+                                        />
+                                        <span class="form-check-label">
+                                          Менее 50
+                                        </span>
+                                      </label>
+                                      <label class="form-check">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          value="50-100"
+                                          name="sale1quantradio"
+                                        />
+                                        <span class="form-check-label">
+                                          50-100
+                                        </span>
+                                      </label>
+                                      <label class="form-check">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          value="более 100"
+                                          name="sale1quantradio"
+                                        />
+                                        <span class="form-check-label">
+                                          более 100
+                                        </span>
+                                      </label>
+                                    </div>
+                                  </div>
+  
+                                  <div
+                                    class="card-body form-control"
+                                    style="display: none"
+                                  >
+                                    <input
+                                      type="text"
+                                      name="sale1quant"
+                                      id="sale1quant"
+                                      class="form-control"
+                                      placeholder="Менее 50, 50-100 или более 100"
+                                    />
+                                  </div>
+                                </div>
+  
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span> Вы
+                                      получали дивиденды в отчетном периоде
+                                      (календарный год)?
+                                    </h5>
+                                  </div>
+                                  <div class="card-body">
+                                    <div>
+                                      <label class="form-check">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          value="Yes"
+                                          name="dividend"
+                                        />
+                                        <span class="form-check-label"> Да </span>
+                                      </label>
+                                      <label class="form-check">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          value="No"
+                                          name="dividend"
+                                          checked
+                                        />
+                                        <span class="form-check-label">
+                                          Нет
+                                        </span>
+                                      </label>
+                                      <label class="form-check">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          value="IDK"
+                                          name="dividend"
+                                        />
+                                        <span class="form-check-label">
+                                          Не знаю
+                                        </span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+  
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span> Есть ли
+                                      основания для включения в налоговую
+                                      декларацию других доходов (продажа
+                                      имущества, авто, получения других доходов)?
+                                    </h5>
+                                  </div>
+                                  <div class="card-body">
+                                    <div>
+                                      <label class="form-check">
+                                        <input
+                                          id="includedeclr"
+                                          class="form-check-input"
+                                          type="radio"
+                                          value="Yes"
+                                          name="includedeclr"
+                                          oninput='on_change("includedeclr","UkKaDrSd")'
+                                        />
+                                        <span class="form-check-label"> Да </span>
+                                      </label>
+                                      <label class="form-check">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          value="No"
+                                          name="includedeclr"
+                                          checked
+                                          oninput='on_change("includedeclr","UkKaDrSd")'
+                                        />
+                                        <span class="form-check-label">
+                                          Нет
+                                        </span>
+                                      </label>
+                                      <label class="form-check">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          value="IDK"
+                                          name="includedeclr"
+                                          oninput='on_change("includedeclr","UkKaDrSd")'
+                                        />
+                                        <span class="form-check-label">
+                                          Не знаю
+                                        </span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+  
+                                <div
+                                  class="card"
+                                  id="UkKaDrSd"
+                                  style="display: none"
+                                >
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span> Укажите
+                                      какие другие сделки и доходы у вас были за
+                                      отчетный период (календарный год).
+                                    </h5>
+                                  </div>
+                                  <div class="card-body form-control">
+                                    <input
+                                      type="text"
+                                      name="otherdeal"
+                                      id="otherdeal"
+                                      class="form-control"
+                                      placeholder="Введите другие сделки"
+                                    />
+                                    <small>Error Message</small>
+                                  </div>
+                                </div>
+  
+                                <div class="card">
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span> Есть ли
+                                      основания для налоговых вычетов
+                                      (стандартные, другие)?
+                                      <div
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalFullscreen2"
+                                        class="btn btn-outline-secondary m-0 p-0 px-2"
+                                      >
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
+                                        <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5ZM8 8.46 1.758 5.965 8 3.052l6.242 2.913L8 8.46Z"/>
+                                        <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46l-3.892-1.556Z"/>
+                                      </svg>
+                                    </div>
+                                    </h5>
+                                  </div>
+                                  <div class="card-body">
+                                    <div>
+                                      <label class="form-check">
+                                        <input
+                                          id="taxdeduct"
+                                          class="form-check-input"
+                                          type="radio"
+                                          value="Yes"
+                                          name="taxdeduct"
+                                          oninput='on_change("taxdeduct","UkazhiOsnovDla")'
+                                        />
+                                        <span class="form-check-label"> Да </span>
+                                      </label>
+                                      <label class="form-check">
+                                        <input
+                                          class="form-check-input"
+                                          type="radio"
+                                          value="No"
+                                          name="taxdeduct"
+                                          checked
+                                          oninput='on_change("taxdeduct","UkazhiOsnovDla")'
+                                        />
+                                        <span class="form-check-label">
+                                          Нет
+                                        </span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+  
+                                <div
+                                  class="card"
+                                  id="UkazhiOsnovDla"
+                                  style="display: none"
+                                >
+                                  <div class="card-header">
+                                    <h5 class="card-title mb-0">
+                                      <span class="text-danger">*</span> Укажите
+                                      основания для каких налоговых вычетов у вас
+                                      есть.
+                                    </h5>
+                                  </div>
+                                  <div class="card-body form-control">
+                                    <input
+                                      type="text"
+                                      name="taxdeduct1"
+                                      id="taxdeduct1"
+                                      class="form-control"
+                                      placeholder="Введите какие именно вычеты"
+                                    />
+                                    <small>Error Message</small>
+                                  </div>
+                                </div>
+                                <div class="container">
+                                  Поля отмеченные
+                                  <span class="text-danger">*</span> - обязательны
+                                  к заполнению
+                                </div>
+                                <div class="container">
+                                  <div class="row mt-2">
+                                    <div class="col-1">
+                                      <input
+                                        id="PolitikaKonf"
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        value=""
+                                        id="flexCheckDefault"
+                                      />
+                                    </div>
+                                    <div class="col-11">
+                                      <label
+                                        required
+                                        class="form-check-label"
+                                        for="flexCheckDefault"
+                                        >«С
+                                        <a
+                                          href="privacyPolicy.html"
+                                          class="text-decoration-underline"
+                                          target="_blank"
+                                          >политикой конфиденциальности</a
+                                        >
+                                        и
+                                        <a
+                                          href="contractOffer.html"
+                                          target="_blank"
+                                          class="DogOfr text-decoration-underline"
+                                          >договором оказания услуг</a
+                                        >
+                                        (договор - оферта) ознакомлен. С правилами
+                                        оказания услуг согласен»
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="container">
+                                  <div
+                                    class="text-center mt-1"
+                                    id="feedback"
+                                  ></div>
+                                  <button
+                                    type="Submit"
+                                    id="submit"
+                                    class="btn btn-success my-3 w-100"
+                                  >
+                                    Отправить заявку
+                                  </button>
+                                </div>
+                                <div class="container">
+                                  <span class="text-danger">*</span> Нажимая на
+                                  кнопку, вы соглашаетесь на обработку
+                                  персональных данных.
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </form>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1110,8 +1134,9 @@
                 <button
                   id="form240stand"
                   class="btn btn-warning w-50 mt-auto mx-auto ZakazUsl"
-                  data-toggle="modal"
-                  data-target=".bd-example-modal-xl"
+                  data-bs-toggle="modal"
+                  href="#exampleModalToggle"
+                  role="button"
                 >
                   Заказать услугу
                 </button>
@@ -1159,8 +1184,9 @@
                 <button
                   id="form240prem"
                   class="btn btn-warning w-50 mt-auto mx-auto ZakazUsl"
-                  data-toggle="modal"
-                  data-target=".bd-example-modal-xl"
+                  data-bs-toggle="modal"
+                  href="#exampleModalToggle"
+                  role="button"
                 >
                   Заказать услугу
                 </button>
@@ -1310,7 +1336,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title h4" id="exampleModalFullscreenLabel">
-              Full screen modal
+              Пояснение
             </h5>
             <button
               type="button"
@@ -1330,9 +1356,11 @@
             <button
               type="button"
               class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
+              href="#exampleModalToggle"
+              data-bs-toggle="modal"
+              role="button"
+              >
+              Вернуться к форме
             </button>
           </div>
         </div>
@@ -1352,7 +1380,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title h4" id="exampleModalFullscreen2Label">
-              Full screen modal
+              Пояснение
             </h5>
             <button
               type="button"
@@ -1372,9 +1400,11 @@
             <button
               type="button"
               class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
+              href="#exampleModalToggle"
+              data-bs-toggle="modal"
+              role="button"
+              >
+              Вернуться к форме
             </button>
           </div>
         </div>
