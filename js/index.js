@@ -132,7 +132,7 @@ $("#form").submit(function (event) {
         error: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on error");
           $("#feedback").html(
-            '<label style=" border-radius: 1em; padding:10px;border: solid green 2px"  class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
+            '<label style=" border-radius: 1em; padding:10px;border: solid green 2px"  class="text-success text-center">«Ваша заявка принята. В ближайшее время мы вам перезвоним!</label>'
           );
         },
       });
