@@ -1,4 +1,3 @@
-
 #videowrapper {
   position: relative;
   overflow: hidden;
@@ -81,13 +80,11 @@ div a {
 
 .partners {
   height: 52px;
-  width: auto;
 }
 
 .partners_big {
   height: 40px;
   margin-top: 10px;
-  width: auto;
 }
 
 @media (max-width: 540px) {
