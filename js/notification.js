@@ -88,10 +88,10 @@ $("#form").submit(function (event) {
   setTimeout(function () {
     // Get data
     var data = {
-      "entry.640670863": "Ответ на уведомление",
-      "entry.552135976": $("#name").val(),
-      "entry.601304414": $("#email").val(),
-      "entry.940607535": $("#tel").val(),
+      "entry.2141224228": "Ответ на уведомление",
+      "entry.750815494": $("#name").val(),
+      "entry.1808378347": $("#email").val(),
+      "entry.1884718043": $("#tel").val(),
     };
 
     // Validate form
@@ -118,7 +118,8 @@ $("#form").submit(function (event) {
       // Send request
       $.ajax({
         // url: "https://docs.google.com/forms/d/e/1FAIpQLScLyZl5LsrxnbhBdPeKtWcBRZRVzgZOIdAhP_bBUUygzI9ZrA/formResponse",
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSfe3Z44BKFQr8FaUUfRthzeYEruJerk-rtR-gq-D0cxczHK-g/formResponse",
+        // url: "https://docs.google.com/forms/d/e/1FAIpQLSfe3Z44BKFQr8FaUUfRthzeYEruJerk-rtR-gq-D0cxczHK-g/formResponse",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLScLyZl5LsrxnbhBdPeKtWcBRZRVzgZOIdAhP_bBUUygzI9ZrA/formResponse",
         type: "POST",
         crossDomain: true,
         dataType: "xml",
@@ -126,13 +127,13 @@ $("#form").submit(function (event) {
         success: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on success");
           $("#feedback").html(
-            '<label  style=" border-radius: 1em; padding:10px;border: solid green 2px" class="text-success text-center">Форма заполнена! На ваш почтовый ящик отправлено письмо с дальнейшими инструкциями!</label>'
+            '<label  style=" border-radius: 1em; padding:10px;border: solid green 2px" class="text-success text-center">Заявка принята! В ближайшее время мы вам перезвоним!</label>'
           );
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on error");
           $("#feedback").html(
-            '<label style=" border-radius: 1em; padding:10px;border: solid green 2px"  class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
+            '<label style=" border-radius: 1em; padding:10px;border: solid green 2px"  class="text-success text-center">Заявка принята! В ближайшее время мы вам перезвоним!</label>'
           );
         },
       });

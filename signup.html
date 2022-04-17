@@ -194,98 +194,28 @@
         </div>
       </div>
     </nav>
-    <div
-      class="container"
+
+    <section
+      class="p-0 p-md-5 bg-light text-secondary py-5 text-center"
       style="
-        height: 73vh;
+        min-height: calc(100vh - 185px);
         display: flex;
-        flex-direction: column;
+        align-items: center;
         justify-content: center;
       "
     >
-      <form action="/user/signup" method="POST">
-        <div class="auth-form">
-          <!-- Имя -->
-          <div class="mb-3">
-            <label for="InputFirstName1" class="form-label">Имя</label>
-            <input
-              type="text"
-              class="form-control"
-              name="first-name"
-              id="InputFirstName1"
-              placeholder="Имя"
-              pattern="[A-Za-zА-Яа-яЁё]*"
-              required
-            />
-          </div>
-
-          <!-- Фамилия -->
-          <div class="mb-3">
-            <label for="InputLastName1" class="form-label">Фамилия</label>
-            <input
-              type="text"
-              class="form-control"
-              name="last-name"
-              id="InputLastName1"
-              placeholder="Фамилия"
-              pattern="[A-Za-zА-Яа-яЁё]*"
-              required
-            />
-          </div>
-
-          <!-- Email -->
-          <div class="mb-3">
-            <label for="InputEmail1" class="form-label">Email</label>
-            <input
-              type="email"
-              class="form-control"
-              name="email"
-              id="InputEmail1"
-              placeholder="Email"
-              aria-describedby="emailHelp"
-              required
-            />
-          </div>
-
-          <!-- Пароль -->
-          <div class="mb-3">
-            <label for="InputPassword1" class="form-label">Пароль</label>
-            <input
-              id="password"
-              class="form-control"
-              name="password"
-              type="password"
-              pattern="^\S{6,}$"
-              onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Минимум 6 символов' : ''); if(this.checkValidity()) form.confirm.pattern = this.value;"
-              placeholder="Пароль"
-              required
-            />
-          </div>
-
-          <!-- Подтверждение пароля -->
-          <div class="mb-3">
-            <label for="InputConfirm1" class="form-label"
-              >Подтвердите пароль</label
-            >
-            <input
-              id="confirm"
-              name="confirm"
-              class="form-control"
-              type="password"
-              pattern="^\S{6,}$"
-              onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Повторите пароль' : '');"
-              placeholder="Повторите пароль"
-              required
-            />
-          </div>
-
-          <!-- Submit -->
-          <button type="submit" class="btn btn-warning">
-            ЗАРЕГИСТРИРОВАТЬСЯ
-          </button>
+      <div class="row">
+        <div class="col-md-12">
+          <h2
+            class="text-uppercase text-center m-3"
+            style="max-width: 960px; width: auto"
+          >
+            <strong>Скоро...</strong>
+          </h2>
         </div>
-      </form>
-    </div>
+      </div>
+    </section>
+    
 <!-- FOOTER -->
 <footer class="text-center text-white pb-2 bg-dark">
   <!-- Grid container -->
