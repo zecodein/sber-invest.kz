@@ -1,0 +1,33 @@
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (6 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (6 handlers)
+[GIN-debug] GET    /                         --> github.com/zecodein/sber-invest.kz/delivery/web.(*Handler).index-fm (6 handlers)
+[GIN-debug] GET    /aboutus                  --> github.com/zecodein/sber-invest.kz/delivery/web.(*Handler).aboutus-fm (6 handlers)
+[GIN-debug] GET    /services                 --> github.com/zecodein/sber-invest.kz/delivery/web.(*Handler).services-fm (6 handlers)
+[GIN-debug] GET    /courses                  --> github.com/zecodein/sber-invest.kz/delivery/web.(*Handler).courses-fm (6 handlers)
+[GIN-debug] GET    /videos                   --> github.com/zecodein/sber-invest.kz/delivery/web.(*Handler).videos-fm (6 handlers)
+[GIN-debug] GET    /tools                    --> github.com/zecodein/sber-invest.kz/delivery/web.(*Handler).tools-fm (6 handlers)
+[GIN-debug] GET    /privacyPolicy            --> github.com/zecodein/sber-invest.kz/delivery/web.(*Handler).privacyPolicy-fm (6 handlers)
+[GIN-debug] GET    /contractOffer            --> github.com/zecodein/sber-invest.kz/delivery/web.(*Handler).contractOffer-fm (6 handlers)
+[GIN-debug] GET    /taxreturn                --> github.com/zecodein/sber-invest.kz/delivery/web.(*Handler).taxreturn-fm (6 handlers)
+[GIN-debug] GET    /NalInvVKaz               --> github.com/zecodein/sber-invest.kz/delivery/web.(*Handler).nalInvVKAZ-fm (6 handlers)
+[GIN-debug] GET    /user/signup              --> github.com/zecodein/sber-invest.kz/delivery/web.(*UserHandler).signUp-fm (6 handlers)
+[GIN-debug] POST   /user/signup              --> github.com/zecodein/sber-invest.kz/delivery/web.(*UserHandler).signUp-fm (6 handlers)
+[GIN-debug] GET    /user/signin              --> github.com/zecodein/sber-invest.kz/delivery/web.(*UserHandler).signIn-fm (6 handlers)
+[GIN-debug] POST   /user/signin              --> github.com/zecodein/sber-invest.kz/delivery/web.(*UserHandler).signIn-fm (6 handlers)
+[GIN-debug] GET    /user/signout             --> github.com/zecodein/sber-invest.kz/delivery/web.(*UserHandler).signOut-fm (6 handlers)
+[GIN-debug] POST   /user/update              --> github.com/zecodein/sber-invest.kz/delivery/web.(*UserHandler).update-fm (6 handlers)
+[GIN-debug] GET    /user/profile             --> github.com/zecodein/sber-invest.kz/delivery/web.(*UserHandler).profile-fm (6 handlers)
+[GIN-debug] POST   /user/delete              --> github.com/zecodein/sber-invest.kz/delivery/web.(*UserHandler).delete-fm (6 handlers)
+[GIN-debug] GET    /article/create           --> github.com/zecodein/sber-invest.kz/delivery/web.(*ArticleHandler).create-fm (6 handlers)
+[GIN-debug] POST   /article/create           --> github.com/zecodein/sber-invest.kz/delivery/web.(*ArticleHandler).create-fm (6 handlers)
+[GIN-debug] GET    /article/update           --> github.com/zecodein/sber-invest.kz/delivery/web.(*ArticleHandler).update-fm (6 handlers)
+[GIN-debug] POST   /article/update           --> github.com/zecodein/sber-invest.kz/delivery/web.(*ArticleHandler).update-fm (6 handlers)
+[GIN-debug] GET    /article/:id              --> github.com/zecodein/sber-invest.kz/delivery/web.(*ArticleHandler).getByID-fm (6 handlers)
+[GIN-debug] GET    /article/delete           --> github.com/zecodein/sber-invest.kz/delivery/web.(*ArticleHandler).delete-fm (6 handlers)
+::1 - [Mon, 18 Apr 2022 11:12:06 +06] "POST /user/signin HTTP/1.1 401 891.279681ms "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "
+::1 - [Mon, 18 Apr 2022 11:12:16 +06] "POST /user/signin HTTP/1.1 200 888.231128ms "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "
+::1 - [Mon, 18 Apr 2022 11:12:16 +06] "GET / HTTP/1.1 200 1.457854ms "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "
+::1 - [Mon, 18 Apr 2022 11:12:43 +06] "GET /static/css/img/background.mp4 HTTP/1.1 206 15.001025574s "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "
+::1 - [Mon, 18 Apr 2022 11:13:16 +06] "GET /static/css/img/background.mp4 HTTP/1.1 206 41.700425ms "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "
+::1 - [Mon, 18 Apr 2022 11:13:58 +06] "GET /static/css/img/background.mp4 HTTP/1.1 206 10.683185734s "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "
+::1 - [Mon, 18 Apr 2022 11:14:50 +06] "GET /static/css/img/background.mp4 HTTP/1.1 206 1.094463ms "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "

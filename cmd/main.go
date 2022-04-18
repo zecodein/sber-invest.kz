@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"path/filepath"
 	"time"
 
@@ -29,6 +30,14 @@ func init() {
 func main() {
 	flag.Parse()
 
+	// gin.DisableConsoleColor()
+
+	// f, err := os.Create("logs.log")
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// gin.DefaultWriter = io.MultiWriter(f)
+
 	config := configs.NewConfig()
 	_, err := toml.DecodeFile(configPath, config)
 	if err != nil {
@@ -42,6 +51,8 @@ func main() {
 	defer db.Close()
 
 	router := gin.Default()
+	yourfile, _ := os.Create("server.log")
+	router.Use(gin.LoggerWithWriter(yourfile))
 
 	store, err := redis.NewStore(10, "tcp", config.CacheHost+config.CacheAddr, config.CachePassword, []byte("sber"))
 	if err != nil {
@@ -49,7 +60,6 @@ func main() {
 	}
 
 	router.Use(sessions.Sessions("sber-invest", store))
-
 	router.Static("/static", "./ui/static")
 	router.HTMLRender = loadTemplates("./ui/html/")
 
