@@ -1,9 +1,9 @@
 {{ define "content" }}
-<input type="text" id="title">
-<input type="text" id="text">
+<input type="text" id="title" placeholder="Заголовок">
+<input type="text" id="text" placeholder="Текст">
 
 <label for="categories">Рубрика:</label>
-<input list="category" id="categories" name="categories"/>
+<input list="category" id="categories" name="categories"/ placeholder="Рубрика">
 
 <datalist id="category">
 {{ range $index, $category := .categories }}
