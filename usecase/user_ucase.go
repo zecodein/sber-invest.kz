@@ -33,8 +33,8 @@ func (u *userUsecase) Create(ctx context.Context, user *domain.User) (int64, err
 	}
 
 	user.Password = string(hash)
-	user.CreatedAt = time.Now().UTC()
-	user.UpdatedAt = time.Now().UTC()
+	user.CreatedAt = time.Now()
+	user.UpdatedAt = time.Now()
 
 	return u.userRepo.Create(ctx, user)
 }

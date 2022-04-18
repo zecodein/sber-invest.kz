@@ -42,16 +42,19 @@ func (u *UserHandler) signUp(c *gin.Context) {
 		c.HTML(http.StatusOK, "signup.html", gin.H{})
 	case http.MethodPost:
 		user := &domain.User{}
+
 		err := c.BindJSON(user)
 		if err != nil {
 			c.Writer.WriteHeader(getStatusCode(err))
 			return
 		}
+
 		_, err = u.userUsecase.Create(c.Request.Context(), user)
 		if err != nil {
 			c.Writer.WriteHeader(getStatusCode(err))
 			return
 		}
+
 		c.Writer.WriteHeader(http.StatusCreated)
 	}
 }
@@ -102,7 +105,7 @@ func (u *UserHandler) update(c *gin.Context) {
 func (u *UserHandler) profile(c *gin.Context) {
 	id := getSession(c)
 	if id == 0 {
-		c.Redirect(http.StatusSeeOther, "/")
+		c.Redirect(http.StatusSeeOther, "/user/signin")
 		return
 	}
 	user, err := u.userUsecase.GetByID(c.Request.Context(), id)

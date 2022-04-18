@@ -1,0 +1,17 @@
+{{ define "content" }}
+<input type="text" id="title">
+<input type="text" id="text">
+
+<label for="categories">Рубрика:</label>
+<input list="category" id="categories" name="categories"/>
+
+<datalist id="category">
+{{ range $index, $category := .categories }}
+    <option value="{{ .Name }}" id="$index">
+{{ end }}
+</datalist>
+
+<button type="submit" onclick="createArticle()">Опубликовать</button>
+
+<script src="/static/js/article.js"></script>
+{{ end }}

@@ -26,5 +26,50 @@ func NewPostgresRepository(config *configs.Config) (*pgxpool.Pool, error) {
 		return nil, fmt.Errorf("postgres: %w", err)
 	}
 
+	err = categories(db)
+	if err != nil {
+		return nil, err
+	}
+
 	return db, nil
+}
+
+func categories(db *pgxpool.Pool) error {
+	stmt := `INSERT INTO "category"("name", "description") VALUES($1, $2)`
+	_, err := db.Exec(context.Background(), stmt, "Assetallocation", "подходы, стратегии, финансовые инструменты, портфели, инструменты инвестиционного анализа.")
+	if err != nil && err.Error()[7:16] != "duplicate" {
+		return err
+	}
+
+	stmt = `INSERT INTO "category"("name", "description") VALUES($1, $2)`
+	_, err = db.Exec(context.Background(), stmt, "Налоги", "налогообложение активов в портфеле инвестора и его налоговая отчетность в Казахстане.")
+	if err != nil && err.Error()[7:16] != "duplicate" {
+		return err
+	}
+
+	stmt = `INSERT INTO "category"("name", "description") VALUES($1, $2)`
+	_, err = db.Exec(context.Background(), stmt, "Пошаговые Инструкции", "все инструкции проекта (оплата налогов, заполнение 240 формы, регистрация брокерского договора и подачи отчётности в НацБанк).")
+	if err != nil && err.Error()[7:16] != "duplicate" {
+		return err
+	}
+
+	stmt = `INSERT INTO "category"("name", "description") VALUES($1, $2)`
+	_, err = db.Exec(context.Background(), stmt, "Психология Инвестиций", "о людях, их особенностях и ограничениях. О дисциплине.")
+	if err != nil && err.Error()[7:16] != "duplicate" {
+		return err
+	}
+
+	stmt = `INSERT INTO "category"("name", "description") VALUES($1, $2)`
+	_, err = db.Exec(context.Background(), stmt, "Важные Новости", "«выжимки» важных новостей.")
+	if err != nil && err.Error()[7:16] != "duplicate" {
+		return err
+	}
+
+	stmt = `INSERT INTO "category"("name", "description") VALUES($1, $2)`
+	_, err = db.Exec(context.Background(), stmt, "TuneUp", "информация о курсах, конференциях и других полезных мероприятиях и ресурсах, с помощью которых можно «прокачать» свою финансовую грамотность.")
+	if err != nil && err.Error()[7:16] != "duplicate" {
+		return err
+	}
+
+	return nil
 }

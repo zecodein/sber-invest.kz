@@ -8,3 +8,19 @@ CREATE TABLE IF NOT EXISTS "user"(
     "created_at" TIMESTAMP NOT NULL,
     "updated_at" TIMESTAMP NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS "article"(
+    "article_id" BIGSERIAL PRIMARY KEY,
+    "user_id" BIGSERIAL NOT NULL,
+    "category_id" BIGSERIAL NOT NULL,
+    "title" TEXT NOT NULL,
+    "text" TEXT NOT NULL,
+    "created_at" TIMESTAMP NOT NULL,
+    "updated_at" TIMESTAMP NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS "category"(
+    "category_id" BIGSERIAL PRIMARY KEY,
+    "name" TEXT NOT NULL UNIQUE,
+    "description" TEXT NOT NULL
+);
