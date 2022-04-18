@@ -30,16 +30,14 @@ func init() {
 func main() {
 	flag.Parse()
 
-	// gin.DisableConsoleColor()
-
-	// f, err := os.Create("logs.log")
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// gin.DefaultWriter = io.MultiWriter(f)
+	logger, err := os.Create("server.log")
+	if err != nil {
+		log.Println(err)
+		return
+	}
 
 	config := configs.NewConfig()
-	_, err := toml.DecodeFile(configPath, config)
+	_, err = toml.DecodeFile(configPath, config)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -51,8 +49,7 @@ func main() {
 	defer db.Close()
 
 	router := gin.Default()
-	yourfile, _ := os.Create("server.log")
-	router.Use(gin.LoggerWithWriter(yourfile))
+	router.Use(gin.LoggerWithWriter(logger))
 
 	store, err := redis.NewStore(10, "tcp", config.CacheHost+config.CacheAddr, config.CachePassword, []byte("sber"))
 	if err != nil {
