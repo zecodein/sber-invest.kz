@@ -13,4 +13,3 @@ stop:
 delete:
 	docker-compose down
 	docker rmi redis:6.2-alpine postgres:latest alpine:latest sber-investkz_app:latest
-	docker volume rm sber-investkz_cache sber-investkz_pg-data
