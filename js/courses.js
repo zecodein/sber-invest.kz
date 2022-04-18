@@ -59,11 +59,23 @@ OformitSert.addEventListener("click", function () {
   PodarokOnClick.checked = "true";
   PodFifthForm.style.display = "block";
   FifthForm.style.display = "none";
+  VesKurs.checked = "true";
+  LocalRynok.checked = "true";
+    ZaPredelami.checked = "true";
+    VychetyISald.checked = "true";
+    Skidka.checked = "true";
+    ObrSvz.checked = "true";
 });
 OformitZayav.addEventListener("click", function () {
   $("#Podarok").prop("checked", false);
   PodFifthForm.style.display = "none";
   FifthForm.style.display = "block";
+  VesKurs.checked = "true";
+  LocalRynok.checked = "true";
+    ZaPredelami.checked = "true";
+    VychetyISald.checked = "true";
+    Skidka.checked = "true";
+    ObrSvz.checked = "true";
 });
 
 const VesKurs = document.getElementById("VesKurs");
