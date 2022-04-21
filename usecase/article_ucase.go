@@ -43,7 +43,11 @@ func (a *articleUsecase) Update(ctx context.Context, article *domain.Article) er
 }
 
 func (a *articleUsecase) GetByID(ctx context.Context, id int64) (*domain.Article, error) {
-	return nil, nil
+	article, err := a.articleRepo.GetByID(ctx, id)
+	if err != nil {
+		return nil, err
+	}
+	return article, nil
 }
 
 func (a *articleUsecase) GetAllCategory(ctx context.Context) ([]domain.Category, error) {

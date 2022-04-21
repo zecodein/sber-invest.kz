@@ -6,13 +6,14 @@ import (
 )
 
 type Article struct {
-	ID         int64     `json:"id,omitempty"`
-	UserID     int64     `json:"user_id,omitempty"`
-	CategoryID int64     `json:"category_id,omitempty"`
-	Title      string    `json:"title,omitempty"`
-	Text       string    `json:"text,omitempty"`
-	CreatedAt  time.Time `json:"created_at,omitempty"`
-	UpdatedAt  time.Time `json:"updated_at,omitempty"`
+	ID           int64     `json:"id,omitempty"`
+	UserID       int64     `json:"user_id,omitempty"`
+	CategoryID   int64     `json:"category_id,omitempty"`
+	CategoryName string    `json:"category_name,omitempty"`
+	Title        string    `json:"title,omitempty"`
+	Text         string    `json:"text,omitempty"`
+	CreatedAt    time.Time `json:"created_at,omitempty"`
+	UpdatedAt    time.Time `json:"updated_at,omitempty"`
 }
 
 type Category struct {

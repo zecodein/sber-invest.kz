@@ -2,6 +2,7 @@ package repository
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/zecodein/sber-invest.kz/domain"
@@ -18,6 +19,15 @@ func NewArticleRepository(db *pgxpool.Pool) domain.ArticleUsecase {
 }
 
 func (a *articleRepository) Create(ctx context.Context, article *domain.Article) (int64, error) {
+	access, err := getAccess(ctx, a.db, article.UserID)
+	if err != nil {
+		return 0, err
+	}
+
+	if access == "basic_user" {
+		return 0, fmt.Errorf("тебе сюда нельзя")
+	}
+
 	stmt := `INSERT INTO "article"(
 		"user_id",
 		"category_id",
@@ -28,7 +38,7 @@ func (a *articleRepository) Create(ctx context.Context, article *domain.Article)
 	) VALUES ($1, $2, $3, $4, $5, $6) RETURNING "article_id"`
 
 	var id int64 = 0
-	err := a.db.QueryRow(ctx, stmt, article.UserID, article.CategoryID, article.Title, article.Text, article.CreatedAt, article.UpdatedAt).Scan(&id)
+	err = a.db.QueryRow(ctx, stmt, article.UserID, article.CategoryID, article.Title, article.Text, article.CreatedAt, article.UpdatedAt).Scan(&id)
 	if err != nil {
 		return 0, err
 	}
@@ -43,7 +53,7 @@ func (a *articleRepository) Update(ctx context.Context, article *domain.Article)
 func (a *articleRepository) GetByID(ctx context.Context, id int64) (*domain.Article, error) {
 	stmt := `SELECT * FROM "article" WHERE "article_id"=$1`
 	article := domain.Article{}
-	err := a.db.QueryRow(ctx, stmt, id).Scan(article.ID, article.UserID, article.Title, article.Text, article.CreatedAt, article.UpdatedAt)
+	err := a.db.QueryRow(ctx, stmt, id).Scan(&article.ID, &article.UserID, &article.CategoryID, &article.Title, &article.Text, &article.CreatedAt, &article.UpdatedAt)
 	if err != nil {
 		return nil, err
 	}

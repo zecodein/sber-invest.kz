@@ -6,10 +6,8 @@ function createArticle() {
     var data = JSON.stringify({
         title: title.value,
         text: text.value,
-        name: category.value,
+        category_name: category.value,
     });
-
-    console.log(data)
 
     let url = "/article/create";
     (async () => {
@@ -22,9 +20,13 @@ function createArticle() {
             },
             body: data,
         });
-        // const content = await rawResponse.status();
+        let content = await rawResponse.json();
         if (rawResponse.status == 200) {
-            window.location.replace("/")
+            console.log(content)
+
+            let url = "/article/" + content.id
+            // console.log(content, url)
+            window.location.replace(url)
         }
     })();
 }

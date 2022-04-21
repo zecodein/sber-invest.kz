@@ -19,7 +19,7 @@ type User struct {
 
 type UserUsecase interface {
 	Create(ctx context.Context, user *User) (int64, error)
-	Update(ctx context.Context, user *User) (int64, error)
+	UpdatePassword(ctx context.Context, old string, new string, id int64) error
 	GetByID(ctx context.Context, id int64) (*User, error)
 	GetByEmail(ctx context.Context, user *User) (int64, error)
 	Delete(ctx context.Context, id int64) error
@@ -27,7 +27,7 @@ type UserUsecase interface {
 
 type UserRepository interface {
 	Create(ctx context.Context, user *User) (int64, error)
-	Update(ctx context.Context, user *User) (int64, error)
+	UpdatePassword(ctx context.Context, password string, id int64) error
 	GetByID(ctx context.Context, id int64) (*User, error)
 	GetByEmail(ctx context.Context, email string) (*User, error)
 	Delete(ctx context.Context, id int64) error

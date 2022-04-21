@@ -1,3 +1,4 @@
+
 function signup() {
     let firstname = document.querySelector("#InputFirstName1")
     let lastname = document.querySelector("#InputLastName1")
@@ -13,6 +14,8 @@ function signup() {
         confirm_password: confirm.value,
     });
     
+    const warning = document.getElementById("warning")
+
     let url = "/user/signup";
     (async () => {
         const rawResponse = await fetch(url, {
@@ -24,9 +27,13 @@ function signup() {
             },
             body: data,
         });
+
         // const content = await rawResponse.status();
         if (rawResponse.status == 201) {
             window.location.replace("/user/signin")
+        } else {
+            warning.innerHTML = ""
+            warning.innerHTML += "Шото не так :("
         }
     })();
 }
@@ -39,6 +46,8 @@ function signin() {
         email: email.value,
         password: password.value,
     });
+
+    const warning = document.getElementById("warning")
 
     let url = "/user/signin";
     (async () => {
@@ -54,6 +63,9 @@ function signin() {
         // const content = await rawResponse.status();
         if (rawResponse.status == 200) {
             window.location.replace("/")
+        } else {
+            warning.innerHTML = ""
+            warning.innerHTML += "Неправильная почта или пароль :("
         }
     })();
 }

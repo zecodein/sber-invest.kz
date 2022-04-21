@@ -3,12 +3,13 @@
 <input type="text" id="text" placeholder="Текст">
 
 <label for="categories">Рубрика:</label>
-<input list="category" id="categories" name="categories"/ placeholder="Рубрика">
+<input list="category" id="categories" name="categories" / placeholder="Рубрика">
 
 <datalist id="category">
-{{ range $index, $category := .categories }}
-    <option value="{{ .Name }}" id="$index">
-{{ end }}
+    {{ range $index, $category := .categories }}
+    <!-- <option value="{{ .ID }}">{{ .Name }}</option> -->
+    <option value="{{ .Name }}" class="id">
+    {{ end }}
 </datalist>
 
 <button type="submit" onclick="createArticle()">Опубликовать</button>

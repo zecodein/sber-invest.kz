@@ -3,6 +3,7 @@ package web
 import (
 	"fmt"
 	"net/http"
+	"strconv"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
@@ -27,8 +28,13 @@ func NewUserHandler(r *gin.Engine, us domain.UserUsecase) {
 	r.POST("/user/signin", handler.signIn)
 
 	r.GET("/user/signout", handler.signOut)
-	r.POST("/user/update", handler.update)
-	r.GET("/user/profile", handler.profile)
+
+	r.GET("/user/update/password", handler.updatePassword)
+	r.POST("/user/update/password", handler.updatePassword)
+
+	r.GET("/user/profile/:id", handler.profile)
+	r.GET("/user/profile/", handler.profile)
+
 	r.POST("/user/delete", handler.delete)
 }
 
@@ -37,6 +43,7 @@ func (u *UserHandler) signUp(c *gin.Context) {
 		c.Redirect(http.StatusSeeOther, "/")
 		return
 	}
+
 	switch c.Request.Method {
 	case http.MethodGet:
 		c.HTML(http.StatusOK, "signup.html", gin.H{})
@@ -98,17 +105,57 @@ func (u *UserHandler) signOut(c *gin.Context) {
 	c.Redirect(http.StatusSeeOther, "/")
 }
 
-func (u *UserHandler) update(c *gin.Context) {
+func (u *UserHandler) updatePassword(c *gin.Context) {
+	userID := getSession(c)
+	if userID == 0 {
+		c.Redirect(http.StatusSeeOther, "/user/signin")
+		return
+	}
+
+	type updatePass struct {
+		OldPassword string `json:"old_password,omitempty"`
+		NewPassword string `json:"new_password,omitempty"`
+	}
+
+	switch c.Request.Method {
+	case http.MethodGet:
+	// TODO
+	case http.MethodPost:
+		update := updatePass{}
+
+		err := c.BindJSON(&update)
+		if err != nil {
+			c.Writer.WriteHeader(getStatusCode(err))
+			return
+		}
+
+		err = u.userUsecase.UpdatePassword(c.Request.Context(), update.OldPassword, update.NewPassword, userID)
+		if err != nil {
+			c.Writer.WriteHeader(getStatusCode(err))
+			return
+		}
+
+		c.Writer.WriteHeader(http.StatusOK)
+	}
 	// TODO update
 }
 
 func (u *UserHandler) profile(c *gin.Context) {
-	id := getSession(c)
-	if id == 0 {
+	userID := getSession(c)
+	if userID == 0 {
 		c.Redirect(http.StatusSeeOther, "/user/signin")
 		return
 	}
-	user, err := u.userUsecase.GetByID(c.Request.Context(), id)
+
+	profileID, err := strconv.ParseInt(c.Param("id"), 10, 64)
+	fmt.Println(profileID, err)
+	if err != nil || profileID == 0 {
+		url := "/user/profile/" + strconv.FormatInt(userID, 10)
+		c.Redirect(http.StatusSeeOther, url)
+		return
+	}
+
+	user, err := u.userUsecase.GetByID(c.Request.Context(), profileID)
 	if err != nil {
 		c.Writer.WriteHeader(http.StatusNotFound)
 		return
