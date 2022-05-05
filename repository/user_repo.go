@@ -81,10 +81,10 @@ func (u *userRepository) Delete(ctx context.Context, id int64) error {
 	return nil
 }
 
-func getAccess(ctx context.Context, db *pgxpool.Pool, userID int64) (string, error) {
+func (u *userRepository) GetAccess(ctx context.Context, userID int64) (string, error) {
 	var access string
 	stmt := `SELECT "access" FROM "user" WHERE "user_id"=$1`
-	row := db.QueryRow(ctx, stmt, userID)
+	row := u.db.QueryRow(ctx, stmt, userID)
 
 	err := row.Scan(&access)
 	if err != nil {

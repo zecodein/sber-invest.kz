@@ -24,7 +24,7 @@ import (
 var configPath string
 
 func init() {
-	flag.StringVar(&configPath, "config-path", "configs/docker.toml", "path to config file")
+	flag.StringVar(&configPath, "cfg", "configs/docker.toml", "path to config file")
 }
 
 func main() {
@@ -67,11 +67,12 @@ func main() {
 	articleUsecase := usecase.NewArticleUsecase(articleRepository)
 
 	handler := &web.Handler{
-		UserUsecase: userUsecase,
+		UserUsecase:    userUsecase,
+		ArticleUsecase: articleUsecase,
 	}
 	web.NewHandler(router, handler)
-	web.NewUserHandler(router, userUsecase)
-	web.NewArticleHandler(router, articleUsecase)
+	// web.NewUserHandler(router, userUsecase)
+	// web.NewArticleHandler(router, articleUsecase)
 
 	server := &http.Server{
 		Addr:         config.BindAddr,

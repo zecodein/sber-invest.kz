@@ -90,6 +90,10 @@ func (u *userUsecase) GetByEmail(ctx context.Context, user *domain.User) (int64,
 	return usr.ID, nil
 }
 
+func (u *userUsecase) GetAccess(ctx context.Context, userID int64) (string, error) {
+	return u.userRepo.GetAccess(ctx, userID)
+}
+
 func (u *userUsecase) Delete(ctx context.Context, id int64) error {
 	return nil
 }

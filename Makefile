@@ -5,7 +5,7 @@ build:
 run:
 	docker-compose build
 	docker image prune
-	docker-compose up
+	docker-compose up -d
 
 stop:
 	docker-compose stop

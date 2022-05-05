@@ -10,34 +10,25 @@ import (
 	"github.com/zecodein/sber-invest.kz/domain"
 )
 
-type ArticleHandler struct {
-	articleUsecase domain.ArticleUsecase
-}
-
-func NewArticleHandler(r *gin.Engine, us domain.ArticleUsecase) {
-	handler := &ArticleHandler{
-		articleUsecase: us,
-	}
-
-	r.GET("/article/create", handler.create)
-	r.POST("/article/create", handler.create)
-
-	r.GET("/article/update", handler.update)
-	r.PUT("/article/update", handler.update)
-
-	r.GET("/article/:id", handler.getByID)
-
-	r.GET("/article/delete", handler.delete)
-}
-
-func (a *ArticleHandler) create(c *gin.Context) {
+func (h *Handler) createArticle(c *gin.Context) {
 	userID := getSession(c)
 	if userID == 0 {
 		c.Redirect(http.StatusSeeOther, "/user/signin")
 		return
 	}
 
-	categories, err := a.articleUsecase.GetAllCategory(c.Request.Context())
+	access, err := h.UserUsecase.GetAccess(c, userID)
+	if err != nil {
+		c.Writer.WriteHeader(getStatusCode(err))
+		return
+	}
+
+	if access == "basic_user" {
+		c.Redirect(http.StatusFound, "/")
+		return
+	}
+
+	categories, err := h.ArticleUsecase.GetAllCategory(c.Request.Context())
 	if err != nil {
 		log.Fatal(err)
 		c.Writer.WriteHeader(getStatusCode(err))
@@ -66,7 +57,7 @@ func (a *ArticleHandler) create(c *gin.Context) {
 		}
 
 		article.UserID = userID
-		article.ID, err = a.articleUsecase.Create(c.Request.Context(), article)
+		article.ID, err = h.ArticleUsecase.Create(c.Request.Context(), article)
 		if err != nil {
 			c.Writer.WriteHeader(getStatusCode(err))
 			return
@@ -81,7 +72,7 @@ func (a *ArticleHandler) create(c *gin.Context) {
 	}
 }
 
-func (a *ArticleHandler) update(c *gin.Context) {
+func (h *Handler) updateArticle(c *gin.Context) {
 	if getSession(c) == 0 {
 		c.Redirect(http.StatusSeeOther, "/user/signin")
 		return
@@ -95,14 +86,16 @@ func (a *ArticleHandler) update(c *gin.Context) {
 	}
 }
 
-func (a *ArticleHandler) getByID(c *gin.Context) {
-	// TODO err
-	id, _ := strconv.ParseInt(c.Param("id"), 10, 64)
-	// fmt.Fprint(c.Writer, "get by id ", id)
-	article, err := a.articleUsecase.GetByID(c.Request.Context(), id)
+func (h *Handler) getArticleByID(c *gin.Context) {
+	id, err := strconv.ParseInt(c.Param("id"), 10, 64)
 	if err != nil {
-		// TODO err
-		log.Fatal(err)
+		c.HTML(http.StatusNotFound, "404.html", gin.H{})
+		return
+	}
+	article, err := h.ArticleUsecase.GetByID(c.Request.Context(), id)
+	if err != nil {
+		c.HTML(http.StatusNotFound, "404.html", gin.H{})
+		return
 	}
 
 	c.HTML(http.StatusOK, "article_page.html", gin.H{
@@ -111,7 +104,7 @@ func (a *ArticleHandler) getByID(c *gin.Context) {
 	// TODO article/:id page
 }
 
-func (a *ArticleHandler) delete(c *gin.Context) {
+func (h *Handler) deleteArticle(c *gin.Context) {
 	if getSession(c) == 0 {
 		c.Redirect(http.StatusSeeOther, "/user/signin")
 		return

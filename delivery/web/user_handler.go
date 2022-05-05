@@ -10,35 +10,30 @@ import (
 	"github.com/zecodein/sber-invest.kz/domain"
 )
 
-type UserHandler struct {
-	userUsecase domain.UserUsecase
-}
+// type UserHandler struct {
+// 	userUsecase domain.UserUsecase
+// }
 
 const key = "sber-session"
 
-func NewUserHandler(r *gin.Engine, us domain.UserUsecase) {
-	handler := &UserHandler{
-		userUsecase: us,
-	}
+// func NewUserHandler(r *gin.Engine, us domain.UserUsecase) {
+// 	handler := &UserHandler{
+// 		userUsecase: us,
+// 	}
 
-	r.GET("/user/signup", handler.signUp)
-	r.POST("/user/signup", handler.signUp)
+// 	r.GET("/user/signup", handler.signUp)
+// 	r.POST("/user/signup", handler.signUp)
+// 	r.GET("/user/signin", handler.signIn)
+// 	r.POST("/user/signin", handler.signIn)
+// 	r.GET("/user/signout", handler.signOut)
+// 	r.GET("/user/update/password", handler.updatePassword)
+// 	r.POST("/user/update/password", handler.updatePassword)
+// 	r.GET("/user/profile/:id", handler.profile)
+// 	r.GET("/user/profile/", handler.profile)
+// 	r.POST("/user/delete", handler.delete)
+// }
 
-	r.GET("/user/signin", handler.signIn)
-	r.POST("/user/signin", handler.signIn)
-
-	r.GET("/user/signout", handler.signOut)
-
-	r.GET("/user/update/password", handler.updatePassword)
-	r.POST("/user/update/password", handler.updatePassword)
-
-	r.GET("/user/profile/:id", handler.profile)
-	r.GET("/user/profile/", handler.profile)
-
-	r.POST("/user/delete", handler.delete)
-}
-
-func (u *UserHandler) signUp(c *gin.Context) {
+func (h *Handler) signUp(c *gin.Context) {
 	if getSession(c) != 0 {
 		c.Redirect(http.StatusSeeOther, "/")
 		return
@@ -56,7 +51,7 @@ func (u *UserHandler) signUp(c *gin.Context) {
 			return
 		}
 
-		_, err = u.userUsecase.Create(c.Request.Context(), user)
+		_, err = h.UserUsecase.Create(c.Request.Context(), user)
 		if err != nil {
 			c.Writer.WriteHeader(getStatusCode(err))
 			return
@@ -66,7 +61,7 @@ func (u *UserHandler) signUp(c *gin.Context) {
 	}
 }
 
-func (u *UserHandler) signIn(c *gin.Context) {
+func (h *Handler) signIn(c *gin.Context) {
 	if getSession(c) != 0 {
 		c.Redirect(http.StatusSeeOther, "/")
 		return
@@ -81,14 +76,14 @@ func (u *UserHandler) signIn(c *gin.Context) {
 			c.Writer.WriteHeader(http.StatusBadRequest)
 			return
 		}
-		id, err := u.userUsecase.GetByEmail(c.Request.Context(), user)
+		id, err := h.UserUsecase.GetByEmail(c.Request.Context(), user)
 		if err != nil {
 			c.Writer.WriteHeader(getStatusCode(err))
 			return
 		}
 		fmt.Println(id)
 
-		err = u.session(c, id)
+		err = h.session(c, id)
 		if err != nil {
 			c.Writer.WriteHeader(getStatusCode(err))
 			return
@@ -97,7 +92,7 @@ func (u *UserHandler) signIn(c *gin.Context) {
 	}
 }
 
-func (u *UserHandler) signOut(c *gin.Context) {
+func (h *Handler) signOut(c *gin.Context) {
 	session := sessions.Default(c)
 	session.Clear()
 	session.Options(sessions.Options{MaxAge: -1})
@@ -105,7 +100,7 @@ func (u *UserHandler) signOut(c *gin.Context) {
 	c.Redirect(http.StatusSeeOther, "/")
 }
 
-func (u *UserHandler) updatePassword(c *gin.Context) {
+func (h *Handler) updatePassword(c *gin.Context) {
 	userID := getSession(c)
 	if userID == 0 {
 		c.Redirect(http.StatusSeeOther, "/user/signin")
@@ -129,7 +124,7 @@ func (u *UserHandler) updatePassword(c *gin.Context) {
 			return
 		}
 
-		err = u.userUsecase.UpdatePassword(c.Request.Context(), update.OldPassword, update.NewPassword, userID)
+		err = h.UserUsecase.UpdatePassword(c.Request.Context(), update.OldPassword, update.NewPassword, userID)
 		if err != nil {
 			c.Writer.WriteHeader(getStatusCode(err))
 			return
@@ -140,7 +135,7 @@ func (u *UserHandler) updatePassword(c *gin.Context) {
 	// TODO update
 }
 
-func (u *UserHandler) profile(c *gin.Context) {
+func (h *Handler) profile(c *gin.Context) {
 	userID := getSession(c)
 	if userID == 0 {
 		c.Redirect(http.StatusSeeOther, "/user/signin")
@@ -155,7 +150,7 @@ func (u *UserHandler) profile(c *gin.Context) {
 		return
 	}
 
-	user, err := u.userUsecase.GetByID(c.Request.Context(), profileID)
+	user, err := h.UserUsecase.GetByID(c.Request.Context(), profileID)
 	if err != nil {
 		c.Writer.WriteHeader(http.StatusNotFound)
 		return
@@ -166,11 +161,11 @@ func (u *UserHandler) profile(c *gin.Context) {
 	})
 }
 
-func (u *UserHandler) delete(c *gin.Context) {
+func (h *Handler) deleteUser(c *gin.Context) {
 	// TODO delete
 }
 
-func (u *UserHandler) session(c *gin.Context, id int64) error {
+func (h *Handler) session(c *gin.Context, id int64) error {
 	session := sessions.Default(c)
 	session.Options(sessions.Options{MaxAge: 3600 * 24, Path: "/", HttpOnly: true})
 	session.Set(key, id)

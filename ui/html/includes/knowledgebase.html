@@ -1,0 +1,10 @@
+{{ define "content" }}
+
+<div>
+    {{ range .categories }}
+    <a href="/knowledgebase/{{ .Id }}">{{ .Name }}</a>
+    <p> {{ .Description }}</p>
+    {{ end }}
+</div>
+
+{{ end }}
