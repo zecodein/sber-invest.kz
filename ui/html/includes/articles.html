@@ -1,5 +1,11 @@
 {{ define "content" }}
     {{ range .articles }}
-        <p>{{ . }}</p>
+    <a href="/article/{{ .ID }}">
+        <p>{{ .Title }}</p>
+        <p>{{ .Text }}</p>
+        <p>Добавлен: {{ .CreatedAt }}</p>
+        <p>Обновлен: {{ .UpdatedAt }}</p>
+        <p>Автор: <a href="/user/profile/{{ .UserID }}">{{ .FirstName }} {{ .LastName }}</a></p>
+    </a>
     {{ end }}
 {{ end }}

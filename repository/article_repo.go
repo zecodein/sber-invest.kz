@@ -3,6 +3,7 @@ package repository
 import (
 	"context"
 	"fmt"
+	"log"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/zecodein/sber-invest.kz/domain"
@@ -119,13 +120,24 @@ func (a *articleRepository) GetByCategory(ctx context.Context, categoryName stri
 	return &articles, nil
 }
 
-func (a *articleRepository) GetByID(ctx context.Context, id int64) (*domain.Article, error) {
-	stmt := `SELECT * FROM "article" WHERE "article_id"=$1`
-	article := domain.Article{}
-	err := a.db.QueryRow(ctx, stmt, id).Scan(&article.ID, &article.UserID, &article.CategoryID, &article.Title, &article.Text, &article.CreatedAt, &article.UpdatedAt)
+func (a *articleRepository) GetByID(ctx context.Context, id int64) (*domain.ArticleDTO, error) {
+	category := make(map[int]string)
+	category[1] = "Assetallocation"
+	category[2] = "Налоги"
+	category[3] = "Пошаговые Инструкции"
+	category[4] = "Психология Инвестиций"
+	category[5] = "Важные Новости"
+	category[6] = "TuneUp"
+
+	// stmt := `SELECT * FROM "article" WHERE "article_id"=$1`
+	stmt := `SELECT a.*, u.first_name, u.last_name FROM "article" a JOIN "user" u ON a.user_id = u.user_id WHERE a.article_id = $1 ORDER BY "created_at" DESC`
+	article := domain.ArticleDTO{}
+	err := a.db.QueryRow(ctx, stmt, id).Scan(&article.ID, &article.UserID, &article.CategoryID, &article.Title, &article.Text, &article.CreatedAt, &article.UpdatedAt, &article.FirstName, &article.LastName)
 	if err != nil {
+		log.Println(err)
 		return nil, err
 	}
+	article.CategoryName = category[int(article.CategoryID)]
 	return &article, nil
 }
 

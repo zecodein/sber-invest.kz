@@ -92,6 +92,7 @@ func (h *Handler) getArticleByID(c *gin.Context) {
 		c.HTML(http.StatusNotFound, "404.html", gin.H{})
 		return
 	}
+
 	article, err := h.ArticleUsecase.GetByID(c.Request.Context(), id)
 	if err != nil {
 		c.HTML(http.StatusNotFound, "404.html", gin.H{})

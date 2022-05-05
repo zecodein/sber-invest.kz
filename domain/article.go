@@ -39,7 +39,7 @@ type ArticleUsecase interface {
 	Create(ctx context.Context, article *Article) (int64, error)
 	Update(ctx context.Context, article *Article) error
 	GetAll(ctx context.Context) (*[]ArticleDTO, error)
-	GetByID(ctx context.Context, id int64) (*Article, error)
+	GetByID(ctx context.Context, id int64) (*ArticleDTO, error)
 	GetAllCategory(ctx context.Context) ([]Category, error)
 	GetByCategory(ctx context.Context, category string) (*[]ArticleDTO, error)
 	Delete(ctx context.Context, id int64) error
@@ -49,7 +49,7 @@ type ArticleRepository interface {
 	Create(ctx context.Context, article *Article) (int64, error)
 	Update(ctx context.Context, article *Article) error
 	GetAll(ctx context.Context) (*[]ArticleDTO, error)
-	GetByID(ctx context.Context, id int64) (*Article, error)
+	GetByID(ctx context.Context, id int64) (*ArticleDTO, error)
 	GetAllCategory(ctx context.Context) ([]Category, error)
 	GetByCategory(ctx context.Context, category string) (*[]ArticleDTO, error)
 	Delete(ctx context.Context, id int64) error

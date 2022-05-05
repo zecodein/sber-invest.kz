@@ -50,7 +50,7 @@ func (a *articleUsecase) GetByCategory(ctx context.Context, categoryName string)
 	return a.articleRepo.GetByCategory(ctx, categoryName)
 }
 
-func (a *articleUsecase) GetByID(ctx context.Context, id int64) (*domain.Article, error) {
+func (a *articleUsecase) GetByID(ctx context.Context, id int64) (*domain.ArticleDTO, error) {
 	article, err := a.articleRepo.GetByID(ctx, id)
 	if err != nil {
 		return nil, err
