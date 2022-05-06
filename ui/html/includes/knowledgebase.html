@@ -1,10 +1,25 @@
 {{ define "content" }}
 
-<div>
+<section
+  class="p-0 p-md-5 bg-light text-secondary py-5 text-center"
+  style="
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  "
+>
+  <div style="display: flex; flex-direction: column; align-items: center">
     {{ range .categories }}
-    <a href="/knowledgebase/{{ .Id }}">{{ .Name }}</a>
-    <p> {{ .Description }}</p>
+    <a
+      class="nav-link text-white px-4 mx-1"
+      style="background: #0719bb; border-radius: 20px; width: fit-content"
+      href="/knowledgebase/{{ .Id }}"
+      >{{ .Name }}</a
+    >
+    <p class="mb-5">{{ .Description }}</p>
     {{ end }}
-</div>
+  </div>
+</section>
 
 {{ end }}

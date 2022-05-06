@@ -32,7 +32,7 @@
 
 @media (max-aspect-ratio: 16/9) {
   #video {
-    height: 100vh;
+    min-height: 100vh;
     width: auto;
     margin-left: 50vw;
     transform: translate(-50%);
@@ -52,36 +52,62 @@
 }
 
 .card-scroll {
-  display: none;
+  display: block;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
 a .card {
-  width: 360px;
-  height: 524px;
-  margin: 10px 0 20px 0;
-}
-
-@media (max-width: 1200px) {
-  .card-deck {
-    display: none;
-  }
-
-  .card-scroll {
-    display: block;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-  }
-
-  a .card {
-    width: 290px;
-    height: 550px;
-    margin: 10px;
-    display: inline-block;
-    white-space: normal;
-  }
+  width: 290px;
+  height: 600px;
+  margin: 10px;
+  display: inline-block;
+  white-space: normal;
 }
 
 div a {
   color: #292d30;
+}
+
+#videowrapper {
+  display: block;
+}
+
+#bgphotoindex {
+  display: none;
+}
+
+.partners {
+  height: 52px;
+}
+
+.partners_big {
+  height: 40px;
+  margin-top: 10px;
+}
+
+@media (max-width: 540px) {
+  #videowrapper {
+    display: none;
+  }
+
+  #bgphotoindex {
+    display: block;
+  }
+
+  .partners {
+    height: 30px;
+  }
+
+  .partners_big {
+    height: 23px;
+    margin-top: 7px;
+  }
+}
+
+.iconBottom {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
 }

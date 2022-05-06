@@ -1,11 +1,22 @@
-{{ define "content" }}
-    {{ range .articles }}
-    <a href="/article/{{ .ID }}">
-        <p>{{ .Title }}</p>
-        <p>{{ .Text }}</p>
-        <p>Добавлен: {{ .CreatedAt }}</p>
-        <p>Обновлен: {{ .UpdatedAt }}</p>
-        <p>Автор: <a href="/user/profile/{{ .UserID }}">{{ .FirstName }} {{ .LastName }}</a></p>
-    </a>
-    {{ end }}
-{{ end }}
+{{ define "content" }} {{ range .articles }}
+<section
+  class="p-0 p-md-5 bg-light text-secondary py-5 text-center"
+  style="
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  "
+>
+  <a href="/article/{{ .ID }}">
+    <p>{{ .Title }}</p>
+    <p>{{ .Text }}</p>
+    <p>Добавлен: {{ .CreatedAt }}</p>
+    <p>Обновлен: {{ .UpdatedAt }}</p>
+    <p>
+      Автор:
+      <a href="/user/profile/{{ .UserID }}">{{ .FirstName }} {{ .LastName }}</a>
+    </p>
+  </a>
+</section>
+{{ end }} {{ end }}
