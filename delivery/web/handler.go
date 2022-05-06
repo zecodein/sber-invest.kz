@@ -14,6 +14,10 @@ type Handler struct {
 	ArticleUsecase domain.ArticleUsecase
 }
 
+type templateData struct {
+	Access string
+}
+
 func NewHandler(r *gin.Engine, h *Handler) {
 	r.GET("/", h.index)
 	r.GET("/knowledgebase", h.knowledgebase)
@@ -50,7 +54,7 @@ func NewHandler(r *gin.Engine, h *Handler) {
 }
 
 func (h *Handler) index(c *gin.Context) {
-	fmt.Println(getSession(c))
+	getSession(c)
 	c.HTML(http.StatusOK, "index.html", gin.H{})
 }
 

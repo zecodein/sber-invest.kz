@@ -11,13 +11,13 @@ import (
 )
 
 func (h *Handler) createArticle(c *gin.Context) {
-	userID := getSession(c)
-	if userID == 0 {
+	userRedis := getSession(c)
+	if userRedis.Id == 0 {
 		c.Redirect(http.StatusSeeOther, "/user/signin")
 		return
 	}
 
-	access, err := h.UserUsecase.GetAccess(c, userID)
+	access, err := h.UserUsecase.GetAccess(c, userRedis.Id)
 	if err != nil {
 		c.Writer.WriteHeader(getStatusCode(err))
 		return
@@ -56,7 +56,7 @@ func (h *Handler) createArticle(c *gin.Context) {
 			}
 		}
 
-		article.UserID = userID
+		article.UserID = userRedis.Id
 		article.ID, err = h.ArticleUsecase.Create(c.Request.Context(), article)
 		if err != nil {
 			c.Writer.WriteHeader(getStatusCode(err))
@@ -73,7 +73,7 @@ func (h *Handler) createArticle(c *gin.Context) {
 }
 
 func (h *Handler) updateArticle(c *gin.Context) {
-	if getSession(c) == 0 {
+	if getSession(c).Id == 0 {
 		c.Redirect(http.StatusSeeOther, "/user/signin")
 		return
 	}
@@ -106,7 +106,7 @@ func (h *Handler) getArticleByID(c *gin.Context) {
 }
 
 func (h *Handler) deleteArticle(c *gin.Context) {
-	if getSession(c) == 0 {
+	if getSession(c).Id == 0 {
 		c.Redirect(http.StatusSeeOther, "/user/signin")
 		return
 	}

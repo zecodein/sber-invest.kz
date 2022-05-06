@@ -1,6 +1,7 @@
 package web
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"strconv"
@@ -34,7 +35,7 @@ const key = "sber-session"
 // }
 
 func (h *Handler) signUp(c *gin.Context) {
-	if getSession(c) != 0 {
+	if getSession(c).Id != 0 {
 		c.Redirect(http.StatusSeeOther, "/")
 		return
 	}
@@ -62,7 +63,7 @@ func (h *Handler) signUp(c *gin.Context) {
 }
 
 func (h *Handler) signIn(c *gin.Context) {
-	if getSession(c) != 0 {
+	if getSession(c).Id != 0 {
 		c.Redirect(http.StatusSeeOther, "/")
 		return
 	}
@@ -101,8 +102,8 @@ func (h *Handler) signOut(c *gin.Context) {
 }
 
 func (h *Handler) updatePassword(c *gin.Context) {
-	userID := getSession(c)
-	if userID == 0 {
+	userRedis := getSession(c)
+	if userRedis.Id == 0 {
 		c.Redirect(http.StatusSeeOther, "/user/signin")
 		return
 	}
@@ -124,7 +125,7 @@ func (h *Handler) updatePassword(c *gin.Context) {
 			return
 		}
 
-		err = h.UserUsecase.UpdatePassword(c.Request.Context(), update.OldPassword, update.NewPassword, userID)
+		err = h.UserUsecase.UpdatePassword(c.Request.Context(), update.OldPassword, update.NewPassword, userRedis.Id)
 		if err != nil {
 			c.Writer.WriteHeader(getStatusCode(err))
 			return
@@ -136,8 +137,8 @@ func (h *Handler) updatePassword(c *gin.Context) {
 }
 
 func (h *Handler) profile(c *gin.Context) {
-	userID := getSession(c)
-	if userID == 0 {
+	userRedis := getSession(c)
+	if userRedis.Id == 0 {
 		c.Redirect(http.StatusSeeOther, "/user/signin")
 		return
 	}
@@ -145,7 +146,7 @@ func (h *Handler) profile(c *gin.Context) {
 	profileID, err := strconv.ParseInt(c.Param("id"), 10, 64)
 	fmt.Println(profileID, err)
 	if err != nil || profileID == 0 {
-		url := "/user/profile/" + strconv.FormatInt(userID, 10)
+		url := "/user/profile/" + strconv.FormatInt(userRedis.Id, 10)
 		c.Redirect(http.StatusSeeOther, url)
 		return
 	}
@@ -165,11 +166,25 @@ func (h *Handler) deleteUser(c *gin.Context) {
 	// TODO delete
 }
 
+type userSession struct {
+	Id     int64  `json:"id,omitempty"`
+	Access string `json:"access,omitempty"`
+}
+
 func (h *Handler) session(c *gin.Context, id int64) error {
+	user, err := h.UserUsecase.GetByID(c, id)
+	if err != nil {
+		return err
+	}
+	// TODO json в redis
+	b, err := json.Marshal(user)
+	if err != nil {
+		return err
+	}
 	session := sessions.Default(c)
 	session.Options(sessions.Options{MaxAge: 3600 * 24, Path: "/", HttpOnly: true})
-	session.Set(key, id)
-	err := session.Save()
+	session.Set(key, b)
+	err = session.Save()
 	if err != nil {
 		return err
 	}
@@ -177,11 +192,18 @@ func (h *Handler) session(c *gin.Context, id int64) error {
 	return nil
 }
 
-func getSession(c *gin.Context) int64 {
+func getSession(c *gin.Context) userSession {
 	session := sessions.Default(c)
 	a := session.Get(key)
 	if a == nil {
-		return 0
+		return userSession{}
 	}
-	return a.(int64)
+	user := &userSession{}
+	fmt.Println(user, a.([]byte))
+	err := json.Unmarshal(a.([]byte), user)
+	if err != nil {
+		return userSession{}
+	}
+	fmt.Println(user)
+	return *user
 }
