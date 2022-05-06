@@ -14,10 +14,6 @@ type Handler struct {
 	ArticleUsecase domain.ArticleUsecase
 }
 
-type templateData struct {
-	Access string
-}
-
 func NewHandler(r *gin.Engine, h *Handler) {
 	r.GET("/", h.index)
 	r.GET("/knowledgebase", h.knowledgebase)
@@ -51,11 +47,52 @@ func NewHandler(r *gin.Engine, h *Handler) {
 	article.PUT("/update", h.updateArticle)
 	article.GET("/:id", h.getArticleByID)
 	article.GET("/delete", h.deleteArticle)
+
+	admin := r.Group("/admin")
+	admin.GET("/", h.admin)
+	admin.POST("/access", h.adminAccess)
+}
+
+func (h *Handler) admin(c *gin.Context) {
+	if getSession(c).Access != "superuser" {
+		c.HTML(http.StatusNotFound, "404.html", gin.H{})
+		return
+	}
+
+	users, err := h.UserUsecase.GetAll(c)
+	if err != nil {
+		c.Writer.WriteHeader(getStatusCode(err))
+		return
+	}
+	c.HTML(http.StatusOK, "admin.html", gin.H{
+		"users":   users,
+		"session": getSession(c),
+	})
+}
+
+func (h *Handler) adminAccess(c *gin.Context) {
+	if getSession(c).Access != "superuser" {
+		c.HTML(http.StatusNotFound, "404.html", gin.H{})
+		return
+	}
+
+	email := c.Request.FormValue("email")
+	access := c.Request.FormValue("access")
+
+	err := h.UserUsecase.ChangeAccess(c, email, access)
+	if err != nil {
+		c.Writer.WriteHeader(getStatusCode(err))
+		return
+	}
+
+	fmt.Println(email, access)
+	c.Redirect(http.StatusFound, "/admin")
 }
 
 func (h *Handler) index(c *gin.Context) {
-	getSession(c)
-	c.HTML(http.StatusOK, "index.html", gin.H{})
+	c.HTML(http.StatusOK, "index.html", gin.H{
+		"session": getSession(c),
+	})
 }
 
 type category struct {
@@ -76,60 +113,84 @@ var categories = [6]category{
 func (h *Handler) knowledgebase(c *gin.Context) {
 	c.HTML(http.StatusOK, "knowledgebase.html", gin.H{
 		"categories": categories,
+		"session":    getSession(c),
 	})
 }
 
 func (h *Handler) getKnowledgebaseById(c *gin.Context) {
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
-		c.HTML(http.StatusNotFound, "404.html", gin.H{})
+		c.HTML(http.StatusNotFound, "404.html", gin.H{
+			"session": getSession(c),
+		})
 		return
 	}
 
 	articles, err := h.ArticleUsecase.GetByCategory(c, categories[id-1].Name)
 	if err != nil {
-		c.HTML(http.StatusNotFound, "404.html", gin.H{})
+		c.HTML(http.StatusNotFound, "404.html", gin.H{
+			"session": getSession(c),
+		})
 		return
 	}
 
 	c.HTML(http.StatusOK, "articles.html", gin.H{
 		"articles": articles,
+		"session":  getSession(c),
 	})
 	fmt.Println(id)
 }
 
 func (h *Handler) aboutus(c *gin.Context) {
-	c.HTML(http.StatusOK, "aboutus.html", gin.H{})
+	c.HTML(http.StatusOK, "aboutus.html", gin.H{
+		"session": getSession(c),
+	})
 }
 
 func (h *Handler) services(c *gin.Context) {
-	c.HTML(http.StatusOK, "services.html", gin.H{})
+	c.HTML(http.StatusOK, "services.html", gin.H{
+		"session": getSession(c),
+	})
 }
 
 func (h *Handler) courses(c *gin.Context) {
-	c.HTML(http.StatusOK, "courses.html", gin.H{})
+	c.HTML(http.StatusOK, "courses.html", gin.H{
+		"session": getSession(c),
+	})
 }
 
 func (h *Handler) videos(c *gin.Context) {
-	c.HTML(http.StatusOK, "videos.html", gin.H{})
+	c.HTML(http.StatusOK, "videos.html", gin.H{
+		"session": getSession(c),
+	})
 }
 
 func (h *Handler) tools(c *gin.Context) {
-	c.HTML(http.StatusOK, "tools.html", gin.H{})
+	c.HTML(http.StatusOK, "tools.html", gin.H{
+		"session": getSession(c),
+	})
 }
 
 func (h *Handler) privacyPolicy(c *gin.Context) {
-	c.HTML(http.StatusOK, "privacyPolicy.html", gin.H{})
+	c.HTML(http.StatusOK, "privacyPolicy.html", gin.H{
+		"session": getSession(c),
+	})
 }
 
 func (h *Handler) contractOffer(c *gin.Context) {
-	c.HTML(http.StatusOK, "contractOffer.html", gin.H{})
+	c.HTML(http.StatusOK, "contractOffer.html", gin.H{
+		"session": getSession(c),
+	})
 }
 
 func (h *Handler) taxreturn(c *gin.Context) {
-	c.HTML(http.StatusOK, "taxreturn.html", gin.H{})
+	c.HTML(http.StatusOK, "taxreturn.html", gin.H{
+		"session": getSession(c),
+	})
 }
 
 func (h *Handler) nalInvVKAZ(c *gin.Context) {
-	c.HTML(http.StatusOK, "NalInvVKaz.html", gin.H{})
+	c.HTML(http.StatusOK, "NalInvVKaz.html", gin.H{
+		"session": getSession(c),
+	})
 }

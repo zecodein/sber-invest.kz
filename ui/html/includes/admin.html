@@ -1,0 +1,22 @@
+{{ define "content" }}
+<h1>Админ здарова как дела?</h1>
+<p>Изменить доступ пользователю</p>
+<form action="/admin/access" method="POST">
+    <label for="email">Почта</label>
+    <input list="users-datalist" id="email" name="email" />
+
+    <datalist id="users-datalist">
+        {{ range .users }}
+        <option value="{{ .Email }}">
+            {{ end }}
+    </datalist>
+
+    <select name="access">
+        <option value="basic_user">Обычный</option>
+        <option value="author">Автор</option>
+        <option value="superuser">Админ</option>
+    </select>
+
+    <button>Изменить дступ</button>
+</form>
+{{ end }}

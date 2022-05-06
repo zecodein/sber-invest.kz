@@ -33,8 +33,8 @@
                             <a class="nav-link" href="/knowledgebase">База знаний</a>
                             <a class="nav-link" href="/videos">Видео</a>
                             <a class="nav-link" href="/tools">Инструменты</a>
-                            {{ if eq .Access "superuser"}}
-                            <a class="nav-link" href="/superhandler">Для админа жи есть</a>
+                            {{ if eq .session.Access "superuser"}}
+                            <a class="nav-link" href="/admin">Для админа жи есть</a>
                             {{ end }}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"

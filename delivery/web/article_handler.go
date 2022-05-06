@@ -89,18 +89,23 @@ func (h *Handler) updateArticle(c *gin.Context) {
 func (h *Handler) getArticleByID(c *gin.Context) {
 	id, err := strconv.ParseInt(c.Param("id"), 10, 64)
 	if err != nil {
-		c.HTML(http.StatusNotFound, "404.html", gin.H{})
+		c.HTML(http.StatusNotFound, "404.html", gin.H{
+			"session": getSession(c),
+		})
 		return
 	}
 
 	article, err := h.ArticleUsecase.GetByID(c.Request.Context(), id)
 	if err != nil {
-		c.HTML(http.StatusNotFound, "404.html", gin.H{})
+		c.HTML(http.StatusNotFound, "404.html", gin.H{
+			"session": getSession(c),
+		})
 		return
 	}
 
 	c.HTML(http.StatusOK, "article_page.html", gin.H{
 		"article": article,
+		"session": getSession(c),
 	})
 	// TODO article/:id page
 }

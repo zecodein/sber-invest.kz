@@ -50,6 +50,32 @@ func (u *userRepository) UpdatePassword(ctx context.Context, password string, id
 	return nil
 }
 
+func (u *userRepository) GetAll(ctx context.Context) (*[]domain.User, error) {
+	stmt := `SELECT * FROM "user"`
+
+	rows, err := u.db.Query(ctx, stmt)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	users := []domain.User{}
+	user := domain.User{}
+	for rows.Next() {
+		err = rows.Scan(&user.ID, &user.FirstName, &user.LastName, &user.Email, &user.Access, &user.Password, &user.CreatedAt, &user.UpdatedAt)
+		if err != nil {
+			return nil, err
+		}
+		user.Password = ""
+		users = append(users, user)
+	}
+	if err = rows.Err(); err != nil {
+		return nil, err
+	}
+
+	return &users, nil
+}
+
 func (u *userRepository) GetByID(ctx context.Context, id int64) (*domain.User, error) {
 	stmt := `SELECT * FROM "user" WHERE "user_id"=$1`
 	user := domain.User{}
@@ -68,6 +94,17 @@ func (u *userRepository) GetByEmail(ctx context.Context, email string) (*domain.
 		return nil, err
 	}
 	return &user, nil
+}
+
+func (u *userRepository) ChangeAccess(ctx context.Context, email string, access string) error {
+	// stmt := `UPDATE "user" SET "password" = $1, "updated_at" = $2 WHERE "user_id" = $3`
+
+	stmt := `UPDATE "user" SET "access" = $1 WHERE "email" = $2`
+	_, err := u.db.Exec(ctx, stmt, access, email)
+	if err != nil {
+		return err
+	}
+	return err
 }
 
 func (u *userRepository) Delete(ctx context.Context, id int64) error {

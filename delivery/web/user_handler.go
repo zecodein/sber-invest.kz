@@ -42,7 +42,9 @@ func (h *Handler) signUp(c *gin.Context) {
 
 	switch c.Request.Method {
 	case http.MethodGet:
-		c.HTML(http.StatusOK, "signup.html", gin.H{})
+		c.HTML(http.StatusOK, "signup.html", gin.H{
+			"session": getSession(c),
+		})
 	case http.MethodPost:
 		user := &domain.User{}
 
@@ -69,7 +71,9 @@ func (h *Handler) signIn(c *gin.Context) {
 	}
 	switch c.Request.Method {
 	case http.MethodGet:
-		c.HTML(http.StatusOK, "signin.html", gin.H{})
+		c.HTML(http.StatusOK, "signin.html", gin.H{
+			"session": getSession(c),
+		})
 	case http.MethodPost:
 		user := &domain.User{}
 		err := c.BindJSON(user)
@@ -158,7 +162,8 @@ func (h *Handler) profile(c *gin.Context) {
 	}
 
 	c.HTML(http.StatusOK, "profile.html", gin.H{
-		"user": user,
+		"user":    user,
+		"session": getSession(c),
 	})
 }
 
@@ -198,12 +203,13 @@ func getSession(c *gin.Context) userSession {
 	if a == nil {
 		return userSession{}
 	}
-	user := &userSession{}
-	fmt.Println(user, a.([]byte))
-	err := json.Unmarshal(a.([]byte), user)
+	user := userSession{}
+	if fmt.Sprintf("type: %T", a) != "type: []uint8" {
+		return userSession{}
+	}
+	err := json.Unmarshal(a.([]byte), &user)
 	if err != nil {
 		return userSession{}
 	}
-	fmt.Println(user)
-	return *user
+	return user
 }

@@ -67,6 +67,10 @@ func (u *userUsecase) UpdatePassword(ctx context.Context, old string, new string
 	return nil
 }
 
+func (u *userUsecase) GetAll(ctx context.Context) (*[]domain.User, error) {
+	return u.userRepo.GetAll(ctx)
+}
+
 func (u *userUsecase) GetByID(ctx context.Context, id int64) (*domain.User, error) {
 	user, err := u.userRepo.GetByID(ctx, id)
 	if err != nil {
@@ -92,6 +96,10 @@ func (u *userUsecase) GetByEmail(ctx context.Context, user *domain.User) (int64,
 
 func (u *userUsecase) GetAccess(ctx context.Context, userID int64) (string, error) {
 	return u.userRepo.GetAccess(ctx, userID)
+}
+
+func (u *userUsecase) ChangeAccess(ctx context.Context, email string, access string) error {
+	return u.userRepo.ChangeAccess(ctx, email, access)
 }
 
 func (u *userUsecase) Delete(ctx context.Context, id int64) error {
