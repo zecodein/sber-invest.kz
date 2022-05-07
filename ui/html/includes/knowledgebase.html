@@ -1,24 +1,77 @@
 {{ define "content" }}
 
 <section
-  class="p-0 p-md-5 bg-light text-secondary py-5 text-center"
+  class="text-white p-lg-50 text-center pt-5"
   style="
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 500px;
+    background:
+      /* top, transparent black, faked with gradient */ linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ),
+      /* bottom, image */ url(static/css/img/database.jpg);
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: cover;
+    background-position: top;
   "
 >
-  <div style="display: flex; flex-direction: column; align-items: center">
-    {{ range .categories }}
-    <a
-      class="nav-link text-white px-4 mx-1"
-      style="background: #0719bb; border-radius: 20px; width: fit-content"
-      href="/knowledgebase/{{ .Id }}"
-      >{{ .Name }}</a
-    >
-    <p class="mb-5">{{ .Description }}</p>
-    {{ end }}
+  <header
+    class="header show-on-scroll h-50 pt-5"
+    style="display: flex; flex-direction: column; justify-content: center"
+  >
+    <h1 class="heading text-warning">БАЗА ЗНАНИЙ</h1>
+  </header>
+  <input
+    type="search"
+    class="btn btn-warning text-white"
+    placeholder="🔎 Найти статью "
+  />
+</section>
+
+<!-- Что вы получите -->
+<section id="learn" class="py-5 bg-light">
+  <div class="container">
+    <div class="aligh-items-center justify-content-between">
+      <div class="p-md-5 text-center">
+        <h2 class="mb-3">Рубрики:</h2>
+        <p class="lead">
+          У нас все распределено по рубрикам, бла бла бла Lorem ipsum dolor sit
+          amet, consectetur adipisicing elit. Cupiditate ab explicabo, inventore
+          nihil placeat reiciendis distinctio! Suscipit pariatur veniam
+          incidunt, earum sequi rem, impedit praesentium illum quis non
+          obcaecati doloribus?
+        </p>
+
+        <div class="row text-center gy-4">
+          {{ range .categories }}
+          <div class="col-md" style="min-width: 400px">
+            <div class="">
+              <div class="card-body p-0 text-left">
+                <div
+                  class="mb-3 d-flex flex-column"
+                  style="align-items: center"
+                >
+                  <ion-icon name="calculator-outline"></ion-icon>
+                  <a
+                    class="nav-link text-white px-4 mx-1"
+                    style="
+                      background: #0719bb;
+                      border-radius: 20px;
+                      width: fit-content;
+                    "
+                    href="/knowledgebase/{{ .Id }}"
+                    >{{ .Name }}</a
+                  >
+                </div>
+                <p class="lead card-text">{{ .Description }}</p>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
