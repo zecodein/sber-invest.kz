@@ -17,6 +17,7 @@ type Handler struct {
 func NewHandler(r *gin.Engine, h *Handler) {
 	r.GET("/", h.index)
 	r.GET("/knowledgebase", h.knowledgebase)
+	r.GET("/notifications", h.notifications)
 	r.GET("/knowledgebase/:id", h.getKnowledgebaseById)
 	r.GET("/aboutus", h.aboutus)
 	r.GET("/services", h.services)
@@ -108,6 +109,12 @@ var categories = [6]category{
 	category{Id: 4, Name: "Психология Инвестиций", Description: "В этой рубрике собраны материалы о людях, их особенностях и ограничениях. О дисциплине, правилах и инструментах, которые в нужный момент могут удержать нас от ошибок."},
 	category{Id: 5, Name: "Важные Новости", Description: "В этой рубрике собраны «выжимки» важных новостей за каждый квартал"},
 	category{Id: 6, Name: "TuneUp", Description: "В этой рубрике собрана информация о курсах, конференциях и других полезных мероприятиях и ресурсах, с помощью которых можно «прокачать» свою финансовую грамотность."},
+}
+
+func (h *Handler) notifications(c *gin.Context) {
+	c.HTML(http.StatusOK, "notifications.html", gin.H{
+		"session": getSession(c),
+	})
 }
 
 func (h *Handler) knowledgebase(c *gin.Context) {

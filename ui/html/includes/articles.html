@@ -1,11 +1,87 @@
 {{ define "content" }}
-    {{ range .articles }}
-    <a href="/article/{{ .ID }}">
-        <p>{{ .Title }}</p>
-        <p>{{ .Text }}</p>
-        <p>Добавлен: {{ .CreatedAt }}</p>
-        <p>Обновлен: {{ .UpdatedAt }}</p>
-        <p>Автор: <a href="/user/profile/{{ .UserID }}">{{ .FirstName }} {{ .LastName }}</a></p>
-    </a>
-    {{ end }}
-{{ end }}
+
+<section class="p-3 p-lg-5 px-3 d-flex flex-column" style="
+background: #f5f6f7;
+min-height: 100vh;
+">
+<br /><br />
+
+<div class="row d-flex justify-content-center lead">
+  <div class="col-1 col-lg-4"></div>
+    <p></p>
+    <input
+  class="message col-10 col-lg-4 mb-5 p-3"
+  style="border-width: 0px; border-radius: 20px; background-color: #e2e2e2;"
+  placeholder="Поиск статьи ..."
+  />
+  <div
+      class="col-1 mt-5 px-0 text-center d-flex align-items-end justify-content-start"
+    ></div>
+</div>
+{{ range .articles }}
+  
+  <div class="row d-flex justify-content-center lead">
+    <div class="col-1 col-lg-4"></div>
+    <p></p>
+    <div
+      class="message col-10 col-lg-4 mb-5 p-3"
+      style=" border-radius: 20px 20px 0 20px; background-color: #e2e2e2;"
+    >
+      <p class="m-0 p-0">
+        <a
+          style="font-weight: bold; color: #0719bb; text-decoration: none"
+          class=""
+          href="/user/profile/{{ .UserID }}"
+          >{{ .FirstName }} {{ .LastName }}</a
+        ><br />
+        <p class="m-0 p-0 d-flex justify-content-center">
+          <a style="font-weight: bold; color: #0719bb; text-decoration: none" href="/article/{{ .ID }}">{{ .Title }}</a> <br />
+        </p>
+        <p class="m-0 p-0 ps-2" style="border: solid #0719bb; border-width: 0px 0 0px 3px;">
+          {{ .Text }}
+        </p>
+        <p class="m-0 p-0 d-flex justify-content-center">
+          Теги: тег1, тег2, тег3, etc
+        </p>
+        <p class="m-0 p-0 my-2 d-flex justify-content-center">
+          <a href="/article/{{ .ID }}" class="d-flex justify-content-center w-100" style="border: #0719bb solid 1px; border-radius: 7px; text-decoration: none; color: #0719bb; font-weight: bold;">Посмотреть</a>
+        </p>
+      </p>
+      <p class="m-0 p-0 d-flex justify-content-between">
+        <span>Добавлен: {{ .CreatedAt.Format "02 Jan 06 15:04" }}</span>
+        <span>Обновлен: {{ .UpdatedAt.Format "02 Jan 06 15:04" }}</span>
+      </p>
+      <p class="m-0 p-0 d-flex justify-content-between" style="font-size:15px;">
+        <a href="#" class="p-1" style="border: #0719bb solid 1px; border-radius: 20px; text-decoration: none; color: #0719bb;">31 комментариев *</a>
+        <span class="p-1">1119 просмотров</span>
+      </p>
+    </div>
+    <div
+      class="col-1 mt-5 px-0 text-center d-flex align-items-end justify-content-start"
+    >
+      <img src="../static/css/img/repnikov.png" width="50px" alt="" />
+    </div>
+  </div>
+  {{ end }}
+</section>
+<!-- 
+<section
+  class="p-0 p-md-5 bg-light text-secondary py-5 text-center"
+  style="
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  "
+>
+  <a href="/article/{{ .ID }}">
+    <p>{{ .Text }}</p>
+    <p>Добавлен: {{ .CreatedAt }}</p>
+    <p>Обновлен: {{ .UpdatedAt }}</p>
+    <p>
+      Автор:
+      <a href="/user/profile/{{ .UserID }}">{{ .FirstName }} {{ .LastName }}</a>
+    </p>
+  </a>
+</section> -->
+ {{ end }}

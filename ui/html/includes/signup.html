@@ -1,58 +1,98 @@
 {{ define "content" }}
 
-<div class="container" style="
-        height: 73vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      ">
-    <div class="auth-form">
-        <!-- Имя -->
-        <div class="mb-3">
-            <label for="InputFirstName1" class="form-label">Имя</label>
-            <input type="text" class="form-control" name="first-name" id="InputFirstName1" placeholder="Имя"
-                pattern="[A-Za-zА-Яа-яЁё]*" required />
-        </div>
-
-        <!-- Фамилия -->
-        <div class="mb-3">
-            <label for="InputLastName1" class="form-label">Фамилия</label>
-            <input type="text" class="form-control" name="last-name" id="InputLastName1" placeholder="Фамилия"
-                pattern="[A-Za-zА-Яа-яЁё]*" required />
-        </div>
-
-        <!-- Email -->
-        <div class="mb-3">
-            <label for="InputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control" name="email" id="InputEmail1" placeholder="Email"
-                aria-describedby="emailHelp" required />
-        </div>
-
-        <!-- Пароль -->
-        <div class="mb-3">
-            <label for="InputPassword1" class="form-label">Пароль</label>
-            <input id="password" class="form-control" name="password" type="password" pattern="^\S{6,}$"
-                onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Минимум 6 символов' : ''); if(this.checkValidity()) form.confirm.pattern = this.value;"
-                placeholder="Пароль" required />
-        </div>
-
-        <!-- Подтверждение пароля -->
-        <div class="mb-3">
-            <label for="InputConfirm1" class="form-label">Подтвердите пароль</label>
-            <input id="confirm" name="confirm" class="form-control" type="password" pattern="^\S{6,}$"
-                onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Повторите пароль' : '');"
-                placeholder="Повторите пароль" required />
-        </div>
-
-        <p id="warning" style="color:red"></p>
-
-        <!-- Submit -->
-        <button onclick="signup()" type="submit" class="btn btn-warning">
-            ЗАРЕГИСТРИРОВАТЬСЯ
-        </button>
-
-        <script src="/static/js/user.js"></script>
+<div
+  class="container"
+  style="
+    height: 73vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  "
+>
+  <div class="auth-form">
+    <!-- Имя -->
+    <div class="mb-3">
+      <label for="InputFirstName1" class="form-label">Имя</label>
+      <input
+        type="text"
+        class="form-control"
+        name="first-name"
+        id="InputFirstName1"
+        placeholder="Имя"
+        pattern="[A-Za-zА-Яа-яЁё]*"
+        required
+      />
     </div>
+
+    <!-- Фамилия -->
+    <div class="mb-3">
+      <label for="InputLastName1" class="form-label">Фамилия</label>
+      <input
+        type="text"
+        class="form-control"
+        name="last-name"
+        id="InputLastName1"
+        placeholder="Фамилия"
+        pattern="[A-Za-zА-Яа-яЁё]*"
+        required
+      />
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="InputEmail1" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="InputEmail1"
+        placeholder="Email"
+        aria-describedby="emailHelp"
+        required
+      />
+    </div>
+
+    <!-- Пароль -->
+    <div class="mb-3">
+      <label for="InputPassword1" class="form-label">Пароль</label>
+      <input
+        id="password"
+        class="form-control"
+        name="password"
+        type="password"
+        pattern="^\S{6,}$"
+        onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Минимум 6 символов' : ''); if(this.checkValidity()) form.confirm.pattern = this.value;"
+        placeholder="Пароль"
+        required
+      />
+    </div>
+
+    <!-- Подтверждение пароля -->
+    <div class="mb-3">
+      <label for="InputConfirm1" class="form-label">Подтвердите пароль</label>
+      <input
+        id="confirm"
+        name="confirm"
+        class="form-control"
+        type="password"
+        pattern="^\S{6,}$"
+        onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Повторите пароль' : '');"
+        placeholder="Повторите пароль"
+        required
+      />
+    </div>
+
+    <p id="warning" style="color: red"></p>
+
+    <a class="" href="/user/signin">Уже есть аккаунт? Войди!</a>
+
+    <!-- Submit -->
+    <button onclick="signup()" type="submit" class="btn btn-warning">
+      ЗАРЕГИСТРИРОВАТЬСЯ
+    </button>
+
+    <script src="/static/js/user.js"></script>
+  </div>
 </div>
 
 {{ end }}

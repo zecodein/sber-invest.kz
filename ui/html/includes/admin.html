@@ -1,22 +1,32 @@
 {{ define "content" }}
-<h1>Админ здарова как дела?</h1>
-<p>Изменить доступ пользователю</p>
-<form action="/admin/access" method="POST">
+<div
+  class="section"
+  style="
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  "
+>
+  <h1>Админ здарова как дела?</h1>
+  <p>Изменить доступ пользователю</p>
+  <form action="/admin/access" method="POST">
     <label for="email">Почта</label>
     <input list="users-datalist" id="email" name="email" />
 
     <datalist id="users-datalist">
-        {{ range .users }}
-        <option value="{{ .Email }}">
-            {{ end }}
+      {{ range .users }}
+      <option value="{{ .Email }}">{{ end }}</option>
     </datalist>
 
     <select name="access">
-        <option value="basic_user">Обычный</option>
-        <option value="author">Автор</option>
-        <option value="superuser">Админ</option>
+      <option value="basic_user">Обычный</option>
+      <option value="author">Автор</option>
+      <option value="superuser">Админ</option>
     </select>
 
     <button>Изменить дступ</button>
-</form>
+  </form>
+</div>
 {{ end }}

@@ -1,18 +1,31 @@
 {{ define "content" }}
-<input type="text" id="title" placeholder="Заголовок">
-<input type="text" id="text" placeholder="Текст">
+<section
+  class="p-0 p-md-5 bg-light text-secondary py-5 text-center"
+  style="
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  "
+>
+  <input type="text" id="title" placeholder="Заголовок" />
+  <input type="text" id="text" placeholder="Текст" />
 
-<label for="categories">Рубрика:</label>
-<input list="category" id="categories" name="categories" / placeholder="Рубрика">
+  <label for="categories">Рубрика:</label>
+  <input
+    list="category"
+    id="categories"
+    name="categories"
+    placeholder="Рубрика"
+  />
 
-<datalist id="category">
+  <datalist id="category">
     {{ range $index, $category := .categories }}
     <!-- <option value="{{ .ID }}">{{ .Name }}</option> -->
-    <option value="{{ .Name }}" class="id">
-    {{ end }}
-</datalist>
+    <option value="{{ .Name }}" class="id">{{ end }}</option>
+  </datalist>
 
-<button type="submit" onclick="createArticle()">Опубликовать</button>
-
+  <button type="submit" onclick="createArticle()">Опубликовать</button>
+</section>
 <script src="/static/js/article.js"></script>
 {{ end }}

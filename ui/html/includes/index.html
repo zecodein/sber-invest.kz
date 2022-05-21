@@ -1,470 +1,482 @@
 {{ define "content" }}
+<section
+id="bgphotoindex"
+  class="text-white text-center"
+  style="
+    height: 100vh;
+    background:
+  /* top, transparent black, faked with gradient */ linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ),
+      /* bottom, image */ url(static/css/img/indexBGPhone.jpg);
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: cover;
+  "
+>
+  
+  <div id="videoMessage" style="height: 100%" class="styling text-white"> 
+    <h1 class="mb-5" style="text-align: center; line-height: 1.5; font-size:30px"><strong>Платформа финансовой грамотности</strong></h1>
+    <p class="lead" style="width: 80%; text-align: center; line-height: 1.5;">Предлагаем материалы для обучения и консультации в области семейных финансов инвестиций и налогообложения.</p>          
+  </div>     
+</section>
+
 <div id="videowrapper">
-    <div id="fullScreenDiv">
-        <video id="video" role="presentation" preload="auto" playsinline="" crossorigin="anonymous" loop="" muted=""
-            autoplay="" class="blur">
-            <source src="./static/css/img/background.mp4" type="video/webm">
-            <source src="./static/css/img/background.mp4" type="video/mp4">
-        </video>
-        <div id="videoMessage" class="styling text-white">
-            <h1 class="mb-5" style="text-align: center; line-height: 1.5;"><strong>Платформа финансовой
-                    грамотности</strong>
-            </h1>
-            <h4 class="" style="width: 50%; text-align: center; line-height: 1.5;">Предлагаем материалы для обучения и
-                консультации в области семейных финансов инвестиций и налогообложения.</h4>
-        </div>
-    </div>
+  <div id="fullScreenDiv">
+     <video  id="video" role="presentation" preload="auto" playsinline="" crossorigin="anonymous" loop="" muted="" autoplay="" class="blur">
+          <source src="static/css/img/background.mp4" type="video/webm">
+          <source src="static/css/img/background.mp4" type="video/mp4">
+      </video> 
+      <div id="videoMessage" class="styling text-white"> 
+          <h1 class="mb-5" style="text-align: center; line-height: 1.5;"><strong>Платформа финансовой грамотности</strong></h1>
+          <p class="lead" style="width: 30%; text-align: center; line-height: 1.5;">Предлагаем материалы для обучения и консультации в области семейных финансов инвестиций и налогообложения.</p>          
+        </div>   
+  </div>
 </div>
 
 <!-- Наши партнеры -->
-<section class="bg-light text-dark py-5 p-lg-0 text-center text-sm-start">
-    <div class="container">
-        <div class="aligh-items-center justify-content-between">
-            <div class="p-md-5 text-center">
-                <h2>Нам доверяют:</h2>
-                <br />
-                <div class="row text-center gy-4">
-                    <div class="col-md">
-                        <div class="text-dark">
-                            <div class="card-body p-0 text-center">
-                                <div class="mb-3">
-                                    <a target="_blank" href="https://rostsber.ru/">
-                                        <img src="./static/css/img/first.png" style="height: 52px;" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md">
-                        <div class="text-dark">
-                            <div class="card-body p-0 text-left">
-                                <div class="mb-3">
-                                    <a target="_blank" href="https://finmentor.kz/">
-                                        <img src="./static/css/img/second.png" style="height: 52px;" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md">
-                        <div class="text-dark">
-                            <div class="card-body p-0 text-left">
-                                <div class="mb-3">
-                                    <a target="_blank" href="https://aligee-investor.kz/">
-                                        <img src="./static/css/img/third.png" style="height: 52px;" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md">
-                        <div class="text-dark">
-                            <div class="card-body p-0 text-center">
-                                <div class="mb-3">
-                                    <a target="_blank" href="https://ffin.kz/">
-                                        <img src="./static/css/img/freedom.png" style="height: 52px;" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md">
-                        <div class="text-dark">
-                            <div class="card-body p-0 text-left">
-                                <div class="mb-3">
-                                    <a target="_blank" href="https://aix.kz/ru/home-ru/">
-                                        <img src="./static/css/img/aie.png" style="height: 52px;" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md">
-                        <div class="text-dark">
-                            <div class="card-body p-0 text-left">
-                                <div class="mb-3">
-                                    <a target="_blank" href="https://www.ikapitalist.kz/">
-                                        <img src="./static/css/img/ikapitalist.png" style="height: 52px;" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md">
-                        <div class="text-dark">
-                            <div class="card-body p-0 text-left">
-                                <div class="mb-3">
-                                    <a target="_blank" href="https://proportunity.kz/">
-                                        <img src="./static/css/img/proportunity.png" style="height: 52px;" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md">
-                        <div class="text-dark">
-                            <div class="card-body p-0 text-left">
-                                <div class="mb-3">
-                                    <a target="_blank" href="https://www.instagram.com/quantdart.kz/?hl=ru">
-                                        <img src="./static/css/img/quantdart.png" style="height: 52px;" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+<section class="text-dark py-5 p-lg-0 text-center text-sm-start">
+<div class="container">
+  <div class="aligh-items-center justify-content-between">
+    <div class="p-md-5 text-center">
+      <h1><strong>Нам доверяют:</strong></h1>
+      <br />
+      <div class="lead row text-center text-sm-start   gy-4">
+        <div class="col">
+          <div class="text-dark">
+            <div class="card-body p-0 text-center">
+              <div class="mb-3">
+                <a target="_blank" href="https://rostsber.ru/">
+                  <img src="static/css/img/first.png" class="partners_big" />
+                </a>
+              </div>
             </div>
+          </div>
         </div>
+
+        <div class="col">
+          <div class="text-dark">
+            <div class="card-body p-0 text-left">
+              <div class="mb-3">
+                <a target="_blank" href="https://finmentor.kz/">
+                  <img src="static/css/img/second.png" class="partners" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="text-dark">
+            <div class="card-body p-0 text-left">
+              <div class="mb-3">
+                <a target="_blank" href="https://aligee-investor.kz/">
+                  <img src="static/css/img/third.png" class="partners" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="text-dark">
+            <div class="card-body p-0 text-center">
+              <div class="mb-3">
+                <a target="_blank" href="https://ffin.kz/">
+                  <img src="static/css/img/freedom.png" class="partners" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="text-dark">
+            <div class="card-body p-0 text-left">
+              <div class="mb-3">
+                <a target="_blank" href="https://aix.kz/ru/home-ru/">
+                  <img src="static/css/img/aie.png" class="partners" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="text-dark">
+            <div class="card-body p-0 text-left">
+              <div class="mb-3">
+                <a target="_blank" href="https://www.ikapitalist.kz/">
+                  <img src="static/css/img/ikapitalist.png" class="partners" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="text-dark">
+            <div class="card-body p-0 text-left">
+              <div class="mb-3">
+                <a target="_blank" href="https://proportunity.kz/">
+                  <img src="static/css/img/proportunity.png" class="partners" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="text-dark">
+            <div class="card-body p-0 text-left">
+              <div class="mb-3">
+                <a target="_blank" href="https://quantdart.kz/">
+                  <img src="static/css/img/quantdart.png" class="partners"  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="text-dark">
+            <div class="card-body p-0 text-left">
+              <div class="mb-3">
+                <a target="_blank" href="https://www.nlnis.ru/">
+                  <img src="static/css/img/spf.png" class="partners"  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
     </div>
+  </div>
+</div>
 </section>
 
 <!-- Costs -->
-<section class="">
-    <div class="container px-0">
-        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <h1 class="display-4 fw-normal">Наши материалы, курсы и услуги</h1>
-            <p class="fs-5 text-muted"></p>
+<section class="bg-light">
+  <div class="container px-0">
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class=""><strong>Наши материалы курсы и услуги</strong></h1>
+      <p class="fs-5 text-muted"></p>
+    </div>
+
+    <div class="t915__scroll-icon-wrapper d-flex justify-content-center" style="mix-blend-mode: multiply;"> <!--?xml version="1.0" encoding="UTF-8"?--> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" height="42" width="42"> <rect class="tooltip-horizontal-scroll-icon_card" x="480" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect> <rect class="tooltip-horizontal-scroll-icon_card" y="0" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect> <rect class="tooltip-horizontal-scroll-icon_card" x="240" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect> <path class="tooltip-horizontal-scroll-icon_hand" d="M78.9579 285.7C78.9579 285.7 37.8579 212.5 20.5579 180.8C-2.44209 138.6 -6.2422 120.8 9.6579 112C19.5579 106.5 33.2579 108.8 41.6579 123.4L61.2579 154.6V32.3C61.2579 32.3 60.0579 0 83.0579 0C107.558 0 105.458 32.3 105.458 32.3V91.7C105.458 91.7 118.358 82.4 133.458 86.6C141.158 88.7 150.158 92.4 154.958 104.6C154.958 104.6 185.658 89.7 200.958 121.4C200.958 121.4 236.358 114.4 236.358 151.1C236.358 187.8 192.158 285.7 192.158 285.7H78.9579Z" fill="rgba(190,190,190,1)"></path> <style> .tooltip-horizontal-scroll-icon_hand {
+      animation: tooltip-horizontal-scroll-icon_anim-scroll-hand 2s infinite
+      }
+      .tooltip-horizontal-scroll-icon_card {
+      animation: tooltip-horizontal-scroll-icon_anim-scroll-card 2s infinite
+      }
+      @keyframes tooltip-horizontal-scroll-icon_anim-scroll-hand {
+      0% { transform: translateX(80px) scale(1); opacity: 0 }
+      10% { transform: translateX(80px) scale(1); opacity: 1 }
+      20%,60% { transform: translateX(175px) scale(.6); opacity: 1 }
+      80% { transform: translateX(5px) scale(.6); opacity: 1 } to { transform: translateX(5px) scale(.6); opacity: 0 }
+      }
+      @keyframes tooltip-horizontal-scroll-icon_anim-scroll-card {
+      0%,60% { transform: translateX(0) }
+      80%,to { transform: translateX(-240px) }
+      }
+      </style> </svg></div>
+
+    <!-- Scroll -->
+    
+    <div class="card-deck card-scroll d-flex">
+
+      <a href="knowledgebase.html">
+        <div class="card" >
+          <img class="card-img-top" src="static/css/img/database.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class=" card-text"><strong>База материалов для самообучения - Статьи, книги, пошаговые видео-инструкции.</strong></h5>
+            <p class="lead card-text" style=" ">Чтобы каждый в Казахстане смог разобраться во всем сам.</p>
+            <p class="lead card-text" style=" ">Учитесь бесплатно!</p>
+            <br >
+          </div>
         </div>
+      </a>
 
-        <!-- Scroll -->
-        <div class="card-deck card-scroll">
-            <a href="/taxreturn">
-                <div class="card">
-                    <img class="card-img-top" src="./static/css/img/logo0-0bg.png" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Подготовить налоговую декларацию со специалистом. (Форма
-                                240/270)</strong>
-                        </p>
-                        <p class="card-text" style="font-size: 13px;">Наша команда возьмет все на себя. Вам останется
-                            только
-                            подать декларацию онлайн и вовремя заплатить налог</p>
-                        <br>
-                    </div>
-                </div>
-            </a>
-            <a href="/NalInvVKaz">
-                <div class="card">
-                    <img class="card-img-top" src="./static/css/img/logo0-0bg.png" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Самый полный и подробный курс о налогах инвестора в
-                                Казахстане</strong></p>
-                        <p class="card-text" style="font-size: 13px;">Вы сможете трезво судить о налогообложении активов
-                            как в
-                            Казахстане так и за его пределами. Вы сможете самостоятельно, подготовить и подать свою
-                            налоговую
-                            декларацию</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="knowledgebase.html">
-                <div class="card">
-                    <img class="card-img-top" src="./static/css/img/logo0-0bg.png" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Самая большая база материалов для самообучения</strong></p>
-                        <p class="card-text" style="font-size: 13px; margin-bottom: 20px;">Статьи, книги, пошаговые
-                            видео-инструкции. Чтобы каждый в Казахстане смог разобраться во всем сам. Учитесь бесплатно!
-                        </p>
-                        <br>
-                    </div>
-                </div>
-            </a>
-
+      <a href="NalInvVKaz.html">
+        <div class="card" >
+          <img class="card-img-top" src="static/css/img/course.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-text"><strong>Все о налогах инвестора в Казахстане - Цикл курсов.</strong></h5>
+            <p class="lead card-text" style="">Вы сможете трезво судить о налогообложении активов как в Казахстане так и за его пределами.</p>
+            <p class="lead card-text" style="">Вы сможете самостоятельно, подготовить и подать свою налоговую декларацию.</p>
+          </div>
         </div>
-
-        <!-- <div class="card-columns"> -->
-        <div class="card-deck text-secondary">
-            <div class="row ">
-                <div class="col-6 col-lg-12">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-4 col-lg-4">
-                            <a href="/taxreturn">
-                                <div class="card">
-                                    <img class="card-img-top" src="./static/css/img/logo0-0bg.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text"><strong>Подготовить налоговую декларацию со специалистом.
-                                                (Форма
-                                                240/270)</strong></p>
-                                        <p class="card-text" style="font-size: 13px;">Наша команда возьмет все на себя.
-                                            Вам останется
-                                            только подать декларацию онлайн и вовремя заплатить налог</p>
-                                        <br>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-4 col-lg-4">
-                            <a href="/NalInvVKaz">
-                                <div class="card">
-                                    <img class="card-img-top" src="./static/css/img/logo0-0bg.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text"><strong>Самый полный и подробный курс о налогах инвестора в
-                                                Казахстане</strong></p>
-                                        <p class="card-text" style="font-size: 13px;">Вы сможете трезво судить о
-                                            налогообложении активов
-                                            как в Казахстане так и за его пределами. Вы сможете самостоятельно,
-                                            подготовить и подать свою
-                                            налоговую декларацию</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-4 col-lg-4">
-                            <a href="knowledgebase.html">
-                                <div class="card">
-                                    <img class="card-img-top" src="./static/css/img/logo0-0bg.png" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text"><strong>Самая большая база материалов для
-                                                самообучения</strong></p>
-                                        <p class="card-text" style="font-size: 13px; margin-bottom: 20px;">Статьи,
-                                            книги, пошаговые
-                                            видео-инструкции. Чтобы каждый в Казахстане смог разобраться во всем сам.
-                                            Учитесь бесплатно!</p>
-                                        <br>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+      </a>
+      
+      <a href="taxreturn.html">
+        <div class="card">
+            <img class="card-img-top" src="static/css/img/taxreturn.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-text"><strong>Налоговая декларация.
+                (Форма 240/270) -Услуга</strong></h5>
+              <p class="lead card-text" style="">Подготовить налоговую декларацию со специалистом.</p>
+              <p class="lead card-text" style="">Вам останется только подать декларацию онлайн и вовремя заплатить налог.</p>
+              <br>
             </div>
-
-            <!-- </div> -->
-
-
-
         </div>
+      </a>
+
+      <a href="notifications.html">
+        <div class="card" >
+          <img class="card-img-top" src="static/css/img/notification.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-text"><strong>Ответ на уведомление ДГД - Услуга</strong></h5>
+            <p class="lead card-text" style=" ">Подготовить ответ на уведомление в УГД с налоговым консультантом.</p>
+            <br >
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    
 </section>
 
 
 
-<section class="p-5 text-white py-5 text-center" style="background: #122448;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7 d-flex flex-column">
-                <h2>«Сбережения и Инвестиции» - некоммерческая организация</h2>
-                <p class="m-auto" style="text-align: left; max-width: 1280px; width: auto">
-                    Все наши материалы, (книги, лекции, видео-инструкции) находятся в открытом доступе чтобы каждый мог
-                    разобраться сам — это один из принципов проекта. При этом команда проекта должна стать незаменимым
-                    помощником в ситуациях, когда требуется профессиональная помощь.
+<section class="p-2 p-sm-5 text-white py-5 text-center" style="background: #122448;">
+  <div class="container">
+    <div class="lead row">
+      <h1 class="mb-4"><strong>«Сбережения и Инвестиции»</strong></h1>
+      <div class="col-lg-7 d-flex flex-column">
+        <div>
+          <p 
+            style="text-align: left; max-width: 1280px; width: auto; line-height: 1.3;"
+          >
+          В основу проекта легла диссертация основателя на тему сбережений и инвестиций в Казахстане.
+          </p>
+          <p 
+            style="text-align: left; max-width: 1280px; width: auto; line-height: 1.3;"
+          >Работа переведена на русский язык и находится в открытом доступе в виде книги.
+          </p>
+          <p 
+              style="text-align: left; max-width: 1280px; width: auto; line-height: 1.3;"
+            >Скачать книгу можно в <a target="_blank" class="text-secondary" href="https://t.me/savingandinvesting/145">телеграмм канале</a> проекта.
+          </p>
+          <p 
+              style="text-align: left; max-width: 1280px; width: auto; line-height: 1.3;"
+            >Коротко о чем книга и зачем ее читать в видео от автора.
+          </p>
+          <p 
+              style="text-align: left; max-width: 1280px; width: auto; line-height: 1.3;"
+            >Печатная версия доступна  в сети магазинов <a target="_blank" class="text-secondary" href="https://www.meloman.kz/delovaya-literatyra-kazakhstana/repnikov-a-sberezhenija-i-investicii.html">Меломан</a> и в интернет магазине <a target="_blank" class="text-secondary" href="https://www.flip.kz/catalog?prod=2187364">Flip.кz</a>
+          </p>
+        </div>
+      </div>
+        <div class="col-lg-5">
+          
+          <iframe class="m-auto w-100" width="450" height="300" src="https://www.youtube.com/embed/FG56cCp0zAE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-                </p>
-            </div>
-            <div class="col-lg-5">
-
-                <iframe class="m-auto w-100" width="450" height="300"
-                    src="https://www.youtube.com/embed/8Tbv5KbLE-0?list=PLVf_4hKzwcLufSUh52fLfFD6rSsehvNqv"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-
-            </div>
+          </p>
+          
         </div>
     </div>
-    <p class="m-auto pt-2" style="text-align: left; max-width: 1280px; width: auto">
-        Мы нацелены на результат и можем консультировать и сопровождать начиная с вопросов ведения личных/семейных
-        финансов и до подбора инструментов в портфель, ребалансировки и подачи ежегодной налоговой декларации.
-    </p>
+    <div class="lead row">
+      <p class="text-start"
+        >
+        Один из принципов проекта - это каждый может во всем разобраться сам. Все наши материалы, (книги, лекции, видео-инструкции) находятся в открытом доступе  - в нашей <a class="text-secondary" target="_blank" href="knowledgebase.html">базе знаний</a>.
+      </p>
     </div>
+  </div>
 </section>
 
-<section class="p-5" style="background: #fff5ef">
-    <h2 class="text-uppercase text-center m-auto" style="max-width: 960px; width: auto;">
-        <strong>Проект "Сбережения и Инвестиции"</strong> <br> <br>
-    </h2>
-    <div class="container">
-        <div class="row">
-            <div class="col-xl">
-                <div class="card mb-3 border-0" style="max-width: 540px; background: #fff5ef">
-                    <div class="row g-0">
-                        <div class="col-lg-6">
-                            <img style="max-width: 250px" src="/static/css/img/repnikov.png" alt="" />
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="card-body">
-                                <h5 class="card-title">Александр Репников</h5>
-                                <p class="card-text">
-                                    MBA in Finance, GBS
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h5><strong>Директор Сбережения и Инвестиции.</strong></h5>
-
-                <p>
-                    Ведущий курсов по портфельным инвестициям и финансовой грамотности, независимый финансовый советник,
-                    автор
-                    книги «Сбережения и Инвестиции».
-                </p>
-                <p>
-                    С 2016 года работает над темой сбережений и инвестиций в Казахстане. Имеет диплом MBA в Geneva
-                    Business
-                    School со специализацией в международных финансах. Работа над диссертацией легла в основу книги и
-                    проекта
-                    «Сбережения и Инвестиции».
-                </p>
+<section class="p-5 px-2 px-5-md pb-0 mb-0" style="background: #fff5ef">
+  <h1
+  class="text-center m-auto"
+  style="max-width: 960px; width: auto;"
+>
+  
+    <strong>Наша команда </strong><br> <br>
+</h1>
+  <div class="container">
+    <div class="lead row">
+      <div class="col-xl text-center text-sm-start">
+        <div
+          class="card border-0"
+          style="max-width: 540px; background: #fff5ef"
+        >
+          <div class="lead row g-0">
+            <div class="col-lg-6">
+              <img
+                style="max-width: 250px"
+                src="static/css/img/repnikov.png"
+                alt=""
+              />
             </div>
-
-            <div class="col-xl">
-                <div class="card mb-3 border-0" style="max-width: 540px; background: #fff5ef">
-                    <div class="row g-0">
-                        <div class="col-lg-6">
-                            <img style="border-radius: 500%; max-width: 250px" src="/static/css/img/repnikova.png"
-                                alt="" />
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="card-body">
-                                <h5 class="card-title">Людмила Репникова</h5>
-                                <p class="card-text">BSc in Economics, KIMEP</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h5><strong>Эксперт по налогооблажению</strong></h5>
-                <p>
-                    Налоговый консультант 1-й категории, член Палаты Налоговых
-                    Консультантов Казахстана. Ведущая курсов по финансовой грамотности
-                    и налогообложению.
+            <div class="col-lg-6">
+              <div class="card-body mx-0 px-0 pb-0">
+                <h5 class="card-title ">Александр Репников</h5>
+                <p class="lead card-text mb-0">
+                  MBA in Finance, GBS
                 </p>
-                <p>
-                    С 2010 года работает в компании EY. Имеет обширный опыт
-                    предоставления услуг по вопросам налогообложения для местных и
-                    иностранных компаний.
-                </p>
-                <p>
-                    С 2020 года Людмила в рамках проекта «Сбережения и Инвестиции»
-                    консультирует частных инвесторов касательно налоговой отчетности.
-                </p>
+                <p class="text-center text-sm-start mb-0"><a href="https://linkedin.com/in/arepnikov" target="_blank">LinkedIn</a></p>
+              </div>
             </div>
-
+          </div>
         </div>
+        <p class="text-center text-sm-start mt-3">
+          Директор Учреждения «Сбережения и Инвестиции». Ведущий курсов по портфельным инвестициям и финансовой грамотности, независимый финансовый советник, автор книги «Сбережения и Инвестиции»            </p>
+          
+      </div>
+
+      <div class="col-xl text-center text-sm-start">
+        <div
+          class="card border-0"
+          style="max-width: 540px; background: #fff5ef"
+        >
+          <div class="lead row g-0">
+            <div class="col-lg-6">
+              <img
+                style="border-radius: 500%; max-width: 250px"
+                src="static/css/img/repnikova.png"
+                alt=""
+              />
+            </div>
+            <div class="col-lg-6">
+              <div class="card-body mx-0 px-0 pb-0">
+                <h5 class="card-title">Людмила Репникова</h5>
+                <p class="lead card-text mb-0">BSc in Economics, KIMEP</p>
+                <p class="text-center text-sm-start mb-0"><a href="https://linkedin.com/in/lrepnikova" target="_blank">LinkedIn</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-sm-start mt-3">
+          Налоговый консультант 1-й категории.  Ведущая курсов по финансовой грамотности и налогообложению. Более 10 лет опыта работы в налоговом департаменте компании EY.
+        </p>
+      </div>
+
     </div>
-</section>
-
-<section class="p-5 text-light bg-dark">
-    <div class="container">
-        <div class="row oProekte">
-            <div class="col">
-                <div class="lead">
-                    <p class="m-auto" style="text-align: left; max-width: 1280px; width: auto">
-                        Команда проекта может стать незаменимым помощником в ситуациях, когда требуется профессиональная
-                        помощь.
-                    </p>
-                    <p class="m-auto pt-2" style="text-align: left; max-width: 1280px; width: auto">
-                        Мы нацелены на результат и можем консультировать и сопровождать начиная с вопросов ведения
-                        личных/семейных
-                        финансов и до подбора инструментов в портфель, ребалансировки и подачи ежегодной налоговой
-                        декларации.
-                    </p>
-                </div>
-            </div>
-        </div>
+    <div class="lead row">
+      <hr>
+      <p>Команда проекта может стать незаменимым помощником в ситуациях, когда требуется профессиональная помощь.
+</p>
+<p>
+        Мы нацелены на результат и можем консультировать и сопровождать, начиная с вопросов ведения личных (семейных) финансов и до подбора инструментов в портфель, ребалансировки и подачи ежегодной налоговой декларации.
+        </p>
     </div>
+  </div>
 </section>
 
-<section class="p-5 bg-light">
-    <form id="form" method="post">
-        <!-- Form fields need name and value attributes -->
-        <div class="container p-0">
-            <div class="m-3">
-                <h1 class="h3 d-inline pt-5 align-middle">
-                    Поможем выбрать и ответим на ваши вопросы.
-                </h1>
-            </div>
+<section class="p-5 bg-light pt-2" >
+  <form id="form" method="post">
+    <!-- Form fields need name and value attributes -->
+    <div class="container p-0">
 
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <p>Если у вас есть вопросы или вы не знаете, что выбрать, оставьте свой номер - мы вам перезвоним!
-                        Или можете связаться с нами в <a href="https://t.me/SberInvestTeam">Телеграм чате</a>
-                    </p>
-                </div>
+      <div class="lead row">
+        <div class="col-12 col-md-6 d-flex flex-column ">
+          <h3 class=" pt-5 align-middle">
+            Если у вас остались вопросы, оставьте свой номер - мы вам перезвоним!
+          </h3>
 
-                <div class="col-12 col-md-6">
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">
-                                <span class="text-danger">*</span> Имя
-                            </h5>
-                        </div>
-                        <div class="form-control">
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Имя">
-                            <small>Заполните поле Имя</small>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">
-                                <span class="text-danger">*</span>
-                                Электроная почта
-                            </h5>
-                        </div>
-                        <div class="form-control">
-                            <input id="email" type="text" name="email" class="form-control" placeholder="e-mail">
-                            <small>Заполните поле Почта</small>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">
-                                <span class="text-danger">*</span> Телефон
-                                (сотовый)
-                            </h5>
-                        </div>
-                        <div class="form-control">
-                            <input id="tel" type="tel" name="mobile" class="form-control"
-                                pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}" value="+7">
-                            <small>Неверный номер</small>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        Поля отмеченные
-                        <span class="text-danger">*</span> - обязательны
-                        к заполнению
-                    </div>
-                    <div class="container">
-                        <div class="row mt-2">
-                            <div class="col-1">
-                                <input id="PolitikaKonf" class="form-check-input" type="checkbox" value="">
-                            </div>
-                            <div class="col-11">
-                                <label required="" class="form-check-label" for="flexCheckDefault">«С
-                                    <a href="/privacyPolicy" class="text-decoration-underline"
-                                        target="_blank">политикой
-                                        конфиденциальности</a>
-                                    ознакомлен.»
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="text-center mt-1" id="feedback"><label
-                                style="display: none; border-radius: 1em; padding:10px;border: solid red 2px"
-                                class="text-danger text-center">Заполните поля корректно</label></div>
-                        <button type="Submit" id="submit" class="btn btn-success my-3 w-100">
-                            Отправить заявку
-                        </button>
-                    </div>
-                    <div class="container">
-                        <span class="text-danger">*</span> Нажимая на
-                        кнопку, вы соглашаетесь на обработку
-                        персональных данных.
-                    </div>
-                </div>
-            </div>
+          <h3 class=" pt-5 align-middle d-none d-md-block">
+            Или можете связаться с нами в <a href="https://t.me/saveandinvestchat">Телеграм чате</a>
+          </h3>
+          
         </div>
-    </form>
+
+        <div class="col-12 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title mb-0">
+                <span class="text-danger">*</span> Имя
+              </h5>
+            </div>
+            <div class="form-control">
+              <input type="text" id="name" name="name" class="form-control" placeholder="Иванов Иван">
+              <small>Заполните поле Имя</small>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title mb-0">
+                <span class="text-danger">*</span>
+                Электроная почта
+              </h5>
+            </div>
+            <div class="form-control">
+              <input  id="email" type="text" name="email" class="form-control" placeholder="IIvanov@gmail.com">
+              <small>Заполните поле Почта</small>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title mb-0">
+                <span class="text-danger">*</span> Телефон
+                (сотовый)
+              </h5>
+            </div>
+            <div class="form-control">
+              <input id="tel" type="tel" name="mobile" class="form-control" placeholder="+7 777 777 77 77" pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}" >
+              <small>Неверный номер</small>
+            </div>
+          </div>
+
+          <div class="container" style="font-size: 14px;">
+            Поля отмеченные
+            <span class="text-danger">*</span> - обязательны
+            к заполнению
+          </div>
+          <div class="container">
+            <div class="lead row mt-2">
+              <div class="col-1 p-0">
+                <input id="PolitikaKonf" class="form-check-input" type="checkbox" value="">
+              </div>
+              <div class="col-11 p-0 m-0">
+                <label required="" style="font-size: 14px;" class="form-check-label" for="flexCheckDefault">«С
+                  <a href="privacyPolicy.html" class="text-decoration-underline" target="_blank">политикой конфиденциальности</a>
+                  ознакомлен.»
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="text-center mt-1" id="feedback"><label style="display: none; border-radius: 1em; padding:10px;border: solid red 2px" class="text-danger text-center">Заполните поля корректно</label></div>
+            <button type="Submit" id="submit" class="btn btn-success my-3 w-100">
+              Отправить
+            </button>
+          </div>
+          <div class="container" style="font-size: 14px;">
+            <span class="text-danger">*</span> Нажимая на
+            кнопку, вы соглашаетесь на обработку
+            персональных данных.
+          </div>
+          <h3 class=" pt-5 align-middle d-md-none">
+            Или можете связаться с нами в <a href="https://t.me/saveandinvestchat">Телеграм чате</a>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </form>
 </section>
+
+<div class="iconBottom d-flex align-items-end">
+  <p style="background: white;font-size: 14px; font-weight: bold; margin:0 10px 10px 0; padding: 7px; border-radius:20px 20px 0 20px">Задай вопрос</p>
+  <a
+    class="nav-link me-2"
+    href="https://t.me/saveandinvestchat"
+    style="padding: 0"
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="50"
+      height="50"
+      fill="currentColor"
+      class="bi bi-telegram"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"
+      />
+    </svg>
+  </a>
+</div>
 {{ end }}

@@ -1,33 +1,53 @@
 {{ define "content" }}
-<div class="container" style="
-  height: 73vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-">
-        <div class="auth-form">
-            <!-- Email -->
-            <div class="mb-3">
-                <label for="InputEmail1" class="form-label">Email</label>
-                <input type="email" class="form-control" name="email" id="InputEmail1" placeholder="Email"
-                    aria-describedby="emailHelp" required />
-            </div>
+<div
+  class="container"
+  style="
+    height: 73vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  "
+>
+  <div class="auth-form">
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="InputEmail1" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="InputEmail1"
+        placeholder="Email"
+        aria-describedby="emailHelp"
+        required
+      />
+    </div>
 
-            <!-- Пароль -->
-            <div class="mb-3">
-                <label for="InputPassword1" class="form-label">Пароль</label>
-                <input id="password" class="form-control" name="password" type="password" pattern="^\S{6,}$"
-                    onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Минимум 6 символов' : ''); if(this.checkValidity()) form.confirm.pattern = this.value;"
-                    placeholder="Пароль" required />
-            </div>
+    <!-- Пароль -->
+    <div class="mb-3">
+      <label for="InputPassword1" class="form-label">Пароль</label>
+      <input
+        id="password"
+        class="form-control"
+        name="password"
+        type="password"
+        pattern="^\S{6,}$"
+        onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Минимум 6 символов' : ''); if(this.checkValidity()) form.confirm.pattern = this.value;"
+        placeholder="Пароль"
+        required
+      />
+    </div>
 
-            <p id="warning" style="color:red"></p>
+    <p id="warning" style="color: red"></p>
 
-            <!-- Submit -->
-            <button onclick="signin()" type="submit" class="btn btn-warning">Войти</button>
+    <!-- Submit -->
+    <a class="" href="/user/signup">Нет аккаунта? Зарегистрируйся!</a>
+    <button onclick="signin()" type="submit" class="btn btn-warning">
+      Войти
+    </button>
 
-            <script src="/static/js/user.js"></script>
-        </div>
+    <script src="/static/js/user.js"></script>
+  </div>
 </div>
 
 {{ end }}
