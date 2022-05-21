@@ -108,7 +108,7 @@ func (u *userRepository) ChangeAccess(ctx context.Context, email string, access 
 }
 
 func (u *userRepository) Delete(ctx context.Context, id int64) error {
-	stmt := `DELETE FROM "user" WHERE "id"=$1`
+	stmt := `DELETE FROM "user" WHERE "user_id"=$1`
 
 	_, err := u.db.Exec(ctx, stmt, id)
 	if err != nil {

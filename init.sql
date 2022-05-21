@@ -24,3 +24,13 @@ CREATE TABLE IF NOT EXISTS "article"(
     "created_at" TIMESTAMP NOT NULL,
     "updated_at" TIMESTAMP NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS "comment"(
+    "comment_id" BIGSERIAL PRIMARY KEY,
+    "user_id" BIGSERIAL NOT NULL REFERENCES "user" ("user_id") ON DELETE CASCADE,
+    "article_id" BIGSERIAL NOT NULL REFERENCES "article" ("article_id") ON DELETE CASCADE,
+    "category_id" BIGSERIAL NOT NULL REFERENCES "category" ("category_id") ON DELETE CASCADE,
+    "text" TEXT NOT NULL,
+    "created_at" TIMESTAMP NOT NULL,
+    "updated_at" TIMESTAMP NOT NULL
+)
