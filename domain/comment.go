@@ -30,7 +30,7 @@ type CommentDTO struct {
 type CommentUsecase interface {
 	Create(ctx context.Context, comment *Comment) (int64, error)
 	Update(ctx context.Context, comment *Comment) error
-	GetByArticleID(ctx context.Context, articleID int64) (*[]Comment, error)
+	GetByArticleID(ctx context.Context, articleID int64) (*[]CommentDTO, error)
 	Delete(ctx context.Context, id int64) error
 }
 
