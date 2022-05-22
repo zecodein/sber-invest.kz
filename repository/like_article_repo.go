@@ -30,9 +30,14 @@ func (l *likeArticleRepository) Like(ctx context.Context, like *domain.LikeArtic
 		) VALUES ($1, $2, $3)`
 	}
 
-	if vote == 1 && vote != 0 {
+	if vote == 1 {
 		stmt = `DELETE FROM "like_article" WHERE "user_id" = $1, "article_id" = $2`
-	} else {
+		_, err = l.db.Exec(ctx, stmt, like.UserID, like.UserID)
+		if err != nil {
+			return err
+		}
+		return nil
+	} else if vote == -1 {
 		stmt = `
 		UPDATE "like_article"
 		SET "vote" = $1
@@ -48,6 +53,37 @@ func (l *likeArticleRepository) Like(ctx context.Context, like *domain.LikeArtic
 }
 
 func (l *likeArticleRepository) Dislike(ctx context.Context, like *domain.LikeArticle) error {
+	stmt := ``
+
+	vote, err := l.getVote(ctx, like)
+	if err != nil {
+		stmt = `
+		INSERT INTO "like_article"(
+			"vote"
+			"user_id",
+			"article_id",
+		) VALUES ($1, $2, $3)`
+	}
+
+	if vote == -1 {
+		stmt = `DELETE FROM "like_article" WHERE "user_id" = $1, "article_id" = $2`
+		_, err = l.db.Exec(ctx, stmt, like.UserID, like.UserID)
+		if err != nil {
+			return err
+		}
+		return nil
+	} else if vote == 1 {
+		stmt = `
+		UPDATE "like_article"
+		SET "vote" = $1
+		WHERE "user_id" = $2, "article_id" = $3`
+	}
+
+	_, err = l.db.Exec(ctx, stmt, -1, like.UserID, like.UserID)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 

@@ -10,9 +10,10 @@ import (
 )
 
 type Handler struct {
-	UserUsecase    domain.UserUsecase
-	ArticleUsecase domain.ArticleUsecase
-	CommentUsecase domain.CommentUsecase
+	UserUsecase        domain.UserUsecase
+	ArticleUsecase     domain.ArticleUsecase
+	CommentUsecase     domain.CommentUsecase
+	LikeArticleUsecase domain.LikeArticleUsecase
 }
 
 func NewHandler(r *gin.Engine, h *Handler) {
@@ -54,6 +55,10 @@ func NewHandler(r *gin.Engine, h *Handler) {
 	comment.POST("/create", h.createComment)
 	comment.POST("/update", h.updateComment)
 	comment.POST("/delete", h.deleteComment)
+
+	voteArticle := r.Group("/vote/article")
+	voteArticle.POST("/like/:id", h.likeArticle)
+	voteArticle.POST("/dislike/:id", h.dislikeArticle)
 
 	admin := r.Group("/admin")
 	admin.GET("/", h.admin)
