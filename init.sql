@@ -34,3 +34,17 @@ CREATE TABLE IF NOT EXISTS "comment"(
     "created_at" TIMESTAMP NOT NULL,
     "updated_at" TIMESTAMP NOT NULL
 )
+
+CREATE TABLE IF NOT EXISTS "like_article"(
+    "like_article_id" BIGSERIAL PRIMARY KEY,
+    "user_id" BIGSERIAL NOT NULL REFERENCES "user" ("user_id") ON DELETE CASCADE,
+    "article_id" BIGSERIAL NOT NULL REFERENCES "article" ("article_id") ON DELETE CASCADE,
+    "vote" INTEGER NOT NULL
+)
+
+CREATE TABLE IF NOT EXISTS "like_comment"(
+    "like_comment_id" BIGSERIAL PRIMARY KEY,
+    "user_id" BIGSERIAL NOT NULL REFERENCES "user" ("user_id") ON DELETE CASCADE,
+    "comment_id" BIGSERIAL NOT NULL REFERENCES "comment" ("comment_id") ON DELETE CASCADE,
+    "vote" INTEGER NOT NULL
+)
