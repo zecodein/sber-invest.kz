@@ -45,18 +45,28 @@ min-height: 100vh;
   <div class="col-0 col-lg-2"></div>
 </div>
 
+<div>
+  <!-- Коммент -->
+  <div class="mb-3 row d-flex justify-content-center lead">
+      <label for="InputPassword1" class="form-label"></label>
+      <input
+      id="comment"
+      class="message col-11 col-lg-4 p-3"
+      name="comment"
+      type="text"
+      placeholder="Написать комментарий.."
+      required
+      style="border-width: 0px; border-radius: 20px; background-color: #e2e2e2;"
+      />
+  </div>
+  <input type="hidden" id="article_id" value="{{ .article.ID }}">
+  <input type="hidden" id="category_id" value="{{ .article.CategoryID }}">
+  <p id="warning" style="color: red"></p>
 
-<div class="row d-flex justify-content-center lead">
-  <div class="col-1 col-lg-4"></div>
-    <p></p>
-    <input
-  class="message col-11 col-lg-4 p-3"
-  style="border-width: 0px; border-radius: 20px; background-color: #e2e2e2;"
-  placeholder="Написать комментарий..."
-  />
-  <div
-      class="col-0 mt-5 px-0 text-center d-flex align-items-end justify-content-start"
-    ></div>
+  <!-- Submit -->
+  <button onclick="commentCreate()" type="submit" class="btn btn-warning">
+      Отправить
+  </button>
 </div>
 
   <div class="row d-flex justify-content-center lead">
@@ -129,4 +139,5 @@ min-height: 100vh;
     </div>
   </div>
 </section>
+<script src="/static/js/comment.js"></script>
 {{ end }}

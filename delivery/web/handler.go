@@ -12,6 +12,7 @@ import (
 type Handler struct {
 	UserUsecase    domain.UserUsecase
 	ArticleUsecase domain.ArticleUsecase
+	CommentUsecase domain.CommentUsecase
 }
 
 func NewHandler(r *gin.Engine, h *Handler) {
@@ -48,6 +49,11 @@ func NewHandler(r *gin.Engine, h *Handler) {
 	article.PUT("/update", h.updateArticle)
 	article.GET("/:id", h.getArticleByID)
 	article.GET("/delete", h.deleteArticle)
+
+	comment := r.Group("/comment")
+	comment.POST("/create", h.createComment)
+	comment.POST("/update", h.updateComment)
+	comment.POST("/delete", h.deleteComment)
 
 	admin := r.Group("/admin")
 	admin.GET("/", h.admin)

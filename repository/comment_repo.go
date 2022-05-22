@@ -26,7 +26,7 @@ func (c *commentRepository) Create(ctx context.Context, comment *domain.Comment)
 		"text",
 		"created_at",
 		"updated_at"
-	) VALUES ($1, $2, $3, $4, $5) RETURNING "article_id"
+	) VALUES ($1, $2, $3, $4, $5, $6) RETURNING "article_id"
 	`
 
 	var id int64 = 0
