@@ -28,6 +28,11 @@ func (h *Handler) likeArticle(c *gin.Context) {
 	}
 
 	vote.Vote = 1
+	err = h.LikeArticleUsecase.Like(c, &vote)
+	if err != nil {
+		c.Writer.WriteHeader(getStatusCode(err))
+		return
+	}
 	c.Redirect(http.StatusFound, "/article/"+articleID)
 	fmt.Println(vote)
 }

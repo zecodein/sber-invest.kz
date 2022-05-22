@@ -2,6 +2,7 @@ package repository
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/zecodein/sber-invest.kz/domain"
@@ -22,15 +23,17 @@ func (l *likeArticleRepository) Like(ctx context.Context, like *domain.LikeArtic
 
 	vote, err := l.getVote(ctx, like)
 	if err != nil {
+		fmt.Println("create like")
 		stmt = `
 		INSERT INTO "like_article"(
-			"vote"
+			"vote",
 			"user_id",
-			"article_id",
+			"article_id"
 		) VALUES ($1, $2, $3)`
 	}
 
 	if vote == 1 {
+		fmt.Println("delete like")
 		stmt = `DELETE FROM "like_article" WHERE "user_id" = $1, "article_id" = $2`
 		_, err = l.db.Exec(ctx, stmt, like.UserID, like.UserID)
 		if err != nil {
@@ -38,12 +41,13 @@ func (l *likeArticleRepository) Like(ctx context.Context, like *domain.LikeArtic
 		}
 		return nil
 	} else if vote == -1 {
+		fmt.Println("update like")
 		stmt = `
 		UPDATE "like_article"
 		SET "vote" = $1
 		WHERE "user_id" = $2, "article_id" = $3`
 	}
-
+	fmt.Println("allo")
 	_, err = l.db.Exec(ctx, stmt, 1, like.UserID, like.UserID)
 	if err != nil {
 		return err
@@ -57,6 +61,7 @@ func (l *likeArticleRepository) Dislike(ctx context.Context, like *domain.LikeAr
 
 	vote, err := l.getVote(ctx, like)
 	if err != nil {
+		fmt.Println("create")
 		stmt = `
 		INSERT INTO "like_article"(
 			"vote"
@@ -66,6 +71,7 @@ func (l *likeArticleRepository) Dislike(ctx context.Context, like *domain.LikeAr
 	}
 
 	if vote == -1 {
+		fmt.Println("delete")
 		stmt = `DELETE FROM "like_article" WHERE "user_id" = $1, "article_id" = $2`
 		_, err = l.db.Exec(ctx, stmt, like.UserID, like.UserID)
 		if err != nil {
@@ -73,6 +79,7 @@ func (l *likeArticleRepository) Dislike(ctx context.Context, like *domain.LikeAr
 		}
 		return nil
 	} else if vote == 1 {
+		fmt.Println("update")
 		stmt = `
 		UPDATE "like_article"
 		SET "vote" = $1

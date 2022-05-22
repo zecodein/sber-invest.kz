@@ -27,7 +27,6 @@ func (h *Handler) createComment(c *gin.Context) {
 	}
 
 	if strings.TrimSpace(comment.Text) == "" {
-		log.Println("da")
 		c.Writer.WriteHeader(http.StatusBadRequest)
 		return
 	}
