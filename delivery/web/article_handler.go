@@ -103,9 +103,16 @@ func (h *Handler) getArticleByID(c *gin.Context) {
 		return
 	}
 
+	comments, err := h.CommentUsecase.GetByArticleID(c, id)
+	if err != nil {
+		c.Writer.WriteHeader(getStatusCode(err))
+		return
+	}
+
 	c.HTML(http.StatusOK, "article_page.html", gin.H{
-		"article": article,
-		"session": getSession(c),
+		"article":  article,
+		"session":  getSession(c),
+		"comments": comments,
 	})
 	// TODO article/:id page
 }

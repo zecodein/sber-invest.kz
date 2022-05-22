@@ -1,4 +1,5 @@
 {{ define "content" }}
+
 <section class="p-3 p-lg-5 px-3 d-flex flex-column" style="
 background: #f5f6f7;
 min-height: 100vh;
@@ -69,6 +70,7 @@ min-height: 100vh;
   </button>
 </div>
 
+  {{ range .comments }}
   <div class="row d-flex justify-content-center lead">
     <div class="col-1 col-lg-2">
       <p></p>
@@ -77,10 +79,10 @@ min-height: 100vh;
       style=" border-radius: 20px 20px 20px 0; background-color: #e2e2e2;"
     >
       <p class="m-0 p-0">
-        Да ну нафиг...
+        {{ .Text }}
       </p>
       <p class="m-0 p-0 d-flex justify-content-between">
-        <span>Добавлен: {{ .article.CreatedAt.Format "02 Jan 06 15:04" }}</span>
+        <span>Добавлен: {{ .CreatedAt.Format "02 Jan 06 15:04" }}</span>
       </p>
       <p class="m-0 p-0 d-flex justify-content-between" style="font-size:15px;">
         <span class="p-1">31 лайков</span>
@@ -89,55 +91,14 @@ min-height: 100vh;
     </div>
     <div class="col-1 col-lg-2 mt-5 px-0 text-center d-flex align-items-end justify-content-start"
     >
-      <img src="../static/css/img/repnikova.png" width="50px" alt="" />
+      <img src="/static/css/img/repnikova.png" width="50px" alt="" />
     </div>
   </div>
-  <div class="row d-flex justify-content-center lead">
-    <div class="col-1 col-lg-2">
-      <p></p>
-    </div>
-    <div class="message col-8 col-lg-8 mb-5 p-3"
-      style=" border-radius: 20px 20px 20px 0; background-color: #e2e2e2;"
-    >
-      <p class="m-0 p-0">
-        Да ну нафиг...
-      </p>
-      <p class="m-0 p-0 d-flex justify-content-between">
-        <span>Добавлен: {{ .article.CreatedAt.Format "02 Jan 06 15:04" }}</span>
-      </p>
-      <p class="m-0 p-0 d-flex justify-content-between" style="font-size:15px;">
-        <span class="p-1">31 лайков</span>
-        <span class="p-1">1 дизлайк</span>
-      </p>
-    </div>
-    <div class="col-1 col-lg-2 mt-5 px-0 text-center d-flex align-items-end justify-content-start"
-    >
-      <img src="../static/css/img/repnikova.png" width="50px" alt="" />
-    </div>
-  </div>
-  <div class="row d-flex justify-content-center lead">
-    <div class="col-1 col-lg-2">
-      <p></p>
-    </div>
-    <div class="message col-8 col-lg-8 mb-5 p-3"
-      style=" border-radius: 20px 20px 20px 0; background-color: #e2e2e2;"
-    >
-      <p class="m-0 p-0">
-        Да ну нафиг...
-      </p>
-      <p class="m-0 p-0 d-flex justify-content-between">
-        <span>Добавлен: {{ .article.CreatedAt.Format "02 Jan 06 15:04" }}</span>
-      </p>
-      <p class="m-0 p-0 d-flex justify-content-between" style="font-size:15px;">
-        <span class="p-1">31 лайков</span>
-        <span class="p-1">1 дизлайк</span>
-      </p>
-    </div>
-    <div class="col-1 col-lg-2 mt-5 px-0 text-center d-flex align-items-end justify-content-start"
-    >
-      <img src="../static/css/img/repnikova.png" width="50px" alt="" />
-    </div>
-  </div>
+  
+  <!-- TODO Erda замути красиво -->
+  <a href="/user/profile/{{ .UserID }}">{{.FirstName}} {{.LastName}}</a>
+  {{ end }}
+
 </section>
 <script src="/static/js/comment.js"></script>
 {{ end }}
