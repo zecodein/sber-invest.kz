@@ -11,5 +11,5 @@ stop:
 	docker-compose stop
 
 delete:
-	docker-compose 
+	docker-compose down
 	docker volume rm sber-investkz_cache sber-investkz_pg-data 

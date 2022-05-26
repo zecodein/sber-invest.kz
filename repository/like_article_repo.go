@@ -34,7 +34,7 @@ func (l *likeArticleRepository) Like(ctx context.Context, like *domain.LikeArtic
 
 	if vote == 1 {
 		fmt.Println("delete like")
-		stmt = `DELETE FROM "like_article" WHERE "user_id" = $1, "article_id" = $2`
+		stmt = `DELETE FROM "like_article" WHERE "user_id" = $1 AND "article_id" = $2`
 		_, err = l.db.Exec(ctx, stmt, like.UserID, like.UserID)
 		if err != nil {
 			return err
@@ -45,7 +45,7 @@ func (l *likeArticleRepository) Like(ctx context.Context, like *domain.LikeArtic
 		stmt = `
 		UPDATE "like_article"
 		SET "vote" = $1
-		WHERE "user_id" = $2, "article_id" = $3`
+		WHERE "user_id" = $2 AND "article_id" = $3`
 	}
 	fmt.Println("allo")
 	_, err = l.db.Exec(ctx, stmt, 1, like.UserID, like.UserID)
@@ -60,19 +60,20 @@ func (l *likeArticleRepository) Dislike(ctx context.Context, like *domain.LikeAr
 	stmt := ``
 
 	vote, err := l.getVote(ctx, like)
+	fmt.Println(vote, err)
 	if err != nil {
 		fmt.Println("create")
 		stmt = `
 		INSERT INTO "like_article"(
-			"vote"
+			"vote",
 			"user_id",
-			"article_id",
+			"article_id"
 		) VALUES ($1, $2, $3)`
 	}
 
 	if vote == -1 {
 		fmt.Println("delete")
-		stmt = `DELETE FROM "like_article" WHERE "user_id" = $1, "article_id" = $2`
+		stmt = `DELETE FROM "like_article" WHERE "user_id" = $1 AND "article_id" = $2`
 		_, err = l.db.Exec(ctx, stmt, like.UserID, like.UserID)
 		if err != nil {
 			return err
@@ -83,7 +84,7 @@ func (l *likeArticleRepository) Dislike(ctx context.Context, like *domain.LikeAr
 		stmt = `
 		UPDATE "like_article"
 		SET "vote" = $1
-		WHERE "user_id" = $2, "article_id" = $3`
+		WHERE "user_id" = $2 AND "article_id" = $3`
 	}
 
 	_, err = l.db.Exec(ctx, stmt, -1, like.UserID, like.UserID)
@@ -95,7 +96,7 @@ func (l *likeArticleRepository) Dislike(ctx context.Context, like *domain.LikeAr
 }
 
 func (l *likeArticleRepository) getVote(ctx context.Context, like *domain.LikeArticle) (int, error) {
-	stmt := `SELECT "vote" FROM "like_article" WHERE "user_id" = $1, "article_id" = $2`
+	stmt := `SELECT "vote" FROM "like_article" WHERE "user_id"=$1 AND "article_id"=$2;`
 	var vote int = 0
 	row := l.db.QueryRow(ctx, stmt, like.UserID, like.ArticleID)
 	err := row.Scan(&vote)
