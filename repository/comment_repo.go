@@ -2,6 +2,7 @@ package repository
 
 import (
 	"context"
+	"log"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/zecodein/sber-invest.kz/domain"
@@ -38,6 +39,7 @@ func (c *commentRepository) Create(ctx context.Context, comment *domain.Comment)
 
 	return id, nil
 }
+
 func (c *commentRepository) Update(ctx context.Context, comment *domain.Comment) error {
 	stmt := `
 	UPDATE "comment"
@@ -52,10 +54,11 @@ func (c *commentRepository) Update(ctx context.Context, comment *domain.Comment)
 
 	return nil
 }
-func (c *commentRepository) GetByArticleID(ctx context.Context, articleID int64) (*[]domain.CommentDTO, error) {
-	stmt := `SELECT c.*, u.first_name, u.last_name FROM "comment" c JOIN "user" u ON c.user_id = u.user_id ORDER BY "created_at" DESC`
 
-	rows, err := c.db.Query(ctx, stmt)
+func (c *commentRepository) GetByArticleID(ctx context.Context, articleID int64) (*[]domain.CommentDTO, error) {
+	stmt := `SELECT c.*, u.first_name, u.last_name FROM "comment" c JOIN "user" u ON c.user_id = u.user_id WHERE "article_id" = $1 ORDER BY "created_at" DESC`
+
+	rows, err := c.db.Query(ctx, stmt, articleID)
 	if err != nil {
 		return nil, err
 	}
@@ -66,6 +69,7 @@ func (c *commentRepository) GetByArticleID(ctx context.Context, articleID int64)
 
 	for rows.Next() {
 		err = rows.Scan(&comment.CommentID, &comment.UserID, &comment.ArticleID, &comment.CategoryID, &comment.Text, &comment.CreatedAt, &comment.UpdatedAt, &comment.FirstName, &comment.LastName)
+		log.Println(err, "72")
 		if err != nil {
 			return nil, err
 		}
@@ -73,11 +77,13 @@ func (c *commentRepository) GetByArticleID(ctx context.Context, articleID int64)
 	}
 
 	if err = rows.Err(); err != nil {
+		log.Println(err, "80")
 		return nil, err
 	}
 
 	return &comments, nil
 }
+
 func (c *commentRepository) Delete(ctx context.Context, id int64) error {
 	stmt := `DELETE FROM "comment" WHERE "comment_id" = $1`
 

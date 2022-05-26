@@ -41,17 +41,17 @@ func categories(db *pgxpool.Pool) error {
 		return err
 	}
 
-	stmt = `INSERT INTO "user"("first_name", "last_name", "email", "access", "password", "created_at", "updated_at") VALUES($1, $2, $3, $4, $5, $6, $7)`
-	_, err = db.Exec(context.Background(), stmt, "Александр", "Репников", "ARepnikov@sber-invest.kz", "superuser", "$2a$14$HVWNjswrGaocfPBz19UztuFRIfB6484r37h9Y/v1srfMTqWdpPvyG", time.Now(), time.Now())
-	if err != nil && err.Error()[7:16] != "duplicate" {
-		return err
-	}
+	// stmt = `INSERT INTO "user"("first_name", "last_name", "email", "access", "password", "created_at", "updated_at") VALUES($1, $2, $3, $4, $5, $6, $7)`
+	// _, err = db.Exec(context.Background(), stmt, "Александр", "Репников", "ARepnikov@sber-invest.kz", "superuser", "$2a$14$HVWNjswrGaocfPBz19UztuFRIfB6484r37h9Y/v1srfMTqWdpPvyG", time.Now(), time.Now())
+	// if err != nil && err.Error()[7:16] != "duplicate" {
+	// 	return err
+	// }
 
-	stmt = `INSERT INTO "user"("first_name", "last_name", "email", "access", "password", "created_at", "updated_at") VALUES($1, $2, $3, $4, $5, $6, $7)`
-	_, err = db.Exec(context.Background(), stmt, "Александр", "Репников", "ARepnikov777gmail.com", "superuser", "$2a$14$0CG9TWVqzKEA4ZzjuccvwOqG91O9nFE7WxBG7y20/.QNFesonWc3e", time.Now(), time.Now())
-	if err != nil && err.Error()[7:16] != "duplicate" {
-		return err
-	}
+	// stmt = `INSERT INTO "user"("first_name", "last_name", "email", "access", "password", "created_at", "updated_at") VALUES($1, $2, $3, $4, $5, $6, $7)`
+	// _, err = db.Exec(context.Background(), stmt, "Александр", "Репников", "ARepnikov777gmail.com", "superuser", "$2a$14$0CG9TWVqzKEA4ZzjuccvwOqG91O9nFE7WxBG7y20/.QNFesonWc3e", time.Now(), time.Now())
+	// if err != nil && err.Error()[7:16] != "duplicate" {
+	// 	return err
+	// }
 
 	stmt = `INSERT INTO "category"("name", "description") VALUES($1, $2)`
 	_, err = db.Exec(context.Background(), stmt, "Assetallocation", "подходы, стратегии, финансовые инструменты, портфели, инструменты инвестиционного анализа.")

@@ -2,6 +2,7 @@ package usecase
 
 import (
 	"context"
+	"strings"
 
 	"github.com/zecodein/sber-invest.kz/domain"
 )
@@ -23,6 +24,7 @@ func (c *commentUsecase) Create(ctx context.Context, comment *domain.Comment) (i
 	}
 	return id, nil
 }
+
 func (c *commentUsecase) Update(ctx context.Context, comment *domain.Comment) error {
 	err := c.commentRepo.Update(ctx, comment)
 	if err != nil {
@@ -30,14 +32,21 @@ func (c *commentUsecase) Update(ctx context.Context, comment *domain.Comment) er
 	}
 	return nil
 }
+
 func (c *commentUsecase) GetByArticleID(ctx context.Context, articleID int64) (*[]domain.CommentDTO, error) {
 	comments, err := c.commentRepo.GetByArticleID(ctx, articleID)
+
+	if err != nil && strings.Contains(err.Error(), "does not exist") {
+		err = nil
+	}
+
 	if err != nil {
 		return nil, err
 	}
 
 	return comments, err
 }
+
 func (c *commentUsecase) Delete(ctx context.Context, id int64) error {
 	err := c.commentRepo.Delete(ctx, id)
 	if err != nil {

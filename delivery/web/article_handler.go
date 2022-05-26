@@ -113,6 +113,7 @@ func (h *Handler) getArticleByID(c *gin.Context) {
 		"article":  article,
 		"session":  getSession(c),
 		"comments": comments,
+		"nil":      comments == nil,
 	})
 	// TODO article/:id page
 }
