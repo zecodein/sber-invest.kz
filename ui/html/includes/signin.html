@@ -2,7 +2,7 @@
 <div
   class="container"
   style="
-    height: 73vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,11 +40,13 @@
 
     <p id="warning" style="color: red"></p>
 
+    <div class="mb-3 d-flex flex-column align-center">
+      <a class="" href="/user/signup">Нет аккаунта? Зарегистрируйся!</a>
+      <button onclick="signin()" type="submit" class="btn btn-warning">
+        Войти
+      </button>
+    </div>
     <!-- Submit -->
-    <a class="" href="/user/signup">Нет аккаунта? Зарегистрируйся!</a>
-    <button onclick="signin()" type="submit" class="btn btn-warning">
-      Войти
-    </button>
 
     <script src="/static/js/user.js"></script>
   </div>

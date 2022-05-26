@@ -1,10 +1,20 @@
-{{ define "content" }}
+<div
+  class="container"
+  style="
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  "
+>
+  {{ define "content" }}
 
-<p>Имя: {{ .user.FirstName }}</p>
-<p>Фамилия: {{ .user.LastName }}</p>
-<p>Почта: {{ .user.Email }}</p>
-<p>Access: {{ .user.Access }}</p>
-<p>Создан: {{ .user.CreatedAt }}</p>
-<p>Обновлен: {{ .user.UpdatedAt }}</p>
+  <p>Имя: {{ .user.FirstName }}</p>
+  <p>Фамилия: {{ .user.LastName }}</p>
+  <p>Почта: {{ .user.Email }}</p>
+  <p>Access: {{ .user.Access }}</p>
+  <p>Создан: {{ .user.CreatedAt.Format "02 Jan 06 15:04" }}</p>
+  <p>Обновлен: {{ .user.UpdatedAt.Format "02 Jan 06 15:04" }}</p>
 
-{{ end }}
+  {{ end }}
+</div>

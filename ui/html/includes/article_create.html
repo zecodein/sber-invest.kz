@@ -6,10 +6,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
   "
 >
-  <input type="text" id="title" placeholder="Заголовок" />
-  <input type="text" id="text" placeholder="Текст" />
+  <input type="text" id="title" placeholder="Заголовок" class="mb-3" />
+  <textarea
+    type="text"
+    id="text"
+    placeholder="Текст"
+    class="mb-3"
+    style="width: 100%; min-height: 200px"
+  ></textarea>
 
   <label for="categories">Рубрика:</label>
   <input
@@ -17,6 +24,7 @@
     id="categories"
     name="categories"
     placeholder="Рубрика"
+    class="mb-3"
   />
 
   <datalist id="category">
