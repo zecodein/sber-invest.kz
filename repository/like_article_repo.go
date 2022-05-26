@@ -35,7 +35,7 @@ func (l *likeArticleRepository) Like(ctx context.Context, like *domain.LikeArtic
 	if vote == 1 {
 		fmt.Println("delete like")
 		stmt = `DELETE FROM "like_article" WHERE "user_id" = $1 AND "article_id" = $2`
-		_, err = l.db.Exec(ctx, stmt, like.UserID, like.UserID)
+		_, err = l.db.Exec(ctx, stmt, like.UserID, like.ArticleID)
 		if err != nil {
 			return err
 		}
@@ -47,8 +47,8 @@ func (l *likeArticleRepository) Like(ctx context.Context, like *domain.LikeArtic
 		SET "vote" = $1
 		WHERE "user_id" = $2 AND "article_id" = $3`
 	}
-	fmt.Println("allo")
-	_, err = l.db.Exec(ctx, stmt, 1, like.UserID, like.UserID)
+
+	_, err = l.db.Exec(ctx, stmt, 1, like.UserID, like.ArticleID)
 	if err != nil {
 		return err
 	}
@@ -74,7 +74,7 @@ func (l *likeArticleRepository) Dislike(ctx context.Context, like *domain.LikeAr
 	if vote == -1 {
 		fmt.Println("delete")
 		stmt = `DELETE FROM "like_article" WHERE "user_id" = $1 AND "article_id" = $2`
-		_, err = l.db.Exec(ctx, stmt, like.UserID, like.UserID)
+		_, err = l.db.Exec(ctx, stmt, like.UserID, like.ArticleID)
 		if err != nil {
 			return err
 		}
@@ -87,7 +87,7 @@ func (l *likeArticleRepository) Dislike(ctx context.Context, like *domain.LikeAr
 		WHERE "user_id" = $2 AND "article_id" = $3`
 	}
 
-	_, err = l.db.Exec(ctx, stmt, -1, like.UserID, like.UserID)
+	_, err = l.db.Exec(ctx, stmt, -1, like.UserID, like.ArticleID)
 	if err != nil {
 		return err
 	}
