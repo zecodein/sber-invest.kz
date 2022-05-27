@@ -2,6 +2,7 @@ package repository
 
 import (
 	"context"
+	"fmt"
 	"log"
 
 	"github.com/jackc/pgx/v4/pgxpool"
@@ -73,6 +74,17 @@ func (c *commentRepository) GetByArticleID(ctx context.Context, articleID int64)
 		if err != nil {
 			return nil, err
 		}
+
+		comment.Likes, err = c.likesComment(ctx, comment.CommentID)
+		if err != nil {
+			return nil, err
+		}
+
+		comment.Dislikes, err = c.dislikesComment(ctx, comment.CommentID)
+		if err != nil {
+			return nil, err
+		}
+
 		comments = append(comments, comment)
 	}
 
@@ -80,8 +92,34 @@ func (c *commentRepository) GetByArticleID(ctx context.Context, articleID int64)
 		log.Println(err, "80")
 		return nil, err
 	}
-
+	fmt.Println(comments)
 	return &comments, nil
+}
+
+func (c *commentRepository) likesComment(ctx context.Context, id int64) (int64, error) {
+	stmt := `SELECT COUNT("vote") FROM "like_comment" WHERE "comment_id" = $1 AND "vote" = 1`
+	row := c.db.QueryRow(ctx, stmt, id)
+
+	var likes int64 = 0
+	err := row.Scan(&likes)
+	if err != nil {
+		return 0, nil
+	}
+
+	return likes, nil
+}
+
+func (c *commentRepository) dislikesComment(ctx context.Context, id int64) (int64, error) {
+	stmt := `SELECT COUNT("vote") FROM "like_comment" WHERE "comment_id" = $1 AND "vote" = -1`
+	row := c.db.QueryRow(ctx, stmt, id)
+
+	var likes int64 = 0
+	err := row.Scan(&likes)
+	if err != nil {
+		return 0, nil
+	}
+
+	return likes, nil
 }
 
 func (c *commentRepository) Delete(ctx context.Context, id int64) error {

@@ -42,10 +42,12 @@ min-height: 100vh;
   <form action="/vote/article/like/{{ .article.ID }}" method="POST">
     <button>like</button>
   </form>
+  {{ .article.Likes }}
 
   <form action="/vote/article/dislike/{{ .article.ID }}" method="POST">
     <button>dislike</button>
   </form>
+  {{ .article.Dislikes }}
 
   <div>
     <!-- Коммент -->
@@ -95,11 +97,13 @@ min-height: 100vh;
   <!-- * COMMENT LIKE -->
   <form action="/vote/comment/like/{{ .CommentID }}" method="POST">
     <button>like</button>
-  </form>f
+  </form>
+  {{ .Likes }}
 
   <form action="/vote/comment/dislike/{{ .CommentID }}" method="POST">
     <button>dislike</button>
   </form>
+  {{ .Dislikes }}
   {{ end }}
   {{ end }}
 </section>
