@@ -25,6 +25,8 @@ function commentCreate() {
         // const content = await rawResponse.status();
         if (rawResponse.status == 201) {
             window.location.reload();
+        } else if (rawResponse.status == 401 ) {
+            window.location.replace("/user/signin");
         } else {
             warning.innerHTML = ""
             warning.innerHTML += "Bad request"

@@ -13,7 +13,7 @@ import (
 func (h *Handler) createComment(c *gin.Context) {
 	userID := getSession(c).Id
 	if userID == 0 {
-		c.Redirect(http.StatusSeeOther, "/user/signin")
+		c.Writer.WriteHeader(http.StatusUnauthorized)
 		return
 	}
 
