@@ -10,9 +10,11 @@ import (
 )
 
 type Handler struct {
-	UserUsecase    domain.UserUsecase
-	ArticleUsecase domain.ArticleUsecase
-	CommentUsecase domain.CommentUsecase
+	UserUsecase        domain.UserUsecase
+	ArticleUsecase     domain.ArticleUsecase
+	CommentUsecase     domain.CommentUsecase
+	LikeArticleUsecase domain.LikeArticleUsecase
+	LikeCommentUsecase domain.LikeCommentUsecase
 }
 
 func NewHandler(r *gin.Engine, h *Handler) {
@@ -54,6 +56,14 @@ func NewHandler(r *gin.Engine, h *Handler) {
 	comment.POST("/create", h.createComment)
 	comment.POST("/update", h.updateComment)
 	comment.POST("/delete", h.deleteComment)
+
+	voteArticle := r.Group("/vote/article")
+	voteArticle.POST("/like/:id", h.likeArticle)
+	voteArticle.POST("/dislike/:id", h.dislikeArticle)
+
+	voteComment := r.Group("/vote/comment")
+	voteComment.POST("/like/:id", h.likeComment)
+	voteComment.POST("/dislike/:id", h.dislikeComment)
 
 	admin := r.Group("/admin")
 	admin.GET("/", h.admin)
@@ -109,12 +119,12 @@ type category struct {
 }
 
 var categories = [6]category{
-	category{Id: 1, Name: "Assetallocation", Description: "В этой рубрике собраны материалы на тему инвестиционных стратегий, финансовых инструментов, портфелей, инструментов инвестиционного анализа – все что касается инвестиций."},
-	category{Id: 2, Name: "Налоги", Description: "В этой рубрике собраны материалы на тему налогообложения активов в портфеле инвестора и его налоговой отчетности в Казахстане (инструкции, разъяснительные статьи, новости."},
-	category{Id: 3, Name: "Пошаговые Инструкции", Description: "В этой рубрике собраны все инструкции проекта (оплата налогов, заполнение 240 формы, регистрация брокерского договора и подачи отчётности в НацБанк)"},
-	category{Id: 4, Name: "Психология Инвестиций", Description: "В этой рубрике собраны материалы о людях, их особенностях и ограничениях. О дисциплине, правилах и инструментах, которые в нужный момент могут удержать нас от ошибок."},
-	category{Id: 5, Name: "Важные Новости", Description: "В этой рубрике собраны «выжимки» важных новостей за каждый квартал"},
-	category{Id: 6, Name: "TuneUp", Description: "В этой рубрике собрана информация о курсах, конференциях и других полезных мероприятиях и ресурсах, с помощью которых можно «прокачать» свою финансовую грамотность."},
+	{Id: 1, Name: "Assetallocation", Description: "В этой рубрике собраны материалы на тему инвестиционных стратегий, финансовых инструментов, портфелей, инструментов инвестиционного анализа – все что касается инвестиций."},
+	{Id: 2, Name: "Налоги", Description: "В этой рубрике собраны материалы на тему налогообложения активов в портфеле инвестора и его налоговой отчетности в Казахстане (инструкции, разъяснительные статьи, новости."},
+	{Id: 3, Name: "Пошаговые Инструкции", Description: "В этой рубрике собраны все инструкции проекта (оплата налогов, заполнение 240 формы, регистрация брокерского договора и подачи отчётности в НацБанк)"},
+	{Id: 4, Name: "Психология Инвестиций", Description: "В этой рубрике собраны материалы о людях, их особенностях и ограничениях. О дисциплине, правилах и инструментах, которые в нужный момент могут удержать нас от ошибок."},
+	{Id: 5, Name: "Важные Новости", Description: "В этой рубрике собраны «выжимки» важных новостей за каждый квартал"},
+	{Id: 6, Name: "TuneUp", Description: "В этой рубрике собрана информация о курсах, конференциях и других полезных мероприятиях и ресурсах, с помощью которых можно «прокачать» свою финансовую грамотность."},
 }
 
 func (h *Handler) notifications(c *gin.Context) {

@@ -27,7 +27,6 @@ func (h *Handler) createComment(c *gin.Context) {
 	}
 
 	if strings.TrimSpace(comment.Text) == "" {
-		log.Println("da")
 		c.Writer.WriteHeader(http.StatusBadRequest)
 		return
 	}
@@ -49,9 +48,7 @@ func (h *Handler) createComment(c *gin.Context) {
 }
 
 func (h *Handler) updateComment(c *gin.Context) {
-
 }
 
 func (h *Handler) deleteComment(c *gin.Context) {
-
 }

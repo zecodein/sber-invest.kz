@@ -137,8 +137,47 @@ func (a *articleRepository) GetByID(ctx context.Context, id int64) (*domain.Arti
 		log.Println(err)
 		return nil, err
 	}
+
+	article.Likes, err = a.likesArticle(ctx, id)
+	if err != nil {
+		return nil, err
+	}
+
+	article.Dislikes, err = a.dislikesArticle(ctx, id)
+	if err != nil {
+		return nil, err
+	}
+
 	article.CategoryName = category[int(article.CategoryID)]
+
+	fmt.Println(article)
 	return &article, nil
+}
+
+func (a *articleRepository) likesArticle(ctx context.Context, id int64) (int64, error) {
+	stmt := `SELECT COUNT("vote") FROM "like_article" WHERE "article_id" = $1 AND "vote" = 1`
+	row := a.db.QueryRow(ctx, stmt, id)
+
+	var likes int64 = 0
+	err := row.Scan(&likes)
+	if err != nil {
+		return 0, nil
+	}
+
+	return likes, nil
+}
+
+func (a *articleRepository) dislikesArticle(ctx context.Context, id int64) (int64, error) {
+	stmt := `SELECT COUNT("vote") FROM "like_article" WHERE "article_id" = $1 AND "vote" = -1`
+	row := a.db.QueryRow(ctx, stmt, id)
+
+	var likes int64 = 0
+	err := row.Scan(&likes)
+	if err != nil {
+		return 0, nil
+	}
+
+	return likes, nil
 }
 
 func (a *articleRepository) GetAllCategory(ctx context.Context) ([]domain.Category, error) {

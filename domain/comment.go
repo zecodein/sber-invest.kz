@@ -25,6 +25,8 @@ type CommentDTO struct {
 	UpdatedAt  time.Time `json:"updated_at,omitempty"`
 	FirstName  string    `json:"first_name,omitempty"`
 	LastName   string    `json:"last_name,omitempty"`
+	Likes      int64     `json:"likes,omitempty"`
+	Dislikes   int64     `json:"dislikes,omitempty"`
 }
 
 type CommentUsecase interface {

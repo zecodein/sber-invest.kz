@@ -2,6 +2,8 @@ package repository
 
 import (
 	"context"
+	"fmt"
+	"log"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/zecodein/sber-invest.kz/domain"
@@ -38,6 +40,7 @@ func (c *commentRepository) Create(ctx context.Context, comment *domain.Comment)
 
 	return id, nil
 }
+
 func (c *commentRepository) Update(ctx context.Context, comment *domain.Comment) error {
 	stmt := `
 	UPDATE "comment"
@@ -52,10 +55,11 @@ func (c *commentRepository) Update(ctx context.Context, comment *domain.Comment)
 
 	return nil
 }
-func (c *commentRepository) GetByArticleID(ctx context.Context, articleID int64) (*[]domain.CommentDTO, error) {
-	stmt := `SELECT c.*, u.first_name, u.last_name FROM "comment" c JOIN "user" u ON c.user_id = u.user_id ORDER BY "created_at" DESC`
 
-	rows, err := c.db.Query(ctx, stmt)
+func (c *commentRepository) GetByArticleID(ctx context.Context, articleID int64) (*[]domain.CommentDTO, error) {
+	stmt := `SELECT c.*, u.first_name, u.last_name FROM "comment" c JOIN "user" u ON c.user_id = u.user_id WHERE "article_id" = $1 ORDER BY "created_at" DESC`
+
+	rows, err := c.db.Query(ctx, stmt, articleID)
 	if err != nil {
 		return nil, err
 	}
@@ -66,18 +70,58 @@ func (c *commentRepository) GetByArticleID(ctx context.Context, articleID int64)
 
 	for rows.Next() {
 		err = rows.Scan(&comment.CommentID, &comment.UserID, &comment.ArticleID, &comment.CategoryID, &comment.Text, &comment.CreatedAt, &comment.UpdatedAt, &comment.FirstName, &comment.LastName)
+		log.Println(err, "72")
 		if err != nil {
 			return nil, err
 		}
+
+		comment.Likes, err = c.likesComment(ctx, comment.CommentID)
+		if err != nil {
+			return nil, err
+		}
+
+		comment.Dislikes, err = c.dislikesComment(ctx, comment.CommentID)
+		if err != nil {
+			return nil, err
+		}
+
 		comments = append(comments, comment)
 	}
 
 	if err = rows.Err(); err != nil {
+		log.Println(err, "80")
 		return nil, err
 	}
-
+	fmt.Println(comments)
 	return &comments, nil
 }
+
+func (c *commentRepository) likesComment(ctx context.Context, id int64) (int64, error) {
+	stmt := `SELECT COUNT("vote") FROM "like_comment" WHERE "comment_id" = $1 AND "vote" = 1`
+	row := c.db.QueryRow(ctx, stmt, id)
+
+	var likes int64 = 0
+	err := row.Scan(&likes)
+	if err != nil {
+		return 0, nil
+	}
+
+	return likes, nil
+}
+
+func (c *commentRepository) dislikesComment(ctx context.Context, id int64) (int64, error) {
+	stmt := `SELECT COUNT("vote") FROM "like_comment" WHERE "comment_id" = $1 AND "vote" = -1`
+	row := c.db.QueryRow(ctx, stmt, id)
+
+	var likes int64 = 0
+	err := row.Scan(&likes)
+	if err != nil {
+		return 0, nil
+	}
+
+	return likes, nil
+}
+
 func (c *commentRepository) Delete(ctx context.Context, id int64) error {
 	stmt := `DELETE FROM "comment" WHERE "comment_id" = $1`
 

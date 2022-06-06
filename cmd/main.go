@@ -63,15 +63,21 @@ func main() {
 	userRepository := repository.NewUserRepository(db)
 	articleRepository := repository.NewArticleRepository(db)
 	commentRepository := repository.NewCommentRepository(db)
+	likeArticleRepository := repository.NewLikeArticleRepository(db)
+	likeCommentRepository := repository.NewLikeCommentRepository(db)
 
 	userUsecase := usecase.NewUserUsecase(userRepository)
 	articleUsecase := usecase.NewArticleUsecase(articleRepository)
 	commentUsecase := usecase.NewCommentUsecase(commentRepository)
+	likeArticleUsecase := usecase.NewLikeArticleUsecase(likeArticleRepository)
+	likeCommentUsecase := usecase.NewLikeCommentUsecase(likeCommentRepository)
 
 	handler := &web.Handler{
-		UserUsecase:    userUsecase,
-		ArticleUsecase: articleUsecase,
-		CommentUsecase: commentUsecase,
+		UserUsecase:        userUsecase,
+		ArticleUsecase:     articleUsecase,
+		CommentUsecase:     commentUsecase,
+		LikeArticleUsecase: likeArticleUsecase,
+		LikeCommentUsecase: likeCommentUsecase,
 	}
 	web.NewHandler(router, handler)
 	// web.NewUserHandler(router, userUsecase)

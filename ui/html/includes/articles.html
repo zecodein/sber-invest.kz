@@ -21,11 +21,11 @@ min-height: 100vh;
 {{ range .articles }}
   
   <div class="row d-flex justify-content-center lead">
-    <div class="col-1 col-lg-4"></div>
+    <div class="col-1 col-lg-2"></div>
     <p></p>
     <div
-      class="message col-10 col-lg-4 mb-5 p-3"
-      style=" border-radius: 20px 20px 0 20px; background-color: #e2e2e2;"
+      class="message col-10 col-lg-10 mb-5 p-3"
+      style=" border-radius: 20px 20px 20px 20px; background-color: #e2e2e2;"
     >
       <p class="m-0 p-0">
         <a
@@ -40,9 +40,6 @@ min-height: 100vh;
         <p class="m-0 p-0 ps-2" style="border: solid #0719bb; border-width: 0px 0 0px 3px;">
           {{ .Text }}
         </p>
-        <p class="m-0 p-0 d-flex justify-content-center">
-          Теги: тег1, тег2, тег3, etc
-        </p>
         <p class="m-0 p-0 my-2 d-flex justify-content-center">
           <a href="/article/{{ .ID }}" class="d-flex justify-content-center w-100" style="border: #0719bb solid 1px; border-radius: 7px; text-decoration: none; color: #0719bb; font-weight: bold;">Посмотреть</a>
         </p>
@@ -51,15 +48,6 @@ min-height: 100vh;
         <span>Добавлен: {{ .CreatedAt.Format "02 Jan 06 15:04" }}</span>
         <span>Обновлен: {{ .UpdatedAt.Format "02 Jan 06 15:04" }}</span>
       </p>
-      <p class="m-0 p-0 d-flex justify-content-between" style="font-size:15px;">
-        <a href="#" class="p-1" style="border: #0719bb solid 1px; border-radius: 20px; text-decoration: none; color: #0719bb;">31 комментариев *</a>
-        <span class="p-1">1119 просмотров</span>
-      </p>
-    </div>
-    <div
-      class="col-1 mt-5 px-0 text-center d-flex align-items-end justify-content-start"
-    >
-      <img src="../static/css/img/repnikov.png" width="50px" alt="" />
     </div>
   </div>
   {{ end }}

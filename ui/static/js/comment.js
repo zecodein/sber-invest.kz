@@ -24,7 +24,7 @@ function commentCreate() {
         });
         // const content = await rawResponse.status();
         if (rawResponse.status == 201) {
-            // window.location.replace("/")
+            window.location.reload();
         } else {
             warning.innerHTML = ""
             warning.innerHTML += "Bad request"
