@@ -25,7 +25,7 @@ min-height: 100vh;
     <p></p>
     <div
       class="message col-10 col-lg-10 mb-5 p-3"
-      style=" border-radius: 20px 20px 20px 20px; background-color: #e2e2e2;"
+      style=" border-radius: 20px 20px 0 20px; background-color: #e2e2e2;"
     >
       <p class="m-0 p-0">
         <a
@@ -40,6 +40,9 @@ min-height: 100vh;
         <p class="m-0 p-0 ps-2" style="border: solid #0719bb; border-width: 0px 0 0px 3px;">
           {{ .Text }}
         </p>
+        <!-- <p class="m-0 p-0 d-flex justify-content-center">
+          Теги: тег1, тег2, тег3, etc
+        </p> -->
         <p class="m-0 p-0 my-2 d-flex justify-content-center">
           <a href="/article/{{ .ID }}" class="d-flex justify-content-center w-100" style="border: #0719bb solid 1px; border-radius: 7px; text-decoration: none; color: #0719bb; font-weight: bold;">Посмотреть</a>
         </p>
