@@ -30,6 +30,7 @@ func NewHandler(r *gin.Engine, h *Handler) {
 	r.GET("/privacyPolicy", h.privacyPolicy)
 	r.GET("/contractOffer", h.contractOffer)
 	r.GET("/taxreturn", h.taxreturn)
+	r.GET("/consultation", h.consultation)
 	r.GET("/NalInvVKaz", h.nalInvVKAZ)
 
 	user := r.Group("/user")
@@ -208,6 +209,12 @@ func (h *Handler) contractOffer(c *gin.Context) {
 
 func (h *Handler) taxreturn(c *gin.Context) {
 	c.HTML(http.StatusOK, "taxreturn.html", gin.H{
+		"session": getSession(c),
+	})
+}
+
+func (h *Handler) consultation(c *gin.Context) {
+	c.HTML(http.StatusOK, "consultation.html", gin.H{
 		"session": getSession(c),
 	})
 }
