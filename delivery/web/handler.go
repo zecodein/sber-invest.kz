@@ -21,6 +21,7 @@ func NewHandler(r *gin.Engine, h *Handler) {
 	r.GET("/", h.index)
 	r.GET("/knowledgebase", h.knowledgebase)
 	r.GET("/notifications", h.notifications)
+	r.GET("/counttaxbasebroker", h.counttaxbasebroker)
 	r.GET("/knowledgebase/:id", h.getKnowledgebaseById)
 	// r.GET("/aboutus", h.aboutus)
 	r.GET("/services", h.services)
@@ -129,6 +130,13 @@ var categories = [6]category{
 
 func (h *Handler) notifications(c *gin.Context) {
 	c.HTML(http.StatusOK, "notifications.html", gin.H{
+		"session": getSession(c),
+	})
+}
+
+// Расчет налогооблагаемой базы по отчету брокера
+func (h *Handler) counttaxbasebroker(c *gin.Context) {
+	c.HTML(http.StatusOK, "countTaxBaseBroker.html", gin.H{
 		"session": getSession(c),
 	})
 }
