@@ -21,7 +21,7 @@
         style="display: flex; flex-direction: column; justify-content: center"
       >
         <h2 class="heading">Подготовка</h2>
-        <h1 class="heading text-warning">НАЛОГОВОЙ ДЕКЛАРАЦИИ</h1>
+        <h1 class="heading text-warning">НАЛОГОВОЙ ДЕКЛАРАЦИИ (ФНО 270 / 240)</h1>
       </header>
       <a href="#form240prem" class="btn btn-warning text-white">Заказать услугу</a>
     </section>
@@ -150,7 +150,7 @@
                       <ion-icon name="clipboard-outline"></ion-icon>
                     </div>
                     <p class="lead card-text">
-                      2) Правильно заполненную декларацию по форме 240 в xml и
+                      2) Правильно заполненную декларацию по форме 270 / 240 в xml и/или
                       pdf формате
                     </p>
                   </div>
@@ -227,7 +227,7 @@
                       />
                     </div>
 
-                    <p class="lead card-text">Оплата услуги</p>
+                    <p class="lead card-text">Оплата и оказание услуги</p>
                   </div>
                 </div>
               </div>
@@ -265,7 +265,7 @@
                     подлежащего к уплате.
                   </li>
                   <li>
-                    Подготовка налоговой декларации по форме 240 в xml и pdf
+                    Подготовка налоговой декларации по форме 270 / 240 в xml и/или pdf
                     формате<br />
                     (за один год).
                   </li>
@@ -976,7 +976,7 @@
                     подлежащего к уплате. <br />(+ корректировки и вычеты)
                   </li>
                   <li>
-                    Подготовка налоговой декларации по форме 240 в xml и pdf
+                    Подготовка налоговой декларации по форме 270 / 240 в xml и/или pdf
                     формате <br />(за один год).
                   </li>
                   <li>
@@ -1018,7 +1018,7 @@
                   </li>
 
                   <li>
-                    Подготовка налоговой декларации по форме 240 в xml и pdf
+                    Подготовка налоговой декларации по форме 270 / 240 в xml и/или pdf
                     формате <br />
                     (за один год).
                   </li>
@@ -1051,5 +1051,47 @@
     </section>
     <div class="container">
       *Расчет стоимости услуг производится после анализа всех документов.
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" slide="" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title h4" id="exampleModalFullscreenLabel">
+              Пояснение
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img class="img-fluid px-md-5 d-md-block" src="style/img/slide1.png" alt="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" href="#exampleModalToggle" data-bs-toggle="modal" role="button">
+              Вернуться к форме
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModalFullscreen2" tabindex="-1" aria-labelledby="exampleModalFullscreen2Label" slide="" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title h4" id="exampleModalFullscreen2Label">
+              Пояснение
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img class="img-fluid px-md-5 d-md-block" src="style/img/slide2.png" alt="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" href="#exampleModalToggle" data-bs-toggle="modal" role="button">
+              Вернуться к форме
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 {{ end }}
