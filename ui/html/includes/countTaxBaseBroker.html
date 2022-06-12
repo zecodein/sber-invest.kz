@@ -1,1097 +1,662 @@
 {{ define "content" }}
-    <section
-      class="text-white p-lg-50 text-center pt-5"
-      style="
-        height: 500px;
-        background:
-      /* top, transparent black, faked with gradient */ linear-gradient(
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)
-          ),
-          /* bottom, image */ url(static/css/img/taxreturn.jpg);
-        background-repeat: no-repeat;
-        text-align: center;
-        background-size: cover;
-        background-position: right;
+<!-- video wrapper for demo -->
+<section id="bgphotoindex" class="text-white text-center" style="
+    height: 50vh;
+    background:
+  /* top, transparent black, faked with gradient */ linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ),
+      /* bottom, image */ url(static/css/img/taxreturn.jpg);
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: cover;
+  ">
+  <div id="videoMessage" style="height: 30%" class="styling text-white">
+    <header class="header show-on-scroll h-20 pt-5"
+      style="display: flex; flex-direction: column; justify-content: center">
+      <h2 class="heading">Инструмент</h2>
+      <h1 class="heading text-warning">НАЛОГОВЫЙ КОНСУЛЬТАНТ</h1>
+      <h4 class="heading">Как быть если у меня много сделок?</h4>    
+    </header>
+    <a href="#form240prem" class="btn btn-warning text-white">Заказать расчет</a>
+  </div>
+</section>
 
-      "
-    >
-      <header
-        class="header show-on-scroll h-50 pt-5"
-        style="display: flex; flex-direction: column; justify-content: center"
-      >
-        <h2 class="heading">Подготовка</h2>
-        <h1 class="heading text-warning">НАЛОГОВОЙ ДЕКЛАРАЦИИ (ФНО 270 / 240)</h1>
+<div id="videowrapper">
+  <div id="fullScreenDiv">
+    <video id="video" role="presentation" preload="auto" playsinline="" crossorigin="anonymous" loop="" muted=""
+      autoplay="" class="blur">
+      <source src="static/css/img/demosoft.mp4" type="video/webm">
+      <source src="static/css/img/demosoft.mp4" type="video/mp4">
+    </video>
+    <div id="videoMessage" class="styling text-white">
+
+      <header class="header show-on-scroll h-20 pt-5"
+        style="display: flex; flex-direction: column; justify-content: center">
+        <h2 class="heading">Инструмент</h2>
+        <h1 class="heading text-warning">НАЛОГОВЫЙ КОНСУЛЬТАНТ</h1>
+        <h4 class="heading">Как быть если у меня много сделок?</h4>
       </header>
-      <a href="#form240prem" class="btn btn-warning text-white">Заказать услугу</a>
-    </section>
+      <a href="#form240prem" class="btn btn-warning text-white">Заказать расчет</a>
+    </div>
+  </div>
+</div>
 
-    <section class="bg-white text-dark my-sm-5 py-5 px-3 text-start">
-      <div class="container"></div>
-        <div class="row">
-          <div
-            class="col-md-4 d-flex justify-content-center align-items-center text-center align-content-center"
-          >
-            <img
-              class="img-fluid d-block img-width"
-              src="static/css/img/icon-tax-rk-0bg.png"
-              alt="img"
-              width="250px"
-            />
-          </div>
-          <div
-            class="col-md-8 d-md-flex align-items-center justify-content-between"
-          >
-            <div class="lead">
-              <!-- <h1>Blablabla <span class="text-warning">blaaa</span></h1> -->
-              <p class="my-4">
-                <span class="h2"
-                  ><span class="text-warning">В Казахстане</span></span
-                ><br />
-                физическое лицо/инвестор обязано декларировать все свои доходы,
-                не облагающиеся налогом у источника выплаты (сделки с ценными
-                бумагами, дивиденды зарубежных компаний и др). Согласно
-                налоговому кодексу, подоходный налог в таком случае инвестор
-                должен рассчитать и уплатить самостоятельно. Кроме того,
-                физическое лицо должно в обязательном порядке отражать все свое
-                зарубежное имущество в информативной секции декларации.
-              </p>
-            </div>
-          </div>
-        </div>
+<!-- in kaz -->
+<section class="bg-white text-dark my-sm-5 py-5 px-3 text-start">
+  <div class="container"></div>
+  <div class="row">
+    <div class="col-md-4 d-flex justify-content-center align-items-center text-center align-content-center">
+      <img class="img-fluid d-block img-width" src="static/css/img/icon-tax-rk-0bg.png" alt="img" width="250px" />
+    </div>
+    <div class="col-md-8 d-md-flex align-items-center justify-content-between">
+      <div class="lead">
+        <!-- <h1>Blablabla <span class="text-warning">blaaa</span></h1> -->
+        <p class="my-4">
+          <span class="h2"><span class="text-warning">В Казахстане</span></span><br />
+          Физическое лицо/инвестор обязано декларировать все свои доходы, (сделки с ценными бумагами, дивиденды зарубежных компаний и др). Согласно налоговому кодексу, инвестор должен самостоятельно рассчитать налогооблагаемый доход и подоходный налог для каждой сделки. 
+        </p>
       </div>
-    </section>
+    </div>
+  </div>
+  </div>
+</section>
 
-    <!-- Investor -->
-    <section
-      id="learn"
-      class="py-5 text-light"
-      style="background-color: #122448"
-    >
-      <div class="container">
-        <div class="aligh-items-center justify-content-between">
-          <div class="p-md-5">
-            <p class="lead display-6 text-center" style="font-size: 1.5rem">
-              У инвестора есть <span class="text-warning">два пути</span>:
-            </p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg">
-            <div class="row aligh-items-center justify-content-between">
-              <div class="col-md-4 p-5 text-center">
-                <ion-icon name="bicycle-outline"></ion-icon>
-              </div>
-              <div class="col-md-8 p-md-5">
-                <p class="lead">
-                  Cамостоятельно подготовить расчёт и все документы. Вам поможет
-                  <a href="NalInvVKaz.html">Курс «Налоги инвестора в Казахстане»</a
-                  >.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg">
-            <div class="row aligh-items-center justify-content-between">
-              <div
-                class="col-md-4 p-5 text-center justify-content-center align-content-center"
-              >
-                <ion-icon name="rocket-outline"></ion-icon>
-              </div>
-              <div class="col-md-8 p-md-5">
-                <p class="lead">
-                  Поручить подготовку своей декларации специалистам. Наша
-                  команда возьмёт все на себя. Вам останется только подать
-                  декларацию онлайн через кабинет налогоплательщика и вовремя
-                  заплатить налог.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+<!-- Investor -->
+<section id="learn" class="py-5 text-light" style="background-color: #122448">
+  <div class="container">
+    <div class="aligh-items-center justify-content-between">
+      <div class="p-md-5">
+        <p class="lead display-6 text-center" style="font-size: 1.5rem">
+          У инвестора есть <span class="text-warning">выбор</span>:
+        </p>
       </div>
-    </section>
+    </div>
 
-    <!-- Что вы получите -->
-    <section id="learn" class="py-5 bg-dark text-light">
-      <div class="container">
-        <div class="aligh-items-center justify-content-between">
-          <div class="p-md-5 text-center">
-            <h2 class="mb-3">Что вы получите?</h2>
+
+    <div class="row">
+
+      <div class="col-xl">
+        <div class="row aligh-items-center justify-content-between">
+          <div class="col-md-4 p-5 text-center">
+            <ion-icon name="bicycle-outline"></ion-icon>
+          </div>
+          <div class="col-md-8 p-md-5">
             <p class="lead">
-              Мы будем работать с Вами от нескольких дней до двух недель для
-              того, чтобы собрать всю необходимую информацию. Подготовка самой
-              декларации займет не более 3-х рабочих дней. По завершению мы
-              предоставим:
+              Вести учет сделок в течении года (например в экселе),и когда придет время подготовить расчёт и подать декларацию самостоятельно
+              <a href="NalInvVKaz.html">Курс «Налоги инвестора в Казахстане»</a> наши 
+              <a href="https://www.youtube.com/watch?v=53TEGwfAN3I&t=53s">бесплатные видео инструкции на Youtube</a>.
             </p>
+          </div>
+        </div>
+      </div>
 
-            <div class="row text-center gy-4">
-              <div class="col-md">
-                <div class="text-light">
-                  <div class="card-body p-0 text-left">
-                    <div class="mb-3">
-                      <ion-icon name="calculator-outline"></ion-icon>
-                    </div>
-                    <p class="lead card-text">
-                      1) Расчет налогооблагаемой базы и налога, подлежащего к
-                      уплате с учетом индивидуальных особенностей инвестора
-                      (корректировок и вычетов)
-                    </p>
-                  </div>
+      <div class="col-xl">
+        <div class="row aligh-items-center justify-content-between">
+          <div class="col-md-4 p-5 text-center justify-content-center align-content-center">
+            <ion-icon name="boat-outline"></ion-icon>
+          </div>
+          <div class="col-md-8 p-md-5">
+            <p class="lead">
+              Заказать расчет у Сбережения и Инвестиции, и уже по нему подготовить декларацию следуя нашей бесплатной инструкции в Youtube. Вам поможет инструмент “Налоговый консультант” и наши 
+              <a href="https://www.youtube.com/watch?v=53TEGwfAN3I&t=53s">бесплатные видео инструкции на Youtube</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl">
+        <div class="row aligh-items-center justify-content-between">
+          <div class="col-md-4 p-5 text-center justify-content-center align-content-center">
+            <ion-icon name="rocket-outline"></ion-icon>
+          </div>
+          <div class="col-md-8 p-md-5">
+            <p class="lead">
+              Полностью поручить подготовку своей декларации специалистам. Наша команда возьмет на себя подготовку всех документов. Вам останется только подать декларацию онлайн через кабинет налогоплательщика и вовремя заплатить налог. Вам поможет услуга 
+              <a href="taxreturn.html">«Подготовить налоговую декларацию»</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Что вы получите -->
+<section id="learn" class="py-5 bg-dark text-light">
+  <div class="container">
+    <div class="aligh-items-center justify-content-between">
+      <div class="p-md-5 text-center">
+        <h2 class="mb-3">Что вы получите?</h2>
+        <p class="lead">
+          Если вы активный инвестор с большим количеством сделок, вариант заказать расчет и уже по нему готовить декларацию может быть единственно верным:
+        </p>
+
+        <div class="row text-center gy-4">
+          <!-- <div class="col-md">
+            <div class="text-light">
+              <div class="card-body p-0 text-left">
+                <div class="mb-3">
+                  <ion-icon name="calculator-outline"></ion-icon>
                 </div>
+                <p class="lead card-text">
+                  1) Отчет “Налоговый консультант” с расчетом налогооблагаемой базы и ИПН подлежащего к уплате
+                </p>
               </div>
+            </div>
+          </div> -->
 
-              <div class="col-md">
-                <div class="text-light">
-                  <div class="card-body p-0 text-left">
-                    <div class="mb-3">
-                      <ion-icon name="clipboard-outline"></ion-icon>
-                    </div>
-                    <p class="lead card-text">
-                      2) Правильно заполненную декларацию по форме 270 / 240 в xml и/или
-                      pdf формате
-                    </p>
-                  </div>
+          <div class="col-md">
+            <div class="text-light">
+              <div class="card-body p-0 text-left">
+                <div class="mb-3">
+                  <ion-icon name="clipboard-outline"></ion-icon>
                 </div>
+                <p class="lead card-text">
+                  1) Отчет “Налоговый консультант” с расчетом налогооблагаемой базы и ИПН подлежащего к уплате
+                </p>
               </div>
+            </div>
+          </div>
 
-              <div class="col-lg">
-                <div class="text-light">
-                  <div class="card-body p-0 text-left">
-                    <div class="mb-3">
-                      <ion-icon name="map-outline"></ion-icon>
-                    </div>
-
-                    <p class="lead card-text">
-                      3) Пошаговую инструкцию по подаче декларации в электронном
-                      или бумажном виде
-                    </p>
-                  </div>
+          <div class="col-lg">
+            <div class="text-light">
+              <div class="card-body p-0 text-left">
+                <div class="mb-3">
+                  <ion-icon name="map-outline"></ion-icon>
                 </div>
+
+                <p class="lead card-text">
+                  2) Пошаговая инструкция заполнения декларации по форме 240
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="bg-light text-dark py-5 p-lg-0 text-center text-sm-start">
-      <div class="container">
-        <div class="aligh-items-center justify-content-between">
-          <div class="p-md-5 text-center">
-            <h2>Как это работает?</h2>
-            <br />
-            <div class="row text-center gy-4">
-              <div class="col-md">
-                <div class="text-dark">
-                  <div class="card-body p-0 text-center">
-                    <div class="mb-3">
-                      <img
-                        src="https://img.icons8.com/ios/50/5b9bd5/1-circle.png/"
-                      />
-                    </div>
-                    <p class="lead card-text">Заполнение анкеты (на сайте)</p>
-                  </div>
+<!-- How it works -->
+<!-- <section class="bg-light text-dark py-5 p-lg-0 text-center text-sm-start">
+  <div class="container">
+    <div class="aligh-items-center justify-content-between">
+      <div class="p-md-5 text-center">
+        <h2>Как это работает?</h2>
+        <br />
+        <div class="row text-center gy-4">
+          <div class="col-md">
+            <div class="text-dark">
+              <div class="card-body p-0 text-center">
+                <div class="mb-3">
+                  <img src="https://img.icons8.com/ios/50/5b9bd5/1-circle.png/" />
                 </div>
+                <p class="lead card-text">Заполнение анкеты (на сайте)</p>
               </div>
-              <div class="col col-md-1">
-                <div class="h1 text-center">+</div>
-              </div>
+            </div>
+          </div>
+          <div class="col col-md-1">
+            <div class="h1 text-center">+</div>
+          </div>
 
-              <div class="col-md">
-                <div class="text-dark">
-                  <div class="card-body p-0 text-left">
-                    <div class="mb-3">
-                      <img
-                        src="https://img.icons8.com/ios/50/5b9bd5/2-circle.png"
-                      />
-                    </div>
-                    <p class="lead card-text">
-                      Согласование объема работ и стоимости
-                    </p>
-                  </div>
+          <div class="col-md">
+            <div class="text-dark">
+              <div class="card-body p-0 text-left">
+                <div class="mb-3">
+                  <img src="https://img.icons8.com/ios/50/5b9bd5/2-circle.png" />
                 </div>
+                <p class="lead card-text">
+                  Согласование объема работ и стоимости
+                </p>
               </div>
-              <div class="col col-md-1">
-                <div class="h1 text-center">+</div>
-              </div>
+            </div>
+          </div>
+          <div class="col col-md-1">
+            <div class="h1 text-center">+</div>
+          </div>
 
-              <div class="col-md">
-                <div class="text-dark">
-                  <div class="card-body p-0 text-left">
-                    <div class="mb-3">
-                      <img
-                        src="https://img.icons8.com/ios/50/5b9bd5/3-circle.png"
-                      />
-                    </div>
-
-                    <p class="lead card-text">Оплата и оказание услуги</p>
-                  </div>
+          <div class="col-md">
+            <div class="text-dark">
+              <div class="card-body p-0 text-left">
+                <div class="mb-3">
+                  <img src="https://img.icons8.com/ios/50/5b9bd5/3-circle.png" />
                 </div>
+
+                <p class="lead card-text">Оплата и оказание услуги</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section> -->
 
-    <!-- Costs -->
-    <section>
-      <div class="container">
-        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-          <h1 class="display-4 fw-normal">Стоимость пакетов услуг</h1>
-          <p class="fs-5 text-muted"></p>
-        </div>
+<!-- Costs -->
+<section>
+  <div class="container">
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <strong class="h1 fw-bold">Стоимость</strong>
+      <p class="fs-5 text-muted"></p>
+    </div>
 
-        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm border-warning minPacket">
-              <div
-                class="card-header py-2 text-white bg-warning border-warning"
-              >
-                <h4 class="my-0 fw-normal">Минимальный</h4>
-                <hr class="my-2" />
-                <h4 class="my-0 fw-normal py-0">Налоговая декларация</h4>
-              </div>
-              <div class="card-body d-flex flex-column">
-                <h1 class="card-title pricing-card-title">
-                  от 20 тыс. тенге*<small class="text-muted fw-light"></small>
-                </h1>
-                <ul class="list-group-flush mt-3 mb-4 text-start">
-                  <li>
-                    Подготовка расчета налогооблагаемой базы и налога,
-                    подлежащего к уплате.
-                  </li>
-                  <li>
-                    Подготовка налоговой декларации по форме 270 / 240 в xml и/или pdf
-                    формате<br />
-                    (за один год).
-                  </li>
-                  <li>
-                    Стоимость налоговой декларации с информативной секцией и
-                    дивидендами составит 20 000 тенге. Сделки по реализации
-                    ценных бумаг увеличивают стоимость.
-                  </li>
-                </ul>
-                <button
-                  id="form240min"
-                  class="btn btn-warning w-50 mt-auto mx-auto ZakazUsl"
-                  data-bs-toggle="modal"
-                  href="#exampleModalToggle"
-                  role="button"
-                >
-                  Заказать услугу
-                </button>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
 
-                <!-- MODAL -->
-
-                <!-- Large modal -->
-                <!-- <button type="button" class="btn btn-primary" >Large
-                modal</button> -->
-
-                <div
-                  class="modal fade"
-                  id="exampleModalToggle"
-                  aria-hidden="true"
-                  aria-labelledby="exampleModalToggleLabel"
-                  tabindex="-1"
-                >
-                  <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalToggleLabel">
-                          Отправить заявку
-                        </h5>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                      <div class="modal-body text-start">
-                        <form id="form" method="post">
-                          <!-- Form fields need name and value attributes -->
-                          <div class="container p-0">
-                            <div class="m-3">
-                              <h1 class="h3 d-inline pt-5 align-middle">
-                                Форма заказа
-                              </h1>
-                            </div>
-  
-                            <div class="row">
-                              <div class="col-12 col-lg-6">
-                                <div class="card">
-                                  <div
-                                    class="card-header"
-                                    style="background-color: orange"
-                                  >
-                                    <h5 class="card-title mb-0">Пакет</h5>
-                                  </div>
-                                  <div class="card-body form-control">
-                                    <div class="form-group">
-                                      <label for="tarifOptions"></label>
-                                      <select
-                                        class="form-control"
-                                        id="tarifOptions"
-                                      >
-                                        <option value="min">
-                                          Минимальный - Налоговая декларация
-                                        </option>
-                                        <option value="stand">
-                                          Стандартный - Налоговая декларация+
-                                        </option>
-                                        <option value="prem">
-                                          Премиум - Налоговая декларация+++
-                                        </option>
-                                      </select>
-                                    </div>
-                                    <p
-                                      id="price"
-                                      class="card-title mb-0 mt-1"
-                                    ></p>
-                                  </div>
-                                </div>
-  
-                                <div class="card">
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span> Фамилия
-                                    </h5>
-                                  </div>
-                                  <div class="card-body form-control">
-                                    <input
-                                      id="surname"
-                                      type="text"
-                                      name="surname"
-                                      class="form-control"
-                                      placeholder="Фамилия"
-                                    />
-                                    <small>Error Message</small>
-                                  </div>
-                                </div>
-  
-                                <div class="card">
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span> Имя
-                                    </h5>
-                                  </div>
-                                  <div class="card-body form-control">
-                                    <input
-                                      type="text"
-                                      id="name"
-                                      name="name"
-                                      class="form-control"
-                                      placeholder="Имя"
-                                    />
-                                    <small>Error Message</small>
-                                  </div>
-                                </div>
-  
-                                <div class="card">
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">Отчество</h5>
-                                  </div>
-                                  <div class="card-body">
-                                    <input
-                                      id="lastname"
-                                      type="text"
-                                      name="patronomic"
-                                      class="form-control"
-                                      placeholder="Отчество"
-                                    />
-                                  </div>
-                                </div>
-  
-                                <div class="card">
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span>
-                                      Электроная почта
-                                    </h5>
-                                  </div>
-                                  <div class="card-body form-control">
-                                    <input
-                                      id="email"
-                                      type="text"
-                                      name="email"
-                                      class="form-control"
-                                      placeholder="e-mail"
-                                    />
-                                    <small>Error Message</small>
-                                  </div>
-                                </div>
-  
-                                <div class="card">
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span> Телефон
-                                      для связи (сотовый)
-                                    </h5>
-                                  </div>
-                                  <div class="card-body form-control">
-                                    <input
-                                      id="tel"
-                                      type="tel"
-                                      name="mobile"
-                                      class="form-control"
-                                      pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                      value="+7"
-                                    />
-                                    <small>Error Message</small>
-                                  </div>
-                                </div>
-  
-                                <div class="card">
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span>
-                                      Гражданство
-                                    </h5>
-                                  </div>
-                                  <div class="card-body form-control">
-                                    <input
-                                      id="citizen"
-                                      type="text"
-                                      name="citizen"
-                                      class="form-control"
-                                      placeholder="Казахстан"
-                                    />
-                                    <small>Error Message</small>
-                                  </div>
-                                </div>
-  
-                                <div class="card">
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span> Адрес
-                                      прописки (полный)
-                                    </h5>
-                                  </div>
-                                  <div class="card-body form-control">
-                                    <input
-                                      id="adressProp"
-                                      type="text"
-                                      name="adressregistration"
-                                      class="form-control"
-                                    />
-                                    <small>Error Message</small>
-                                  </div>
-                                </div>
-  
-                                <div class="card">
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span> Адрес
-                                      проживания
-                                    </h5>
-                                    <input
-                                      id="adressSame"
-                                      class="form-check-input"
-                                      type="checkbox"
-                                      value=""
-                                      id="flexCheckDefault"
-                                    />
-                                    <label
-                                      class="form-check-label fs-6"
-                                      for="flexCheckDefault"
-                                    >
-                                      Такой же как адрес прописки?
-                                    </label>
-                                  </div>
-                                  <div class="card-body form-control">
-                                    <input
-                                      id="adressProzh"
-                                      type="text"
-                                      name="adress"
-                                      class="form-control"
-                                    />
-                                    <small>Error Message</small>
-                                  </div>
-                                </div>
-                              </div>
-  
-                              <div class="col-12 col-lg-6">
-                                <div class="card">
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span> Вы
-                                      налоговый резидент РК в
-                                      <span
-                                        data-container="body"
-                                        data-toggle="popover"
-                                        data-placement="top"
-                                        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-                                        class=""
-                                        >отчетном периоде</span
-                                      >
-                                      (календарный год)?
-                                      <div
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#exampleModalFullscreen"
-                                        class="btn btn-outline-secondary m-0 p-0 px-2"
-                                      >
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
-                                        <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5ZM8 8.46 1.758 5.965 8 3.052l6.242 2.913L8 8.46Z"/>
-                                        <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46l-3.892-1.556Z"/>
-                                      </svg>
-                                    </div>
-                                    </h5>
-                                  </div>
-  
-                                  <div class="card-body">
-                                    <div>
-                                      <label class="form-check form-check-inline">
-                                        <input
-                                          class="form-check-input"
-                                          type="radio"
-                                          name="taxresident"
-                                          value="Yes"
-                                        />
-                                        <span class="form-check-label"> Да </span>
-                                      </label>
-                                      <label class="form-check form-check-inline">
-                                        <input
-                                          class="form-check-input"
-                                          type="radio"
-                                          name="taxresident"
-                                          value="No"
-                                          checked
-                                        />
-                                        <span class="form-check-label">
-                                          Нет
-                                        </span>
-                                      </label>
-                                      <label class="form-check form-check-inline">
-                                        <input
-                                          class="form-check-input"
-                                          type="radio"
-                                          name="taxresident"
-                                          value="IDK"
-                                        />
-                                        <span class="form-check-label">
-                                          Не знаю
-                                        </span>
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-  
-                                <div class="card">
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span> У вас
-                                      были операции по продаже ценных бумаг в
-                                      отчетном периоде? (календарный год)
-                                    </h5>
-                                  </div>
-                                  <div class="card-body">
-                                    <div>
-                                      <label class="form-check">
-                                        <input
-                                          id="sale1"
-                                          class="form-check-input"
-                                          oninput='on_change("sale1","KolOpPoPro")'
-                                          type="radio"
-                                          name="sale1"
-                                          value="Yes"
-                                        />
-                                        <span class="form-check-label"> Да </span>
-                                      </label>
-                                      <label class="form-check">
-                                        <input
-                                          class="form-check-input"
-                                          oninput='on_change("sale1","KolOpPoPro")'
-                                          type="radio"
-                                          name="sale1"
-                                          value="No"
-                                          checked
-                                        />
-                                        <span class="form-check-label">
-                                          Нет
-                                        </span>
-                                      </label>
-                                      <label class="form-check">
-                                        <input
-                                          class="form-check-input"
-                                          oninput='on_change("sale1","KolOpPoPro")'
-                                          type="radio"
-                                          name="sale1"
-                                          value="IDK"
-                                        />
-                                        <span class="form-check-label">
-                                          Не знаю
-                                        </span>
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-  
-                                <div
-                                  class="card"
-                                  id="KolOpPoPro"
-                                  style="display: none"
-                                >
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span> Укажите
-                                      количество операций по продаже ценных бумаг
-                                      за отчетный период (календарный год)
-                                    </h5>
-                                  </div>
-  
-                                  <div class="card-body">
-                                    <div>
-                                      <label class="form-check">
-                                        <input
-                                          class="form-check-input"
-                                          type="radio"
-                                          value="Менее 50"
-                                          name="sale1quantradio"
-                                        />
-                                        <span class="form-check-label">
-                                          Менее 50
-                                        </span>
-                                      </label>
-                                      <label class="form-check">
-                                        <input
-                                          class="form-check-input"
-                                          type="radio"
-                                          value="50-100"
-                                          name="sale1quantradio"
-                                        />
-                                        <span class="form-check-label">
-                                          50-100
-                                        </span>
-                                      </label>
-                                      <label class="form-check">
-                                        <input
-                                          class="form-check-input"
-                                          type="radio"
-                                          value="более 100"
-                                          name="sale1quantradio"
-                                        />
-                                        <span class="form-check-label">
-                                          более 100
-                                        </span>
-                                      </label>
-                                    </div>
-                                  </div>
-  
-                                  <div
-                                    class="card-body form-control"
-                                    style="display: none"
-                                  >
-                                    <input
-                                      type="text"
-                                      name="sale1quant"
-                                      id="sale1quant"
-                                      class="form-control"
-                                      placeholder="Менее 50, 50-100 или более 100"
-                                    />
-                                  </div>
-                                </div>
-  
-                                <div class="card">
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span> Вы
-                                      получали дивиденды в отчетном периоде
-                                      (календарный год)?
-                                    </h5>
-                                  </div>
-                                  <div class="card-body">
-                                    <div>
-                                      <label class="form-check">
-                                        <input
-                                          class="form-check-input"
-                                          type="radio"
-                                          value="Yes"
-                                          name="dividend"
-                                        />
-                                        <span class="form-check-label"> Да </span>
-                                      </label>
-                                      <label class="form-check">
-                                        <input
-                                          class="form-check-input"
-                                          type="radio"
-                                          value="No"
-                                          name="dividend"
-                                          checked
-                                        />
-                                        <span class="form-check-label">
-                                          Нет
-                                        </span>
-                                      </label>
-                                      <label class="form-check">
-                                        <input
-                                          class="form-check-input"
-                                          type="radio"
-                                          value="IDK"
-                                          name="dividend"
-                                        />
-                                        <span class="form-check-label">
-                                          Не знаю
-                                        </span>
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-  
-                                <div class="card">
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span> Есть ли
-                                      основания для включения в налоговую
-                                      декларацию других доходов (продажа
-                                      имущества, авто, получения других доходов)?
-                                    </h5>
-                                  </div>
-                                  <div class="card-body">
-                                    <div>
-                                      <label class="form-check">
-                                        <input
-                                          id="includedeclr"
-                                          class="form-check-input"
-                                          type="radio"
-                                          value="Yes"
-                                          name="includedeclr"
-                                          oninput='on_change("includedeclr","UkKaDrSd")'
-                                        />
-                                        <span class="form-check-label"> Да </span>
-                                      </label>
-                                      <label class="form-check">
-                                        <input
-                                          class="form-check-input"
-                                          type="radio"
-                                          value="No"
-                                          name="includedeclr"
-                                          checked
-                                          oninput='on_change("includedeclr","UkKaDrSd")'
-                                        />
-                                        <span class="form-check-label">
-                                          Нет
-                                        </span>
-                                      </label>
-                                      <label class="form-check">
-                                        <input
-                                          class="form-check-input"
-                                          type="radio"
-                                          value="IDK"
-                                          name="includedeclr"
-                                          oninput='on_change("includedeclr","UkKaDrSd")'
-                                        />
-                                        <span class="form-check-label">
-                                          Не знаю
-                                        </span>
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-  
-                                <div
-                                  class="card"
-                                  id="UkKaDrSd"
-                                  style="display: none"
-                                >
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span> Укажите
-                                      какие другие сделки и доходы у вас были за
-                                      отчетный период (календарный год).
-                                    </h5>
-                                  </div>
-                                  <div class="card-body form-control">
-                                    <input
-                                      type="text"
-                                      name="otherdeal"
-                                      id="otherdeal"
-                                      class="form-control"
-                                      placeholder="Введите другие сделки"
-                                    />
-                                    <small>Error Message</small>
-                                  </div>
-                                </div>
-  
-                                <div class="card">
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span> Есть ли
-                                      основания для налоговых вычетов
-                                      (стандартные, другие)?
-                                      <div
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#exampleModalFullscreen2"
-                                        class="btn btn-outline-secondary m-0 p-0 px-2"
-                                      >
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
-                                        <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5ZM8 8.46 1.758 5.965 8 3.052l6.242 2.913L8 8.46Z"/>
-                                        <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46l-3.892-1.556Z"/>
-                                      </svg>
-                                    </div>
-                                    </h5>
-                                  </div>
-                                  <div class="card-body">
-                                    <div>
-                                      <label class="form-check">
-                                        <input
-                                          id="taxdeduct"
-                                          class="form-check-input"
-                                          type="radio"
-                                          value="Yes"
-                                          name="taxdeduct"
-                                          oninput='on_change("taxdeduct","UkazhiOsnovDla")'
-                                        />
-                                        <span class="form-check-label"> Да </span>
-                                      </label>
-                                      <label class="form-check">
-                                        <input
-                                          class="form-check-input"
-                                          type="radio"
-                                          value="No"
-                                          name="taxdeduct"
-                                          checked
-                                          oninput='on_change("taxdeduct","UkazhiOsnovDla")'
-                                        />
-                                        <span class="form-check-label">
-                                          Нет
-                                        </span>
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-  
-                                <div
-                                  class="card"
-                                  id="UkazhiOsnovDla"
-                                  style="display: none"
-                                >
-                                  <div class="card-header">
-                                    <h5 class="card-title mb-0">
-                                      <span class="text-danger">*</span> Укажите
-                                      основания для каких налоговых вычетов у вас
-                                      есть.
-                                    </h5>
-                                  </div>
-                                  <div class="card-body form-control">
-                                    <input
-                                      type="text"
-                                      name="taxdeduct1"
-                                      id="taxdeduct1"
-                                      class="form-control"
-                                      placeholder="Введите какие именно вычеты"
-                                    />
-                                    <small>Error Message</small>
-                                  </div>
-                                </div>
-                                <div class="container">
-                                  Поля отмеченные
-                                  <span class="text-danger">*</span> - обязательны
-                                  к заполнению
-                                </div>
-                                <div class="container">
-                                  <div class="row mt-2">
-                                    <div class="col-1">
-                                      <input
-                                        id="PolitikaKonf"
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        value=""
-                                        id="flexCheckDefault"
-                                      />
-                                    </div>
-                                    <div class="col-11">
-                                      <label
-                                        required
-                                        class="form-check-label"
-                                        for="flexCheckDefault"
-                                        >«С
-                                        <a
-                                          href="privacyPolicy.html"
-                                          class="text-decoration-underline"
-                                          target="_blank"
-                                          >политикой конфиденциальности</a
-                                        >
-                                        и
-                                        <a
-                                          href="contractOffer.html"
-                                          target="_blank"
-                                          class="DogOfr text-decoration-underline"
-                                          >договором оказания услуг</a
-                                        >
-                                        (договор - оферта) ознакомлен. С правилами
-                                        оказания услуг согласен»
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="container">
-                                  <div
-                                    class="text-center mt-1"
-                                    id="feedback"
-                                  ></div>
-                                  <button
-                                    type="Submit"
-                                    id="submit"
-                                    class="btn btn-success my-3 w-100"
-                                  >
-                                    Отправить заявку
-                                  </button>
-                                </div>
-                                <div class="container">
-                                  <span class="text-danger">*</span> Нажимая на
-                                  кнопку, вы соглашаетесь на обработку
-                                  персональных данных.
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+      <div class="col-md-6">
+        <div class="card mb-4 rounded-3 shadow-sm border-warning stdPacket">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title pricing-card-title">
+              от 10 тыс. тенге*<small class="text-muted fw-light"></small>
+            </h1>
+            <div class="list-group-flush mt-3 mb-4 text-start">
+              <div class="text-center lead">
+                *+ 5 тыс. тенге за каждый дополнительный отчет брокера в заказе.
               </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm border-success stdPacket">
-              <div
-                class="card-header py-2 text-white bg-success border-success"
-              >
-                <h4 class="my-0 fw-normal">Стандартный</h4>
-                <hr class="my-2" />
-                <h4 class="my-0 fw-normal py-0">Налоговая декларация+</h4>
-              </div>
-              <div class="card-body d-flex flex-column">
-                <h1 class="card-title pricing-card-title">
-                  от 50 тыс. тенге*<small class="text-muted fw-light"></small>
-                </h1>
-                <ul class="list-group-flush mt-3 mb-4 text-start">
-                  <li>
-                    Подготовка расчета налогооблагаемой базы и налога,
-                    подлежащего к уплате. <br />(+ корректировки и вычеты)
-                  </li>
-                  <li>
-                    Подготовка налоговой декларации по форме 270 / 240 в xml и/или pdf
-                    формате <br />(за один год).
-                  </li>
-                  <li>
-                    Анализ документов и индивидуальных особенностей инвестора на
-                    предмет применимых налоговых вычетов.
-                  </li>
-                </ul>
-                <button
-                  id="form240stand"
-                  class="btn btn-warning w-50 mt-auto mx-auto ZakazUsl"
-                  data-bs-toggle="modal"
-                  href="#exampleModalToggle"
-                  role="button"
-                >
-                  Заказать услугу
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div
-              class="card mb-4 rounded-3 shadow-sm border-primary premPacket"
+            <a
+              id="ZakazUsl"
+              data-bs-toggle="modal"
+              href="#exampleModalToggle"
+              role="button"
+              class="btn btn-warning mt-auto mx-auto text-white ZakazUsl"
+              >Заказать расчет</a
             >
-              <div
-                class="card-header py-2 text-white bg-primary border-primary"
-              >
-                <h4 class="my-0 fw-normal">Премиум</h4>
-                <hr class="my-2" />
-                <h4 class="my-0 fw-normal py-0">Налоговая декларация+++</h4>
+
+            <div
+              class="modal fade"
+              id="exampleModalToggle"
+              aria-hidden="true"
+              aria-labelledby="exampleModalToggleLabel"
+              tabindex="-1"
+            >
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel">
+                      Отправить заявку
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body text-start">
+                    <form id="form" method="post">
+                      <div class="card">
+                        <div class="card-header">
+                          <h5 class="card-title mb-0">
+                            <span class="text-danger">*</span> Имя
+                          </h5>
+                        </div>
+                        <div class="form-control">
+                          <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="form-control"
+                            placeholder="Иванов Иван"
+                          />
+                          <small>Заполните поле Имя</small>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="card-header">
+                          <h5 class="card-title mb-0">
+                            <span class="text-danger">*</span>
+                            Электроная почта
+                          </h5>
+                        </div>
+                        <div class="form-control">
+                          <input
+                            id="email"
+                            type="text"
+                            name="email"
+                            class="form-control"
+                            placeholder="IIvanov@gmail.com"
+                          />
+                          <small>Заполните поле Почта</small>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="card-header">
+                          <h5 class="card-title mb-0">
+                            <span class="text-danger">*</span> Телефон (сотовый)
+                          </h5>
+                        </div>
+                        <div class="form-control">
+                          <input
+                            id="tel"
+                            type="tel"
+                            name="mobile"
+                            class="form-control"
+                            placeholder="+7 777 777 77 77"
+                            pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                          />
+                          <small>Неверный номер</small>
+                        </div>
+                      </div>
+
+                      <div class="container" style="font-size: 14px">
+                        Поля отмеченные
+                        <span class="text-danger">*</span> - обязательны к
+                        заполнению
+                      </div>
+                      <div class="container">
+                        <div class="row mt-2">
+                          <div class="col-1 p-0">
+                            <input
+                              id="PolitikaKonf"
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                          </div>
+                          <div class="col-11 p-0 m-0">
+                            <label
+                              required=""
+                              style="font-size: 14px"
+                              class="form-check-label"
+                              for="flexCheckDefault"
+                              >«С
+                              <a
+                                href="privacyPolicy.html"
+                                class="text-decoration-underline"
+                                target="_blank"
+                                >политикой конфиденциальности</a
+                              > и <a
+                              href="contractOffer.html"
+                              class="text-decoration-underline"
+                              target="_blank"
+                              >договор оказания услуг</a
+                            > (договор - оферта) ознакомлен.»
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="container">
+                        <div class="text-center mt-1" id="feedback">
+                          <label
+                            style="
+                              display: none;
+                              border-radius: 1em;
+                              padding: 10px;
+                              border: solid red 2px;
+                            "
+                            class="text-danger text-center"
+                            >Заполните поля корректно</label
+                          >
+                        </div>
+                        <button
+                          type="Submit"
+                          id="submit"
+                          class="btn btn-success my-3 w-100"
+                        >
+                          Отправить
+                        </button>
+                      </div>
+                      <div class="container" style="font-size: 14px">
+                        <span class="text-danger">*</span> Нажимая на кнопку, вы
+                        соглашаетесь на обработку персональных данных.
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
-              <div class="card-body d-flex flex-column">
-                <h1 class="card-title pricing-card-title">
-                  от 100 тыс. тенге*<small class="text-muted fw-light"></small>
-                </h1>
-                <ul class="list-group-flush mt-3 mb-4 text-start">
-                  <li>
-                    Подготовка расчета налогооблагаемой базы и налога,
-                    подлежащего к уплате. <br />(+ корректировки и вычеты)
-                  </li>
-
-                  <li>
-                    Подготовка налоговой декларации по форме 270 / 240 в xml и/или pdf
-                    формате <br />
-                    (за один год).
-                  </li>
-
-                  <li>
-                    Анализ документов и индивидуальных особенностей инвестора на
-                    предмет применимых налоговых вычетов.
-                  </li>
-
-                  <li>
-                    Оптимизация налогообложения будущих периодов
-                    <br />(консультация с финансовым советником).
-                    Рассматриваются законные варианты снижения налогов.
-                  </li>
-                </ul>
-                <button
-                  id="form240prem"
-                  class="btn btn-warning w-50 mt-auto mx-auto ZakazUsl"
-                  data-bs-toggle="modal"
-                  href="#exampleModalToggle"
-                  role="button"
-                >
-                  Заказать услугу
-                </button>
+              <div
+                class="modal fade"
+                id="exampleModalToggle2"
+                aria-hidden="true"
+                aria-labelledby="exampleModalToggleLabel2"
+                tabindex="-1"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalToggleLabel2">
+                        Modal 2
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      Hide this modal and show the first with the button below.
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        class="btn btn-primary"
+                        data-bs-target="#exampleModalToggle"
+                        data-bs-toggle="modal"
+                        data-bs-dismiss="modal"
+                      >
+                        Back to first
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <div class="container">
-      *Расчет стоимости услуг производится после анализа всех документов.
-    </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" slide="" style="display: none;" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title h4" id="exampleModalFullscreenLabel">
-              Пояснение
-            </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img class="img-fluid px-md-5 d-md-block" src="style/img/slide1.png" alt="">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" href="#exampleModalToggle" data-bs-toggle="modal" role="button">
-              Вернуться к форме
-            </button>
+      <div class="col-md-6">
+        <div class="card mb-4 rounded-3 shadow-sm border-warning stdPacket">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title pricing-card-title">
+              от 30 тыс. тенге*<small class="text-muted fw-light"></small>
+            </h1>
+            <div class="list-group-flush mt-3 mb-4 text-start">
+              <div class="text-center lead">
+                *Расчет стоимости услуг производится после анализа всех
+                документов.
+              </div>
+            </div>
+            <a
+              id="ZakazUsl"
+              data-bs-toggle="modal"
+              href="#exampleModalToggle"
+              role="button"
+              class="btn btn-warning mt-auto mx-auto text-white ZakazUsl"
+              >Заказать услугу</a
+            >
+
+            <div
+              class="modal fade"
+              id="exampleModalToggle"
+              aria-hidden="true"
+              aria-labelledby="exampleModalToggleLabel"
+              tabindex="-1"
+            >
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel">
+                      Отправить заявку
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body text-start">
+                    <form id="form" method="post">
+                      <div class="card">
+                        <div class="card-header">
+                          <h5 class="card-title mb-0">
+                            <span class="text-danger">*</span> Имя
+                          </h5>
+                        </div>
+                        <div class="form-control">
+                          <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="form-control"
+                            placeholder="Иванов Иван"
+                          />
+                          <small>Заполните поле Имя</small>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="card-header">
+                          <h5 class="card-title mb-0">
+                            <span class="text-danger">*</span>
+                            Электроная почта
+                          </h5>
+                        </div>
+                        <div class="form-control">
+                          <input
+                            id="email"
+                            type="text"
+                            name="email"
+                            class="form-control"
+                            placeholder="IIvanov@gmail.com"
+                          />
+                          <small>Заполните поле Почта</small>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="card-header">
+                          <h5 class="card-title mb-0">
+                            <span class="text-danger">*</span> Телефон (сотовый)
+                          </h5>
+                        </div>
+                        <div class="form-control">
+                          <input
+                            id="tel"
+                            type="tel"
+                            name="mobile"
+                            class="form-control"
+                            placeholder="+7 777 777 77 77"
+                            pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                          />
+                          <small>Неверный номер</small>
+                        </div>
+                      </div>
+
+                      <div class="container" style="font-size: 14px">
+                        Поля отмеченные
+                        <span class="text-danger">*</span> - обязательны к
+                        заполнению
+                      </div>
+                      <div class="container">
+                        <div class="row mt-2">
+                          <div class="col-1 p-0">
+                            <input
+                              id="PolitikaKonf"
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                          </div>
+                          <div class="col-11 p-0 m-0">
+                            <label
+                              required=""
+                              style="font-size: 14px"
+                              class="form-check-label"
+                              for="flexCheckDefault"
+                              >«С
+                              <a
+                                href="privacyPolicy.html"
+                                class="text-decoration-underline"
+                                target="_blank"
+                                >политикой конфиденциальности</a
+                              > и <a
+                              href="contractOffer.html"
+                              class="text-decoration-underline"
+                              target="_blank"
+                              >договор оказания услуг</a
+                            > (договор - оферта) ознакомлен.»
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="container">
+                        <div class="text-center mt-1" id="feedback">
+                          <label
+                            style="
+                              display: none;
+                              border-radius: 1em;
+                              padding: 10px;
+                              border: solid red 2px;
+                            "
+                            class="text-danger text-center"
+                            >Заполните поля корректно</label
+                          >
+                        </div>
+                        <button
+                          type="Submit"
+                          id="submit"
+                          class="btn btn-success my-3 w-100"
+                        >
+                          Отправить
+                        </button>
+                      </div>
+                      <div class="container" style="font-size: 14px">
+                        <span class="text-danger">*</span> Нажимая на кнопку, вы
+                        соглашаетесь на обработку персональных данных.
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="modal fade"
+                id="exampleModalToggle2"
+                aria-hidden="true"
+                aria-labelledby="exampleModalToggleLabel2"
+                tabindex="-1"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalToggleLabel2">
+                        Modal 2
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      Hide this modal and show the first with the button below.
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        class="btn btn-primary"
+                        data-bs-target="#exampleModalToggle"
+                        data-bs-toggle="modal"
+                        data-bs-dismiss="modal"
+                      >
+                        Back to first
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
-    <div class="modal fade" id="exampleModalFullscreen2" tabindex="-1" aria-labelledby="exampleModalFullscreen2Label" slide="" style="display: none;" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title h4" id="exampleModalFullscreen2Label">
-              Пояснение
-            </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img class="img-fluid px-md-5 d-md-block" src="style/img/slide2.png" alt="">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" href="#exampleModalToggle" data-bs-toggle="modal" role="button">
-              Вернуться к форме
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
+</section>
 {{ end }}
