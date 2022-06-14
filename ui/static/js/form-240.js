@@ -1,7 +1,7 @@
-function handleSubmit () {
+function handleSubmit() {
   const tarif = document.getElementById('tarif').value;
   const price = document.getElementById('price').value;
-  
+
   sessionStorage.setItem("TARIF", tarif);
   sessionStorage.setItem("PRICE", price);
 
@@ -275,6 +275,7 @@ $("#form").submit(function (event) {
     // Get data
     var data = {
       "entry.552099895": $("#surname").val(),
+      "entry.640670863": "Декларация",
       "entry.552135976": $("#name").val(),
       "entry.1462956229": $("#lastname").val(),
       "entry.601304414": $("#email").val(),
