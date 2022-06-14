@@ -14,17 +14,17 @@
   ">
   <div id="videoMessage" style="height: 30%" class="styling text-white">
     <header class="header show-on-scroll h-20 pt-5"
-      style="display: flex; flex-direction: column; justify-content: center">
+      style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
       <h2 class="heading">Инструмент</h2>
       <h1 class="heading text-warning">НАЛОГОВЫЙ КОНСУЛЬТАНТ</h1>
       <h4 class="heading">Как быть если у меня много сделок?</h4>    
     </header>
-    <a href="#form240prem" class="btn btn-warning text-white">Заказать расчет</a>
+    <a href="#costs" class="btn btn-warning text-white">Заказать расчет</a>
   </div>
 </section>
 
 <div id="videowrapper">
-  <div id="fullScreenDiv">
+  <div id="fullScreenDiv" style="position: relative;">
     <video id="video" role="presentation" preload="auto" playsinline="" crossorigin="anonymous" loop="" muted=""
       autoplay="" class="blur">
       <source src="static/css/img/demosoft.mp4" type="video/webm">
@@ -33,12 +33,12 @@
     <div id="videoMessage" class="styling text-white">
 
       <header class="header show-on-scroll h-20 pt-5"
-        style="display: flex; flex-direction: column; justify-content: center">
+        style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <h2 class="heading">Инструмент</h2>
         <h1 class="heading text-warning">НАЛОГОВЫЙ КОНСУЛЬТАНТ</h1>
         <h4 class="heading">Как быть если у меня много сделок?</h4>
       </header>
-      <a href="#form240prem" class="btn btn-warning text-white">Заказать расчет</a>
+      <a href="#costs" class="btn btn-warning text-white">Заказать расчет</a>
     </div>
   </div>
 </div>
@@ -243,9 +243,9 @@
       <p class="fs-5 text-muted"></p>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center d-flex justify-content-center">
 
-      <div class="col-md-6">
+      <div class="col-md-6" id="costs">
         <div class="card mb-4 rounded-3 shadow-sm border-warning stdPacket">
           <div class="card-body d-flex flex-column">
             <h1 class="card-title pricing-card-title">
@@ -265,386 +265,99 @@
               >Заказать расчет</a
             >
 
-            <div
-              class="modal fade"
-              id="exampleModalToggle"
-              aria-hidden="true"
-              aria-labelledby="exampleModalToggleLabel"
-              tabindex="-1"
-            >
+            <div class="modal fade" id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel" tabindex="-1" style="display: none;" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalToggleLabel">
-                      Отправить заявку
+                      Оформить расчет
                     </h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body text-start">
-                    <form id="form" method="post">
-                      <div class="card">
-                        <div class="card-header">
-                          <h5 class="card-title mb-0">
-                            <span class="text-danger">*</span> Имя
-                          </h5>
-                        </div>
-                        <div class="form-control">
-                          <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            class="form-control"
-                            placeholder="Иванов Иван"
-                          />
-                          <small>Заполните поле Имя</small>
-                        </div>
+                    <form id="form" method="post" class="needs-validation">
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="first" value="5000" checked="">
+                        <label class="form-check-label w-75" for="PoryadokNal">Один документ</label><span class="text-end" style="float: right">5 000 тг</span>
+                      </div>
+                      <hr class="my-1">
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="second" value="10000" >
+                        <label class="form-check-label w-75" for="LocalRynok">Два документа</label><span class="text-end" style="float: right">10 000 тг</span>
+                      </div>
+                      <hr class="my-1">
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="third" value="15000" >
+                        <label class="form-check-label w-75" for="ZaPredelami">Три документа</label><span class="text-end" style="float: right">15 000 тг</span>
+                      </div>
+                      <hr class="my-1">
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="forth" value="20000" >
+                        <label class="form-check-label w-75" for="VychetyISald">Чертыре документа</label><span class="text-end" style="float: right">20 000 тг</span>
+                      </div>
+                      <hr class="my-1">
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="fifth" value="25000"  >
+                        <label class="form-check-label w-75" for="Diagramma">Пять документов</label><span class="text-end" style="float: right">25 000 тг</span>
+                      </div>
+                      <br>
+
+                      <div class="form-check form-switch">
+                        <label class="form-check-label w-75">Итого:</label><span id="totalPrice" class="text-end" style="float: right">50000 тг</span>
                       </div>
 
-                      <div class="card">
-                        <div class="card-header">
-                          <h5 class="card-title mb-0">
-                            <span class="text-danger">*</span>
-                            Электроная почта
-                          </h5>
-                        </div>
-                        <div class="form-control">
-                          <input
-                            id="email"
-                            type="text"
-                            name="email"
-                            class="form-control"
-                            placeholder="IIvanov@gmail.com"
-                          />
-                          <small>Заполните поле Почта</small>
-                        </div>
+                      <br>
+
+                      <div id="link" class="">
+                        <button class="btn btn-primary" href="https://forms.gle/S7xt7zX8eUPEfvUFA">Форма для загрузки документов</button>
+                      </div>
+                      <br>
+
+                      <div id="purchase" class="">
+                        <button class="btn btn-primary">Оплатить расчет</button>
                       </div>
 
-                      <div class="card">
-                        <div class="card-header">
-                          <h5 class="card-title mb-0">
-                            <span class="text-danger">*</span> Телефон (сотовый)
-                          </h5>
-                        </div>
-                        <div class="form-control">
-                          <input
-                            id="tel"
-                            type="tel"
-                            name="mobile"
-                            class="form-control"
-                            placeholder="+7 777 777 77 77"
-                            pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                          />
-                          <small>Неверный номер</small>
-                        </div>
-                      </div>
-
-                      <div class="container" style="font-size: 14px">
-                        Поля отмеченные
-                        <span class="text-danger">*</span> - обязательны к
-                        заполнению
-                      </div>
-                      <div class="container">
-                        <div class="row mt-2">
-                          <div class="col-1 p-0">
-                            <input
-                              id="PolitikaKonf"
-                              class="form-check-input"
-                              type="checkbox"
-                              value=""
-                            />
-                          </div>
-                          <div class="col-11 p-0 m-0">
-                            <label
-                              required=""
-                              style="font-size: 14px"
-                              class="form-check-label"
-                              for="flexCheckDefault"
-                              >«С
-                              <a
-                                href="privacyPolicy.html"
-                                class="text-decoration-underline"
-                                target="_blank"
-                                >политикой конфиденциальности</a
-                              > и <a
-                              href="contractOffer.html"
-                              class="text-decoration-underline"
-                              target="_blank"
-                              >договор оказания услуг</a
-                            > (договор - оферта) ознакомлен.»
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="container">
-                        <div class="text-center mt-1" id="feedback">
-                          <label
-                            style="
-                              display: none;
-                              border-radius: 1em;
-                              padding: 10px;
-                              border: solid red 2px;
-                            "
-                            class="text-danger text-center"
-                            >Заполните поля корректно</label
-                          >
-                        </div>
-                        <button
-                          type="Submit"
-                          id="submit"
-                          class="btn btn-success my-3 w-100"
-                        >
-                          Отправить
-                        </button>
-                      </div>
-                      <div class="container" style="font-size: 14px">
-                        <span class="text-danger">*</span> Нажимая на кнопку, вы
-                        соглашаетесь на обработку персональных данных.
-                      </div>
                     </form>
+
+                      <div class="" style="display: flex">
+                        <input id="PolitikaKonf" class="m-1" type="checkbox" value="" checked="">
+                        <label required="" class="form-check-label ms-2" for="flexCheckDefault">«С
+                          <a href="privacyPolicy.html" class="text-decoration-underline" target="_blank">политикой конфиденциальности</a>
+                          и
+                          <a href="contractOffer.html" target="_blank" class="DogOfr text-decoration-underline">договором оказания услуг</a>
+                          (договор - оферта) ознакомлен. С правилами
+                          оказания услуг согласен»
+                        </label>
+
+                        <br>
+                      </div>
+
+                      <div class="modal-footer">
+                        <div class="container">
+                          <span class="text-danger">*</span> Нажимая на
+                          кнопку, вы соглашаетесь на обработку персональных
+                          данных.
+                        </div>
+                      </div>
+                    
                   </div>
                 </div>
               </div>
-              <div
-                class="modal fade"
-                id="exampleModalToggle2"
-                aria-hidden="true"
-                aria-labelledby="exampleModalToggleLabel2"
-                tabindex="-1"
-              >
+              <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5 class="modal-title" id="exampleModalToggleLabel2">
                         Modal 2
                       </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      Hide this modal and show the first with the button below.
+                      Hide this modal and show the first with the button
+                      below.
                     </div>
                     <div class="modal-footer">
-                      <button
-                        class="btn btn-primary"
-                        data-bs-target="#exampleModalToggle"
-                        data-bs-toggle="modal"
-                        data-bs-dismiss="modal"
-                      >
-                        Back to first
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="card mb-4 rounded-3 shadow-sm border-warning stdPacket">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title pricing-card-title">
-              от 30 тыс. тенге*<small class="text-muted fw-light"></small>
-            </h1>
-            <div class="list-group-flush mt-3 mb-4 text-start">
-              <div class="text-center lead">
-                *Расчет стоимости услуг производится после анализа всех
-                документов.
-              </div>
-            </div>
-            <a
-              id="ZakazUsl"
-              data-bs-toggle="modal"
-              href="#exampleModalToggle"
-              role="button"
-              class="btn btn-warning mt-auto mx-auto text-white ZakazUsl"
-              >Заказать услугу</a
-            >
-
-            <div
-              class="modal fade"
-              id="exampleModalToggle"
-              aria-hidden="true"
-              aria-labelledby="exampleModalToggleLabel"
-              tabindex="-1"
-            >
-              <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalToggleLabel">
-                      Отправить заявку
-                    </h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body text-start">
-                    <form id="form" method="post">
-                      <div class="card">
-                        <div class="card-header">
-                          <h5 class="card-title mb-0">
-                            <span class="text-danger">*</span> Имя
-                          </h5>
-                        </div>
-                        <div class="form-control">
-                          <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            class="form-control"
-                            placeholder="Иванов Иван"
-                          />
-                          <small>Заполните поле Имя</small>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div class="card-header">
-                          <h5 class="card-title mb-0">
-                            <span class="text-danger">*</span>
-                            Электроная почта
-                          </h5>
-                        </div>
-                        <div class="form-control">
-                          <input
-                            id="email"
-                            type="text"
-                            name="email"
-                            class="form-control"
-                            placeholder="IIvanov@gmail.com"
-                          />
-                          <small>Заполните поле Почта</small>
-                        </div>
-                      </div>
-
-                      <div class="card">
-                        <div class="card-header">
-                          <h5 class="card-title mb-0">
-                            <span class="text-danger">*</span> Телефон (сотовый)
-                          </h5>
-                        </div>
-                        <div class="form-control">
-                          <input
-                            id="tel"
-                            type="tel"
-                            name="mobile"
-                            class="form-control"
-                            placeholder="+7 777 777 77 77"
-                            pattern="[0-9]{,2}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                          />
-                          <small>Неверный номер</small>
-                        </div>
-                      </div>
-
-                      <div class="container" style="font-size: 14px">
-                        Поля отмеченные
-                        <span class="text-danger">*</span> - обязательны к
-                        заполнению
-                      </div>
-                      <div class="container">
-                        <div class="row mt-2">
-                          <div class="col-1 p-0">
-                            <input
-                              id="PolitikaKonf"
-                              class="form-check-input"
-                              type="checkbox"
-                              value=""
-                            />
-                          </div>
-                          <div class="col-11 p-0 m-0">
-                            <label
-                              required=""
-                              style="font-size: 14px"
-                              class="form-check-label"
-                              for="flexCheckDefault"
-                              >«С
-                              <a
-                                href="privacyPolicy.html"
-                                class="text-decoration-underline"
-                                target="_blank"
-                                >политикой конфиденциальности</a
-                              > и <a
-                              href="contractOffer.html"
-                              class="text-decoration-underline"
-                              target="_blank"
-                              >договор оказания услуг</a
-                            > (договор - оферта) ознакомлен.»
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="container">
-                        <div class="text-center mt-1" id="feedback">
-                          <label
-                            style="
-                              display: none;
-                              border-radius: 1em;
-                              padding: 10px;
-                              border: solid red 2px;
-                            "
-                            class="text-danger text-center"
-                            >Заполните поля корректно</label
-                          >
-                        </div>
-                        <button
-                          type="Submit"
-                          id="submit"
-                          class="btn btn-success my-3 w-100"
-                        >
-                          Отправить
-                        </button>
-                      </div>
-                      <div class="container" style="font-size: 14px">
-                        <span class="text-danger">*</span> Нажимая на кнопку, вы
-                        соглашаетесь на обработку персональных данных.
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="modal fade"
-                id="exampleModalToggle2"
-                aria-hidden="true"
-                aria-labelledby="exampleModalToggleLabel2"
-                tabindex="-1"
-              >
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalToggleLabel2">
-                        Modal 2
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      Hide this modal and show the first with the button below.
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        class="btn btn-primary"
-                        data-bs-target="#exampleModalToggle"
-                        data-bs-toggle="modal"
-                        data-bs-dismiss="modal"
-                      >
+                      <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">
                         Back to first
                       </button>
                     </div>
@@ -659,4 +372,6 @@
     </div>
   </div>
 </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="../static/js/courses.js"></script>
 {{ end }}

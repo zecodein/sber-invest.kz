@@ -1,2 +1,1 @@
-[GIN] 2022/06/12 - 13:01:50 | 200 |         786µs |             ::1 | GET      "/counttaxbasebroker"
-[GIN] 2022/06/12 - 13:02:28 | 404 |         4.2µs |             ::1 | GET      "/privacyPolicy.html"
+[GIN] 2022/06/14 - 21:11:48 | 200 |     946.135µs |             ::1 | GET      "/counttaxbasebroker"
