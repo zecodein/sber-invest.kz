@@ -7,17 +7,17 @@
         rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0.7)
       ),
-      /* bottom, image */ url(static/css/img/taxreturn.jpg);
+      /* bottom, image */ url(static/css/img/notification_background.jpg);
     background-repeat: no-repeat;
     text-align: center;
     background-size: cover;
   ">
-  <div id="videoMessage" style="height: 30%" class="styling text-white">
+  <div id="videoMessage" style="height: 37%" class="styling text-white">
     <header class="header show-on-scroll h-20 pt-5"
       style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
       <h2 class="heading">Инструмент</h2>
       <h1 class="heading text-warning">НАЛОГОВЫЙ КОНСУЛЬТАНТ</h1>
-      <h4 class="heading">Как быть если у меня много сделок?</h4>    
+      <h4 class="heading">Как быть если у меня много сделок?</h4>
     </header>
     <a href="#costs" class="btn btn-warning text-white">Заказать расчет</a>
   </div>
@@ -30,7 +30,7 @@
       <source src="static/css/img/demosoft.mp4" type="video/webm">
       <source src="static/css/img/demosoft.mp4" type="video/mp4">
     </video>
-    <div id="videoMessage" class="styling text-white">
+    <div id="videoMessage" class="styling text-white" style="height: 60%;">
 
       <header class="header show-on-scroll h-20 pt-5"
         style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -43,31 +43,16 @@
   </div>
 </div>
 
-<!-- in kaz -->
-<section class="bg-white text-dark my-sm-5 py-5 px-3 text-start">
-  <div class="container"></div>
-  <div class="row">
-    <div class="col-md-4 d-flex justify-content-center align-items-center text-center align-content-center">
-      <img class="img-fluid d-block img-width" src="static/css/img/icon-tax-rk-0bg.png" alt="img" width="250px" />
-    </div>
-    <div class="col-md-8 d-md-flex align-items-center justify-content-between">
-      <div class="lead">
-        <!-- <h1>Blablabla <span class="text-warning">blaaa</span></h1> -->
-        <p class="my-4">
-          <span class="h2"><span class="text-warning">В Казахстане</span></span><br />
-          Физическое лицо/инвестор обязано декларировать все свои доходы, (сделки с ценными бумагами, дивиденды зарубежных компаний и др). Согласно налоговому кодексу, инвестор должен самостоятельно рассчитать налогооблагаемый доход и подоходный налог для каждой сделки. 
-        </p>
-      </div>
-    </div>
-  </div>
-  </div>
-</section>
-
 <!-- Investor -->
 <section id="learn" class="py-5 text-light" style="background-color: #122448">
   <div class="container">
     <div class="aligh-items-center justify-content-between">
       <div class="p-md-5">
+        <p class="lead display-6 text-center" style="font-size: 1.5rem">
+          В <span class="text-warning">Казахстане</span> физическое лицо/инвестор обязано декларировать все свои доходы,
+          (сделки с ценными бумагами, дивиденды зарубежных компаний и др). Согласно налоговому кодексу, инвестор должен
+          самостоятельно рассчитать налогооблагаемый доход и подоходный налог для каждой сделки.
+        </p>
         <p class="lead display-6 text-center" style="font-size: 1.5rem">
           У инвестора есть <span class="text-warning">выбор</span>:
         </p>
@@ -75,9 +60,58 @@
     </div>
 
 
-    <div class="row">
+    <div class="row text-center">
 
-      <div class="col-xl">
+      <div class="col-md">
+        <div class="text-light">
+          <div class="card-body p-0 text-left">
+            <div class="mb-3">
+              <ion-icon name="bicycle-outline"></ion-icon>
+            </div>
+            <p class="lead card-text">
+              Вести учет сделок в течении года (например в экселе),и когда придет время подготовить расчёт и подать
+              декларацию самостоятельно
+              <a href="NalInvVKaz.html" class="link-info">Курс «Налоги инвестора в Казахстане»</a> наши
+              <a href="https://www.youtube.com/watch?v=53TEGwfAN3I&t=53s" class="link-info">бесплатные видео инструкции
+                на Youtube</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md">
+        <div class="text-light">
+          <div class="card-body p-0 text-left">
+            <div class="mb-3">
+              <ion-icon name="boat-outline"></ion-icon>
+            </div>
+            <p class="lead card-text">
+              Заказать расчет у Сбережения и Инвестиции, и уже по нему подготовить декларацию следуя нашей бесплатной
+              инструкции в Youtube. Вам поможет инструмент “Налоговый консультант” и наши
+              <a href="https://www.youtube.com/watch?v=53TEGwfAN3I&t=53s" class="link-info">бесплатные видео инструкции
+                на Youtube</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md">
+        <div class="text-light">
+          <div class="card-body p-0 text-left">
+            <div class="mb-3">
+              <ion-icon name="rocket-outline"></ion-icon>
+            </div>
+            <p class="lead card-text">
+              Полностью поручить подготовку своей декларации специалистам. Наша команда возьмет на себя подготовку всех
+              документов. Вам останется только подать декларацию онлайн через кабинет налогоплательщика и вовремя
+              заплатить налог. Вам поможет услуга
+              <a href="taxreturn.html" class="link-info">«Подготовить налоговую декларацию»</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-xl">
         <div class="row aligh-items-center justify-content-between">
           <div class="col-md-4 p-5 text-center">
             <ion-icon name="bicycle-outline"></ion-icon>
@@ -118,43 +152,92 @@
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
   </div>
 </section>
 
+<!-- tax consultant-->
+<section class="bg-white text-dark my-sm-5 py-5 px-3 text-start">
+  <div class="container"></div>
+  <div class="row">
+    <div class="col-md-4 d-flex justify-content-center align-items-center text-center align-content-center">
+      <img class="img-fluid d-block img-width" src="static/css/img/icon-tax-rk-0bg.png" alt="img" width="250px" />
+    </div>
+    <div class="col-md-8 d-md-flex align-items-center justify-content-between">
+      <div class="lead">
+        <h1><span class="text-warning">НАЛОГОВЫЙ КОНСУЛЬТАНТ</span></h1>
+        <p class="my-4">
+          Программное решение для автоматизации расчета налогооблагаемой базы и индивидуально подоходного налога (ИПН)
+          для заполнения налоговой декларации (ФНО 240/270) в Казахстане на основе отчета брокера.
+        </p>
+        <p class="my-4">
+          Отчет генерируется автоматически после обработки отчета брокера и проверяется налоговым консультантом перед
+          отправкой клиенту
+        </p>
+
+        <p class="my-4">
+          Расчет налогооблагаемого дохода производится с учетом:
+        </p>
+
+        <ul>
+          <li>вида дохода (сделки/дивиденды)</li>
+          <li>типа ценных бумаг по которым получен доход (долговые, долевые, производные)</li>
+          <li>освобождений в НК РК (долговые ЦБ и ЦБ на локальных рынках)</li>
+          <li>страны происхождения дохода (Офшоры)
+          </li>
+          <li>курса тенге на момент совершения сделки или получения дивидендов либо купона ( конвертация дохода в
+            национальную валюту)
+          </li>
+        </ul>
+
+        <p class="my-4">
+          Расчет доступен для 5 брокерских отчетов
+        </p>
+
+        <div class="table-responsive-md">
+          <table class="table table-bordered align-middle" style="width: 100%">
+            <tr class="text-center">
+              <th style="width: 20%">АО «Фридом Финанс»</th>
+              <th style="width: 20%">FFIN</th>
+              <th style="width: 20%">Freedom Global</th>
+              <th style="width: 20%">TD Ameritrade</th>
+              <th style="width: 20%">IBKR</th>
+            </tr>
+          </table>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
 <!-- Что вы получите -->
 <section id="learn" class="py-5 bg-dark text-light">
   <div class="container">
+
     <div class="aligh-items-center justify-content-between">
+
       <div class="p-md-5 text-center">
         <h2 class="mb-3">Что вы получите?</h2>
         <p class="lead">
-          Если вы активный инвестор с большим количеством сделок, вариант заказать расчет и уже по нему готовить декларацию может быть единственно верным:
+          Если вы активный инвестор с большим количеством сделок, или вы налоговый бухгалтер с большим количеством
+          клиентов вариант заказать расчет и уже по нему готовить декларацию может быть единственно верным. Вы получите:
         </p>
 
         <div class="row text-center gy-4">
-          <!-- <div class="col-md">
-            <div class="text-light">
-              <div class="card-body p-0 text-left">
-                <div class="mb-3">
-                  <ion-icon name="calculator-outline"></ion-icon>
-                </div>
-                <p class="lead card-text">
-                  1) Отчет “Налоговый консультант” с расчетом налогооблагаемой базы и ИПН подлежащего к уплате
-                </p>
-              </div>
-            </div>
-          </div> -->
 
-          <div class="col-md">
-            <div class="text-light">
-              <div class="card-body p-0 text-left">
-                <div class="mb-3">
-                  <ion-icon name="clipboard-outline"></ion-icon>
-                </div>
-                <p class="lead card-text">
+          <div class="col-lg">
+            <div class="row aligh-items-center justify-content-between">
+              <div class="col-md-4 p-5 text-center">
+                <ion-icon name="clipboard-outline"></ion-icon>
+              </div>
+              <div class="col-md-8 p-md-5">
+                <p class="lead">
                   1) Отчет “Налоговый консультант” с расчетом налогооблагаемой базы и ИПН подлежащего к уплате
                 </p>
               </div>
@@ -162,78 +245,26 @@
           </div>
 
           <div class="col-lg">
-            <div class="text-light">
-              <div class="card-body p-0 text-left">
-                <div class="mb-3">
-                  <ion-icon name="map-outline"></ion-icon>
-                </div>
-
-                <p class="lead card-text">
+            <div class="row aligh-items-center justify-content-between">
+              <div class="col-md-4 p-5 text-center">
+                <ion-icon name="map-outline"></ion-icon>
+              </div>
+              <div class="col-md-8 p-md-5">
+                <p class="lead">
                   2) Пошаговая инструкция заполнения декларации по форме 240
                 </p>
               </div>
             </div>
-          </div>
-        </div>
+          </div>          
+
+        </div>    
+
       </div>
+
     </div>
+
   </div>
 </section>
-
-<!-- How it works -->
-<!-- <section class="bg-light text-dark py-5 p-lg-0 text-center text-sm-start">
-  <div class="container">
-    <div class="aligh-items-center justify-content-between">
-      <div class="p-md-5 text-center">
-        <h2>Как это работает?</h2>
-        <br />
-        <div class="row text-center gy-4">
-          <div class="col-md">
-            <div class="text-dark">
-              <div class="card-body p-0 text-center">
-                <div class="mb-3">
-                  <img src="https://img.icons8.com/ios/50/5b9bd5/1-circle.png/" />
-                </div>
-                <p class="lead card-text">Заполнение анкеты (на сайте)</p>
-              </div>
-            </div>
-          </div>
-          <div class="col col-md-1">
-            <div class="h1 text-center">+</div>
-          </div>
-
-          <div class="col-md">
-            <div class="text-dark">
-              <div class="card-body p-0 text-left">
-                <div class="mb-3">
-                  <img src="https://img.icons8.com/ios/50/5b9bd5/2-circle.png" />
-                </div>
-                <p class="lead card-text">
-                  Согласование объема работ и стоимости
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col col-md-1">
-            <div class="h1 text-center">+</div>
-          </div>
-
-          <div class="col-md">
-            <div class="text-dark">
-              <div class="card-body p-0 text-left">
-                <div class="mb-3">
-                  <img src="https://img.icons8.com/ios/50/5b9bd5/3-circle.png" />
-                </div>
-
-                <p class="lead card-text">Оплата и оказание услуги</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 <!-- Costs -->
 <section>
@@ -256,16 +287,11 @@
                 *+ 5 тыс. тенге за каждый дополнительный отчет брокера в заказе.
               </div>
             </div>
-            <a
-              id="ZakazUsl"
-              data-bs-toggle="modal"
-              href="#exampleModalToggle"
-              role="button"
-              class="btn btn-warning mt-auto mx-auto text-white ZakazUsl"
-              >Заказать расчет</a
-            >
+            <a id="ZakazUsl" data-bs-toggle="modal" href="#exampleModalToggle" role="button"
+              class="btn btn-warning mt-auto mx-auto text-white ZakazUsl">Заказать расчет</a>
 
-            <div class="modal fade" id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel" tabindex="-1" style="display: none;" aria-hidden="true">
+            <div class="modal fade" id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel" tabindex="-1"
+              style="display: none;" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -278,38 +304,45 @@
                     <form id="form" method="post" class="needs-validation">
                       <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="first" value="5000" checked="">
-                        <label class="form-check-label w-75" for="PoryadokNal">Один документ</label><span class="text-end" style="float: right">5 000 тг</span>
+                        <label class="form-check-label w-75" for="PoryadokNal">Один документ</label><span
+                          class="text-end" style="float: right">5 000 тг</span>
                       </div>
                       <hr class="my-1">
                       <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="second" value="10000" >
-                        <label class="form-check-label w-75" for="LocalRynok">Два документа</label><span class="text-end" style="float: right">10 000 тг</span>
+                        <input class="form-check-input" type="checkbox" id="second" value="10000">
+                        <label class="form-check-label w-75" for="LocalRynok">Два документа</label><span
+                          class="text-end" style="float: right">10 000 тг</span>
                       </div>
                       <hr class="my-1">
                       <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="third" value="15000" >
-                        <label class="form-check-label w-75" for="ZaPredelami">Три документа</label><span class="text-end" style="float: right">15 000 тг</span>
+                        <input class="form-check-input" type="checkbox" id="third" value="15000">
+                        <label class="form-check-label w-75" for="ZaPredelami">Три документа</label><span
+                          class="text-end" style="float: right">15 000 тг</span>
                       </div>
                       <hr class="my-1">
                       <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="forth" value="20000" >
-                        <label class="form-check-label w-75" for="VychetyISald">Чертыре документа</label><span class="text-end" style="float: right">20 000 тг</span>
+                        <input class="form-check-input" type="checkbox" id="forth" value="20000">
+                        <label class="form-check-label w-75" for="VychetyISald">Чертыре документа</label><span
+                          class="text-end" style="float: right">20 000 тг</span>
                       </div>
                       <hr class="my-1">
                       <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="fifth" value="25000"  >
-                        <label class="form-check-label w-75" for="Diagramma">Пять документов</label><span class="text-end" style="float: right">25 000 тг</span>
+                        <input class="form-check-input" type="checkbox" id="fifth" value="25000">
+                        <label class="form-check-label w-75" for="Diagramma">Пять документов</label><span
+                          class="text-end" style="float: right">25 000 тг</span>
                       </div>
                       <br>
 
                       <div class="form-check form-switch">
-                        <label class="form-check-label w-75">Итого:</label><span id="totalPrice" class="text-end" style="float: right">50000 тг</span>
+                        <label class="form-check-label w-75">Итого:</label><span id="totalPrice" class="text-end"
+                          style="float: right">50000 тг</span>
                       </div>
 
                       <br>
 
                       <div id="link" class="">
-                        <button class="btn btn-primary" href="https://forms.gle/S7xt7zX8eUPEfvUFA">Форма для загрузки документов</button>
+                        <button class="btn btn-primary" href="https://forms.gle/S7xt7zX8eUPEfvUFA">Форма для загрузки
+                          документов</button>
                       </div>
                       <br>
 
@@ -319,31 +352,34 @@
 
                     </form>
 
-                      <div class="" style="display: flex">
-                        <input id="PolitikaKonf" class="m-1" type="checkbox" value="" checked="">
-                        <label required="" class="form-check-label ms-2" for="flexCheckDefault">«С
-                          <a href="privacyPolicy.html" class="text-decoration-underline" target="_blank">политикой конфиденциальности</a>
-                          и
-                          <a href="contractOffer.html" target="_blank" class="DogOfr text-decoration-underline">договором оказания услуг</a>
-                          (договор - оферта) ознакомлен. С правилами
-                          оказания услуг согласен»
-                        </label>
+                    <div class="" style="display: flex">
+                      <input id="PolitikaKonf" class="m-1" type="checkbox" value="" checked="">
+                      <label required="" class="form-check-label ms-2" for="flexCheckDefault">«С
+                        <a href="privacyPolicy.html" class="text-decoration-underline" target="_blank">политикой
+                          конфиденциальности</a>
+                        и
+                        <a href="contractOffer.html" target="_blank" class="DogOfr text-decoration-underline">договором
+                          оказания услуг</a>
+                        (договор - оферта) ознакомлен. С правилами
+                        оказания услуг согласен»
+                      </label>
 
-                        <br>
-                      </div>
+                      <br>
+                    </div>
 
-                      <div class="modal-footer">
-                        <div class="container">
-                          <span class="text-danger">*</span> Нажимая на
-                          кнопку, вы соглашаетесь на обработку персональных
-                          данных.
-                        </div>
+                    <div class="modal-footer">
+                      <div class="container">
+                        <span class="text-danger">*</span> Нажимая на
+                        кнопку, вы соглашаетесь на обработку персональных
+                        данных.
                       </div>
-                    
+                    </div>
+
                   </div>
                 </div>
               </div>
-              <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+              <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -357,7 +393,8 @@
                       below.
                     </div>
                     <div class="modal-footer">
-                      <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">
+                      <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">
                         Back to first
                       </button>
                     </div>
