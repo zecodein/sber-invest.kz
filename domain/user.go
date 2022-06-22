@@ -17,6 +17,14 @@ type User struct {
 	UpdatedAt       time.Time `json:"updated_at,omitempty"`
 }
 
+// JWT user model testing ...
+type UserRequestDTO struct {
+	FirstName string `json:"first_name,omitempty" binding:"required"`
+	LastName  string `json:"last_name,omitempty" binding:"required"`
+	Email     string `json:"email,omitempty" binding:"required"`
+	Password  string `json:"password,omitempty" binding:"required"`
+}
+
 type UserUsecase interface {
 	Create(ctx context.Context, user *User) (int64, error)
 	UpdatePassword(ctx context.Context, old string, new string, id int64) error

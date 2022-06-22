@@ -11,28 +11,7 @@ import (
 	"github.com/zecodein/sber-invest.kz/domain"
 )
 
-// type UserHandler struct {
-// 	userUsecase domain.UserUsecase
-// }
-
 const key = "sber-session"
-
-// func NewUserHandler(r *gin.Engine, us domain.UserUsecase) {
-// 	handler := &UserHandler{
-// 		userUsecase: us,
-// 	}
-
-// 	r.GET("/user/signup", handler.signUp)
-// 	r.POST("/user/signup", handler.signUp)
-// 	r.GET("/user/signin", handler.signIn)
-// 	r.POST("/user/signin", handler.signIn)
-// 	r.GET("/user/signout", handler.signOut)
-// 	r.GET("/user/update/password", handler.updatePassword)
-// 	r.POST("/user/update/password", handler.updatePassword)
-// 	r.GET("/user/profile/:id", handler.profile)
-// 	r.GET("/user/profile/", handler.profile)
-// 	r.POST("/user/delete", handler.delete)
-// }
 
 func (h *Handler) signUp(c *gin.Context) {
 	if getSession(c).Id != 0 {
@@ -213,3 +192,24 @@ func getSession(c *gin.Context) userSession {
 	}
 	return user
 }
+
+// type UserHandler struct {
+// 	userUsecase domain.UserUsecase
+// }
+
+// func NewUserHandler(r *gin.Engine, us domain.UserUsecase) {
+// 	handler := &UserHandler{
+// 		userUsecase: us,
+// 	}
+
+// 	r.GET("/user/signup", handler.signUp)
+// 	r.POST("/user/signup", handler.signUp)
+// 	r.GET("/user/signin", handler.signIn)
+// 	r.POST("/user/signin", handler.signIn)
+// 	r.GET("/user/signout", handler.signOut)
+// 	r.GET("/user/update/password", handler.updatePassword)
+// 	r.POST("/user/update/password", handler.updatePassword)
+// 	r.GET("/user/profile/:id", handler.profile)
+// 	r.GET("/user/profile/", handler.profile)
+// 	r.POST("/user/delete", handler.delete)
+// }

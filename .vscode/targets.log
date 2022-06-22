@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun 15 12:30:01 2022
+# Make data base, printed on Wed Jun 22 12:20:00 2022
 
 # Variables
 
@@ -49,7 +49,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /home/student/Applications/VSCode/usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:857918
+JOURNAL_STREAM = 8:40736
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -73,7 +73,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 275222
+MANAGERPID = 1421
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -91,7 +91,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/ALEM-316f02:@/tmp/.ICE-unix/275439,unix/ALEM-316f02:/tmp/.ICE-unix/275439
+SESSION_MANAGER = local/ALEM-316f06:@/tmp/.ICE-unix/1639,unix/ALEM-316f06:/tmp/.ICE-unix/1639
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -103,7 +103,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 84695e36d03e471e9126a57f3468458d
+INVOCATION_ID = 411170d43cc1412eb76e57d942db2715
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -113,7 +113,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 275841
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2378
 # automatic
 %F = $(notdir $%)
 # environment
@@ -125,7 +125,7 @@ PWD = /home/student/Documents/zecodein/sber-invest.kz
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 275401
+SSH_AGENT_PID = 1600
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -141,7 +141,7 @@ VSCODE_CODE_CACHE_PATH = /home/student/.config/Code/CachedData/c3511e6c69bb39013
 # environment
 LOGNAME = student
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 +F = $(notdir $+)
 # environment
@@ -163,7 +163,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-95ac9b83-e2f1-48af-afee-298110087204.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-198672b6-de11-4b88-b86b-8d3cba2ea3c1.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -201,8 +201,6 @@ GDK_BACKEND = x11
 # environment
 LC_PAPER = kk_KZ.UTF-8
 # environment
-NO_AT_BRIDGE = 1
-# environment
 QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
@@ -235,9 +233,9 @@ LC_ADDRESS = kk_KZ.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 275841
+VSCODE_PID = 2378
 # variable set hash-table stats:
-# Load=112/1024=11%, Rehash=0, Collisions=19/137=14%
+# Load=111/1024=11%, Rehash=0, Collisions=19/136=14%
 
 # Pattern-specific Variable Values
 
@@ -245,9 +243,9 @@ VSCODE_PID = 275841
 
 # Directories
 
-# . (device 62, inode 183107): 21 files, no impossibilities.
+# . (device 64, inode 125): 22 files, no impossibilities.
 
-# 21 files, no impossibilities in 1 directories.
+# 22 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -293,6 +291,7 @@ build:
 run:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 6):
 	docker-compose build
@@ -308,7 +307,6 @@ delete:
 	docker volume rm sber-investkz_cache sber-investkz_pg-data 
 
 # files hash-table stats:
- 
 # Load=8/1024=1%, Rehash=0, Collisions=0/18=0%
 # VPATH Search Paths
 
@@ -316,12 +314,12 @@ delete:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 30 / storage = 258 B / avg = 8 B
-# current buf: size = 8162 B / used = 258 B / count = 30 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 31 / storage = 266 B / avg = 8 B
+# current buf: size = 8162 B / used = 266 B / count = 31 / avg = 8 B
 
-# strcache performance: lookups = 38 / hit rate = 21%
+# strcache performance: lookups = 39 / hit rate = 20%
 # hash-table stats:
-# Load=30/8192=0%, Rehash=0, Collisions=1/38=3%
-# Finished Make data base on Wed Jun 15 12:30:01 2022
+# Load=31/8192=0%, Rehash=0, Collisions=1/39=3%
+# Finished Make data base on Wed Jun 22 12:20:00 2022
 
  

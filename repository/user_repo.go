@@ -130,3 +130,5 @@ func (u *userRepository) GetAccess(ctx context.Context, userID int64) (string, e
 
 	return access, nil
 }
+
+// JWT repo for testing ...

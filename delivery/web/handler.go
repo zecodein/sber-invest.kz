@@ -46,6 +46,12 @@ func NewHandler(r *gin.Engine, h *Handler) {
 	user.GET("/profile/", h.profile)
 	user.POST("/delete", h.deleteUser)
 
+	// JWT routes for testing ...
+	public := r.Group("/api")
+	// api.GET("/login", h.jwtLogin)
+	public.POST("/register", h.jwtRegister)
+	// api.GET("admin/user", h.adminUser)
+
 	article := r.Group("/article")
 	article.GET("/create", h.createArticle)
 	article.POST("/create", h.createArticle)
@@ -70,6 +76,7 @@ func NewHandler(r *gin.Engine, h *Handler) {
 	admin := r.Group("/admin")
 	admin.GET("/", h.admin)
 	admin.POST("/access", h.adminAccess)
+
 }
 
 func (h *Handler) admin(c *gin.Context) {
