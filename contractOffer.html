@@ -70,7 +70,7 @@
 <body>
 <!-- Navbar menu -->
 <nav
-class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light sticky-top pt-2"
+class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light fixed-top pt-2"
 id="ftco-navbar"
 style="flex-direction: column"
 >
@@ -89,13 +89,13 @@ style="flex-direction: column"
         class="d-flex sberInv navbar-brand my-0 text-wrap align-items-center"
         style="padding: 0; margin: 0"
         >СБЕРЕЖЕНИЯ И ИНВЕСТИЦИИ
-        
-         </a
-      >
+      </a>
       <a
         href="index.html"
         class="d-flex sberInv navbar-brand my-0 text-wrap align-items-center"
-        style="padding: 0; margin: 0; font-size: 13px;">в Казахстане</a>
+        style="padding: 0; margin: 0; font-size: 13px"
+        >в Казахстане</a
+      >
     </ul>
   </div>
   <button
@@ -110,10 +110,13 @@ style="flex-direction: column"
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="navbar-collapse collapse ps-xl-5 d-lg-flex justify-content-end" id="navbarID">
-    <div class="" style="flex-direction: column;">
+  <div
+    class="navbar-collapse collapse ps-xl-5 d-lg-flex justify-content-end"
+    id="navbarID"
+  >
+    <div class="" style="flex-direction: column">
       <ul class="ps-md-0 m-0">
-        <li class="">
+        <li class="d-flex justify-content-center">
           <ul class="navbar-nav m-auto">
             <li class="nav-item dropdown">
               <a
@@ -126,33 +129,37 @@ style="flex-direction: column"
                 >Услуги
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a
-                  class="dropdown-item"
-                  href="taxreturn.html"
-                  >Налоговая декларация</a
+                <a class="dropdown-item" href="/taxreturn.html"
+                  >Подготовка налоговой декларации (ФНО 270/240)</a
                 >
-                <a
-                  class="dropdown-item"
-                  href="notifications.html"
-                  >Ответ на уведомление</a
+                <a class="dropdown-item" href="/notifications.html"
+                  >Подготовка ответа на уведомление в налоговую</a
+                >
+                <a class="dropdown-item" href="/counttaxbasebroker.html"
+                  >Расчет налогооблагаемой базы по отчету брокера</a
+                >
+                <a class="dropdown-item" href="/consultation.html"
+                  >Персональная консультация</a
                 >
               </div>
             </li>
-            <a class="nav-link" href="NalInvVKaz.html">Курсы</a>
-            <a class="nav-link" href="knowledgebase.html">База знаний</a>
-            <a class="nav-link" href="videos.html">Видео</a>
-            <a class="nav-link" href="tools.html">Инструменты</a>
-            <a class="nav-link text-white px-4 mx-1" style="background: #0719bb; border-radius: 20px;" href="/signin.html"
-            >Войти / Зарегистрироваться</a
-          >
-            
+            <a class="nav-link" href="/NalInvVKaz.html">Курсы</a>
+            <a class="nav-link" href="/knowledgebase.html">База знаний</a>
+            <a class="nav-link" href="/videos.html">Видео</a>
+            <a class="nav-link" href="/counttaxbasebroker.html">Инструменты</a>
+            <a
+              class="nav-link text-white px-4 mx-1"
+              style="background: #0719bb; border-radius: 20px"
+              href="/signin.html"
+              >Войти / Зарегистрироваться</a
+            >
           </ul>
         </li>
       </ul>
     </div>
   </div>
 </div>
-</nav>
+  </nav>
 
   <section>
     <div class="container contentMain my-5">
