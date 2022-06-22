@@ -6,6 +6,7 @@ const tel = document.getElementById("tel");
 const question = document.getElementById("question");
 const PolitikaKonf = document.getElementById("PolitikaKonf");
 
+
 form.addEventListener("submit", (e) => {
   submit = checkInputs();
   if (!submit) {
@@ -95,6 +96,16 @@ $("#form").submit(function (event) {
   event.preventDefault();
   $("#feedback").html("");
   setTimeout(function () {
+
+    const patreon = document.getElementsByName("patreon");
+    var patreon_value;
+    for (var i = 0; i < patreon.length; i++) {
+      if (patreon[i].checked) {
+        patreon_value = patreon[i].value;
+      }
+    }
+
+
     // Get data
     var data = {
       "entry.2141224228": "Консультация",
@@ -102,8 +113,10 @@ $("#form").submit(function (event) {
       "entry.1808378347": $("#email").val(),
       "entry.1884718043": $("#tel").val(),
       "entry.951893491": $("#question").val(),
+      "entry.240020271": patreon_value,
     };
 
+    console.log(data);
     // Validate form
     var formSuccess = true;
     Object.keys(data).forEach(function (key, index) {
