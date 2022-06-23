@@ -23,7 +23,7 @@ services:
       - ./init.sql:/docker-entrypoint-initdb.d/1-init.sql
       - pg-data:/var/lib/postgresql/data
     ports:
-      - '5432:5432'
+      - '6543:5432'
     restart: unless-stopped
 
   redis:

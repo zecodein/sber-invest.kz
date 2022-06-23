@@ -12,18 +12,24 @@ type User struct {
 	Email           string    `json:"email,omitempty"`
 	Access          string    `json:"access,omitempty"`
 	Password        string    `json:"password,omitempty"`
-	ConfirmPassword string    `json:"confirm_password,omitempty"`
 	CreatedAt       time.Time `json:"created_at,omitempty"`
 	UpdatedAt       time.Time `json:"updated_at,omitempty"`
 }
 
-// JWT user model testing ...
-type UserRequestDTO struct {
+// UserRequestDTO JWT user model testing ...
+type UserRegisterRequestDTO struct {
 	FirstName string `json:"first_name,omitempty" binding:"required"`
 	LastName  string `json:"last_name,omitempty" binding:"required"`
 	Email     string `json:"email,omitempty" binding:"required"`
 	Password  string `json:"password,omitempty" binding:"required"`
 }
+
+// UserResponseDTO JWT user model testing ...
+type UserLoginRequestDTO struct {
+	Email     string `json:"email,omitempty" binding:"required"`
+	Password  string `json:"password,omitempty" binding:"required"`
+}
+
 
 type UserUsecase interface {
 	Create(ctx context.Context, user *User) (int64, error)
@@ -31,6 +37,7 @@ type UserUsecase interface {
 	GetByID(ctx context.Context, id int64) (*User, error)
 	GetAll(ctx context.Context) (*[]User, error)
 	GetByEmail(ctx context.Context, user *User) (int64, error)
+	GetByEmailJWT(ctx context.Context, user *User) (string, error) // return token for JWT
 	GetAccess(ctx context.Context, userID int64) (string, error)
 	ChangeAccess(ctx context.Context, email string, access string) error
 	Delete(ctx context.Context, id int64) error

@@ -96,6 +96,7 @@ func (u *userRepository) GetByEmail(ctx context.Context, email string) (*domain.
 	return &user, nil
 }
 
+
 func (u *userRepository) ChangeAccess(ctx context.Context, email string, access string) error {
 	// stmt := `UPDATE "user" SET "password" = $1, "updated_at" = $2 WHERE "user_id" = $3`
 

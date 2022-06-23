@@ -48,7 +48,7 @@ func NewHandler(r *gin.Engine, h *Handler) {
 
 	// JWT routes for testing ...
 	public := r.Group("/api")
-	// api.GET("/login", h.jwtLogin)
+	public.POST("/login", h.jwtLogin)
 	public.POST("/register", h.jwtRegister)
 	// api.GET("admin/user", h.adminUser)
 

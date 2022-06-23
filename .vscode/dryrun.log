@@ -1,6 +1,7 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/student/Documents/zecodein/sber-invest.kz'
-docker-compose build
-docker image prune
-make: Leaving directory '/home/student/Documents/zecodein/sber-invest.kz'
- 
+make.exe --dry-run --always-make --keep-going --print-directory
+'\\wsl$\Ubuntu-20.04\home\quazar\repo\zecodein\sber-invest.kz'
+CMD.EXE was started with the above path as the current directory.
+UNC paths are not supported.  Defaulting to Windows directory.
+'make.exe' is not recognized as an internal or external command,
+operable program or batch file.
+

@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/zecodein/sber-invest.kz/domain"
+	"github.com/zecodein/sber-invest.kz/domain"	
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -24,9 +24,7 @@ func (u *userUsecase) Create(ctx context.Context, user *domain.User) (int64, err
 	if strings.TrimSpace(user.FirstName) == "" || strings.TrimSpace(user.LastName) == "" || strings.TrimSpace(user.Email) == "" || strings.TrimSpace(user.Password) == "" {
 		return 0, domain.ErrNotValid
 	}
-	if user.Password != user.ConfirmPassword {
-		return 0, domain.ErrNotValid
-	}
+
 
 	hash, err := hashPassword([]byte(user.Password))
 	if err != nil {
@@ -46,7 +44,7 @@ func (u *userUsecase) UpdatePassword(ctx context.Context, old string, new string
 		return err
 	}
 
-	if comparePassword([]byte(old), []byte(new)) == nil {
+	if comparePassword(old, new) == nil {
 		return fmt.Errorf("повторяется сукаааа")
 	}
 
@@ -84,14 +82,32 @@ func (u *userUsecase) GetByEmail(ctx context.Context, user *domain.User) (int64,
 	if err != nil {
 		return 0, err
 	}
-
-	// err = bcrypt.CompareHashAndPassword([]byte(usr.Password), []byte(user.Password))
-	err = comparePassword([]byte(usr.Password), []byte(user.Password))
+	
+	err = comparePassword(usr.Password, user.Password)
 	if err != nil {
 		return 0, domain.ErrWrongPassword
 	}
 
 	return usr.ID, nil
+}
+
+func (u *userUsecase) GetByEmailJWT(ctx context.Context, user *domain.User) (string, error) {
+	usr, err := u.userRepo.GetByEmail(ctx, user.Email)
+	if err != nil {
+		return "", err
+	}
+
+	err = comparePassword(usr.Password, user.Password)
+	if err != nil { // && err == bcrypt.ErrMismatchedHashAndPassword
+		return "", domain.ErrWrongPassword
+	}
+
+	token, err := GenerateToken(int(usr.ID))
+	if err != nil {
+		return "", err
+	}
+
+	return token, nil
 }
 
 func (u *userUsecase) GetAccess(ctx context.Context, userID int64) (string, error) {
@@ -115,10 +131,7 @@ func hashPassword(password []byte) (string, error) {
 	return string(hash), nil
 }
 
-func comparePassword(hash, password []byte) error {
-	err := bcrypt.CompareHashAndPassword(hash, password)
-	if err != nil {
-		return err
-	}
-	return nil
+func comparePassword(hashedPassword, password string) error {
+	// removed additional error check, as it returns only error
+	return bcrypt.CompareHashAndPassword([]byte(hashedPassword), []byte(password))
 }

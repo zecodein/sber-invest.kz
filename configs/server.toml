@@ -1,7 +1,7 @@
 bind_addr = ":8080"
 
 host_db = "localhost"
-port_db = ":5432"
+port_db = ":6543"
 name_db = "sber-invest-db"
 user_db = "postgres"
 password_db = "PostgresInvest2022"
