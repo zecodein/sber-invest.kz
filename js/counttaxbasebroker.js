@@ -3,6 +3,12 @@ const name = document.getElementById("name");
 const email = document.getElementById("email");
 const tel = document.getElementById("tel");
 const PolitikaKonf = document.getElementById("PolitikaKonf");
+// const broker_total = document.getElementById("broker_total");
+var brokers = "";
+
+
+
+console.log(brokers);
 
 form.addEventListener("submit", (e) => {
   submit = checkInputs();
@@ -14,12 +20,21 @@ form.addEventListener("submit", (e) => {
 });
 
 function checkInputs() {
-  var sumbitForm = true;
+  var submitForm = true;
 
   // trim to remove the whitespaces
   const nameValue = name.value.trim();
   const emailValue = email.value.trim();
   const telValue = tel.value.trim();
+
+  brokers = "";
+  var checkboxes = document.querySelectorAll('input[name="broker"]:checked');
+  for (var checkbox of checkboxes) {
+    brokers += checkbox.value + ' ';
+  }
+
+
+  console.log(brokers)
 
   submitForm = true;
 
@@ -53,6 +68,12 @@ function checkInputs() {
   } else {
     submitForm = false;
   }
+
+  if (brokers === "") {
+    submitForm = false;
+  } else {
+  }
+
   return submitForm;
 }
 
@@ -85,22 +106,27 @@ $("#form").submit(function (event) {
   event.preventDefault();
   $("#feedback").html("");
   setTimeout(function () {
-    const patreonnames = document.getElementsByName("patreon");
-    var patreonnames_value;
-    for (var i = 0; i < patreonnames.length; i++) {
-      if (patreonnames[i].checked) {
-        patreonnames_value = patreonnames[i].value;
+
+    const patreon = document.getElementsByName("patreon");
+    var patreon_value;
+    for (var i = 0; i < patreon.length; i++) {
+      if (patreon[i].checked) {
+        patreon_value = patreon[i].value;
       }
     }
+
+
     // Get data
     var data = {
-      "entry.2141224228": "Ответ на уведомление",
+      "entry.2141224228": "Расчет",
       "entry.750815494": $("#name").val(),
       "entry.1808378347": $("#email").val(),
       "entry.1884718043": $("#tel").val(),
-      "entry.240020271": patreonnames_value,
+      "entry.240020271": patreon_value,
+      "entry.912444377": brokers,
     };
 
+    console.log(data);
     // Validate form
     var formSuccess = true;
     Object.keys(data).forEach(function (key, index) {
@@ -134,13 +160,13 @@ $("#form").submit(function (event) {
         success: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on success");
           $("#feedback").html(
-            '<label  style=" border-radius: 1em; padding:10px;border: solid green 2px" class="text-success text-center">Заявка принята! В ближайшее время мы вам перезвоним!</label>'
+            '<label  style=" border-radius: 1em; padding:10px;border: solid green 2px" class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовыый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
           );
         },
         error: function (jqXHR, textStatus, errorThrown) {
           console.log("Enter on error");
           $("#feedback").html(
-            '<label style=" border-radius: 1em; padding:10px;border: solid green 2px"  class="text-success text-center">Заявка принята! В ближайшее время мы вам перезвоним!</label>'
+            '<label style=" border-radius: 1em; padding:10px;border: solid green 2px"  class="text-success text-center">Заявка принята! В ближайшее время на ваш почтовыый ящик будет отправлено письмо с дальнейшими инструкциями!</label>'
           );
         },
       });

@@ -181,7 +181,7 @@
     >
       <header
         class="header show-on-scroll h-50 pt-5"
-        style="display: flex; flex-direction: column; justify-content: center"
+        style="display: flex; flex-direction: column; justify-content: end"
       >
         <h2 class="heading">Ответ на</h2>
         <h1 class="heading text-warning">УВЕДОМЛЕНИЕ</h1>
@@ -382,6 +382,9 @@
                   <div class="text-center lead">
                     *Расчет стоимости услуг производится после анализа всех документов.
                   </div>
+                  <div class="text-center lead">
+                    *Для <a href="https://www.patreon.com/sberinvest" target="_blank">патронов проекта</a> предусмотрены скидки (10/20/30%)
+                  </div>
                 </div>
                 <a
                   id="ZakazUsl"
@@ -451,6 +454,60 @@
                               <small>Неверный номер</small>
                             </div>
                           </div>
+
+                          <div class="card">
+                            <div class="card-header">
+                              <h5 class="card-title mb-0">
+                                <span class="text-danger">*</span> Вы участник
+                                программы поддержки проекта (patreon)?
+                              </h5>
+                            </div>
+                            <div class="card-body">
+                              <div>
+                                <label class="form-check form-check-inline">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="patreon"
+                                    value="Нет"
+                                    checked
+                                  />
+                                  <span class="form-check-label"> Нет </span>
+                                </label>
+                                <label class="form-check form-check-inline">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="patreon"
+                                    value="Клубная карта"
+                                  />
+                                  <span class="form-check-label">
+                                    Клубная карта
+                                  </span>
+                                </label>
+                                <label class="form-check form-check-inline">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="patreon"
+                                    value="Серебряная карта"
+                                  />
+                                  <span class="form-check-label">
+                                    Серебряная карта
+                                  </span>
+                                </label>
+                                <label class="form-check form-check-inline">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="patreon"
+                                    value="VIP-патрон"
+                                  />
+                                  <span class="form-check-label"> VIP-патрон </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
             
                           <div class="container" style="font-size: 14px;">
                             Поля отмеченные
@@ -463,10 +520,27 @@
                                 <input id="PolitikaKonf" class="form-check-input" type="checkbox" value="">
                               </div>
                               <div class="col-11 p-0 m-0">
-                                <label required="" style="font-size: 14px;" class="form-check-label" for="flexCheckDefault">«С
-                                  <a href="privacyPolicy.html" class="text-decoration-underline" target="_blank">политикой конфиденциальности</a>
-                                  ознакомлен.»
-                                </label>
+                                <label
+                              required=""
+                              style="font-size: 14px"
+                              class="form-check-label"
+                              for="flexCheckDefault"
+                              >С
+                              <a
+                                href="privacyPolicy.html"
+                                class="text-decoration-underline"
+                                target="_blank"
+                                >политикой конфиденциальности</a
+                              >
+                              и
+                              <a
+                                href="contractOffer.html"
+                                class="text-decoration-underline"
+                                target="_blank"
+                                >договор оказания услуг</a
+                              >
+                              (договор - оферта) ознакомлен. С правилами оказания услуг согласен.
+                            </label>
                               </div>
                             </div>
                           </div>

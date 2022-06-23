@@ -1,7 +1,7 @@
-function handleSubmit () {
+function handleSubmit() {
   const tarif = document.getElementById('tarif').value;
   const price = document.getElementById('price').value;
-  
+
   sessionStorage.setItem("TARIF", tarif);
   sessionStorage.setItem("PRICE", price);
 
@@ -71,7 +71,7 @@ function on_change(el, text) {
 const form = document.getElementById("form");
 const name = document.getElementById("name");
 const surname = document.getElementById("surname");
-const lastname = document.getElementById("lastname");
+// const lastname = document.getElementById("lastname");
 const email = document.getElementById("email");
 const tel = document.getElementById("tel");
 const citizen = document.getElementById("citizen");
@@ -103,7 +103,7 @@ function checkInputs() {
   // trim to remove the whitespaces
   const nameValue = name.value.trim();
   const surnameValue = surname.value.trim();
-  const lastnameValue = lastname.value.trim();
+  // const lastnameValue = lastname.value.trim();
   const emailValue = email.value.trim();
   const telValue = tel.value.trim();
   const citizenValue = citizen.value.trim();
@@ -129,10 +129,10 @@ function checkInputs() {
     setSuccessFor(name);
   }
 
-  if (lastnameValue === "") {
-  } else {
-    setSuccessFor(lastname);
-  }
+  // if (lastnameValue === "") {
+  // } else {
+  //   setSuccessFor(lastname);
+  // }
 
   if (emailValue === "") {
     setErrorFor(email, "Заполните поле Почта");
@@ -240,12 +240,14 @@ $("#form").submit(function (event) {
     const dividendnames = document.getElementsByName("dividend");
     const includedeclrnames = document.getElementsByName("includedeclr");
     const taxdeductnames = document.getElementsByName("taxdeduct");
+    const patreonnames = document.getElementsByName("patreon");
 
     var taxresidentnames_value;
     var sale1names_value;
     var dividendnames_value;
     var includedeclrnames_value;
     var taxdeductnames_value;
+    var patreonnames_value;
     for (var i = 0; i < taxresidentnames.length; i++) {
       if (taxresidentnames[i].checked) {
         taxresidentnames_value = taxresidentnames[i].value;
@@ -271,13 +273,18 @@ $("#form").submit(function (event) {
         taxdeductnames_value = taxdeductnames[i].value;
       }
     }
+    for (var i = 0; i < patreonnames.length; i++) {
+      if (patreonnames[i].checked) {
+        patreonnames_value = patreonnames[i].value;
+      }
+    }
 
     // Get data
     var data = {
       "entry.552099895": $("#surname").val(),
       "entry.640670863": "Декларация",
       "entry.552135976": $("#name").val(),
-      "entry.1462956229": $("#lastname").val(),
+      // "entry.1462956229": $("#lastname").val(),
       "entry.601304414": $("#email").val(),
       "entry.940607535": $("#tel").val(),
       "entry.1315104526": $("#citizen").val(),
@@ -294,6 +301,8 @@ $("#form").submit(function (event) {
       "entry.1182572961": $("#tarifOptions").val(),
 
       "entry.1148544009": queryString,
+
+      "entry.1128154228": patreonnames_value,
     };
 
     // Validate form
@@ -306,7 +315,8 @@ $("#form").submit(function (event) {
         key != "entry.949391439" &&
         key != "entry.1182572961" &&
         key != "entry.1462956229" &&
-        key != "entry.1148544009"
+        key != "entry.1148544009" &&
+        key != "entry.1128154228"
       ) {
         formSuccess = false;
         $("#feedback").html(
