@@ -2,6 +2,7 @@ package repository
 
 import (
 	"context"
+	"fmt"
 	"time"
 
 	"github.com/jackc/pgx/v4/pgxpool"
@@ -89,13 +90,26 @@ func (u *userRepository) GetByID(ctx context.Context, id int64) (*domain.User, e
 func (u *userRepository) GetByEmail(ctx context.Context, email string) (*domain.User, error) {
 	stmt := `SELECT * FROM "user" WHERE "email"=$1`
 	user := domain.User{}
+
 	err := u.db.QueryRow(ctx, stmt, email).Scan(&user.ID, &user.FirstName, &user.LastName, &user.Email, &user.Access, &user.Password, &user.CreatedAt, &user.UpdatedAt)
+	fmt.Println(user, email)
 	if err != nil {
 		return nil, err
 	}
 	return &user, nil
 }
 
+func (u *userRepository) GetByEmailJWT(ctx context.Context, email string) (*domain.User, error) {
+	stmt := `SELECT * FROM "user" WHERE "email"=$1`
+	user := domain.User{}
+
+	err := u.db.QueryRow(ctx, stmt, email).Scan(&user.ID, &user.FirstName, &user.LastName, &user.Email, &user.Access, &user.Password, &user.CreatedAt, &user.UpdatedAt)
+	fmt.Println(user, email)
+	if err != nil {
+		return nil, err
+	}
+	return &user, nil
+}
 
 func (u *userRepository) ChangeAccess(ctx context.Context, email string, access string) error {
 	// stmt := `UPDATE "user" SET "password" = $1, "updated_at" = $2 WHERE "user_id" = $3`
