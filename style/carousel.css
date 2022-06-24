@@ -57,15 +57,17 @@
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  cursor: grab;
 }
 
-a .card {
+div .card {
   width: 290px;
   height: 700px;
   margin: 10px;
   display: inline-block;
   white-space: normal;
   -webkit-overflow-scrolling: touch;
+  cursor: grab;
 }
 
 div a {
