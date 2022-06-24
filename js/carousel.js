@@ -90,3 +90,29 @@
 
   init();
 })();
+
+const slider = document.querySelector(".card-scroll");
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.assEventListener("mousedown", () => {
+  isDown = true;
+  slider.classList.add('active');
+})
+
+slider.assEventListener("mouseleave", () => {
+  isDown = false;
+  slider.classList.remove('active');
+})
+
+slider.assEventListener("mouseup", () => {
+  isDown = false;
+  slider.classList.remove('active');
+})
+
+slider.assEventListener("mousemove", () => {
+  if (!isDown) return;
+  console.log(isDown);
+  console.log("Do work!");
+})

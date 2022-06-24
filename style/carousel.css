@@ -52,6 +52,7 @@
 }
 
 .card-scroll {
+  overflow: -moz-scrollbars-horizontal; 
   display: block;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -60,10 +61,11 @@
 
 a .card {
   width: 290px;
-  height: 600px;
+  height: 700px;
   margin: 10px;
   display: inline-block;
   white-space: normal;
+  -webkit-overflow-scrolling: touch;
 }
 
 div a {

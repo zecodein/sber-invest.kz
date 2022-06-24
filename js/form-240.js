@@ -178,7 +178,9 @@ function checkInputs() {
   if (sale1.checked && sale1quantValue === "") {
     setErrorFor(sale1quant, "Заполните Данное поле");
     submitForm = false;
-  } else if (!sale1.checked) {
+  } else if (!sale1.checked && sale1quantValue === "") {
+    setErrorFor(sale1quant, "Заполните Данное поле");
+    submitForm = false;
   } else {
     setSuccessFor(sale1quant);
   }
