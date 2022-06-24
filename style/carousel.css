@@ -60,7 +60,7 @@
   cursor: grab;
 }
 
-div .card {
+a .card {
   width: 290px;
   height: 700px;
   margin: 10px;
