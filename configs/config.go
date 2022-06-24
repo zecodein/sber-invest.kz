@@ -12,6 +12,9 @@ type Config struct {
 	CacheHost     string `toml:"cache_host"`
 	CachePassword string `toml:"cache_password"`
 	CacheAddr     string `toml:"cache_addr"`
+
+	APISECRET         string `toml:"api_secret"`
+	TOKENHOURLIFESPAN string `toml:"token_hour_lifespan"`
 }
 
 func NewConfig() *Config {
@@ -27,5 +30,8 @@ func NewConfig() *Config {
 		CacheHost:     "localhost",
 		CachePassword: "",
 		CacheAddr:     ":6379",
+
+		APISECRET:         "yoursecretstring",
+		TOKENHOURLIFESPAN: "1",
 	}
 }

@@ -9,3 +9,4 @@ password_db = "PostgresInvest2022"
 cache_host = "redis"
 cache_password = "RedisInvest2022"
 cache_addr = ":6379"
+

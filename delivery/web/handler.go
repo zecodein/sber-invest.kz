@@ -6,6 +6,7 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
+	"github.com/zecodein/sber-invest.kz/delivery/web/middleware"
 	"github.com/zecodein/sber-invest.kz/domain"
 )
 
@@ -50,7 +51,9 @@ func NewHandler(r *gin.Engine, h *Handler) {
 	public := r.Group("/api")
 	public.POST("/login", h.jwtLogin)
 	public.POST("/register", h.jwtRegister)
-	// api.GET("admin/user", h.adminUser)
+	protected := r.Group("api/admin")
+	protected.Use(middleware.InitMiddleware().JWTAuthMiddlware())
+	protected.GET("/user", h.jwtCurrentUser)
 
 	article := r.Group("/article")
 	article.GET("/create", h.createArticle)

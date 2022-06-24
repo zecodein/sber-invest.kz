@@ -60,6 +60,10 @@ func main() {
 	router.Static("/static", "./ui/static")
 	router.HTMLRender = loadTemplates("./ui/html/")
 
+	// Initiate middleware ...
+	// middL := middleware.InitMiddleware()
+	// router.Use(middL.JWTAuthMiddlware())
+
 	userRepository := repository.NewUserRepository(db)
 	articleRepository := repository.NewArticleRepository(db)
 	commentRepository := repository.NewCommentRepository(db)
