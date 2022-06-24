@@ -23,6 +23,7 @@ func InitMiddleware() *GoMiddleware {
 // 	return func(c gin.Context) error {
 // 		return nil
 // 	}
+//
 // }
 
 func (m *GoMiddleware) JWTAuthMiddlware() gin.HandlerFunc {

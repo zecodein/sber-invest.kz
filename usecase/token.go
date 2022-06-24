@@ -69,7 +69,6 @@ func ExtractTokenID(c *gin.Context) (uint, error) {
 	if ok && token.Valid {
 		uid, err := strconv.ParseUint(fmt.Sprintf("%.0f", claims["user_id"]), 10, 32)
 		if err != nil {
-			fmt.Println("asljfsaojfdpoijf")
 			return 0, err
 		}
 		return uint(uid), nil

@@ -73,6 +73,10 @@ func (u *userUsecase) GetByID(ctx context.Context, id int64) (*domain.User, erro
 	if err != nil {
 		return nil, err
 	}
+
+	// prepare give with no password
+	user.Password = ""
+
 	return user, nil
 }
 
