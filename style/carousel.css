@@ -57,6 +57,7 @@
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  cursor: grab;
 }
 
 a .card {
@@ -66,6 +67,7 @@ a .card {
   display: inline-block;
   white-space: normal;
   -webkit-overflow-scrolling: touch;
+  cursor: grab;
 }
 
 div a {
