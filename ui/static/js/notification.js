@@ -1,4 +1,3 @@
-
 const form = document.getElementById("form");
 const name = document.getElementById("name");
 const email = document.getElementById("email");
@@ -86,12 +85,20 @@ $("#form").submit(function (event) {
   event.preventDefault();
   $("#feedback").html("");
   setTimeout(function () {
+    const patreonnames = document.getElementsByName("patreon");
+    var patreonnames_value;
+    for (var i = 0; i < patreonnames.length; i++) {
+      if (patreonnames[i].checked) {
+        patreonnames_value = patreonnames[i].value;
+      }
+    }
     // Get data
     var data = {
       "entry.2141224228": "Ответ на уведомление",
       "entry.750815494": $("#name").val(),
       "entry.1808378347": $("#email").val(),
       "entry.1884718043": $("#tel").val(),
+      "entry.240020271": patreonnames_value,
     };
 
     // Validate form

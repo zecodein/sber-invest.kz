@@ -4,11 +4,11 @@
   style="
     height: 500px;
     background:
-        /* top, transparent black, faked with gradient */ linear-gradient(
+/* top, transparent black, faked with gradient */ linear-gradient(
         rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0.7)
       ),
-      /* bottom, image */ url(../static/css/img/notification_background.jpg);
+      /* bottom, image */ url(static/css/img/notification_background.jpg);
     background-repeat: no-repeat;
     text-align: center;
     background-size: cover;
@@ -17,7 +17,7 @@
 >
   <header
     class="header show-on-scroll h-50 pt-5"
-    style="display: flex; flex-direction: column; justify-content: center"
+    style="display: flex; flex-direction: column; justify-content: end"
   >
     <h2 class="heading">Ответ на</h2>
     <h1 class="heading text-warning">УВЕДОМЛЕНИЕ</h1>
@@ -28,7 +28,7 @@
 <section class="p-3 p-lg-5">
   <h2 class="text-center m-auto" style="max-width: 960px; width: auto">
     <strong
-      >Пошаговая инструкция о том что делать в случае получения уведомления от
+      >Пошаговая инструкция о том, что делать в случае получения уведомления от
       налоговых органов:</strong
     >
   </h2>
@@ -44,8 +44,7 @@
             <li class="mb-2">
               Не паниковать! Тщательно ознакомиться с уведомлением, понять суть,
               понять момент начала исчисления срока исполнения уведомления.
-              Обычно срок исполнения уведомления – 30 рабочих дней со дня
-              получения уведомления.
+              Обычный срок – 30 рабочих дней со дня получения уведомления.
             </li>
             <li class="mb-2">
               Связаться с налоговыми органами - получить всю возможную
@@ -79,7 +78,7 @@
       <div class="col-md px-0 px-md-2">
         <span class="d-flex justify-content-center">
           <img
-            src="../static/css/img/successPage.png"
+            src="static/css/img/successPage.png"
             alt=""
             width="40px"
             class=""
@@ -96,12 +95,7 @@
       </div>
       <div class="col-md px-0 px-md-2">
         <span class="d-flex justify-content-center">
-          <img
-            src="../static/css/img/failPage.png"
-            alt=""
-            width="40px"
-            class=""
-          />
+          <img src="static/css/img/failPage.png" alt="" width="40px" class="" />
         </span>
         <hr style="height: 5px; border: none" class="text-warning" />
         <p>
@@ -125,7 +119,7 @@
     <div
       class="col-1 pe-0 text-center d-flex align-items-end justify-content-end"
     >
-      <img src="../static/css/img/repnikova.png" width="50px" alt="" />
+      <img src="static/css/img/repnikova.png" width="50px" alt="" />
     </div>
     <div
       class="message col-8 col-lg-4 mb-5 p-3"
@@ -154,7 +148,7 @@
     <div
       class="col-1 mt-5 px-0 text-center d-flex align-items-end justify-content-start"
     >
-      <img src="../static/css/img/repnikov.png" width="50px" alt="" />
+      <img src="static/css/img/repnikov.png" width="50px" alt="" />
     </div>
   </div>
 </section>
@@ -175,7 +169,7 @@
             <div class="col-lg-6">
               <img
                 style="max-width: 250px"
-                src="../static/css/img/repnikov.png"
+                src="static/css/img/repnikov.png"
                 alt=""
               />
             </div>
@@ -208,7 +202,7 @@
             <div class="col-lg-6">
               <img
                 style="border-radius: 500%; max-width: 250px"
-                src="../static/css/img/repnikova.png"
+                src="static/css/img/repnikova.png"
                 alt=""
               />
             </div>
@@ -265,6 +259,13 @@
               <div class="text-center lead">
                 *Расчет стоимости услуг производится после анализа всех
                 документов.
+              </div>
+              <div class="text-center lead">
+                *Для
+                <a href="https://www.patreon.com/sberinvest" target="_blank"
+                  >патронов проекта</a
+                >
+                предусмотрены скидки (10/20/30%)
               </div>
             </div>
             <a
@@ -354,6 +355,67 @@
                         </div>
                       </div>
 
+                      <div class="card">
+                        <div class="card-header">
+                          <h5 class="card-title mb-0">
+                            <span class="text-danger">*</span> Вы участник
+                            <a
+                              href="https://www.patreon.com/sberinvest"
+                              target="_blank"
+                              >программы поддержки проекта</a
+                            >
+                            (patreon)?
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <div
+                            class="d-flex justify-content-start aligh-items-center"
+                          >
+                            <label class="form-check form-check-inline">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="patreon"
+                                value="Нет"
+                                checked
+                              />
+                              <span class="form-check-label"> Нет </span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="patreon"
+                                value="Клубная карта"
+                              />
+                              <span class="form-check-label">
+                                Клубная карта
+                              </span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="patreon"
+                                value="Серебряная карта"
+                              />
+                              <span class="form-check-label">
+                                Серебряная карта
+                              </span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="patreon"
+                                value="VIP-патрон"
+                              />
+                              <span class="form-check-label"> VIP-патрон </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
                       <div class="container" style="font-size: 14px">
                         Поля отмеченные
                         <span class="text-danger">*</span> - обязательны к
@@ -361,9 +423,9 @@
                       </div>
                       <div class="container">
                         <div class="row mt-2">
-                          <div class="col-1">
+                          <div class="col-1 p-0 d-flex justify-content-center">
                             <input
-                              id="PolitikaKonf" 
+                              id="PolitikaKonf"
                               class="form-check-input"
                               type="checkbox"
                               value=""
@@ -377,19 +439,20 @@
                               for="flexCheckDefault"
                               >С
                               <a
-                                href="privacyPolicy.html"
+                                href="/privacyPolicy"
                                 class="text-decoration-underline"
                                 target="_blank"
                                 >политикой конфиденциальности</a
                               >
                               и
                               <a
-                                href="contractOffer.html"
+                                href="/contractOffer"
                                 class="text-decoration-underline"
                                 target="_blank"
                                 >договор оказания услуг</a
                               >
-                              (договор - оферта) ознакомлен. С правилами оказания услуг согласен.
+                              (договор - оферта) ознакомлен. С правилами
+                              оказания услуг согласен.
                             </label>
                           </div>
                         </div>

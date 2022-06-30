@@ -4,20 +4,20 @@
   style="
     height: 500px;
     background:
-        /* top, transparent black, faked with gradient */ linear-gradient(
+      /* top, transparent black, faked with gradient */ linear-gradient(
         rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0.7)
       ),
-      /* bottom, image */ url(../static/css/img/consultation.jpg);
+      /* bottom, image */ url(static/css/img/consultation.jpg);
     background-repeat: no-repeat;
     text-align: center;
     background-size: cover;
-    background-position: top;
+    background-position: center;
   "
 >
   <header
     class="header show-on-scroll h-50 pt-5"
-    style="display: flex; flex-direction: column; justify-content: center"
+    style="display: flex; flex-direction: column; justify-content: flex-end"
   >
     <h2 class="heading">Персональная</h2>
     <h1 class="heading text-warning">КОНСУЛЬТАЦИЯ</h1>
@@ -29,15 +29,26 @@
 
 <section class="container m-auto p-5 px-3" style="max-width: 900px">
   <div class="row lead">
+    <div class="text-center m-auto lead">
+      <p class="d-none d-md-block">
+        Консультация - лучший способ быстро разобраться в любом важном для вас
+        вопросе, связанном с личными или семейными финансами, инвестициями,
+        отчетности в НБ, налоговую и др.
+      </p>
+      <p class="d-block d-md-none" style="text-align: justify">
+        Консультация - лучший способ быстро разобраться в любом важном для вас
+        вопросе, связанном с личными или семейными финансами, инвестициями,
+        отчетности в НБ, налоговую и др.
+      </p>
+    </div>
     <div class="col-md px-4">
-      <ul class="ps-3">
+      <ul class="ps-3 mb-0">
         <li>Как вести семейный бюджет?</li>
         <li>Какой банк или ипотеку выбрать?</li>
         <li>Как составить финансовый план?</li>
         <li>Что делать с пенсионными накоплениями?</li>
         <li>Как создать инвестиционный портфель?</li>
         <li>Какое распределение активов у меня должно быть?</li>
-        <li>Как выбрать брокера?</li>
       </ul>
     </div>
     <div class="col-md px-4">
@@ -47,21 +58,14 @@
         <li>Как разместиться, покупать/продавать?</li>
         <li>Как ребалансировать портфель?</li>
         <li>Как отчитываться в Нац Банк, налоговую</li>
+        <li>Как выбрать брокера?</li>
         <li>и др.</li>
       </ul>
     </div>
   </div>
-
-  <div class="text-center m-auto lead">
-    <p class="mb-0">
-      Консультация - лучший способ быстро разобраться в любом важном для вас
-      вопросе, связанном с личными или семейными финансами, инвестициями,
-      отчетности в НБ, налоговую и др.
-    </p>
-  </div>
 </section>
 
-<section id="learn" class="py-5 bg-dark text-light">
+<section id="learn" class="py-5 py-md-2 bg-dark text-light">
   <div class="container">
     <div class="aligh-items-center justify-content-between">
       <div class="p-md-5 text-center">
@@ -92,9 +96,6 @@
         </div>
       </div>
     </div>
-    <div class="text-center m-auto lead">
-      <p class="mb-0">После консультации вы получите запись в аудио формате</p>
-    </div>
   </div>
 </section>
 
@@ -114,7 +115,7 @@
             <div class="col-lg-6">
               <img
                 style="max-width: 250px"
-                src="../static/css/img/repnikov.png"
+                src="static/css/img/repnikov.png"
                 alt=""
               />
             </div>
@@ -147,7 +148,7 @@
             <div class="col-lg-6">
               <img
                 style="border-radius: 500%; max-width: 250px"
-                src="../static/css/img/repnikova.png"
+                src="static/css/img/repnikova.png"
                 alt=""
               />
             </div>
@@ -198,9 +199,15 @@
         <div class="card mb-4 rounded-3 shadow-sm border-warning stdPacket">
           <div class="card-body d-flex flex-column">
             <h1 class="card-title pricing-card-title">
-              50 тыс. тенге<small class="text-muted fw-light"></small>
+              50 тыс. тенге*<small class="text-muted fw-light"></small>
             </h1>
-            <div class="list-group-flush mt-3 mb-4 text-start"></div>
+            <div class="text-center lead">
+              *Для
+              <a target="_blank" href="https://www.patreon.com/sberinvest"
+                >патронов проекта</a
+              >
+              предусмотрены скидки (10/20/30%)
+            </div>
             <a
               id="ZakazUsl"
               data-bs-toggle="modal"
@@ -301,10 +308,71 @@
                             type="text"
                             name="question"
                             class="form-control"
-                            placeholder="Напишите вопросы, ответы на которые вы ищите.  Опишите вашу ситуацию и важные обстоятельства чтобы специалист успел помочь вам найти решение. Время консультации всего час."
+                            placeholder="Напишите вопросы, ответы на которые вы ищите. Время консультации всего час. Опишите вашу ситуацию и важные обстоятельства чтобы специалист успел помочь вам найти решение."
                             style="height: 300px"
                           ></textarea>
                           <small>Введите вопросы</small>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="card-header">
+                          <h5 class="card-title mb-0">
+                            <span class="text-danger">*</span> Вы участник
+                            <a
+                              href="https://www.patreon.com/sberinvest"
+                              target="_blank"
+                              >программы поддержки проекта</a
+                            >
+                            (patreon)?
+                          </h5>
+                        </div>
+                        <div class="card-body">
+                          <div
+                            class="d-flex justify-content-start aligh-items-center"
+                          >
+                            <label class="form-check form-check-inline">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="patreon"
+                                value="Нет"
+                                checked
+                              />
+                              <span class="form-check-label"> Нет </span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="patreon"
+                                value="Клубная карта"
+                              />
+                              <span class="form-check-label">
+                                Клубная карта
+                              </span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="patreon"
+                                value="Серебряная карта"
+                              />
+                              <span class="form-check-label">
+                                Серебряная карта
+                              </span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="patreon"
+                                value="VIP-патрон"
+                              />
+                              <span class="form-check-label"> VIP-патрон </span>
+                            </label>
+                          </div>
                         </div>
                       </div>
 
@@ -315,7 +383,7 @@
                       </div>
                       <div class="container">
                         <div class="row mt-2">
-                          <div class="col-1 p-0">
+                          <div class="col-1 p-0 d-flex justify-content-center">
                             <input
                               id="PolitikaKonf"
                               class="form-check-input"
@@ -331,14 +399,14 @@
                               for="flexCheckDefault"
                               >«С
                               <a
-                                href="privacyPolicy.html"
+                                href="privacyPolicy"
                                 class="text-decoration-underline"
                                 target="_blank"
                                 >политикой конфиденциальности</a
                               >
                               и
                               <a
-                                href="contractOffer.html"
+                                href="contractOffer"
                                 class="text-decoration-underline"
                                 target="_blank"
                                 >договором оказания</a

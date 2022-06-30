@@ -8,7 +8,7 @@
   <div class="container">
     <a href="/"
       ><img
-        src="/static/css/img/logo0-0bg.png"
+        src="static/css/img/logo0-0bg.png"
         alt=""
         width="60px"
         class="me-lg-3 ms-0 ms-xl-3"
@@ -78,25 +78,12 @@
               <a class="nav-link" href="/knowledgebase">База знаний</a>
               <a class="nav-link" href="/videos">Видео</a>
               <a class="nav-link" href="/counttaxbasebroker">Инструменты</a>
-              {{ if eq .session.Access "superuser"}}
-              <a class="nav-link" href="/admin">Для админа</a>
-              {{ end }} {{ if eq .session.Access "author"}}
-              <a class="nav-link" href="/article/create">Создать статью</a>
-              {{ end }} {{ if eq .session.Id 0 }}
               <a
                 class="nav-link text-white px-4 mx-1"
                 style="background: #0719bb; border-radius: 20px"
-                href="/user/signin"
+                href="/signin"
                 >Войти / Зарегистрироваться</a
               >
-              {{ else}}
-              <a
-                class="nav-link text-white px-4 mx-1"
-                style="background: red; border-radius: 20px"
-                href="/user/signout"
-                >Выйти</a
-              >
-              {{end}}
             </ul>
           </li>
         </ul>
