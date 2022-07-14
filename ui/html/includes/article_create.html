@@ -10,13 +10,22 @@
   "
 >
   <input type="text" id="title" placeholder="Заголовок" class="mb-3" />
-  <textarea
+  <!-- <textarea
     type="text"
     id="text"
     placeholder="Текст"
     class="mb-3"
     style="width: 100%; min-height: 200px"
-  ></textarea>
+  ></textarea> -->
+
+  <!-- CK editor -->
+ 
+    <textarea name="ckcontent" id="editor"     class="mb-3"
+    style="width: 100%; min-height: 200px">
+      Please enter text here.
+  </textarea>
+ 
+
 
   <label for="categories">Рубрика:</label>
   <input
@@ -36,4 +45,20 @@
   <button type="submit" onclick="createArticle()">Опубликовать</button>
 </section>
 <script src="/static/js/article.js"></script>
+
+<!-- CK Editor -->
+<script>
+  let editor;
+
+  ClassicEditor
+      .create( document.querySelector( '#editor' ) )
+      .then( newEditor => {
+        editor = newEditor;
+    } )
+      .catch( error => {
+          console.error( error );
+      } );
+   
+</script>
+
 {{ end }}
